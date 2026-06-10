@@ -7,7 +7,8 @@ export const roles = {
     AUDITOR: "auditor",
     COMPLIANCE_MANAGER: "compliance_manager",
     IT_MANAGER: "it_manager",
-    ASSIGNEE: "assignee"
+    ASSIGNEE: "assignee",
+    GRC_MANAGER: "grc_manager"
 };
 
 export const incidentStatus = {
@@ -37,16 +38,130 @@ export const ruleStatus = {
     RETIRED: "retired"
 };
 
+// ─── GRC: Findings ────────────────────────────────────────────────────────────
 export const findingStatus = {
     OPEN: "open",
     IN_PROGRESS: "in_progress",
-    RESOLVED: "resolved",
-    PENDING_VALIDATION: "pending_validation",
-    PENDING_RETEST: "pending_retest",
-    REOPENED: "reopened",
+    READY_FOR_RETEST: "ready_for_retest",
+    CLOSED: "closed",
+    REOPENED: "reopened"
+};
+
+export const sourceModule = {
+    NETWORK: "network",
+    UCTC: "uctc",
+    SOAR: "soar",
+    PHISHING: "phishing",
+    SIEM: "siem",
+    OPENCTI: "opencti",
+    MANUAL: "manual"
+};
+
+export const severity = {
+    LOW: "low",
+    MEDIUM: "medium",
+    HIGH: "high",
+    CRITICAL: "critical"
+};
+
+// ─── GRC: Risks ───────────────────────────────────────────────────────────────
+export const riskStatus = {
+    OPEN: "open",
+    MITIGATED: "mitigated",
+    ACCEPTED: "accepted",
     CLOSED: "closed"
 };
 
+export const riskLevel = {
+    LOW: "low",
+    MEDIUM: "medium",
+    HIGH: "high",
+    CRITICAL: "critical"
+};
+
+export const riskTreatment = {
+    MITIGATE: "mitigate",
+    ACCEPT: "accept",
+    TRANSFER: "transfer",
+    AVOID: "avoid"
+};
+
+// ─── GRC: Remediation Tasks ───────────────────────────────────────────────────
+export const taskStatus = {
+    OPEN: "open",
+    IN_PROGRESS: "in_progress",
+    COMPLETED: "completed",
+    VERIFIED: "verified"
+};
+
+export const taskPriority = {
+    LOW: "low",
+    MEDIUM: "medium",
+    HIGH: "high",
+    CRITICAL: "critical"
+};
+
+// ─── GRC: Compliance ──────────────────────────────────────────────────────────
+export const complianceFramework = {
+    ISO27001: "ISO27001",
+    NIST: "NIST",
+    PCI_DSS: "PCI_DSS",
+    SOC2: "SOC2"
+};
+
+export const controlStatus = {
+    COMPLIANT: "compliant",
+    NON_COMPLIANT: "non_compliant",
+    PARTIALLY_COMPLIANT: "partially_compliant",
+    NOT_ASSESSED: "not_assessed"
+};
+
+// ─── GRC: Retest ─────────────────────────────────────────────────────────────
+export const retestResult = {
+    PASS: "pass",
+    FAIL: "fail"
+};
+
+// ─── GRC: Audit Trail ────────────────────────────────────────────────────────
+export const auditAction = {
+    CREATE: "create",
+    UPDATE: "update",
+    DELETE: "delete",
+    ASSIGN: "assign",
+    CLOSE: "close",
+    REOPEN: "reopen",
+    ACCEPT: "accept",
+    MITIGATE: "mitigate",
+    COMPLETE: "complete",
+    VERIFY: "verify",
+    LINK: "link",
+    GENERATE: "generate"
+};
+
+export const entityType = {
+    FINDING: "finding",
+    RISK: "risk",
+    TASK: "task",
+    EVIDENCE: "evidence",
+    REPORT: "report",
+    CONTROL: "control",
+    RETEST: "retest",
+    SIEM_ALERT: "siem_alert",
+    NOTIFICATION: "notification"
+};
+
+// ─── GRC: Notifications ──────────────────────────────────────────────────────
+export const notificationType = {
+    FINDING: "finding",
+    RISK: "risk",
+    TASK: "task",
+    REPORT: "report",
+    COMPLIANCE: "compliance",
+    RETEST: "retest",
+    INTEGRATION: "integration"
+};
+
+// ─── Phishing / Campaign ─────────────────────────────────────────────────────
 export const campaignStatus = {
     DRAFT: "draft",
     ACTIVE: "active",

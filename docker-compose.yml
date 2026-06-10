@@ -45,5 +45,16 @@ services:
       - mongo
       - redis
 
+  report-worker:
+    build: .
+    command: node src/workers/reportWorker.js
+    env_file:
+      - config/.env
+    depends_on:
+      - mongo
+      - redis
+    volumes:
+      - ./uploads:/app/uploads
+
 volumes:
   mongo_data:

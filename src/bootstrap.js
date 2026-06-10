@@ -1,11 +1,20 @@
+import path from "path";
+import { fileURLToPath } from "url";
 import { globalErrorHandling } from "./middleware/globalErrorHandling.js";
 import { authRouter, phishingRouter, soarRouter, uctcRouter, grcRouter } from "./modules/index.js";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export const bootstrap = (app, express) => {
     app.use(express.json());
 
     // Health check
     app.get("/health", (req, res) => res.json({ status: "ok", service: "LumiSec API" }));
+
+    // GRC OpenAPI documentation
+    app.get("/api/grc/docs/openapi.json", (_req, res) => {
+        res.sendFile(path.resolve(__dirname, "../docs/grc-openapi.json"));
+    });
 
     // API Routes
     app.use("/api/auth",     authRouter);

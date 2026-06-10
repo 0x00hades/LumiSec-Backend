@@ -1,0 +1,421 @@
+{
+  "info": {
+    "_postman_id": "7d7fdc0a-6a38-4f4f-a41b-0f3f7c8f6f5a",
+    "name": "LumiSec API",
+    "description": "Postman collection for LumiSec backend APIs. Set {{baseUrl}} to your local server, then use /api/auth/login or /api/auth/signup to populate {{token}}. Most protected routes use Bearer auth with {{token}}."
+  },
+  "item": [
+    {
+      "name": "General",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/health",
+              "host": ["{{baseUrl}}"],
+              "path": ["health"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Signup",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Admin User\",\n  \"email\": \"admin@lumisec.io\",\n  \"password\": \"Password123\",\n  \"role\": \"admin\",\n  \"department\": \"SOC\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/signup",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "auth", "signup"]
+            },
+            "description": "Creates a user and returns a JWT token.",
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "type": "text/javascript",
+                  "exec": [
+                    "const json = pm.response.json();",
+                    "if (json && json.data && json.data.token) {",
+                    "  pm.collectionVariables.set('token', json.data.token);",
+                    "}",
+                    "if (json && json.data && json.data.user && json.data.user._id) {",
+                    "  pm.collectionVariables.set('userId', json.data.user._id);",
+                    "}"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@lumisec.io\",\n  \"password\": \"Password123\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/login",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "auth", "login"]
+            },
+            "description": "Logs in and stores token in collection variables.",
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "type": "text/javascript",
+                  "exec": [
+                    "const json = pm.response.json();",
+                    "if (json && json.data && json.data.token) {",
+                    "  pm.collectionVariables.set('token', json.data.token);",
+                    "}",
+                    "if (json && json.data && json.data.user && json.data.user._id) {",
+                    "  pm.collectionVariables.set('userId', json.data.user._id);",
+                    "}"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "Profile",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/profile",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "auth", "profile"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "UCTC",
+      "item": [
+        {
+          "name": "Create Rule",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Suspicious PowerShell\",\n  \"description\": \"Detect suspicious PowerShell activity\",\n  \"rawSigma\": \"title: Suspicious PowerShell\nlogsource:\n  product: windows\ndetection:\n  selection:\n    Image|endswith: powershell.exe\n  condition: selection\",\n  \"targetSiem\": \"elastic\",\n  \"mitreTactics\": [\"execution\"],\n  \"mitreTechniques\": [\"T1059.001\"]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/uctc/rules",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "uctc", "rules"]
+            }
+          }
+        },
+        {
+          "name": "Get Rules",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/uctc/rules?page=1&limit=20&status=converted",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "uctc", "rules"],
+              "query": [
+                { "key": "page", "value": "1" },
+                { "key": "limit", "value": "20" },
+                { "key": "status", "value": "converted" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Deploy Rule",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/uctc/rules/{{ruleId}}/deploy",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "uctc", "rules", "{{ruleId}}", "deploy"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "SOAR",
+      "item": [
+        {
+          "name": "Create Incident",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Suspicious login\",\n  \"description\": \"Multiple failed logins\",\n  \"severity\": \"high\",\n  \"sourceIP\": \"10.0.0.5\",\n  \"affectedHost\": \"host-01\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/soar/incidents",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "soar", "incidents"]
+            }
+          }
+        },
+        {
+          "name": "Get Incidents",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/soar/incidents?page=1&limit=20&severity=high&status=new",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "soar", "incidents"],
+              "query": [
+                { "key": "page", "value": "1" },
+                { "key": "limit", "value": "20" },
+                { "key": "severity", "value": "high" },
+                { "key": "status", "value": "new" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute Playbook",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/soar/incidents/{{incidentId}}/playbook/{{playbookId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "soar", "incidents", "{{incidentId}}", "playbook", "{{playbookId}}"]
+            }
+          }
+        },
+        {
+          "name": "Close Incident",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"notes\": \"Contained and closed\",\n  \"isFalsePositive\": false\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/soar/incidents/{{incidentId}}/close",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "soar", "incidents", "{{incidentId}}", "close"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Phishing",
+      "item": [
+        {
+          "name": "Create Campaign",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Security Awareness Q2\",\n  \"description\": \"Quarterly phishing simulation\",\n  \"template\": {\n    \"subject\": \"Security update\",\n    \"senderName\": \"LumiSec Security\",\n    \"senderEmail\": \"security@lumisec.io\",\n    \"htmlBody\": \"<p>Hello team</p>\"\n  },\n  \"landingPageUrl\": \"https://example.com/login\",\n  \"trackingDomain\": \"https://track.example.com\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/phishing",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "phishing"]
+            }
+          }
+        },
+        {
+          "name": "Get Campaigns",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/phishing?page=1&limit=20",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "phishing"],
+              "query": [
+                { "key": "page", "value": "1" },
+                { "key": "limit", "value": "20" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Launch Campaign",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/phishing/{{campaignId}}/launch",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "phishing", "{{campaignId}}", "launch"]
+            }
+          }
+        },
+        {
+          "name": "Track Event Public",
+          "request": {
+            "method": "POST",
+            "auth": { "type": "noauth" },
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "User-Agent", "value": "Postman Runtime" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type\": \"click\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/phishing/track/{{trackingId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "phishing", "track", "{{trackingId}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "GRC",
+      "item": [
+        {
+          "name": "Create Finding",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Missing MFA\",\n  \"description\": \"Critical accounts do not enforce MFA\",\n  \"riskRating\": \"high\",\n  \"severity\": 8,\n  \"control\": \"IAM-01\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/grc/findings",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "grc", "findings"]
+            }
+          }
+        },
+        {
+          "name": "Get Findings",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/grc/findings?page=1&limit=20&status=open&riskRating=high",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "grc", "findings"],
+              "query": [
+                { "key": "page", "value": "1" },
+                { "key": "limit", "value": "20" },
+                { "key": "status", "value": "open" },
+                { "key": "riskRating", "value": "high" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Close Finding",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"retestResult\": \"effective\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/grc/findings/{{findingId}}/close",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "grc", "findings", "{{findingId}}", "close"]
+            }
+          }
+        },
+        {
+          "name": "Create Remediation Task",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"findingId\": \"{{findingId}}\",\n  \"assigneeId\": \"{{assigneeId}}\",\n  \"description\": \"Patch vulnerable server\",\n  \"dueDate\": \"2026-06-01T00:00:00.000Z\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/grc/tasks",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "grc", "tasks"]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:3000" },
+    { "key": "token", "value": "" },
+    { "key": "userId", "value": "" },
+    { "key": "ruleId", "value": "" },
+    { "key": "incidentId", "value": "" },
+    { "key": "playbookId", "value": "" },
+    { "key": "campaignId", "value": "" },
+    { "key": "trackingId", "value": "" },
+    { "key": "findingId", "value": "" },
+    { "key": "assigneeId", "value": "" }
+  ]
+}

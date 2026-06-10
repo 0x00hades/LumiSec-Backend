@@ -5,29 +5,34 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "test": "node --test --test-concurrency=1 test/auth.api.test.js test/grc.api.test.js test/health.api.test.js test/phishing.api.test.js test/soar.api.test.js test/uctc.api.test.js"
   },
   "dependencies": {
+    "@elastic/elasticsearch": "^8.15.0",
+    "axios": "^1.7.7",
+    "axios-retry": "^4.5.0",
     "bcrypt": "^5.1.1",
     "bull": "^4.12.2",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "graphql-request": "^6.1.0",
     "ioredis": "^5.3.2",
-    "js-yaml": "^4.1.0",
     "joi": "^17.13.3",
+    "js-yaml": "^4.1.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.6.1",
+    "multer": "^2.1.1",
     "node-ssh": "^13.2.0",
     "nodemailer": "^6.9.15",
+    "pdfkit": "^0.19.0",
     "pg": "^8.12.0",
     "socket.io": "^4.7.5",
-    "axios": "^1.7.7",
-    "winston": "^3.14.2",
-    "@elastic/elasticsearch": "^8.15.0",
-    "axios-retry": "^4.5.0"
+    "winston": "^3.14.2"
   },
   "devDependencies": {
-    "nodemon": "^3.1.4"
+    "mongodb-memory-server": "^10.1.4",
+    "nodemon": "^3.1.4",
+    "supertest": "^7.1.1"
   }
 }

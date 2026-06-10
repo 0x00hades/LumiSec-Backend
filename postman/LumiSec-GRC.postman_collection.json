@@ -1,0 +1,872 @@
+{
+  "info": {
+    "_postman_id": "a3b8c4d1-9e2f-4a1b-8c7d-6f5e4d3c2b1a",
+    "name": "LumiSec GRC API",
+    "description": "Complete Postman collection for the LumiSec GRC (Governance, Risk & Compliance) module.\n\n**Setup:**\n1. Set `{{baseUrl}}` (default: http://localhost:3000)\n2. Run **Auth → Login** (or Signup) to populate `{{token}}`\n3. Run **Findings → Create Finding** to populate `{{findingId}}`\n4. Use folder requests in workflow order for best results\n\n**Roles:** admin, grc_manager, auditor, soc_manager, soc_analyst, detection_engineer, compliance_manager, it_manager, assignee\n\n**Docs:** helpo/LumiSec-GRC-API-Documentation.md",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [{ "key": "token", "value": "{{token}}", "type": "string" }]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "if (!pm.collectionVariables.get('baseUrl')) {",
+          "  pm.collectionVariables.set('baseUrl', 'http://localhost:3000');",
+          "}"
+        ]
+      }
+    }
+  ],
+  "item": [
+    {
+      "name": "Auth",
+      "description": "Authenticate before calling GRC endpoints. Token is saved to collection variables.",
+      "item": [
+        {
+          "name": "Signup (GRC Admin)",
+          "request": {
+            "auth": { "type": "noauth" },
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"GRC Admin\",\n  \"email\": \"grc-admin@lumisec.io\",\n  \"password\": \"Password123\",\n  \"role\": \"grc_manager\",\n  \"department\": \"GRC\"\n}"
+            },
+            "url": "{{baseUrl}}/api/auth/signup",
+            "description": "Create a grc_manager user for testing GRC endpoints."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const json = pm.response.json();",
+                  "if (json?.data?.token) pm.collectionVariables.set('token', json.data.token);",
+                  "if (json?.data?.user?._id) {",
+                  "  pm.collectionVariables.set('userId', json.data.user._id);",
+                  "  pm.collectionVariables.set('assigneeId', json.data.user._id);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Login",
+          "request": {
+            "auth": { "type": "noauth" },
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"grc-admin@lumisec.io\",\n  \"password\": \"Password123\"\n}"
+            },
+            "url": "{{baseUrl}}/api/auth/login"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const json = pm.response.json();",
+                  "if (json?.data?.token) pm.collectionVariables.set('token', json.data.token);",
+                  "if (json?.data?.user?._id) {",
+                  "  pm.collectionVariables.set('userId', json.data.user._id);",
+                  "  pm.collectionVariables.set('assigneeId', json.data.user._id);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Profile",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/auth/profile"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Findings",
+      "item": [
+        {
+          "name": "Create Finding",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Missing MFA on admin accounts\",\n  \"description\": \"Privileged accounts lack multi-factor authentication\",\n  \"severity\": \"high\",\n  \"riskRating\": \"high\",\n  \"asset\": \"auth-server-01\",\n  \"tags\": [\"identity\", \"mfa\"],\n  \"dueDate\": \"2026-07-01T00:00:00.000Z\"\n}"
+            },
+            "url": "{{baseUrl}}/api/grc/findings"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const json = pm.response.json();",
+                  "if (json?.data?._id) pm.collectionVariables.set('findingId', json.data._id);"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "List Findings",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/grc/findings?page=1&limit=20&severity=high&status=open&search=mfa",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "grc", "findings"],
+              "query": [
+                { "key": "page", "value": "1" },
+                { "key": "limit", "value": "20" },
+                { "key": "severity", "value": "high", "disabled": true },
+                { "key": "status", "value": "open", "disabled": true },
+                { "key": "sourceModule", "value": "manual", "disabled": true },
+                { "key": "riskRating", "value": "high", "disabled": true },
+                { "key": "asset", "value": "", "disabled": true },
+                { "key": "search", "value": "mfa", "disabled": true }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Finding by ID",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/grc/findings/{{findingId}}"
+          }
+        },
+        {
+          "name": "Update Finding",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Missing MFA on admin accounts — escalated\",\n  \"severity\": \"critical\",\n  \"riskRating\": \"critical\",\n  \"tags\": [\"identity\", \"mfa\", \"escalated\"]\n}"
+            },
+            "url": "{{baseUrl}}/api/grc/findings/{{findingId}}"
+          }
+        },
+        {
+          "name": "Assign Finding",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"assignedTo\": \"{{assigneeId}}\"\n}"
+            },
+            "url": "{{baseUrl}}/api/grc/findings/{{findingId}}/assign"
+          }
+        },
+        {
+          "name": "Close Finding",
+          "request": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/api/grc/findings/{{findingId}}/close"
+          }
+        },
+        {
+          "name": "Reopen Finding",
+          "request": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/api/grc/findings/{{findingId}}/reopen"
+          }
+        },
+        {
+          "name": "Delete Finding",
+          "request": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/grc/findings/{{findingId}}"
+          }
+        },
+        {
+          "name": "Get Finding History",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/grc/findings/{{findingId}}/history"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Risks",
+      "item": [
+        {
+          "name": "Create Risk",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Credential theft via phishing\",\n  \"description\": \"Users may submit credentials to fake login pages\",\n  \"likelihood\": 4,\n  \"impact\": 5,\n  \"findingId\": \"{{findingId}}\",\n  \"treatment\": \"mitigate\"\n}"
+            },
+            "url": "{{baseUrl}}/api/grc/risks"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const json = pm.response.json();",
+                  "if (json?.data?._id) pm.collectionVariables.set('riskId', json.data._id);"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "List Risks",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/grc/risks?page=1&limit=20&riskLevel=critical&status=open",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "grc", "risks"],
+              "query": [
+                { "key": "page", "value": "1" },
+                { "key": "limit", "value": "20" },
+                { "key": "riskLevel", "value": "critical", "disabled": true },
+                { "key": "status", "value": "open", "disabled": true },
+                { "key": "owner", "value": "{{userId}}", "disabled": true },
+                { "key": "findingId", "value": "{{findingId}}", "disabled": true },
+                { "key": "search", "value": "", "disabled": true }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Risk by ID",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/grc/risks/{{riskId}}"
+          }
+        },
+        {
+          "name": "Update Risk",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"likelihood\": 3,\n  \"impact\": 4,\n  \"treatment\": \"mitigate\"\n}"
+            },
+            "url": "{{baseUrl}}/api/grc/risks/{{riskId}}"
+          }
+        },
+        {
+          "name": "Accept Risk",
+          "request": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/api/grc/risks/{{riskId}}/accept"
+          }
+        },
+        {
+          "name": "Mitigate Risk",
+          "request": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/api/grc/risks/{{riskId}}/mitigate"
+          }
+        },
+        {
+          "name": "Close Risk",
+          "request": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/api/grc/risks/{{riskId}}/close"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Remediation Tasks",
+      "item": [
+        {
+          "name": "Create Task",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"findingId\": \"{{findingId}}\",\n  \"title\": \"Enable MFA for admin accounts\",\n  \"description\": \"Configure MFA policy in identity provider\",\n  \"assignedTo\": \"{{assigneeId}}\",\n  \"priority\": \"high\",\n  \"dueDate\": \"2026-07-01T00:00:00.000Z\"\n}"
+            },
+            "url": "{{baseUrl}}/api/grc/tasks"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const json = pm.response.json();",
+                  "if (json?.data?._id) pm.collectionVariables.set('taskId', json.data._id);"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "List Tasks",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/grc/tasks?page=1&limit=20&status=open&priority=high",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "grc", "tasks"],
+              "query": [
+                { "key": "page", "value": "1" },
+                { "key": "limit", "value": "20" },
+                { "key": "status", "value": "open", "disabled": true },
+                { "key": "priority", "value": "high", "disabled": true },
+                { "key": "assignedTo", "value": "{{assigneeId}}", "disabled": true },
+                { "key": "findingId", "value": "{{findingId}}", "disabled": true }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Task by ID",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/grc/tasks/{{taskId}}"
+          }
+        },
+        {
+          "name": "Update Task",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"priority\": \"critical\",\n  \"description\": \"Urgent: enforce MFA before end of week\"\n}"
+            },
+            "url": "{{baseUrl}}/api/grc/tasks/{{taskId}}"
+          }
+        },
+        {
+          "name": "Complete Task",
+          "request": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/api/grc/tasks/{{taskId}}/complete"
+          }
+        },
+        {
+          "name": "Verify Task",
+          "request": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/api/grc/tasks/{{taskId}}/verify"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Evidence",
+      "item": [
+        {
+          "name": "Upload Evidence",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "file", "type": "file", "src": "", "description": "Select a PDF, PNG, JPEG, TXT, JSON, or ZIP file (max 10MB)" },
+                { "key": "findingId", "value": "{{findingId}}", "type": "text" },
+                { "key": "taskId", "value": "{{taskId}}", "type": "text", "disabled": true }
+              ]
+            },
+            "url": "{{baseUrl}}/api/grc/evidence",
+            "description": "Select a file in the 'file' field before sending."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const json = pm.response.json();",
+                  "if (json?.data?._id) pm.collectionVariables.set('evidenceId', json.data._id);"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Evidence by ID",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/grc/evidence/{{evidenceId}}"
+          }
+        },
+        {
+          "name": "Delete Evidence",
+          "request": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/grc/evidence/{{evidenceId}}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Audit Reports",
+      "item": [
+        {
+          "name": "Create Report",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Q2 2026 Cloud Security Audit\",\n  \"framework\": \"SOC2\",\n  \"scope\": \"AWS production environment\",\n  \"summary\": \"Two critical cloud misconfigurations identified\",\n  \"findings\": [\"{{findingId}}\"]\n}"
+            },
+            "url": "{{baseUrl}}/api/grc/reports"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const json = pm.response.json();",
+                  "if (json?.data?._id) pm.collectionVariables.set('reportId', json.data._id);"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "List Reports",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/grc/reports?page=1&limit=20&framework=SOC2",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "grc", "reports"],
+              "query": [
+                { "key": "page", "value": "1" },
+                { "key": "limit", "value": "20" },
+                { "key": "framework", "value": "SOC2", "disabled": true },
+                { "key": "status", "value": "draft", "disabled": true }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Report by ID",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/grc/reports/{{reportId}}"
+          }
+        },
+        {
+          "name": "Update Report",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"summary\": \"Updated executive summary with remediation status\",\n  \"scope\": \"AWS + Azure production environments\"\n}"
+            },
+            "url": "{{baseUrl}}/api/grc/reports/{{reportId}}"
+          }
+        },
+        {
+          "name": "Add Findings to Report",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"findingIds\": [\"{{findingId}}\"]\n}"
+            },
+            "url": "{{baseUrl}}/api/grc/reports/{{reportId}}/findings"
+          }
+        },
+        {
+          "name": "Generate Report PDF",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/grc/reports/{{reportId}}/generate",
+            "description": "Queues PDF generation. Poll Get Report until status is 'ready'. Requires report-worker running."
+          }
+        },
+        {
+          "name": "Download Report PDF",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/grc/reports/{{reportId}}/download",
+            "description": "Returns binary PDF. Use Send and Download in Postman."
+          }
+        },
+        {
+          "name": "Delete Report",
+          "request": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/grc/reports/{{reportId}}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Compliance",
+      "item": [
+        {
+          "name": "Create Control",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"framework\": \"ISO27001\",\n  \"controlId\": \"A.8.2.3\",\n  \"title\": \"Handling of removable media\",\n  \"description\": \"Procedures for secure media handling\",\n  \"status\": \"partially_compliant\"\n}"
+            },
+            "url": "{{baseUrl}}/api/grc/compliance/controls"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const json = pm.response.json();",
+                  "if (json?.data?._id) pm.collectionVariables.set('controlId', json.data._id);"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "List Controls",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/grc/compliance/controls?page=1&limit=20&framework=ISO27001&status=non_compliant",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "grc", "compliance", "controls"],
+              "query": [
+                { "key": "page", "value": "1" },
+                { "key": "limit", "value": "20" },
+                { "key": "framework", "value": "ISO27001", "disabled": true },
+                { "key": "status", "value": "non_compliant", "disabled": true }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Control by ID",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/grc/compliance/controls/{{controlId}}"
+          }
+        },
+        {
+          "name": "Update Control",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"compliant\",\n  \"description\": \"Media handling policy implemented and verified\"\n}"
+            },
+            "url": "{{baseUrl}}/api/grc/compliance/controls/{{controlId}}"
+          }
+        },
+        {
+          "name": "Link Finding to Control",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"findingId\": \"{{findingId}}\"\n}"
+            },
+            "url": "{{baseUrl}}/api/grc/compliance/controls/{{controlId}}/link-finding"
+          }
+        },
+        {
+          "name": "Get Compliance Status",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/grc/compliance/status"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Retesting",
+      "item": [
+        {
+          "name": "Record Retest",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"result\": \"pass\",\n  \"notes\": \"MFA enforced on all admin accounts\"\n}"
+            },
+            "url": "{{baseUrl}}/api/grc/findings/{{findingId}}/retest",
+            "description": "result: pass | fail. pass closes finding; fail reopens it."
+          }
+        },
+        {
+          "name": "List Retest History",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/grc/findings/{{findingId}}/retests"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Dashboard",
+      "item": [
+        {
+          "name": "Overview",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/grc/dashboard/overview"
+          }
+        },
+        {
+          "name": "Risks",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/grc/dashboard/risks"
+          }
+        },
+        {
+          "name": "Compliance",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/grc/dashboard/compliance"
+          }
+        },
+        {
+          "name": "Tasks",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/grc/dashboard/tasks"
+          }
+        },
+        {
+          "name": "Risk Heatmap",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/grc/dashboard/risk-heatmap"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Audit Logs",
+      "item": [
+        {
+          "name": "List Audit Logs",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/grc/audit-logs?page=1&limit=20&entityType=finding&action=update",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "grc", "audit-logs"],
+              "query": [
+                { "key": "page", "value": "1" },
+                { "key": "limit", "value": "20" },
+                { "key": "entityType", "value": "finding", "disabled": true },
+                { "key": "action", "value": "update", "disabled": true },
+                { "key": "user", "value": "{{userId}}", "disabled": true }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Entity Audit Logs",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/grc/audit-logs/finding/{{findingId}}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Notifications",
+      "item": [
+        {
+          "name": "List Notifications",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/grc/notifications?page=1&limit=20&isRead=false",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "grc", "notifications"],
+              "query": [
+                { "key": "page", "value": "1" },
+                { "key": "limit", "value": "20" },
+                { "key": "isRead", "value": "false", "disabled": true }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const json = pm.response.json();",
+                  "if (json?.data?.[0]?._id) pm.collectionVariables.set('notificationId', json.data[0]._id);"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Mark Notification Read",
+          "request": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/api/grc/notifications/{{notificationId}}/read"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Integrations",
+      "description": "Cross-module ingestion endpoints. Called by Network, UCTC, SOAR, Phishing, SIEM, and OpenCTI modules.",
+      "item": [
+        {
+          "name": "Network → Finding",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Rogue device detected on VLAN 10\",\n  \"description\": \"Unauthorized MAC address 00:1A:2B:3C:4D:5E detected\",\n  \"severity\": \"high\",\n  \"asset\": \"00:1A:2B:3C:4D:5E\",\n  \"findingType\": \"rogue_device\",\n  \"sourceId\": \"net-scan-2026-042\",\n  \"tags\": [\"network\", \"rogue_device\"]\n}"
+            },
+            "url": "{{baseUrl}}/api/grc/integrations/network/findings"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const json = pm.response.json();",
+                  "if (json?.data?._id) pm.collectionVariables.set('findingId', json.data._id);"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "UCTC → Finding",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Sigma rule failed detection test\",\n  \"description\": \"Rule SID-5001 did not trigger on simulated attack\",\n  \"severity\": \"medium\",\n  \"testCaseId\": \"uctc-tc-2026-015\",\n  \"tags\": [\"detection-gap\", \"sigma\"]\n}"
+            },
+            "url": "{{baseUrl}}/api/grc/integrations/uctc/findings"
+          }
+        },
+        {
+          "name": "SOAR → Incident",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"incidentId\": \"INC-2026-0042\",\n  \"title\": \"Brute force attack on VPN\",\n  \"description\": \"Multiple failed login attempts from 203.0.113.10\",\n  \"severity\": \"high\",\n  \"createRisk\": true,\n  \"likelihood\": 4,\n  \"impact\": 4\n}"
+            },
+            "url": "{{baseUrl}}/api/grc/integrations/soar/incidents"
+          }
+        },
+        {
+          "name": "SOAR → Update Task",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"in_progress\",\n  \"priority\": \"critical\"\n}"
+            },
+            "url": "{{baseUrl}}/api/grc/integrations/soar/tasks/{{taskId}}"
+          }
+        },
+        {
+          "name": "Phishing → Risk",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"eventType\": \"submit\",\n  \"title\": \"Credential submission during phishing simulation\",\n  \"description\": \"User submitted credentials on fake O365 login page\"\n}"
+            },
+            "url": "{{baseUrl}}/api/grc/integrations/phishing/risk"
+          }
+        },
+        {
+          "name": "SIEM → Alert",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"alertId\": \"alert-abc-123\",\n  \"ruleName\": \"Brute Force Login\",\n  \"severity\": \"critical\",\n  \"sourceIp\": \"203.0.113.10\",\n  \"destinationIp\": \"10.0.0.5\",\n  \"indexName\": \"winlogbeat-*\"\n}"
+            },
+            "url": "{{baseUrl}}/api/grc/integrations/siem/alerts"
+          }
+        },
+        {
+          "name": "OpenCTI → IOC Risk",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"indicator\": \"malicious-domain.example.com\",\n  \"iocType\": \"domain\",\n  \"title\": \"C2 domain from OpenCTI feed\",\n  \"confidence\": 4,\n  \"description\": \"Known command-and-control domain linked to APT group\"\n}"
+            },
+            "url": "{{baseUrl}}/api/grc/integrations/opencti/ioc"
+          }
+        }
+      ]
+    },
+    {
+      "name": "OpenAPI",
+      "item": [
+        {
+          "name": "Get OpenAPI Spec",
+          "request": {
+            "auth": { "type": "noauth" },
+            "method": "GET",
+            "url": "{{baseUrl}}/api/grc/docs/openapi.json"
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:3000" },
+    { "key": "token", "value": "" },
+    { "key": "userId", "value": "" },
+    { "key": "assigneeId", "value": "" },
+    { "key": "findingId", "value": "" },
+    { "key": "riskId", "value": "" },
+    { "key": "taskId", "value": "" },
+    { "key": "evidenceId", "value": "" },
+    { "key": "reportId", "value": "" },
+    { "key": "controlId", "value": "" },
+    { "key": "notificationId", "value": "" }
+  ]
+}

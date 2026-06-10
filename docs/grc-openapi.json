@@ -1,0 +1,247 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "LumiSec GRC API",
+    "description": "Governance, Risk & Compliance module for the LumiSec cybersecurity platform",
+    "version": "1.0.0"
+  },
+  "servers": [{ "url": "/api/grc", "description": "GRC API base path" }],
+  "security": [{ "bearerAuth": [] }],
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    },
+    "schemas": {
+      "ApiResponse": {
+        "type": "object",
+        "properties": {
+          "success": { "type": "boolean" },
+          "message": { "type": "string" },
+          "data": {}
+        }
+      },
+      "Finding": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string", "example": "Missing MFA on admin accounts" },
+          "description": { "type": "string" },
+          "severity": { "type": "string", "enum": ["low", "medium", "high", "critical"] },
+          "riskRating": { "type": "string", "enum": ["low", "medium", "high", "critical"] },
+          "sourceModule": { "type": "string", "enum": ["network", "uctc", "soar", "phishing", "siem", "opencti", "manual"] },
+          "asset": { "type": "string", "example": "10.0.0.15" },
+          "status": { "type": "string", "enum": ["open", "in_progress", "ready_for_retest", "closed", "reopened"] },
+          "tags": { "type": "array", "items": { "type": "string" } }
+        },
+        "required": ["title", "description", "severity", "riskRating"]
+      },
+      "Risk": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "description": { "type": "string" },
+          "likelihood": { "type": "integer", "minimum": 1, "maximum": 5 },
+          "impact": { "type": "integer", "minimum": 1, "maximum": 5 },
+          "score": { "type": "integer", "readOnly": true },
+          "riskLevel": { "type": "string", "enum": ["low", "medium", "high", "critical"], "readOnly": true },
+          "treatment": { "type": "string", "enum": ["mitigate", "accept", "transfer", "avoid"] },
+          "status": { "type": "string", "enum": ["open", "mitigated", "accepted", "closed"] }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/findings": {
+      "post": {
+        "tags": ["Findings"],
+        "summary": "Create finding",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "title": "Open RDP port",
+                "description": "Port 3389 exposed to internet",
+                "severity": "high",
+                "riskRating": "high",
+                "asset": "10.0.0.15",
+                "tags": ["network", "exposure"]
+              }
+            }
+          }
+        },
+        "responses": { "201": { "description": "Finding created" } }
+      },
+      "get": {
+        "tags": ["Findings"],
+        "summary": "List findings",
+        "parameters": [
+          { "name": "page", "in": "query", "schema": { "type": "integer" } },
+          { "name": "limit", "in": "query", "schema": { "type": "integer" } },
+          { "name": "severity", "in": "query", "schema": { "type": "string" } },
+          { "name": "status", "in": "query", "schema": { "type": "string" } },
+          { "name": "asset", "in": "query", "schema": { "type": "string" } },
+          { "name": "sourceModule", "in": "query", "schema": { "type": "string" } },
+          { "name": "search", "in": "query", "schema": { "type": "string" } }
+        ],
+        "responses": { "200": { "description": "Paginated findings list" } }
+      }
+    },
+    "/findings/{id}": {
+      "get": { "tags": ["Findings"], "summary": "Get finding by ID" },
+      "patch": { "tags": ["Findings"], "summary": "Update finding" },
+      "delete": { "tags": ["Findings"], "summary": "Delete finding" }
+    },
+    "/findings/{id}/assign": {
+      "patch": {
+        "tags": ["Findings"],
+        "summary": "Assign finding",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": { "assignedTo": "507f1f77bcf86cd799439011" }
+            }
+          }
+        }
+      }
+    },
+    "/findings/{id}/close": { "patch": { "tags": ["Findings"], "summary": "Close finding" } },
+    "/findings/{id}/reopen": { "patch": { "tags": ["Findings"], "summary": "Reopen finding" } },
+    "/findings/{id}/history": { "get": { "tags": ["Findings"], "summary": "Get finding audit history" } },
+    "/findings/{id}/retest": {
+      "post": {
+        "tags": ["Retesting"],
+        "summary": "Record retest result",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": { "result": "pass", "notes": "MFA enforced on all admin accounts" }
+            }
+          }
+        }
+      }
+    },
+    "/risks": {
+      "post": {
+        "tags": ["Risks"],
+        "summary": "Create risk",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "title": "Credential theft via phishing",
+                "description": "Users may submit credentials to fake login pages",
+                "likelihood": 4,
+                "impact": 5,
+                "findingId": "507f1f77bcf86cd799439011"
+              }
+            }
+          }
+        }
+      },
+      "get": { "tags": ["Risks"], "summary": "List risks" }
+    },
+    "/risks/{id}/accept": { "patch": { "tags": ["Risks"], "summary": "Accept risk" } },
+    "/tasks": {
+      "post": {
+        "tags": ["Remediation Tasks"],
+        "summary": "Create remediation task",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "findingId": "507f1f77bcf86cd799439011",
+                "title": "Enable MFA",
+                "description": "Enforce MFA for all privileged accounts",
+                "assignedTo": "507f1f77bcf86cd799439012",
+                "priority": "high",
+                "dueDate": "2026-07-01T00:00:00.000Z"
+              }
+            }
+          }
+        }
+      },
+      "get": { "tags": ["Remediation Tasks"], "summary": "List tasks" }
+    },
+    "/evidence": {
+      "post": {
+        "tags": ["Evidence"],
+        "summary": "Upload evidence",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": { "type": "string", "format": "binary" },
+                  "findingId": { "type": "string" },
+                  "taskId": { "type": "string" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/reports/{id}/generate": { "post": { "tags": ["Audit Reports"], "summary": "Queue PDF generation" } },
+    "/dashboard/overview": { "get": { "tags": ["Dashboard"], "summary": "GRC overview statistics" } },
+    "/dashboard/risk-heatmap": { "get": { "tags": ["Dashboard"], "summary": "5x5 risk heatmap" } },
+    "/integrations/network/findings": {
+      "post": {
+        "tags": ["Integrations"],
+        "summary": "Ingest network module finding",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "title": "Rogue device detected",
+                "description": "Unauthorized MAC on VLAN 10",
+                "severity": "high",
+                "asset": "00:1A:2B:3C:4D:5E",
+                "findingType": "rogue_device",
+                "sourceId": "net-2026-001"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/integrations/siem/alerts": {
+      "post": {
+        "tags": ["Integrations"],
+        "summary": "Ingest SIEM alert",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "alertId": "alert-abc-123",
+                "ruleName": "Brute Force Login",
+                "severity": "critical",
+                "sourceIp": "203.0.113.10",
+                "destinationIp": "10.0.0.5",
+                "indexName": "winlogbeat-*"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/audit-logs": { "get": { "tags": ["Audit"], "summary": "List audit logs" } },
+    "/notifications": { "get": { "tags": ["Notifications"], "summary": "List user notifications" } }
+  },
+  "tags": [
+    { "name": "Findings" },
+    { "name": "Risks" },
+    { "name": "Remediation Tasks" },
+    { "name": "Evidence" },
+    { "name": "Audit Reports" },
+    { "name": "Compliance" },
+    { "name": "Retesting" },
+    { "name": "Dashboard" },
+    { "name": "Integrations" },
+    { "name": "Audit" },
+    { "name": "Notifications" }
+  ]
+}

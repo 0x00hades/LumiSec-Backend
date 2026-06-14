@@ -24,10 +24,11 @@ export const sendEmail = async ({ to, subject, html, from }) => {
 };
 
 export const sendPhishingEmail = async ({ to, subject, htmlBody, from, trackingId, trackingDomain }) => {
-    // Inject tracking pixel and link rewriting
+    const base = (trackingDomain || process.env.PHISHING_TRACKING_DOMAIN || "http://localhost:3000/api/phishing").replace(/\/$/, "");
+
     const trackedHtml = htmlBody
-        .replace(/href="([^"]+)"/g, `href="${trackingDomain}/track/click/${trackingId}?url=$1"`)
-        + `<img src="${trackingDomain}/track/open/${trackingId}" width="1" height="1" style="display:none"/>`;
+        .replace(/href="([^"]+)"/g, `href="${base}/track/click/${trackingId}?url=$1"`)
+        + `<img src="${base}/track/open/${trackingId}" width="1" height="1" style="display:none"/>`;
 
     return sendEmail({ to, subject, html: trackedHtml, from });
 };

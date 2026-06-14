@@ -34,7 +34,38 @@ export const messages = {
         createdSuccessfully: "Campaign created successfully",
         launchedSuccessfully: "Campaign launched successfully",
         updatedSuccessfully: "Campaign updated successfully",
-        deletedSuccessfully: "Campaign deleted successfully"
+        deletedSuccessfully: "Campaign deleted successfully",
+        pausedSuccessfully: "Campaign paused successfully",
+        resumedSuccessfully: "Campaign resumed successfully",
+        stoppedSuccessfully: "Campaign stopped successfully",
+        invalidStatus: "Invalid campaign status transition"
+    },
+    template: {
+        notFound: "Email template not found",
+        createdSuccessfully: "Email template created successfully",
+        updatedSuccessfully: "Email template updated successfully",
+        deletedSuccessfully: "Email template deleted successfully"
+    },
+    landingPage: {
+        notFound: "Landing page not found",
+        createdSuccessfully: "Landing page created successfully",
+        updatedSuccessfully: "Landing page updated successfully",
+        deletedSuccessfully: "Landing page deleted successfully"
+    },
+    recipient: {
+        notFound: "Recipient not found",
+        createdSuccessfully: "Recipient created successfully",
+        updatedSuccessfully: "Recipient updated successfully",
+        deletedSuccessfully: "Recipient deleted successfully",
+        importedSuccessfully: "Recipients imported successfully"
+    },
+    phishingReport: {
+        notFound: "Campaign report not found",
+        generateQueued: "Campaign report generation queued",
+        pdfNotReady: "Campaign report PDF is not ready for download"
+    },
+    phishingRisk: {
+        createdSuccessfully: "Phishing risk created successfully"
     },
     sigmaRule: {
         notFound: "Sigma rule not found",

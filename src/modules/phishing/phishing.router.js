@@ -3,35 +3,210 @@ import { isValid } from "../../middleware/validation.js";
 import { asyncHandler } from "../../middleware/asyncHandler.js";
 import { isAuthenticated } from "../../middleware/authentication.js";
 import { isAuthorized } from "../../middleware/authorization.js";
-import { roles } from "../../utils/constant/enums.js";
-import { createCampaignValidation, trackEventValidation } from "./phishing.validation.js";
-import { createCampaign, launchCampaign, trackEvent, getCampaigns } from "./phishing.controller.js";
+import { phishingPermissions as p } from "./permissions.js";
+import {
+    createTemplateValidation, updateTemplateValidation, templateIdValidation,
+    createLandingPageValidation, updateLandingPageValidation, landingPageIdValidation,
+    importRecipientsValidation, recipientIdValidation, updateRecipientValidation, listRecipientsValidation,
+    createCampaignValidation, updateCampaignValidation, campaignIdValidation, campaignIdParamValidation,
+    addCampaignRecipientsValidation, launchCampaignValidation,
+    trackingIdParamValidation, trackSubmitValidation, trackDownloadValidation,
+    grcRiskIntegrationValidation, soarIncidentIntegrationValidation,
+    siemEventIntegrationValidation, openctiIndicatorValidation,
+    listQueryValidation, dashboardTrendsValidation
+} from "./phishing.validation.js";
+import {
+    createTemplate, getTemplates, getTemplate, updateTemplate, deleteTemplate,
+    createLandingPage, getLandingPages, getLandingPage, updateLandingPage, deleteLandingPage,
+    importRecipients, getRecipients, getRecipient, updateRecipient, deleteRecipient,
+    createCampaign, getCampaigns, getCampaign, updateCampaign, deleteCampaign,
+    addCampaignRecipients, launchCampaign, pauseCampaign, resumeCampaign, stopCampaign,
+    trackOpen, trackClick, trackVisit, trackSubmit, trackDownload,
+    generateReport, downloadReport, getReportStats,
+    getDashboardOverview, getDashboardRisks, getDashboardDepartments, getDashboardTrends,
+    integrateGrcRisk, integrateSoarIncident, integrateSiemEvent, integrateOpenCtiIndicator
+} from "./phishing.controller.js";
 
 const phishingRouter = Router();
 
-phishingRouter.post("/",
-    isAuthenticated(),
-    isAuthorized([roles.ADMIN, roles.SOC_MANAGER]),
-    isValid(createCampaignValidation),
+// ─── Templates ───────────────────────────────────────────────────────────────
+phishingRouter.post("/templates",
+    isAuthenticated(), isAuthorized(p.templates.create), isValid(createTemplateValidation),
+    asyncHandler(createTemplate)
+);
+phishingRouter.get("/templates",
+    isAuthenticated(), isAuthorized(p.templates.read), isValid(listQueryValidation),
+    asyncHandler(getTemplates)
+);
+phishingRouter.get("/templates/:id",
+    isAuthenticated(), isAuthorized(p.templates.read), isValid(templateIdValidation),
+    asyncHandler(getTemplate)
+);
+phishingRouter.patch("/templates/:id",
+    isAuthenticated(), isAuthorized(p.templates.update), isValid(templateIdValidation), isValid(updateTemplateValidation),
+    asyncHandler(updateTemplate)
+);
+phishingRouter.delete("/templates/:id",
+    isAuthenticated(), isAuthorized(p.templates.delete), isValid(templateIdValidation),
+    asyncHandler(deleteTemplate)
+);
+
+// ─── Landing Pages ───────────────────────────────────────────────────────────
+phishingRouter.post("/landing-pages",
+    isAuthenticated(), isAuthorized(p.landingPages.create), isValid(createLandingPageValidation),
+    asyncHandler(createLandingPage)
+);
+phishingRouter.get("/landing-pages",
+    isAuthenticated(), isAuthorized(p.landingPages.read), isValid(listQueryValidation, "query"),
+    asyncHandler(getLandingPages)
+);
+phishingRouter.get("/landing-pages/:id",
+    isAuthenticated(), isAuthorized(p.landingPages.read), isValid(landingPageIdValidation),
+    asyncHandler(getLandingPage)
+);
+phishingRouter.patch("/landing-pages/:id",
+    isAuthenticated(), isAuthorized(p.landingPages.update), isValid(landingPageIdValidation), isValid(updateLandingPageValidation),
+    asyncHandler(updateLandingPage)
+);
+phishingRouter.delete("/landing-pages/:id",
+    isAuthenticated(), isAuthorized(p.landingPages.delete), isValid(landingPageIdValidation),
+    asyncHandler(deleteLandingPage)
+);
+
+// ─── Recipients ──────────────────────────────────────────────────────────────
+phishingRouter.post("/recipients/import",
+    isAuthenticated(), isAuthorized(p.recipients.create), isValid(importRecipientsValidation),
+    asyncHandler(importRecipients)
+);
+phishingRouter.get("/recipients",
+    isAuthenticated(), isAuthorized(p.recipients.read), isValid(listRecipientsValidation),
+    asyncHandler(getRecipients)
+);
+phishingRouter.get("/recipients/:id",
+    isAuthenticated(), isAuthorized(p.recipients.read), isValid(recipientIdValidation),
+    asyncHandler(getRecipient)
+);
+phishingRouter.patch("/recipients/:id",
+    isAuthenticated(), isAuthorized(p.recipients.update), isValid(recipientIdValidation), isValid(updateRecipientValidation),
+    asyncHandler(updateRecipient)
+);
+phishingRouter.delete("/recipients/:id",
+    isAuthenticated(), isAuthorized(p.recipients.delete), isValid(recipientIdValidation),
+    asyncHandler(deleteRecipient)
+);
+
+// ─── Campaigns ───────────────────────────────────────────────────────────────
+phishingRouter.post("/campaigns",
+    isAuthenticated(), isAuthorized(p.campaigns.create), isValid(createCampaignValidation),
     asyncHandler(createCampaign)
 );
-
-phishingRouter.post("/:campaignId/launch",
-    isAuthenticated(),
-    isAuthorized([roles.ADMIN, roles.SOC_MANAGER]),
-    asyncHandler(launchCampaign)
-);
-
-phishingRouter.get("/",
-    isAuthenticated(),
-    isAuthorized([roles.ADMIN, roles.SOC_MANAGER, roles.SOC_ANALYST]),
+phishingRouter.get("/campaigns",
+    isAuthenticated(), isAuthorized(p.campaigns.read), isValid(listQueryValidation),
     asyncHandler(getCampaigns)
 );
+phishingRouter.get("/campaigns/:id",
+    isAuthenticated(), isAuthorized(p.campaigns.read), isValid(campaignIdValidation),
+    asyncHandler(getCampaign)
+);
+phishingRouter.patch("/campaigns/:id",
+    isAuthenticated(), isAuthorized(p.campaigns.update), isValid(campaignIdValidation), isValid(updateCampaignValidation),
+    asyncHandler(updateCampaign)
+);
+phishingRouter.delete("/campaigns/:id",
+    isAuthenticated(), isAuthorized(p.campaigns.delete), isValid(campaignIdValidation),
+    asyncHandler(deleteCampaign)
+);
+phishingRouter.post("/campaigns/:id/recipients",
+    isAuthenticated(), isAuthorized(p.campaigns.manage), isValid(campaignIdValidation), isValid(addCampaignRecipientsValidation),
+    asyncHandler(addCampaignRecipients)
+);
+phishingRouter.post("/campaigns/:id/launch",
+    isAuthenticated(), isAuthorized(p.campaigns.launch), isValid(campaignIdValidation), isValid(launchCampaignValidation),
+    asyncHandler(launchCampaign)
+);
+phishingRouter.post("/campaigns/:id/pause",
+    isAuthenticated(), isAuthorized(p.campaigns.manage), isValid(campaignIdValidation),
+    asyncHandler(pauseCampaign)
+);
+phishingRouter.post("/campaigns/:id/resume",
+    isAuthenticated(), isAuthorized(p.campaigns.manage), isValid(campaignIdValidation),
+    asyncHandler(resumeCampaign)
+);
+phishingRouter.post("/campaigns/:id/stop",
+    isAuthenticated(), isAuthorized(p.campaigns.manage), isValid(campaignIdValidation),
+    asyncHandler(stopCampaign)
+);
 
-// Public tracking endpoint (no auth — hit by victims' browsers)
-phishingRouter.post("/track/:trackingId",
-    isValid(trackEventValidation),
-    asyncHandler(trackEvent)
+// ─── Tracking (public) ───────────────────────────────────────────────────────
+phishingRouter.get("/track/open/:trackingId",
+    isValid(trackingIdParamValidation),
+    asyncHandler(trackOpen)
+);
+phishingRouter.get("/track/click/:trackingId",
+    isValid(trackingIdParamValidation),
+    asyncHandler(trackClick)
+);
+phishingRouter.post("/track/visit/:trackingId",
+    isValid(trackingIdParamValidation),
+    asyncHandler(trackVisit)
+);
+phishingRouter.post("/track/submit/:trackingId",
+    isValid(trackSubmitValidation),
+    asyncHandler(trackSubmit)
+);
+phishingRouter.post("/track/download/:trackingId",
+    isValid(trackDownloadValidation),
+    asyncHandler(trackDownload)
+);
+
+// ─── Reports ─────────────────────────────────────────────────────────────────
+phishingRouter.post("/reports/:campaignId/generate",
+    isAuthenticated(), isAuthorized(p.reports.generate), isValid(campaignIdParamValidation),
+    asyncHandler(generateReport)
+);
+phishingRouter.get("/reports/:campaignId/download",
+    isAuthenticated(), isAuthorized(p.reports.read), isValid(campaignIdParamValidation),
+    asyncHandler(downloadReport)
+);
+phishingRouter.get("/reports/:campaignId/stats",
+    isAuthenticated(), isAuthorized(p.reports.read), isValid(campaignIdParamValidation),
+    asyncHandler(getReportStats)
+);
+
+// ─── Dashboard ───────────────────────────────────────────────────────────────
+phishingRouter.get("/dashboard/overview",
+    isAuthenticated(), isAuthorized(p.dashboard.read),
+    asyncHandler(getDashboardOverview)
+);
+phishingRouter.get("/dashboard/risks",
+    isAuthenticated(), isAuthorized(p.dashboard.read),
+    asyncHandler(getDashboardRisks)
+);
+phishingRouter.get("/dashboard/departments",
+    isAuthenticated(), isAuthorized(p.dashboard.read),
+    asyncHandler(getDashboardDepartments)
+);
+phishingRouter.get("/dashboard/trends",
+    isAuthenticated(), isAuthorized(p.dashboard.read), isValid(dashboardTrendsValidation),
+    asyncHandler(getDashboardTrends)
+);
+
+// ─── Integrations ────────────────────────────────────────────────────────────
+phishingRouter.post("/integrations/grc/risk",
+    isAuthenticated(), isAuthorized(p.integrations.manage), isValid(grcRiskIntegrationValidation),
+    asyncHandler(integrateGrcRisk)
+);
+phishingRouter.post("/integrations/soar/incident",
+    isAuthenticated(), isAuthorized(p.integrations.manage), isValid(soarIncidentIntegrationValidation),
+    asyncHandler(integrateSoarIncident)
+);
+phishingRouter.post("/integrations/siem/event",
+    isAuthenticated(), isAuthorized(p.integrations.manage), isValid(siemEventIntegrationValidation),
+    asyncHandler(integrateSiemEvent)
+);
+phishingRouter.post("/integrations/opencti/indicator",
+    isAuthenticated(), isAuthorized(p.integrations.manage), isValid(openctiIndicatorValidation),
+    asyncHandler(integrateOpenCtiIndicator)
 );
 
 export default phishingRouter;

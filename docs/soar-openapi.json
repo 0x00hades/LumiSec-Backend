@@ -1,0 +1,179 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "LumiSec SOAR API",
+    "description": "Security Orchestration, Automation and Response module endpoints.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    { "url": "/api/soar", "description": "SOAR API base path" }
+  ],
+  "tags": [
+    { "name": "Incidents" },
+    { "name": "Playbooks" },
+    { "name": "Artifacts" },
+    { "name": "Webhooks" },
+    { "name": "Connectors" },
+    { "name": "Dashboard" },
+    { "name": "Analytics" },
+    { "name": "Integrations" }
+  ],
+  "paths": {
+    "/incidents": {
+      "post": {
+        "tags": ["Incidents"],
+        "summary": "Create incident",
+        "security": [{ "bearerAuth": [] }]
+      },
+      "get": {
+        "tags": ["Incidents"],
+        "summary": "List incidents",
+        "security": [{ "bearerAuth": [] }]
+      }
+    },
+    "/incidents/{id}": {
+      "get": {
+        "tags": ["Incidents"],
+        "summary": "Get incident by ID",
+        "security": [{ "bearerAuth": [] }],
+        "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }]
+      },
+      "patch": {
+        "tags": ["Incidents"],
+        "summary": "Update incident",
+        "security": [{ "bearerAuth": [] }],
+        "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }]
+      },
+      "delete": {
+        "tags": ["Incidents"],
+        "summary": "Soft delete incident",
+        "security": [{ "bearerAuth": [] }],
+        "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }]
+      }
+    },
+    "/incidents/{id}/close": {
+      "patch": {
+        "tags": ["Incidents"],
+        "summary": "Close incident (alias)",
+        "security": [{ "bearerAuth": [] }],
+        "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }]
+      }
+    },
+    "/incidents/{id}/artifacts": {
+      "get": {
+        "tags": ["Artifacts"],
+        "summary": "List incident artifacts",
+        "security": [{ "bearerAuth": [] }],
+        "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }]
+      },
+      "post": {
+        "tags": ["Artifacts"],
+        "summary": "Add artifact to incident",
+        "security": [{ "bearerAuth": [] }],
+        "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }]
+      }
+    },
+    "/incidents/{id}/playbooks/run": {
+      "post": {
+        "tags": ["Playbooks"],
+        "summary": "Execute playbook against incident",
+        "security": [{ "bearerAuth": [] }],
+        "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }]
+      }
+    },
+    "/incidents/{incidentId}/playbook/{playbookId}": {
+      "post": {
+        "tags": ["Playbooks"],
+        "summary": "Execute playbook (legacy path)",
+        "security": [{ "bearerAuth": [] }],
+        "parameters": [
+          { "name": "incidentId", "in": "path", "required": true, "schema": { "type": "string" } },
+          { "name": "playbookId", "in": "path", "required": true, "schema": { "type": "string" } }
+        ]
+      }
+    },
+    "/playbooks": {
+      "post": {
+        "tags": ["Playbooks"],
+        "summary": "Create playbook",
+        "security": [{ "bearerAuth": [] }]
+      },
+      "get": {
+        "tags": ["Playbooks"],
+        "summary": "List playbooks",
+        "security": [{ "bearerAuth": [] }]
+      }
+    },
+    "/playbook-runs/{runId}": {
+      "get": {
+        "tags": ["Playbooks"],
+        "summary": "Get playbook run status",
+        "security": [{ "bearerAuth": [] }],
+        "parameters": [{ "name": "runId", "in": "path", "required": true, "schema": { "type": "string" } }]
+      }
+    },
+    "/webhooks/custom": {
+      "post": {
+        "tags": ["Webhooks"],
+        "summary": "Ingest custom webhook alert",
+        "security": [{ "bearerAuth": [] }]
+      }
+    },
+    "/connectors": {
+      "post": {
+        "tags": ["Connectors"],
+        "summary": "Create connector",
+        "security": [{ "bearerAuth": [] }]
+      },
+      "get": {
+        "tags": ["Connectors"],
+        "summary": "List connectors",
+        "security": [{ "bearerAuth": [] }]
+      }
+    },
+    "/dashboard/overview": {
+      "get": {
+        "tags": ["Dashboard"],
+        "summary": "SOAR dashboard overview",
+        "security": [{ "bearerAuth": [] }]
+      }
+    },
+    "/analytics/kpis": {
+      "get": {
+        "tags": ["Analytics"],
+        "summary": "Analytics KPIs",
+        "security": [{ "bearerAuth": [] }]
+      }
+    },
+    "/analytics/export": {
+      "post": {
+        "tags": ["Analytics"],
+        "summary": "Queue analytics export",
+        "security": [{ "bearerAuth": [] }]
+      }
+    },
+    "/integrations/firewall/block-ip": {
+      "post": {
+        "tags": ["Integrations"],
+        "summary": "Block IP via firewall integration",
+        "security": [{ "bearerAuth": [] }]
+      }
+    },
+    "/integrations/siem/event": {
+      "post": {
+        "tags": ["Integrations"],
+        "summary": "Push SIEM event",
+        "security": [{ "bearerAuth": [] }]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}

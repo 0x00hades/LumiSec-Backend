@@ -1,0 +1,2044 @@
+[
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "5.1",
+        "domain": "Security, Compliance & Resilience Governance",
+        "control_text": "[GOV-01]: Mechanisms exist to facilitate the implementation of security, compliance and resilience governance controls. | [GOV-02]: Mechanisms exist to establish, maintain and disseminate policies, standards and procedures necessary for secure, compliant and resilient capabilities. | [GOV-03]: Mechanisms exist to review the Security, Compliance & Resilience Program (SCRP), including policies, standards and procedures, at planned intervals or if significant changes occur to ensure their continuing suitability, adequacy and effectiveness. | [PRI-01]: Mechanisms exist to facilitate the implementation and operation of data protection controls throughout the data lifecycle to ensure all forms of Personal Data (PD) are processed lawfully, fairly and transparently. | [PRI-01.3]: Mechanisms exist to:  (1) Ensure that the public has access to information about organizational data privacy activities and can communicate with its Chief Privacy Officer (CPO) or similar role; (2) Ensure that organizational data privacy practices are publicly available through organizational websites or document repositories;  (3) Utilize publicly facing email addresses and/or phone lines to enable the public to provide feedback and/or direct questions to data privacy office(s) regarding data privacy practices; and (4) Inform data subjects when changes are made to the privacy notice and the nature of such changes.",
+        "sub_requirements": [
+            "GOV-01",
+            "GOV-02",
+            "GOV-03",
+            "PRI-01",
+            "PRI-01.3"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "5.4",
+        "domain": "Security, Compliance & Resilience Governance",
+        "control_text": "[GOV-01]: Mechanisms exist to facilitate the implementation of security, compliance and resilience governance controls. | [HRS-01]: Mechanisms exist to facilitate the implementation of personnel security controls. | [HRS-04.2]: Mechanisms exist to formally educate authorized users on proper data handling practices for all the relevant types of data to which they have access. | [HRS-05]: Mechanisms exist to require all employees and contractors to apply cybersecurity and data protection principles in their daily work to enable secure, compliant and resilient capabilities. | [HRS-05.1]: Mechanisms exist to define acceptable and unacceptable rules of behavior for the use of technologies, including consequences for unacceptable behavior. | [HRS-05.2]: Mechanisms exist to define rules of behavior that contain explicit restrictions on the use of social media and networking sites, posting information on commercial websites and sharing account information. | [HRS-05.3]: Mechanisms exist to establish usage restrictions and implementation guidance for organizational technologies based on the potential to cause damage to Technology Assets, Applications and/or Services (TAAS), if used maliciously. | [PRM-01]: Mechanisms exist to facilitate the implementation of resource planning controls that provide a portfolio management approach to achieve security, compliance and resilience objectives. | [PRM-02]: Mechanisms exist to address all capital planning and investment requests, including the resources needed to implement the Security, Compliance & Resilience Program (SCRP) and document all exceptions to this requirement. | [SAT-03]: Mechanisms exist to provide role-based security, compliance and resilience-related training:  (1) Before authorizing access to the system or performing assigned duties;  (2) When required by system changes; and  (3) Annually thereafter.",
+        "sub_requirements": [
+            "GOV-01",
+            "HRS-01",
+            "HRS-04.2",
+            "HRS-05",
+            "HRS-05.1",
+            "HRS-05.2",
+            "HRS-05.3",
+            "PRM-01",
+            "PRM-02",
+            "SAT-03"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "5.37",
+        "domain": "Security, Compliance & Resilience Governance",
+        "control_text": "[GOV-01]: Mechanisms exist to facilitate the implementation of security, compliance and resilience governance controls. | [GOV-02]: Mechanisms exist to establish, maintain and disseminate policies, standards and procedures necessary for secure, compliant and resilient capabilities. | [GOV-03]: Mechanisms exist to review the Security, Compliance & Resilience Program (SCRP), including policies, standards and procedures, at planned intervals or if significant changes occur to ensure their continuing suitability, adequacy and effectiveness. | [OPS-01]: Mechanisms exist to facilitate the implementation of operational security controls. | [OPS-01.1]: Mechanisms exist to identify and document Standardized Operating Procedures (SOP), or similar documentation, to enable the proper execution of day-to-day / assigned tasks. | [OPS-03]: Mechanisms exist to define supporting business processes and implement appropriate governance and service management to ensure appropriate planning, delivery and support of the organization's technology capabilities supporting business functions, workforce, and/or customers based on industry-recognized standards to achieve the specific goals of the process area.",
+        "sub_requirements": [
+            "GOV-01",
+            "GOV-02",
+            "GOV-03",
+            "OPS-01",
+            "OPS-01.1",
+            "OPS-03"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "5.2",
+        "domain": "Security, Compliance & Resilience Governance",
+        "control_text": "[GOV-04]: Mechanisms exist to assign one or more qualified individuals with the mission and resources to centrally-manage, coordinate, develop, implement and maintain an enterprise-wide Security, Compliance & Resilience Program (SCRP). | [HRS-03]: Mechanisms exist to define cybersecurity roles & responsibilities for all personnel. | [HRS-04.1]: Mechanisms exist to ensure that individuals accessing a system that stores, transmits or processes information requiring special protection satisfy organization-defined personnel screening criteria. | [TPM-03.2]: Mechanisms exist to utilize security safeguards to limit harm from potential adversaries who identify and target the organization's supply chain. | [TPM-05.4]: Mechanisms exist to document and maintain a Responsible, Accountable, Supportive, Consulted & Informed (RASCI) matrix, or similar documentation, to delineate assignment for security, compliance and resilience controls between internal stakeholders and External Service Providers (ESPs). | [TPM-06]: Mechanisms exist to control personnel security requirements including security roles and responsibilities for third-party providers.",
+        "sub_requirements": [
+            "GOV-04",
+            "HRS-03",
+            "HRS-04.1",
+            "TPM-03.2",
+            "TPM-05.4",
+            "TPM-06"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "5.5",
+        "domain": "Security, Compliance & Resilience Governance",
+        "control_text": "[GOV-06]: Mechanisms exist to identify and document appropriate contacts with relevant law enforcement and regulatory bodies.",
+        "sub_requirements": [
+            "GOV-06"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "5.6",
+        "domain": "Security, Compliance & Resilience Governance",
+        "control_text": "[GOV-07]: Mechanisms exist to establish contact with selected groups and associations within the security, compliance and resilience communities to:  (1) Facilitate ongoing cybersecurity and data protection education and training for organizational personnel; (2) Maintain currency with recommended cybersecurity and data protection practices, techniques and technologies; and (3) Share current cybersecurity and/or data protection-related information including threats, vulnerabilities and incidents.",
+        "sub_requirements": [
+            "GOV-07"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "5.12",
+        "domain": "Security, Compliance & Resilience Governance",
+        "control_text": "[GOV-10]: Mechanisms exist to facilitate data governance to oversee the organization's policies, standards and procedures so that sensitive/regulated data is effectively managed and maintained in accordance with applicable statutory, regulatory and contractual obligations. | [AST-04.1]: Mechanisms exist to determine security, compliance and resilience control applicability by identifying, assigning and documenting the appropriate asset scope categorization for all Technology Assets, Applications and/or Services (TAAS) and personnel (internal and third-parties). | [DCH-01]: Mechanisms exist to facilitate the implementation of data protection controls. | [DCH-02]: Mechanisms exist to ensure data and assets are categorized in accordance with applicable statutory, regulatory and contractual requirements.",
+        "sub_requirements": [
+            "GOV-10",
+            "AST-04.1",
+            "DCH-01",
+            "DCH-02"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "5.30",
+        "domain": "Asset Management",
+        "control_text": "[AST-01]: Mechanisms exist to facilitate an IT Asset Management (ITAM) program to implement and manage asset management controls. | [AST-01.1]: Mechanisms exist to identify and assess the security of Technology Assets, Applications and/or Services (TAAS) that support more than one critical business function. | [BCD-01]: Mechanisms exist to facilitate the implementation of contingency planning controls to help ensure resilient Technology Assets, Applications and/or Services (TAAS) (e.g., Continuity of Operations Plan (COOP) or Business Continuity & Disaster Recovery (BC/DR) playbooks). | [BCD-01.1]: Mechanisms exist to coordinate contingency plan development with internal and external elements responsible for related plans. | [BCD-01.2]: Mechanisms exist to coordinate internal contingency plans with the contingency plans of external service providers to ensure that contingency requirements can be satisfied. | [BCD-04]: Mechanisms exist to conduct tests and/or exercises to evaluate the contingency plan's effectiveness and the organization's readiness to execute the plan. | [IRO-06]: Mechanisms exist to formally test incident response capabilities through realistic exercises to determine the operational effectiveness of those capabilities. | [RSK-08]: Mechanisms exist to conduct a Business Impact Analysis (BIA) to identify and assess security, compliance and resilience risks.",
+        "sub_requirements": [
+            "AST-01",
+            "AST-01.1",
+            "BCD-01",
+            "BCD-01.1",
+            "BCD-01.2",
+            "BCD-04",
+            "IRO-06",
+            "RSK-08"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "5.31",
+        "domain": "Asset Management",
+        "control_text": "[AST-01]: Mechanisms exist to facilitate an IT Asset Management (ITAM) program to implement and manage asset management controls. | [CPL-01]: Mechanisms exist to facilitate the identification and implementation of relevant statutory, regulatory and contractual controls. | [CPL-02]: Mechanisms exist to provide a security, compliance and resilience controls oversight function that reports to the organization's executive leadership. | [CRY-01.2]: Mechanisms exist to address the exporting of cryptographic technologies in compliance with relevant statutory and regulatory requirements. | [PRI-07.1]: Mechanisms exist to include data privacy requirements in contracts and other acquisition-related documents that establish data privacy roles and responsibilities for contractors and service providers. | [TPM-05]: Mechanisms exist to require contractual requirements for applicable security, compliance and resilience requirements with third-parties, reflecting the organization's needs to protect its Technology Assets, Applications, Services and/or Data (TAASD).",
+        "sub_requirements": [
+            "AST-01",
+            "CPL-01",
+            "CPL-02",
+            "CRY-01.2",
+            "PRI-07.1",
+            "TPM-05"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "7.9",
+        "domain": "Asset Management",
+        "control_text": "[AST-01]: Mechanisms exist to facilitate an IT Asset Management (ITAM) program to implement and manage asset management controls. | [AST-05]: Mechanisms exist to maintain strict control over the internal or external distribution of any kind of sensitive/regulated media. | [AST-06]: Mechanisms exist to implement enhanced protection measures for unattended technology assets to protect against tampering and unauthorized access. | [AST-08]: Mechanisms exist to periodically inspect systems and system components for Indicators of Compromise (IoC). | [AST-15]: Mechanisms exist to assess the integrity of critical Technology Assets, Applications and/or Services (TAAS) to detect evidence of tampering, where: (1)\tLogical assessments evaluate the integrity of critical components (e.g., configuration settings); and (2)\tPhysical assessments evaluate assets for evidence of unauthorized access and/or modifications. | [NET-14.5]: Mechanisms exist to define secure telecommuting practices and govern remote access to Technology Assets, Applications, Services and/or Data (TAASD) for remote workers.",
+        "sub_requirements": [
+            "AST-01",
+            "AST-05",
+            "AST-06",
+            "AST-08",
+            "AST-15",
+            "NET-14.5"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "5.9",
+        "domain": "Asset Management",
+        "control_text": "[AST-01.1]: Mechanisms exist to identify and assess the security of Technology Assets, Applications and/or Services (TAAS) that support more than one critical business function. | [AST-01.2]: Mechanisms exist to identify and involve pertinent stakeholders of critical Technology Assets, Applications, Services and/or Data (TAASD) to support the ongoing secure management of those assets. | [AST-02]: Mechanisms exist to perform inventories of Technology Assets, Applications, Services and/or Data (TAASD) that: (1) Accurately reflects the current TAASD in use;  (2) Identifies authorized software products, including business justification details; (3) Is at the level of granularity deemed necessary for tracking and reporting; (4) Includes organization-defined information deemed necessary to achieve effective property accountability; and (5) Is available for review and audit by designated organizational personnel. | [AST-02.8]: Mechanisms exist to create and maintain a map of Technology Assets, Applications and/or Services (TAAS) where sensitive/regulated data is stored, transmitted or processed. | [AST-03]: Mechanisms exist to ensure asset ownership responsibilities are assigned, tracked and managed at a team, individual, or responsible organization level to establish a common understanding of requirements for asset protection. | [AST-03.1]: Mechanisms exist to include capturing the name, position and/or role of individuals responsible/accountable for administering assets as part of the technology asset inventory process. | [AST-04]: Mechanisms exist to maintain network architecture diagrams that:  (1) Contain sufficient detail to assess the security of the network's architecture; (2) Reflect the current architecture of the network environment; and (3) Document all sensitive/regulated data flows. | [DCH-01]: Mechanisms exist to facilitate the implementation of data protection controls. | [DCH-02]: Mechanisms exist to ensure data and assets are categorized in accordance with applicable statutory, regulatory and contractual requirements. | [PRI-05.5]: Mechanisms exist to establish and maintain a current inventory of all Technology Assets, Applications and/or Services (TAAS) that collect, receive, process, store, transmit, share, update and/or dispose Personal Data (PD). | [PRM-05]: Mechanisms exist to identify critical system components and functions by performing a criticality analysis for critical Technology Assets, Applications and/or Services (TAAS) at pre-defined decision points in the Secure Development Life Cycle (SDLC).",
+        "sub_requirements": [
+            "AST-01.1",
+            "AST-01.2",
+            "AST-02",
+            "AST-02.8",
+            "AST-03",
+            "AST-03.1",
+            "AST-04",
+            "DCH-01",
+            "DCH-02",
+            "PRI-05.5",
+            "PRM-05"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "5.32",
+        "domain": "Asset Management",
+        "control_text": "[AST-02.7]: Mechanisms exist to protect Intellectual Property (IP) rights with software licensing restrictions.",
+        "sub_requirements": [
+            "AST-02.7"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "8.9",
+        "domain": "Asset Management",
+        "control_text": "[AST-02.9]: Mechanisms exist to implement and manage a Configuration Management Database (CMDB), or similar technology, to monitor and govern technology asset-specific information. | [CFG-01]: Mechanisms exist to facilitate the implementation of configuration management controls. | [CFG-01.1]: Mechanisms exist to implement a segregation of duties for configuration management that prevents developers from performing production configuration management duties. | [CFG-02]: Mechanisms exist to develop, document and maintain secure baseline configurations for Technology Assets, Applications and/or Services (TAAS) that are consistent with industry-accepted system hardening standards. | [CFG-02.1]: Mechanisms exist to review and update baseline configurations: (1) At least annually; (2) When required due to so; or (3) As part of system component installations and upgrades. | [CFG-03]: Mechanisms exist to configure systems to provide only essential capabilities by specifically prohibiting or restricting the use of ports, protocols, and/or services.",
+        "sub_requirements": [
+            "AST-02.9",
+            "CFG-01",
+            "CFG-01.1",
+            "CFG-02",
+            "CFG-02.1",
+            "CFG-03"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "5.21",
+        "domain": "Asset Management",
+        "control_text": "[AST-03.2]: Mechanisms exist to track the origin, development, ownership, location and changes to Technology Assets, Applications, Services and/or Data (TAASD). | [IAO-01]: Mechanisms exist to facilitate the implementation of security, compliance and resilience assessment and authorization controls. | [IAO-02]: Mechanisms exist to formally assess the security, compliance and resilience controls in Technology Assets, Applications and/or Services (TAAS) through Information Assurance Program (IAP) activities to determine the extent to which the controls are implemented correctly, operating as intended and producing the desired outcome with respect to meeting expected requirements. | [IAO-02.2]: Mechanisms exist to conduct specialized assessments for:  (1) Statutory, regulatory and contractual compliance obligations; (2) Monitoring capabilities;  (3) Mobile devices; (4) Databases; (5) Application security; (6) Embedded technologies (e.g., IoT, OT, etc.); (7) Vulnerability management;  (8) Malicious code;  (9) Insider threats; (10) Performance/load testing; and/or (11) Artificial Intelligence and Autonomous Technologies (AAT). | [RSK-09]: Mechanisms exist to develop a plan for Supply Chain Risk Management (SCRM) associated with the development, acquisition, maintenance and disposal of Technology Assets, Applications and/or Services (TAAS), including documenting selected mitigating actions and monitoring performance against those plans. | [TPM-03]: Mechanisms exist to: (1) Evaluate security risks and threats associated with Technology Assets, Applications and/or Services (TAAS) supply chains; and (2) Take appropriate remediation actions to minimize the organization's exposure to those risks and threats, as necessary. | [TPM-03.1]: Mechanisms exist to utilize tailored acquisition strategies, contract tools and procurement methods for the purchase of unique Technology Assets, Applications and/or Services (TAAS). | [TPM-04.4]: Mechanisms exist to restrict the location of information processing/storage based on business requirements. | [TPM-05]: Mechanisms exist to require contractual requirements for applicable security, compliance and resilience requirements with third-parties, reflecting the organization's needs to protect its Technology Assets, Applications, Services and/or Data (TAASD). | [TPM-05.1]: Mechanisms exist to compel External Service Providers (ESPs) to provide notification of actual or potential compromises in the supply chain that can potentially affect or have adversely affected Technology Assets, Applications and/or Services (TAAS) that the organization utilizes.",
+        "sub_requirements": [
+            "AST-03.2",
+            "IAO-01",
+            "IAO-02",
+            "IAO-02.2",
+            "RSK-09",
+            "TPM-03",
+            "TPM-03.1",
+            "TPM-04.4",
+            "TPM-05",
+            "TPM-05.1"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "8.20",
+        "domain": "Asset Management",
+        "control_text": "[AST-04]: Mechanisms exist to maintain network architecture diagrams that:  (1) Contain sufficient detail to assess the security of the network's architecture; (2) Reflect the current architecture of the network environment; and (3) Document all sensitive/regulated data flows. | [NET-01]: Mechanisms exist to develop, govern & update procedures to facilitate the implementation of Network Security Controls (NSC). | [NET-02]: Mechanisms exist to implement security functions as a layered structure that minimizes interactions between layers of the design and avoids any dependence by lower layers on the functionality or correctness of higher layers. | [NET-03]: Mechanisms exist to monitor and control communications at the external network boundary and at key internal boundaries within the network. | [NET-04]: Mechanisms exist to implement and govern Access Control Lists (ACLs) to provide data flow enforcement that explicitly restrict network traffic to only what is authorized. | [NET-04.1]: Mechanisms exist to configure firewall and router configurations to deny network traffic by default and allow network traffic by exception (e.g., deny all, permit by exception). | [NET-06]: Mechanisms exist to ensure network architecture utilizes network segmentation to isolate Technology Assets, Applications and/or Services (TAAS) to protect from other network resources. | [NET-08.1]: Mechanisms exist to monitor De-Militarized Zone (DMZ) network segments to separate untrusted networks from trusted networks.",
+        "sub_requirements": [
+            "AST-04",
+            "NET-01",
+            "NET-02",
+            "NET-03",
+            "NET-04",
+            "NET-04.1",
+            "NET-06",
+            "NET-08.1"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "7.7",
+        "domain": "Asset Management",
+        "control_text": "[AST-06]: Mechanisms exist to implement enhanced protection measures for unattended technology assets to protect against tampering and unauthorized access. | [END-01]: Mechanisms exist to facilitate the implementation of Endpoint Device Management (EDM) controls. | [PES-04]: Mechanisms exist to identify systems, equipment and respective operating environments that require limited physical access so that appropriate physical access controls are designed and implemented for offices, rooms and facilities.",
+        "sub_requirements": [
+            "AST-06",
+            "END-01",
+            "PES-04"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "8.1",
+        "domain": "Asset Management",
+        "control_text": "[AST-06]: Mechanisms exist to implement enhanced protection measures for unattended technology assets to protect against tampering and unauthorized access. | [AST-07]: Mechanisms exist to appropriately protect devices that capture sensitive/regulated data via direct physical interaction from tampering and substitution. | [AST-12]: Mechanisms exist to restrict the possession and/or use of personally-owned Technology Assets, Applications and/or Services (TAAS) within organization-controlled facilities. | [END-01]: Mechanisms exist to facilitate the implementation of Endpoint Device Management (EDM) controls. | [END-02]: Mechanisms exist to protect the confidentiality, integrity, availability and safety of endpoint devices. | [IAC-22]: Mechanisms exist to enforce a limit for consecutive invalid login attempts by a user during an organization-defined time period and automatically locks the account when the maximum number of unsuccessful attempts is exceeded. | [MDM-01]: Mechanisms exist to implement and govern Mobile Device Management (MDM) controls. | [MDM-02]: Mechanisms exist to enforce access control requirements for the connection of mobile devices to organizational Technology Assets, Applications and/or Services (TAAS). | [MDM-05]: Mechanisms exist to remotely purge selected information from mobile devices.",
+        "sub_requirements": [
+            "AST-06",
+            "AST-07",
+            "AST-12",
+            "END-01",
+            "END-02",
+            "IAC-22",
+            "MDM-01",
+            "MDM-02",
+            "MDM-05"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "7.14",
+        "domain": "Asset Management",
+        "control_text": "[AST-09]: Mechanisms exist to securely dispose of, destroy or repurpose system components using organization-defined techniques and methods to prevent information being recovered from these components.",
+        "sub_requirements": [
+            "AST-09"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "8.10",
+        "domain": "Asset Management",
+        "control_text": "[AST-09]: Mechanisms exist to securely dispose of, destroy or repurpose system components using organization-defined techniques and methods to prevent information being recovered from these components. | [DCH-08]: Mechanisms exist to securely dispose of media when it is no longer required, using formal procedures. | [DCH-09]: Mechanisms exist to sanitize system media with the strength and integrity commensurate with the classification or sensitivity of the information prior to disposal, release out of organizational control or release for reuse. | [DCH-09.1]: Mechanisms exist to supervise, track, document and verify system media sanitization and disposal actions. | [DCH-09.3]: Mechanisms exist to facilitate the sanitization of Personal Data (PD). | [DCH-18]: Mechanisms exist to retain media and data in accordance with applicable statutory, regulatory and contractual obligations. | [DCH-21]: Mechanisms exist to securely dispose of, destroy or erase information. | [PRI-05]: Mechanisms exist to:  (1) Retain Personal Data (PD), including metadata, for an organization-defined time period to fulfill the purpose(s) identified in the notice or as required by law; (2) Dispose of, destroys, erases, and/or anonymizes the PD, regardless of the method of storage; and (3) Use organization-defined techniques or methods to ensure secure deletion or destruction of PD (including originals, copies and archived records).",
+        "sub_requirements": [
+            "AST-09",
+            "DCH-08",
+            "DCH-09",
+            "DCH-09.1",
+            "DCH-09.3",
+            "DCH-18",
+            "DCH-21",
+            "PRI-05"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "5.11",
+        "domain": "Asset Management",
+        "control_text": "[AST-10]: Mechanisms exist to ensure that employees and third-party users return all organizational assets in their possession upon termination of employment, contract or agreement.",
+        "sub_requirements": [
+            "AST-10"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "7.10",
+        "domain": "Asset Management",
+        "control_text": "[AST-11]: Mechanisms exist to authorize, control and track technology assets entering and exiting organizational facilities. | [AST-12]: Mechanisms exist to restrict the possession and/or use of personally-owned Technology Assets, Applications and/or Services (TAAS) within organization-controlled facilities. | [DCH-01]: Mechanisms exist to facilitate the implementation of data protection controls. | [DCH-03]: Mechanisms exist to control and restrict access to digital and non-digital media to authorized individuals. | [DCH-06]: Mechanisms exist to:  (1) Physically control and securely store digital and non-digital media within controlled areas using organization-defined security measures; and (2) Protect system media until the media are destroyed or sanitized using approved equipment, techniques and procedures. | [DCH-07]: Mechanisms exist to protect and control digital and non-digital media during transport outside of controlled areas using appropriate security measures. | [DCH-07.2]: Cryptographic mechanisms exist to protect the confidentiality and integrity of information stored on digital media during transport outside of controlled areas. | [DCH-08]: Mechanisms exist to securely dispose of media when it is no longer required, using formal procedures. | [DCH-10]: Mechanisms exist to restrict the use of types of digital media on systems or system components. | [DCH-10.1]: Mechanisms exist to restrict the use and distribution of sensitive/regulated data. | [DCH-12]: Mechanisms exist to restrict removable media in accordance with data handling and acceptable usage parameters.",
+        "sub_requirements": [
+            "AST-11",
+            "AST-12",
+            "DCH-01",
+            "DCH-03",
+            "DCH-06",
+            "DCH-07",
+            "DCH-07.2",
+            "DCH-08",
+            "DCH-10",
+            "DCH-10.1",
+            "DCH-12"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "5.29",
+        "domain": "Business Continuity & Disaster Recovery",
+        "control_text": "[BCD-01]: Mechanisms exist to facilitate the implementation of contingency planning controls to help ensure resilient Technology Assets, Applications and/or Services (TAAS) (e.g., Continuity of Operations Plan (COOP) or Business Continuity & Disaster Recovery (BC/DR) playbooks). | [BCD-01.1]: Mechanisms exist to coordinate contingency plan development with internal and external elements responsible for related plans. | [BCD-01.2]: Mechanisms exist to coordinate internal contingency plans with the contingency plans of external service providers to ensure that contingency requirements can be satisfied. | [BCD-04]: Mechanisms exist to conduct tests and/or exercises to evaluate the contingency plan's effectiveness and the organization's readiness to execute the plan. | [IRO-05]: Mechanisms exist to train personnel in their incident response roles and responsibilities. | [IRO-06.1]: Mechanisms exist to coordinate incident response testing with organizational elements responsible for related plans. | [IRO-11.2]: Mechanisms exist to establish a direct, cooperative relationship between the organization's incident response capability and external service providers.",
+        "sub_requirements": [
+            "BCD-01",
+            "BCD-01.1",
+            "BCD-01.2",
+            "BCD-04",
+            "IRO-05",
+            "IRO-06.1",
+            "IRO-11.2"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "8.14",
+        "domain": "Business Continuity & Disaster Recovery",
+        "control_text": "[BCD-08]: Mechanisms exist to establish an alternate storage site that includes both the assets and necessary agreements to permit the storage and recovery of system backup information. | [BCD-09]: Mechanisms exist to establish an alternate processing site that provides security measures equivalent to that of the primary site. | [BCD-11.7]: Mechanisms exist to maintain a failover capability, which is not collocated with the primary Technology Asset, Application and/or Service (TAAS), which can be activated with little-to-no loss of information or disruption to operations.",
+        "sub_requirements": [
+            "BCD-08",
+            "BCD-09",
+            "BCD-11.7"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "8.13",
+        "domain": "Business Continuity & Disaster Recovery",
+        "control_text": "[BCD-11]: Mechanisms exist to create recurring backups of data, software and/or system images, as well as verify the integrity of these backups, to ensure the availability of the data to satisfy Recovery Time Objectives (RTOs) and Recovery Point Objectives (RPOs). | [BCD-11.1]: Mechanisms exist to routinely test backups that verify the reliability of the backup process, as well as the integrity and availability of the data. | [BCD-11.2]: Mechanisms exist to store backup copies of critical software and other security-related information in a separate facility or in a fire-rated container that is not collocated with the system being backed up. | [BCD-11.4]: Cryptographic mechanisms exist to prevent the unauthorized disclosure and/or modification of backup information.",
+        "sub_requirements": [
+            "BCD-11",
+            "BCD-11.1",
+            "BCD-11.2",
+            "BCD-11.4"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "8.6",
+        "domain": "Capacity & Performance Planning",
+        "control_text": "[CAP-01]: Mechanisms exist to facilitate the implementation of capacity management controls to ensure optimal system performance to meet expected and anticipated future capacity requirements. | [CAP-03]: Mechanisms exist to conduct capacity planning so that necessary capacity for information processing, telecommunications and environmental support will exist during contingency operations.",
+        "sub_requirements": [
+            "CAP-01",
+            "CAP-03"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "8.19",
+        "domain": "Change Management",
+        "control_text": "[CHG-01]: Mechanisms exist to facilitate the implementation of a change management program. | [CHG-02]: Mechanisms exist to govern the technical configuration change control processes. | [CHG-02.2]: Mechanisms exist to appropriately test and document proposed changes in a non-production environment before changes are implemented in a production environment. | [END-03]: Automated mechanisms exist to prohibit software installations without explicitly assigned privileged status. | [END-03.2]: Mechanisms exist to define, document, approve and enforce access restrictions associated with changes to Technology Assets, Applications and/or Services (TAAS).",
+        "sub_requirements": [
+            "CHG-01",
+            "CHG-02",
+            "CHG-02.2",
+            "END-03",
+            "END-03.2"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "8.32",
+        "domain": "Change Management",
+        "control_text": "[CHG-01]: Mechanisms exist to facilitate the implementation of a change management program. | [CHG-02]: Mechanisms exist to govern the technical configuration change control processes. | [CHG-02.2]: Mechanisms exist to appropriately test and document proposed changes in a non-production environment before changes are implemented in a production environment. | [PRM-07]: Mechanisms exist to ensure changes to Technology Assets, Applications and/or Services (TAAS) within the Secure Development Life Cycle (SDLC) are controlled through formal change control procedures. | [TDA-14]: Mechanisms exist to require system developers and integrators to perform configuration management during system design, development, implementation and operation.",
+        "sub_requirements": [
+            "CHG-01",
+            "CHG-02",
+            "CHG-02.2",
+            "PRM-07",
+            "TDA-14"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "5.23",
+        "domain": "Cloud Security",
+        "control_text": "[CLD-01]: Mechanisms exist to facilitate the implementation of cloud management controls to ensure cloud instances are secure and in-line with industry practices. | [CLD-02]: Mechanisms exist to ensure the cloud security architecture supports the organization's technology strategy to securely design, configure and maintain cloud employments. | [CLD-04]: Mechanisms exist to ensure support for secure interoperability between components with Application Programming Interfaces (APIs). | [CLD-06]: Mechanisms exist to ensure multi-tenant owned or managed assets (physical and virtual) are designed and governed such that provider and customer (tenant) user access is appropriately segmented from other tenant users. | [CLD-06.1]: Mechanisms exist to formally document a Customer Responsibility Matrix (CRM), delineating assigned responsibilities for security, compliance and resilience controls between the Cloud Service Provider (CSP) and its customers. | [CLD-09]: Mechanisms exist to control the location of cloud processing/storage based on business requirements that includes statutory, regulatory and contractual obligations. | [IAO-02]: Mechanisms exist to formally assess the security, compliance and resilience controls in Technology Assets, Applications and/or Services (TAAS) through Information Assurance Program (IAP) activities to determine the extent to which the controls are implemented correctly, operating as intended and producing the desired outcome with respect to meeting expected requirements. | [IAO-02.2]: Mechanisms exist to conduct specialized assessments for:  (1) Statutory, regulatory and contractual compliance obligations; (2) Monitoring capabilities;  (3) Mobile devices; (4) Databases; (5) Application security; (6) Embedded technologies (e.g., IoT, OT, etc.); (7) Vulnerability management;  (8) Malicious code;  (9) Insider threats; (10) Performance/load testing; and/or (11) Artificial Intelligence and Autonomous Technologies (AAT). | [TPM-05.4]: Mechanisms exist to document and maintain a Responsible, Accountable, Supportive, Consulted & Informed (RASCI) matrix, or similar documentation, to delineate assignment for security, compliance and resilience controls between internal stakeholders and External Service Providers (ESPs).",
+        "sub_requirements": [
+            "CLD-01",
+            "CLD-02",
+            "CLD-04",
+            "CLD-06",
+            "CLD-06.1",
+            "CLD-09",
+            "IAO-02",
+            "IAO-02.2",
+            "TPM-05.4"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "8.26",
+        "domain": "Cloud Security",
+        "control_text": "[CLD-04]: Mechanisms exist to ensure support for secure interoperability between components with Application Programming Interfaces (APIs). | [CFG-02]: Mechanisms exist to develop, document and maintain secure baseline configurations for Technology Assets, Applications and/or Services (TAAS) that are consistent with industry-accepted system hardening standards. | [CRY-01]: Mechanisms exist to facilitate the implementation of cryptographic protections controls using known public standards and trusted cryptographic technologies. | [CRY-03]: Cryptographic mechanisms exist to protect the confidentiality of data being transmitted. | [CRY-04]: Cryptographic mechanisms exist to protect the integrity of data being transmitted. | [PRM-05]: Mechanisms exist to identify critical system components and functions by performing a criticality analysis for critical Technology Assets, Applications and/or Services (TAAS) at pre-defined decision points in the Secure Development Life Cycle (SDLC). | [SEA-01]: Mechanisms exist to facilitate the implementation of industry-recognized security, compliance and resilience practices in the specification, design, development, implementation and modification of Technology Assets, Applications and/or Services (TAAS). | [SEA-02]: Mechanisms exist to develop an enterprise architecture, aligned with industry-recognized leading practices, with consideration for security, compliance and resilience principles that addresses risk to organizational operations, assets, individuals and other organizations. | [TDA-06]: Mechanisms exist to develop applications based on Secure Software Development Practices (SSDP).",
+        "sub_requirements": [
+            "CLD-04",
+            "CFG-02",
+            "CRY-01",
+            "CRY-03",
+            "CRY-04",
+            "PRM-05",
+            "SEA-01",
+            "SEA-02",
+            "TDA-06"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "8.34",
+        "domain": "Compliance",
+        "control_text": "[CPL-01]: Mechanisms exist to facilitate the identification and implementation of relevant statutory, regulatory and contractual controls. | [CPL-02]: Mechanisms exist to provide a security, compliance and resilience controls oversight function that reports to the organization's executive leadership. | [CPL-02.1]: Mechanisms exist to implement an internal audit function that is capable of providing senior organization management with insights into the appropriateness of the organization's technology and information governance processes. | [CPL-03]: Mechanisms exist to regularly review processes and documented procedures to ensure conformity with the organization's security, compliance and/or resilience policies, standards and other applicable requirements. | [CPL-04]: Mechanisms exist to thoughtfully plan audits by including input from operational risk and compliance partners to minimize the impact of audit-related activities on business operations.",
+        "sub_requirements": [
+            "CPL-01",
+            "CPL-02",
+            "CPL-02.1",
+            "CPL-03",
+            "CPL-04"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "5.36",
+        "domain": "Compliance",
+        "control_text": "[CPL-02]: Mechanisms exist to provide a security, compliance and resilience controls oversight function that reports to the organization's executive leadership. | [CPL-03]: Mechanisms exist to regularly review processes and documented procedures to ensure conformity with the organization's security, compliance and/or resilience policies, standards and other applicable requirements. | [CPL-03.2]: Mechanisms exist to regularly review Technology Assets, Applications and/or Services (TAAS) for adherence to the organization's security, compliance and/or resilience policies and standards. | [PRI-08]: Mechanisms exist to conduct testing, training and monitoring activities for Personal Data (PD) controls.",
+        "sub_requirements": [
+            "CPL-02",
+            "CPL-03",
+            "CPL-03.2",
+            "PRI-08"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "6.8",
+        "domain": "Compliance",
+        "control_text": "[CPL-02]: Mechanisms exist to provide a security, compliance and resilience controls oversight function that reports to the organization's executive leadership. | [MON-02.2]: Automated mechanisms exist to centrally collect, review and analyze audit records from multiple sources. | [MON-06]: Mechanisms exist to provide an event log report generation capability to aid in detecting and assessing anomalous activities. | [IRO-02]: Mechanisms exist to cover: (1) Preparation; (2) Automated event detection or manual incident report intake; (3) Analysis; (4) Containment; (5) Eradication; and (6) Recovery. | [IRO-10]: Mechanisms exist to timely-report incidents to applicable: (1) Internal stakeholders;  (2) Affected clients & third-parties; and (3) Regulatory authorities.",
+        "sub_requirements": [
+            "CPL-02",
+            "MON-02.2",
+            "MON-06",
+            "IRO-02",
+            "IRO-10"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "8.8",
+        "domain": "Compliance",
+        "control_text": "[CPL-02]: Mechanisms exist to provide a security, compliance and resilience controls oversight function that reports to the organization's executive leadership. | [CPL-03.2]: Mechanisms exist to regularly review Technology Assets, Applications and/or Services (TAAS) for adherence to the organization's security, compliance and/or resilience policies and standards. | [CFG-03.1]: Mechanisms exist to periodically review system configurations to identify and disable unnecessary and/or non-secure functions, ports, protocols and services. | [IRO-10.3]: Mechanisms exist to report system vulnerabilities associated with reported cybersecurity and data protection incidents to organization-defined personnel or roles. | [PRI-08]: Mechanisms exist to conduct testing, training and monitoring activities for Personal Data (PD) controls. | [VPM-01]: Mechanisms exist to facilitate the implementation and monitoring of vulnerability management controls. | [VPM-01.1]: Mechanisms exist to define and manage the scope for its attack surface management activities. | [VPM-02]: Mechanisms exist to ensure that vulnerabilities are properly identified, tracked and remediated. | [VPM-03]: Mechanisms exist to identify and assign a risk ranking to newly discovered security vulnerabilities using reputable outside sources for security vulnerability information. | [VPM-05]: Mechanisms exist to conduct software patching for all deployed Technology Assets, Applications and/or Services (TAAS), including firmware. | [VPM-06]: Mechanisms exist to detect vulnerabilities and configuration errors by routine vulnerability scanning of systems and applications.",
+        "sub_requirements": [
+            "CPL-02",
+            "CPL-03.2",
+            "CFG-03.1",
+            "IRO-10.3",
+            "PRI-08",
+            "VPM-01",
+            "VPM-01.1",
+            "VPM-02",
+            "VPM-03",
+            "VPM-05",
+            "VPM-06"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "5.35",
+        "domain": "Compliance",
+        "control_text": "[CPL-02.1]: Mechanisms exist to implement an internal audit function that is capable of providing senior organization management with insights into the appropriateness of the organization's technology and information governance processes. | [CPL-03]: Mechanisms exist to regularly review processes and documented procedures to ensure conformity with the organization's security, compliance and/or resilience policies, standards and other applicable requirements. | [CPL-03.1]: Mechanisms exist to utilize independent assessors to evaluate security, compliance and resilience at planned intervals or when the Technology Asset, Application and/or Service (TAAS) undergoes significant changes. | [CPL-03.2]: Mechanisms exist to regularly review Technology Assets, Applications and/or Services (TAAS) for adherence to the organization's security, compliance and/or resilience policies and standards. | [CPL-04]: Mechanisms exist to thoughtfully plan audits by including input from operational risk and compliance partners to minimize the impact of audit-related activities on business operations.",
+        "sub_requirements": [
+            "CPL-02.1",
+            "CPL-03",
+            "CPL-03.1",
+            "CPL-03.2",
+            "CPL-04"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "8.3",
+        "domain": "Configuration Management",
+        "control_text": "[CFG-01]: Mechanisms exist to facilitate the implementation of configuration management controls. | [CFG-02]: Mechanisms exist to develop, document and maintain secure baseline configurations for Technology Assets, Applications and/or Services (TAAS) that are consistent with industry-accepted system hardening standards. | [CFG-03]: Mechanisms exist to configure systems to provide only essential capabilities by specifically prohibiting or restricting the use of ports, protocols, and/or services. | [IAC-08]: Mechanisms exist to enforce Role-Based Access Control (RBAC) for Technology Assets, Applications, Services and/or Data (TAASD) to restrict access to individuals assigned specific roles with legitimate business needs. | [IAC-21]: Mechanisms exist to utilize the concept of least privilege, allowing only authorized access to processes necessary to accomplish assigned tasks in accordance with organizational business functions. | [NET-04]: Mechanisms exist to implement and govern Access Control Lists (ACLs) to provide data flow enforcement that explicitly restrict network traffic to only what is authorized.",
+        "sub_requirements": [
+            "CFG-01",
+            "CFG-02",
+            "CFG-03",
+            "IAC-08",
+            "IAC-21",
+            "NET-04"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "8.12",
+        "domain": "Configuration Management",
+        "control_text": "[CFG-01]: Mechanisms exist to facilitate the implementation of configuration management controls. | [CFG-02]: Mechanisms exist to develop, document and maintain secure baseline configurations for Technology Assets, Applications and/or Services (TAAS) that are consistent with industry-accepted system hardening standards. | [CFG-02.5]: Mechanisms exist to configure Technology Assets, Applications and/or Services (TAAS) utilized in high-risk areas with more restrictive baseline configurations. | [CFG-03]: Mechanisms exist to configure systems to provide only essential capabilities by specifically prohibiting or restricting the use of ports, protocols, and/or services. | [DCH-01]: Mechanisms exist to facilitate the implementation of data protection controls. | [IAC-21]: Mechanisms exist to utilize the concept of least privilege, allowing only authorized access to processes necessary to accomplish assigned tasks in accordance with organizational business functions. | [NET-01]: Mechanisms exist to develop, govern & update procedures to facilitate the implementation of Network Security Controls (NSC). | [NET-03.3]: Mechanisms exist to prevent the public disclosure of internal network information. | [NET-03.5]: Automated mechanisms exist to prevent the unauthorized exfiltration of sensitive/regulated data across managed interfaces. | [PES-13]: Facility security mechanisms exist to protect the system from information leakage due to electromagnetic signals emanations. | [SEA-01]: Mechanisms exist to facilitate the implementation of industry-recognized security, compliance and resilience practices in the specification, design, development, implementation and modification of Technology Assets, Applications and/or Services (TAAS). | [SEA-01.1]: Mechanisms exist to centrally-manage the organization-wide management and implementation of security, compliance and resilience controls and related processes.",
+        "sub_requirements": [
+            "CFG-01",
+            "CFG-02",
+            "CFG-02.5",
+            "CFG-03",
+            "DCH-01",
+            "IAC-21",
+            "NET-01",
+            "NET-03.3",
+            "NET-03.5",
+            "PES-13",
+            "SEA-01",
+            "SEA-01.1"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "8.5",
+        "domain": "Configuration Management",
+        "control_text": "[CFG-02]: Mechanisms exist to develop, document and maintain secure baseline configurations for Technology Assets, Applications and/or Services (TAAS) that are consistent with industry-accepted system hardening standards. | [END-01]: Mechanisms exist to facilitate the implementation of Endpoint Device Management (EDM) controls. | [END-02]: Mechanisms exist to protect the confidentiality, integrity, availability and safety of endpoint devices. | [END-09]: Mechanisms exist to establish a trusted communications path between the user and the security functions of the operating system. | [SEA-17]: Mechanisms exist to utilize a trusted communications path between the user and the security functions of the system.",
+        "sub_requirements": [
+            "CFG-02",
+            "END-01",
+            "END-02",
+            "END-09",
+            "SEA-17"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "8.25",
+        "domain": "Configuration Management",
+        "control_text": "[CFG-02]: Mechanisms exist to develop, document and maintain secure baseline configurations for Technology Assets, Applications and/or Services (TAAS) that are consistent with industry-accepted system hardening standards. | [CFG-02.4]: Mechanisms exist to manage baseline configurations for development and test environments separately from operational baseline configurations to minimize the risk of unintentional changes. | [IAO-04]: Mechanisms exist to require system developers and integrators to create and execute a Security Testing and Evaluation (ST&E) plan, or similar process, to identify and remediate flaws during development. | [PRM-07]: Mechanisms exist to ensure changes to Technology Assets, Applications and/or Services (TAAS) within the Secure Development Life Cycle (SDLC) are controlled through formal change control procedures. | [TDA-01]: Mechanisms exist to facilitate the implementation of tailored development and acquisition strategies, contract tools and procurement methods to meet unique business needs. | [TDA-02]: Mechanisms exist to design, develop and produce Technology Assets, Applications and/or Services (TAAS) in such a way that risk-based technical and functional specifications ensure Minimum Viable Product (MVP) criteria establish an appropriate level of security and resiliency based on applicable risks and threats. | [TDA-02.3]: Mechanisms exist to require software developers to ensure that their software development processes employ industry-recognized secure practices for secure programming, engineering methods, quality control processes and validation techniques to minimize flawed and/or malformed software. | [TDA-06]: Mechanisms exist to develop applications based on Secure Software Development Practices (SSDP). | [TDA-07]: Mechanisms exist to maintain a segmented development network to ensure a secure development environment. | [TDA-08]: Mechanisms exist to manage separate development, testing and operational environments to reduce the risks of unauthorized access or changes to the operational environment and to ensure no impact to production Technology Assets, Applications and/or Services (TAAS). | [TDA-09]: Mechanisms exist to require system developers/integrators consult with security, compliance and/or resilience personnel to:  (1) Create and implement a Security Testing and Evaluation (ST&E) plan, or similar capability; (2) Implement a verifiable flaw remediation process to correct weaknesses and deficiencies identified during the control testing and evaluation process; and (3) Document the results.",
+        "sub_requirements": [
+            "CFG-02",
+            "CFG-02.4",
+            "IAO-04",
+            "PRM-07",
+            "TDA-01",
+            "TDA-02",
+            "TDA-02.3",
+            "TDA-06",
+            "TDA-07",
+            "TDA-08",
+            "TDA-09"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "8.27",
+        "domain": "Configuration Management",
+        "control_text": "[CFG-03.1]: Mechanisms exist to periodically review system configurations to identify and disable unnecessary and/or non-secure functions, ports, protocols and services. | [SEA-01]: Mechanisms exist to facilitate the implementation of industry-recognized security, compliance and resilience practices in the specification, design, development, implementation and modification of Technology Assets, Applications and/or Services (TAAS). | [TDA-05]: Mechanisms exist to require the developers of Technology Assets, Applications and/or Services (TAAS) to produce a design specification and security architecture that:  (1) Is consistent with and supportive of the organization's security architecture which is established within and is an integrated part of the organization's enterprise architecture; (2) Accurately and completely describes the required security functionality and the allocation of security, compliance and resilience controls among physical and logical components; and (3) Expresses how individual security functions, mechanisms and services work together to provide required security capabilities and a unified approach to protection. | [TDA-06]: Mechanisms exist to develop applications based on Secure Software Development Practices (SSDP).",
+        "sub_requirements": [
+            "CFG-03.1",
+            "SEA-01",
+            "TDA-05",
+            "TDA-06"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "8.15",
+        "domain": "Continuous Monitoring",
+        "control_text": "[MON-01]: Mechanisms exist to facilitate the implementation of enterprise-wide monitoring controls. | [MON-01.4]: Mechanisms exist to generate, monitor, correlate and respond to alerts from physical, cybersecurity, data protection and supply chain activities to achieve integrated situational awareness. | [MON-02]: Mechanisms exist to utilize a Security Incident Event Manager (SIEM), or similar automated tool, to support the centralized collection of security-related event logs. | [MON-02.1]: Automated mechanisms exist to correlate both technical and non-technical information from across the enterprise by a Security Incident Event Manager (SIEM) or similar automated tool, to enhance organization-wide situational awareness. | [MON-02.2]: Automated mechanisms exist to centrally collect, review and analyze audit records from multiple sources. | [MON-03]: Mechanisms exist to configure Technology Assets, Applications and/or Services (TAAS) to produce event logs that contain sufficient information to, at a minimum: (1) Establish what type of event occurred; (2) When (date and time) the event occurred; (3) Where the event occurred; (4) The source of the event; (5) The outcome (success or failure) of the event; and  (6) The identity of any user/subject associated with the event. | [MON-03.3]: Mechanisms exist to log and review the actions of users and/or services with elevated privileges. | [MON-06]: Mechanisms exist to provide an event log report generation capability to aid in detecting and assessing anomalous activities. | [MON-08]: Mechanisms exist to protect event logs and audit tools from unauthorized access, modification and deletion.",
+        "sub_requirements": [
+            "MON-01",
+            "MON-01.4",
+            "MON-02",
+            "MON-02.1",
+            "MON-02.2",
+            "MON-03",
+            "MON-03.3",
+            "MON-06",
+            "MON-08"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "8.16",
+        "domain": "Continuous Monitoring",
+        "control_text": "[MON-01]: Mechanisms exist to facilitate the implementation of enterprise-wide monitoring controls. | [MON-01.1]: Mechanisms exist to implement Intrusion Detection / Prevention Systems (IDS / IPS) technologies on critical systems, key network segments and network choke points. | [MON-01.2]: Mechanisms exist to utilize a Security Incident Event Manager (SIEM), or similar automated tool, to support near real-time analysis and incident escalation. | [MON-01.3]: Mechanisms exist to continuously monitor inbound and outbound communications traffic for unusual or unauthorized activities or conditions. | [MON-01.8]: Mechanisms exist to review event logs on an ongoing basis and escalate incidents in accordance with established timelines and procedures. | [MON-02.2]: Automated mechanisms exist to centrally collect, review and analyze audit records from multiple sources.",
+        "sub_requirements": [
+            "MON-01",
+            "MON-01.1",
+            "MON-01.2",
+            "MON-01.3",
+            "MON-01.8",
+            "MON-02.2"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "5.7",
+        "domain": "Continuous Monitoring",
+        "control_text": "[MON-11]: Mechanisms exist to monitor for evidence of unauthorized exfiltration or disclosure of non-public information. | [MON-11.3]: Automated mechanisms exist to identify and alert on Indicators of Compromise (IoC). | [THR-01]: Mechanisms exist to implement a threat intelligence program that includes a cross-organization information-sharing capability that can influence the development of the system and security architectures, selection of security solutions, monitoring, threat hunting, response and recovery activities. | [THR-02]: Mechanisms exist to develop Indicators of Exposure (IOE) to understand the potential attack vectors that attackers could use to attack the organization. | [THR-03]: Mechanisms exist to maintain situational awareness of vulnerabilities and evolving threats by leveraging the knowledge of attacker tactics, techniques and procedures to facilitate the implementation of preventative and compensating controls. | [THR-03.1]: Mechanisms exist to utilize external threat intelligence feeds to generate and disseminate organization-specific security alerts, advisories and/or directives.",
+        "sub_requirements": [
+            "MON-11",
+            "MON-11.3",
+            "THR-01",
+            "THR-02",
+            "THR-03",
+            "THR-03.1"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "8.24",
+        "domain": "Cryptographic Protections",
+        "control_text": "[CRY-01]: Mechanisms exist to facilitate the implementation of cryptographic protections controls using known public standards and trusted cryptographic technologies. | [CRY-03]: Cryptographic mechanisms exist to protect the confidentiality of data being transmitted. | [CRY-04]: Cryptographic mechanisms exist to protect the integrity of data being transmitted. | [CRY-05]: Cryptographic mechanisms exist to prevent unauthorized disclosure of data at rest. | [CRY-09]: Mechanisms exist to facilitate cryptographic key management controls to protect the confidentiality, integrity and availability of keys. | [CRY-09.3]: Mechanisms exist to ensure the availability of information in the event of the loss of cryptographic keys by individual users. | [CRY-09.4]: Mechanisms exist to facilitate the secure distribution of symmetric and asymmetric cryptographic keys using industry recognized key management technology and processes.",
+        "sub_requirements": [
+            "CRY-01",
+            "CRY-03",
+            "CRY-04",
+            "CRY-05",
+            "CRY-09",
+            "CRY-09.3",
+            "CRY-09.4"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "5.14",
+        "domain": "Cryptographic Protections",
+        "control_text": "[CRY-03]: Cryptographic mechanisms exist to protect the confidentiality of data being transmitted. | [DCH-07]: Mechanisms exist to protect and control digital and non-digital media during transport outside of controlled areas using appropriate security measures. | [DCH-07.1]: Mechanisms exist to identify custodians throughout the transport of digital or non-digital media. | [DCH-14]: Mechanisms exist to utilize a process to assist users in making information sharing decisions to ensure data is appropriately protected. | [DCH-17]: Mechanisms exist to secure ad-hoc exchanges of large digital files with internal or external parties. | [HRS-05]: Mechanisms exist to require all employees and contractors to apply cybersecurity and data protection principles in their daily work to enable secure, compliant and resilient capabilities. | [HRS-05.1]: Mechanisms exist to define acceptable and unacceptable rules of behavior for the use of technologies, including consequences for unacceptable behavior. | [HRS-06]: Mechanisms exist to require internal and third-party users to sign appropriate access agreements prior to being granted access. | [HRS-06.1]: Mechanisms exist to require Non-Disclosure Agreements (NDAs) or similar confidentiality agreements that reflect the needs to protect data and operational details, or both employees and third-parties. | [NET-01]: Mechanisms exist to develop, govern & update procedures to facilitate the implementation of Network Security Controls (NSC). | [NET-04]: Mechanisms exist to implement and govern Access Control Lists (ACLs) to provide data flow enforcement that explicitly restrict network traffic to only what is authorized. | [NET-04.1]: Mechanisms exist to configure firewall and router configurations to deny network traffic by default and allow network traffic by exception (e.g., deny all, permit by exception). | [NET-13]: Mechanisms exist to protect the confidentiality, integrity and availability of electronic messaging communications. | [NET-18]: Mechanisms exist to force Internet-bound network traffic through a proxy device (e.g., Policy Enforcement Point (PEP)) for URL content filtering and DNS filtering to limit a user's ability to connect to dangerous or prohibited Internet sites. | [PES-01]: Mechanisms exist to facilitate the operation of physical and environmental protection controls.",
+        "sub_requirements": [
+            "CRY-03",
+            "DCH-07",
+            "DCH-07.1",
+            "DCH-14",
+            "DCH-17",
+            "HRS-05",
+            "HRS-05.1",
+            "HRS-06",
+            "HRS-06.1",
+            "NET-01",
+            "NET-04",
+            "NET-04.1",
+            "NET-13",
+            "NET-18",
+            "PES-01"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "5.10",
+        "domain": "Data Classification & Handling",
+        "control_text": "[DCH-01]: Mechanisms exist to facilitate the implementation of data protection controls. | [DCH-04]: Mechanisms exist to mark media in accordance with data protection requirements so that personnel are alerted to distribution limitations, handling caveats and applicable security requirements. | [DCH-07.1]: Mechanisms exist to identify custodians throughout the transport of digital or non-digital media. | [HRS-05.1]: Mechanisms exist to define acceptable and unacceptable rules of behavior for the use of technologies, including consequences for unacceptable behavior. | [HRS-05.2]: Mechanisms exist to define rules of behavior that contain explicit restrictions on the use of social media and networking sites, posting information on commercial websites and sharing account information. | [HRS-05.3]: Mechanisms exist to establish usage restrictions and implementation guidance for organizational technologies based on the potential to cause damage to Technology Assets, Applications and/or Services (TAAS), if used maliciously. | [HRS-06]: Mechanisms exist to require internal and third-party users to sign appropriate access agreements prior to being granted access.",
+        "sub_requirements": [
+            "DCH-01",
+            "DCH-04",
+            "DCH-07.1",
+            "HRS-05.1",
+            "HRS-05.2",
+            "HRS-05.3",
+            "HRS-06"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "5.33",
+        "domain": "Data Classification & Handling",
+        "control_text": "[DCH-01]: Mechanisms exist to facilitate the implementation of data protection controls. | [DCH-18]: Mechanisms exist to retain media and data in accordance with applicable statutory, regulatory and contractual obligations. | [PRI-03]: Mechanisms exist to enable data subjects to authorize the collection, receiving, processing, storage, transmission, sharing, updating and/or disposal of their Personal Data (PD), where prior to collection the data subject is provided with: (1) Plain language to illustrate the potential data privacy risks of the authorization;  (2) A means for users to decline the authorization; and (3) All necessary choice and consent-related criteria required by applicable statutory, regulatory and contractual obligations. | [PRI-04]: Mechanisms exist to minimize the collection of Personal Data (PD) to only what is adequate, relevant and limited to the purposes identified in the data privacy notice, including protections against collecting PD from minors without appropriate parental or legal guardian consent. | [PRI-05]: Mechanisms exist to:  (1) Retain Personal Data (PD), including metadata, for an organization-defined time period to fulfill the purpose(s) identified in the notice or as required by law; (2) Dispose of, destroys, erases, and/or anonymizes the PD, regardless of the method of storage; and (3) Use organization-defined techniques or methods to ensure secure deletion or destruction of PD (including originals, copies and archived records). | [PRI-05.1]: Mechanisms exist to address the use of Personal Data (PD) for internal testing, training and research that: (1) Takes measures to limit or minimize the amount of PD used for internal testing, training and research purposes; and (2) Authorizes the use of PD when such information is required for internal testing, training and research. | [PRI-05.4]: Mechanisms exist to restrict collecting, receiving, processing, storing, transmitting, sharing and/or updating Personal Data (PD) to: (1) The purpose(s) originally collected, consistent with the data privacy notice(s); (2) What is authorized by the data subject, or authorized agent; and (3) What is consistent with applicable laws, regulations and contractual obligations. | [PRI-07]: Mechanisms exist to disclose Personal Data (PD) to third-parties only for the purposes identified in the data privacy notice and with the implicit or explicit consent of the data subject. | [PRI-07.1]: Mechanisms exist to include data privacy requirements in contracts and other acquisition-related documents that establish data privacy roles and responsibilities for contractors and service providers. | [RSK-10]: Mechanisms exist to conduct a Data Protection Impact Assessment (DPIA) on Technology Assets, Applications and/or Services (TAAS) that store, process and/or transmit Personal Data (PD) to identify and remediate reasonably-expected risks.",
+        "sub_requirements": [
+            "DCH-01",
+            "DCH-18",
+            "PRI-03",
+            "PRI-04",
+            "PRI-05",
+            "PRI-05.1",
+            "PRI-05.4",
+            "PRI-07",
+            "PRI-07.1",
+            "RSK-10"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "8.11",
+        "domain": "Data Classification & Handling",
+        "control_text": "[DCH-03.2]: Mechanisms exist to apply data masking to sensitive/regulated information that is displayed or printed. | [DCH-23.4]: Mechanisms exist to remove, mask, encrypt, hash or replace direct identifiers in a dataset. | [PRI-05.3]: Mechanisms exist to mask sensitive/regulated data through data anonymization, pseudonymization, redaction or de-identification.",
+        "sub_requirements": [
+            "DCH-03.2",
+            "DCH-23.4",
+            "PRI-05.3"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "5.13",
+        "domain": "Data Classification & Handling",
+        "control_text": "[DCH-04]: Mechanisms exist to mark media in accordance with data protection requirements so that personnel are alerted to distribution limitations, handling caveats and applicable security requirements.",
+        "sub_requirements": [
+            "DCH-04"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "8.33",
+        "domain": "Data Classification & Handling",
+        "control_text": "[DCH-23]: Mechanisms exist to anonymize data by removing Personal Data (PD) from datasets. | [TDA-10]: Mechanisms exist to approve, document and control the use of live data in development and test environments.",
+        "sub_requirements": [
+            "DCH-23",
+            "TDA-10"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "8.7",
+        "domain": "Endpoint Security",
+        "control_text": "[END-04]: Mechanisms exist to utilize antimalware technologies to detect and eradicate malicious code. | [END-04.1]: Automated mechanisms exist to update antimalware technologies, including signature definitions.",
+        "sub_requirements": [
+            "END-04",
+            "END-04.1"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "6.1",
+        "domain": "Human Resources Security",
+        "control_text": "[HRS-04]: Mechanisms exist to manage personnel security risk by screening individuals prior to authorizing access. | [HRS-04.1]: Mechanisms exist to ensure that individuals accessing a system that stores, transmits or processes information requiring special protection satisfy organization-defined personnel screening criteria.",
+        "sub_requirements": [
+            "HRS-04",
+            "HRS-04.1"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "6.2",
+        "domain": "Human Resources Security",
+        "control_text": "[HRS-05]: Mechanisms exist to require all employees and contractors to apply cybersecurity and data protection principles in their daily work to enable secure, compliant and resilient capabilities. | [HRS-05.1]: Mechanisms exist to define acceptable and unacceptable rules of behavior for the use of technologies, including consequences for unacceptable behavior. | [HRS-05.2]: Mechanisms exist to define rules of behavior that contain explicit restrictions on the use of social media and networking sites, posting information on commercial websites and sharing account information. | [HRS-05.3]: Mechanisms exist to establish usage restrictions and implementation guidance for organizational technologies based on the potential to cause damage to Technology Assets, Applications and/or Services (TAAS), if used maliciously. | [HRS-05.5]: Mechanisms exist to manage business risks associated with permitting mobile device access to organizational resources.",
+        "sub_requirements": [
+            "HRS-05",
+            "HRS-05.1",
+            "HRS-05.2",
+            "HRS-05.3",
+            "HRS-05.5"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "6.6",
+        "domain": "Human Resources Security",
+        "control_text": "[HRS-06.1]: Mechanisms exist to require Non-Disclosure Agreements (NDAs) or similar confidentiality agreements that reflect the needs to protect data and operational details, or both employees and third-parties. | [TPM-05]: Mechanisms exist to require contractual requirements for applicable security, compliance and resilience requirements with third-parties, reflecting the organization's needs to protect its Technology Assets, Applications, Services and/or Data (TAASD).",
+        "sub_requirements": [
+            "HRS-06.1",
+            "TPM-05"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "6.4",
+        "domain": "Human Resources Security",
+        "control_text": "[HRS-07]: Mechanisms exist to sanction personnel failing to comply with established security policies, standards and procedures. | [HRS-07.1]: Mechanisms exist to conduct employee misconduct investigations when there is reasonable assurance that a policy has been violated.",
+        "sub_requirements": [
+            "HRS-07",
+            "HRS-07.1"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "6.5",
+        "domain": "Human Resources Security",
+        "control_text": "[HRS-08]: Mechanisms exist to adjust logical and physical access authorizations to Technology Assets, Applications and/or Services (TAAS) and facilities upon personnel reassignment or transfer, in a timely manner. | [HRS-09]: Mechanisms exist to govern the termination of individual employment. | [HRS-09.3]: Mechanisms exist to govern former employee behavior by formally notifying terminated individuals of their applicable, legally binding post-employment requirements for the protection of sensitive/regulated data.",
+        "sub_requirements": [
+            "HRS-08",
+            "HRS-09",
+            "HRS-09.3"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "5.3",
+        "domain": "Human Resources Security",
+        "control_text": "[HRS-11]: Mechanisms exist to implement and maintain Separation of Duties (SoD) to prevent potential inappropriate activity without collusion. | [HRS-12]: Mechanisms exist to avoid incompatible development-specific roles through limiting and reviewing developer privileges to change hardware, software and firmware components within a production/operational environment.",
+        "sub_requirements": [
+            "HRS-11",
+            "HRS-12"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "5.18",
+        "domain": "Human Resources Security",
+        "control_text": "[HRS-11]: Mechanisms exist to implement and maintain Separation of Duties (SoD) to prevent potential inappropriate activity without collusion. | [IAC-01]: Mechanisms exist to facilitate the implementation of identification and access management controls. | [IAC-07]: Mechanisms exist to utilize a formal user registration and de-registration process that governs the assignment of access rights. | [IAC-07.1]: Mechanisms exist to revoke user access rights following changes in personnel roles and duties, if no longer necessary or permitted. | [IAC-07.2]: Mechanisms exist to revoke user access rights in a timely manner, upon termination of employment or contract. | [IAC-10]: Mechanisms exist to: (1) Securely manage authenticators for users and devices; and (2) Ensure the strength of authentication is appropriate to the classification of the data being accessed. | [IAC-10.11]: Mechanisms exist to protect and store passwords via a password manager tool. | [IAC-15]: Mechanisms exist to proactively govern account management of individual, group, system, service, application, guest and temporary accounts. | [IAC-15.1]: Automated mechanisms exist to support the management of system accounts (e.g., directory services). | [IAC-15.2]: Automated mechanisms exist to disable or remove temporary and emergency accounts after an organization-defined time period for each type of account. | [IAC-16]: Mechanisms exist to restrict and control privileged access rights for users and Technology Assets, Applications and/or Services (TAAS). | [IAC-16.1]: Mechanisms exist to inventory all privileged accounts and validate that each person with elevated privileges is authorized by the appropriate level of organizational management. | [IAC-17]: Mechanisms exist to periodically-review the privileges assigned to individuals and service accounts to validate the need for such privileges and reassign or remove unnecessary privileges, as necessary. | [IAC-19]: Mechanisms exist to prevent the sharing of generic IDs, passwords or other generic authentication methods. | [IAC-20]: Mechanisms exist to enforce Logical Access Control (LAC) permissions that conform to the principle of \"least privilege.\" | [IAC-20.1]: Mechanisms exist to limit access to sensitive/regulated data to only those individuals whose job requires such access. | [IAC-20.2]: Mechanisms exist to restrict access to databases containing sensitive/regulated data to only necessary Technology Assets, Applications and/or Services (TAAS) or those individuals whose job requires such access. | [IAC-20.3]: Mechanisms exist to restrict and tightly control utility programs that are capable of overriding system and application controls. | [IAC-21]: Mechanisms exist to utilize the concept of least privilege, allowing only authorized access to processes necessary to accomplish assigned tasks in accordance with organizational business functions. | [IAC-21.3]: Mechanisms exist to restrict the assignment of privileged accounts to management-approved personnel and/or roles. | [PES-01]: Mechanisms exist to facilitate the operation of physical and environmental protection controls. | [PES-02]: Physical access control mechanisms exist to maintain a current list of personnel with authorized access to organizational facilities (except for those areas within the facility officially designated as publicly accessible). | [PES-02.1]: Physical access control mechanisms exist to authorize physical access to facilities based on the position or role of the individual. | [PES-03]: Physical access control mechanisms exist to enforce physical access authorizations for all physical access points (including designated entry/exit points) to facilities (excluding those areas within the facility officially designated as publicly accessible).",
+        "sub_requirements": [
+            "HRS-11",
+            "IAC-01",
+            "IAC-07",
+            "IAC-07.1",
+            "IAC-07.2",
+            "IAC-10",
+            "IAC-10.11",
+            "IAC-15",
+            "IAC-15.1",
+            "IAC-15.2",
+            "IAC-16",
+            "IAC-16.1",
+            "IAC-17",
+            "IAC-19",
+            "IAC-20",
+            "IAC-20.1",
+            "IAC-20.2",
+            "IAC-20.3",
+            "IAC-21",
+            "IAC-21.3",
+            "PES-01",
+            "PES-02",
+            "PES-02.1",
+            "PES-03"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "5.15",
+        "domain": "Identification & Authentication",
+        "control_text": "[IAC-01]: Mechanisms exist to facilitate the implementation of identification and access management controls. | [IAC-02]: Mechanisms exist to uniquely identify and centrally Authenticate, Authorize and Audit (AAA) organizational users and processes acting on behalf of organizational users. | [IAC-08]: Mechanisms exist to enforce Role-Based Access Control (RBAC) for Technology Assets, Applications, Services and/or Data (TAASD) to restrict access to individuals assigned specific roles with legitimate business needs. | [IAC-15]: Mechanisms exist to proactively govern account management of individual, group, system, service, application, guest and temporary accounts. | [IAC-16]: Mechanisms exist to restrict and control privileged access rights for users and Technology Assets, Applications and/or Services (TAAS). | [IAC-17]: Mechanisms exist to periodically-review the privileges assigned to individuals and service accounts to validate the need for such privileges and reassign or remove unnecessary privileges, as necessary. | [IAC-21]: Mechanisms exist to utilize the concept of least privilege, allowing only authorized access to processes necessary to accomplish assigned tasks in accordance with organizational business functions. | [PES-01]: Mechanisms exist to facilitate the operation of physical and environmental protection controls. | [PES-02]: Physical access control mechanisms exist to maintain a current list of personnel with authorized access to organizational facilities (except for those areas within the facility officially designated as publicly accessible). | [PES-02.1]: Physical access control mechanisms exist to authorize physical access to facilities based on the position or role of the individual. | [PES-03]: Physical access control mechanisms exist to enforce physical access authorizations for all physical access points (including designated entry/exit points) to facilities (excluding those areas within the facility officially designated as publicly accessible). | [PES-04]: Mechanisms exist to identify systems, equipment and respective operating environments that require limited physical access so that appropriate physical access controls are designed and implemented for offices, rooms and facilities. | [PES-04.1]: Physical security mechanisms exist to allow only authorized personnel access to secure areas.",
+        "sub_requirements": [
+            "IAC-01",
+            "IAC-02",
+            "IAC-08",
+            "IAC-15",
+            "IAC-16",
+            "IAC-17",
+            "IAC-21",
+            "PES-01",
+            "PES-02",
+            "PES-02.1",
+            "PES-03",
+            "PES-04",
+            "PES-04.1"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "5.16",
+        "domain": "Identification & Authentication",
+        "control_text": "[IAC-03]: Mechanisms exist to uniquely identify and centrally Authenticate, Authorize and Audit (AAA) third-party users and processes that provide services to the organization. | [IAC-04]: Mechanisms exist to uniquely identify and centrally Authenticate, Authorize and Audit (AAA) devices before establishing a connection using bidirectional authentication that is cryptographically- based and replay resistant. | [IAC-05]: Mechanisms exist to identify and authenticate third-party Technology Assets, Applications and/or Services (TAAS). | [IAC-07]: Mechanisms exist to utilize a formal user registration and de-registration process that governs the assignment of access rights. | [IAC-09]: Mechanisms exist to govern naming standards for usernames and Technology Assets, Applications and/or Services (TAAS). | [IAC-09.1]: Mechanisms exist to ensure proper user identification management for non-consumer users and administrators. | [IAC-09.4]: Mechanisms exist to coordinate username identifiers with external organizations for cross-organization management of identifiers. | [IAC-15]: Mechanisms exist to proactively govern account management of individual, group, system, service, application, guest and temporary accounts. | [IAC-15.3]: Automated mechanisms exist to disable inactive accounts after an organization-defined time period. | [IAC-15.5]: Mechanisms exist to authorize the use of shared/group accounts only under certain organization-defined conditions.",
+        "sub_requirements": [
+            "IAC-03",
+            "IAC-04",
+            "IAC-05",
+            "IAC-07",
+            "IAC-09",
+            "IAC-09.1",
+            "IAC-09.4",
+            "IAC-15",
+            "IAC-15.3",
+            "IAC-15.5"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "5.17",
+        "domain": "Identification & Authentication",
+        "control_text": "[IAC-10]: Mechanisms exist to: (1) Securely manage authenticators for users and devices; and (2) Ensure the strength of authentication is appropriate to the classification of the data being accessed. | [IAC-10.1]: Mechanisms exist to enforce complexity, length and lifespan considerations to ensure strong criteria for password-based authentication. | [IAC-10.5]: Mechanisms exist to protect authenticators commensurate with the sensitivity of the information to which use of the authenticator permits access. | [IAC-10.8]: Mechanisms exist to ensure default authenticators are changed as part of account creation or system installation. | [IAC-10.11]: Mechanisms exist to protect and store passwords via a password manager tool. | [IAC-18]: Mechanisms exist to compel users to follow accepted practices in the use of authentication mechanisms (e.g., passwords, passphrases, physical or logical security tokens, smart cards, certificates, etc.).",
+        "sub_requirements": [
+            "IAC-10",
+            "IAC-10.1",
+            "IAC-10.5",
+            "IAC-10.8",
+            "IAC-10.11",
+            "IAC-18"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "8.2",
+        "domain": "Identification & Authentication",
+        "control_text": "[IAC-16]: Mechanisms exist to restrict and control privileged access rights for users and Technology Assets, Applications and/or Services (TAAS). | [IAC-16.1]: Mechanisms exist to inventory all privileged accounts and validate that each person with elevated privileges is authorized by the appropriate level of organizational management. | [IAC-17]: Mechanisms exist to periodically-review the privileges assigned to individuals and service accounts to validate the need for such privileges and reassign or remove unnecessary privileges, as necessary. | [IAC-21.3]: Mechanisms exist to restrict the assignment of privileged accounts to management-approved personnel and/or roles.",
+        "sub_requirements": [
+            "IAC-16",
+            "IAC-16.1",
+            "IAC-17",
+            "IAC-21.3"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "8.18",
+        "domain": "Identification & Authentication",
+        "control_text": "[IAC-20.3]: Mechanisms exist to restrict and tightly control utility programs that are capable of overriding system and application controls.",
+        "sub_requirements": [
+            "IAC-20.3"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "5.24",
+        "domain": "Incident Response",
+        "control_text": "[IRO-01]: Mechanisms exist to implement and govern processes and documentation to facilitate an organization-wide response capability for cybersecurity and data protection-related incidents. | [IRO-02]: Mechanisms exist to cover: (1) Preparation; (2) Automated event detection or manual incident report intake; (3) Analysis; (4) Containment; (5) Eradication; and (6) Recovery. | [IRO-04]: Mechanisms exist to maintain and make available a current and viable Incident Response Plan (IRP) to all stakeholders. | [IRO-13]: Mechanisms exist to incorporate lessons learned from analyzing and resolving cybersecurity and data protection incidents to reduce the likelihood or impact of future incidents.",
+        "sub_requirements": [
+            "IRO-01",
+            "IRO-02",
+            "IRO-04",
+            "IRO-13"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "5.25",
+        "domain": "Incident Response",
+        "control_text": "[IRO-02]: Mechanisms exist to cover: (1) Preparation; (2) Automated event detection or manual incident report intake; (3) Analysis; (4) Containment; (5) Eradication; and (6) Recovery. | [IRO-04.1]: Mechanisms exist to address data breaches, or other incidents involving the unauthorized disclosure of sensitive or regulated data, according to applicable laws, regulations and contractual obligations. | [IRO-07]: Mechanisms exist to establish an integrated team of cybersecurity, IT and business function representatives that are capable of addressing cybersecurity and data protection incident response operations. | [IRO-09]: Mechanisms exist to document, monitor and report the status of cybersecurity and data protection incidents to internal stakeholders all the way through the resolution of the incident.",
+        "sub_requirements": [
+            "IRO-02",
+            "IRO-04.1",
+            "IRO-07",
+            "IRO-09"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "5.26",
+        "domain": "Incident Response",
+        "control_text": "[IRO-02]: Mechanisms exist to cover: (1) Preparation; (2) Automated event detection or manual incident report intake; (3) Analysis; (4) Containment; (5) Eradication; and (6) Recovery. | [IRO-04]: Mechanisms exist to maintain and make available a current and viable Incident Response Plan (IRP) to all stakeholders. | [IRO-07]: Mechanisms exist to establish an integrated team of cybersecurity, IT and business function representatives that are capable of addressing cybersecurity and data protection incident response operations. | [IRO-08]: Mechanisms exist to perform digital forensics and maintain the integrity of the chain of custody, in accordance with applicable laws, regulations and industry-recognized secure practices.",
+        "sub_requirements": [
+            "IRO-02",
+            "IRO-04",
+            "IRO-07",
+            "IRO-08"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "5.28",
+        "domain": "Incident Response",
+        "control_text": "[IRO-08]: Mechanisms exist to perform digital forensics and maintain the integrity of the chain of custody, in accordance with applicable laws, regulations and industry-recognized secure practices.",
+        "sub_requirements": [
+            "IRO-08"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "5.20",
+        "domain": "Incident Response",
+        "control_text": "[IRO-10.4]: Mechanisms exist to provide cybersecurity and data protection incident information to the provider of the Technology Assets, Applications and/or Services (TAAS) and other organizations involved in the supply chain for TAAS related to the incident. | [TPM-01]: Mechanisms exist to facilitate the implementation of third-party management controls. | [TPM-05]: Mechanisms exist to require contractual requirements for applicable security, compliance and resilience requirements with third-parties, reflecting the organization's needs to protect its Technology Assets, Applications, Services and/or Data (TAASD). | [TPM-08]: Mechanisms exist to monitor, regularly review and assess External Service Providers (ESPs) for compliance with established contractual requirements for security, compliance and resilience controls. | [TPM-10]: Mechanisms exist to control changes to services by suppliers, taking into account the criticality of business Technology Assets, Applications, Services and/or Data (TAASD) that are in scope by the third-party.",
+        "sub_requirements": [
+            "IRO-10.4",
+            "TPM-01",
+            "TPM-05",
+            "TPM-08",
+            "TPM-10"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "5.27",
+        "domain": "Incident Response",
+        "control_text": "[IRO-13]: Mechanisms exist to incorporate lessons learned from analyzing and resolving cybersecurity and data protection incidents to reduce the likelihood or impact of future incidents.",
+        "sub_requirements": [
+            "IRO-13"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "8.29",
+        "domain": "Information Assurance",
+        "control_text": "[IAO-02]: Mechanisms exist to formally assess the security, compliance and resilience controls in Technology Assets, Applications and/or Services (TAAS) through Information Assurance Program (IAP) activities to determine the extent to which the controls are implemented correctly, operating as intended and producing the desired outcome with respect to meeting expected requirements. | [IAO-02.2]: Mechanisms exist to conduct specialized assessments for:  (1) Statutory, regulatory and contractual compliance obligations; (2) Monitoring capabilities;  (3) Mobile devices; (4) Databases; (5) Application security; (6) Embedded technologies (e.g., IoT, OT, etc.); (7) Vulnerability management;  (8) Malicious code;  (9) Insider threats; (10) Performance/load testing; and/or (11) Artificial Intelligence and Autonomous Technologies (AAT). | [TDA-02]: Mechanisms exist to design, develop and produce Technology Assets, Applications and/or Services (TAAS) in such a way that risk-based technical and functional specifications ensure Minimum Viable Product (MVP) criteria establish an appropriate level of security and resiliency based on applicable risks and threats. | [TDA-02.3]: Mechanisms exist to require software developers to ensure that their software development processes employ industry-recognized secure practices for secure programming, engineering methods, quality control processes and validation techniques to minimize flawed and/or malformed software. | [TDA-06.1]: Mechanisms exist to require the developer of the Technology Asset, Application and/or Service (TAAS) to perform a criticality analysis at organization-defined decision points in the Secure Development Life Cycle (SDLC). | [TDA-09]: Mechanisms exist to require system developers/integrators consult with security, compliance and/or resilience personnel to:  (1) Create and implement a Security Testing and Evaluation (ST&E) plan, or similar capability; (2) Implement a verifiable flaw remediation process to correct weaknesses and deficiencies identified during the control testing and evaluation process; and (3) Document the results.",
+        "sub_requirements": [
+            "IAO-02",
+            "IAO-02.2",
+            "TDA-02",
+            "TDA-02.3",
+            "TDA-06.1",
+            "TDA-09"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "7.13",
+        "domain": "Maintenance",
+        "control_text": "[MNT-01]: Mechanisms exist to develop, disseminate, review & update procedures to facilitate the implementation of maintenance controls across the enterprise. | [MNT-02]: Mechanisms exist to conduct controlled maintenance activities throughout the lifecycle of the Technology Asset, Application and/or Service (TAAS). | [MNT-03]: Mechanisms exist to obtain maintenance support and/or spare parts for Technology Assets, Applications and/or Services (TAAS) within a defined Recovery Time Objective (RTO).",
+        "sub_requirements": [
+            "MNT-01",
+            "MNT-02",
+            "MNT-03"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "8.21",
+        "domain": "Network Security",
+        "control_text": "[NET-01]: Mechanisms exist to develop, govern & update procedures to facilitate the implementation of Network Security Controls (NSC). | [NET-03]: Mechanisms exist to monitor and control communications at the external network boundary and at key internal boundaries within the network. | [NET-08]: Mechanisms exist to employ Network Intrusion Detection / Prevention Systems (NIDS/NIPS) to detect and/or prevent intrusions into the network. | [NET-15]: Mechanisms exist to control authorized wireless usage and monitor for unauthorized wireless access. | [TPM-05]: Mechanisms exist to require contractual requirements for applicable security, compliance and resilience requirements with third-parties, reflecting the organization's needs to protect its Technology Assets, Applications, Services and/or Data (TAASD). | [TPM-08]: Mechanisms exist to monitor, regularly review and assess External Service Providers (ESPs) for compliance with established contractual requirements for security, compliance and resilience controls.",
+        "sub_requirements": [
+            "NET-01",
+            "NET-03",
+            "NET-08",
+            "NET-15",
+            "TPM-05",
+            "TPM-08"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "8.22",
+        "domain": "Network Security",
+        "control_text": "[NET-06]: Mechanisms exist to ensure network architecture utilizes network segmentation to isolate Technology Assets, Applications and/or Services (TAAS) to protect from other network resources. | [NET-06.1]: Mechanisms exist to implement security management subnets to isolate security tools and support components from other internal system components by implementing separate subnetworks with managed interfaces to other components of the system. | [WEB-02]: Mechanisms exist to utilize a Demilitarized Zone (DMZ) to restrict inbound traffic to authorized Technology Assets, Applications and/or Services (TAAS) on certain services, protocols and ports.",
+        "sub_requirements": [
+            "NET-06",
+            "NET-06.1",
+            "WEB-02"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "6.7",
+        "domain": "Network Security",
+        "control_text": "[NET-14]: Mechanisms exist to define, control and review organization-approved, secure remote access methods. | [NET-14.5]: Mechanisms exist to define secure telecommuting practices and govern remote access to Technology Assets, Applications, Services and/or Data (TAASD) for remote workers.",
+        "sub_requirements": [
+            "NET-14",
+            "NET-14.5"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "8.23",
+        "domain": "Network Security",
+        "control_text": "[NET-18]: Mechanisms exist to force Internet-bound network traffic through a proxy device (e.g., Policy Enforcement Point (PEP)) for URL content filtering and DNS filtering to limit a user's ability to connect to dangerous or prohibited Internet sites.",
+        "sub_requirements": [
+            "NET-18"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "7.1",
+        "domain": "Physical & Environmental Security",
+        "control_text": "[PES-01]: Mechanisms exist to facilitate the operation of physical and environmental protection controls. | [PES-02]: Physical access control mechanisms exist to maintain a current list of personnel with authorized access to organizational facilities (except for those areas within the facility officially designated as publicly accessible). | [PES-03]: Physical access control mechanisms exist to enforce physical access authorizations for all physical access points (including designated entry/exit points) to facilities (excluding those areas within the facility officially designated as publicly accessible). | [PES-03.1]: Physical access control mechanisms exist to limit and monitor physical access through controlled ingress and egress points. | [PES-04]: Mechanisms exist to identify systems, equipment and respective operating environments that require limited physical access so that appropriate physical access controls are designed and implemented for offices, rooms and facilities.",
+        "sub_requirements": [
+            "PES-01",
+            "PES-02",
+            "PES-03",
+            "PES-03.1",
+            "PES-04"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "7.5",
+        "domain": "Physical & Environmental Security",
+        "control_text": "[PES-01]: Mechanisms exist to facilitate the operation of physical and environmental protection controls. | [PES-04]: Mechanisms exist to identify systems, equipment and respective operating environments that require limited physical access so that appropriate physical access controls are designed and implemented for offices, rooms and facilities. | [PES-12]: Physical security mechanisms exist to locate system components within the facility to minimize potential damage from physical and environmental hazards and to minimize the opportunity for unauthorized access. | [RSK-01]: Mechanisms exist to facilitate the implementation of strategic, operational and tactical risk management controls. | [RSK-04]: Mechanisms exist to conduct recurring assessments of risk that includes the likelihood and magnitude of harm, from unauthorized access, use, disclosure, disruption, modification or destruction of the organization's Technology Assets, Applications, Services and/or Data (TAASD).",
+        "sub_requirements": [
+            "PES-01",
+            "PES-04",
+            "PES-12",
+            "RSK-01",
+            "RSK-04"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "7.4",
+        "domain": "Physical & Environmental Security",
+        "control_text": "[PES-03]: Physical access control mechanisms exist to enforce physical access authorizations for all physical access points (including designated entry/exit points) to facilities (excluding those areas within the facility officially designated as publicly accessible). | [PES-05]: Physical access control mechanisms exist to monitor for, detect and respond to physical security incidents. | [PES-05.1]: Physical access control mechanisms exist to monitor physical intrusion alarms and surveillance equipment. | [PES-05.2]: Facility security mechanisms exist to monitor physical access to critical systems or sensitive/regulated data, in addition to the physical access monitoring of the facility.",
+        "sub_requirements": [
+            "PES-03",
+            "PES-05",
+            "PES-05.1",
+            "PES-05.2"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "7.2",
+        "domain": "Physical & Environmental Security",
+        "control_text": "[PES-03.1]: Physical access control mechanisms exist to limit and monitor physical access through controlled ingress and egress points. | [PES-03.3]: Physical access control mechanisms generate a log entry for each access attempt through controlled ingress and egress points. | [PES-04.1]: Physical security mechanisms exist to allow only authorized personnel access to secure areas. | [PES-06]: Physical access control mechanisms exist to identify, authorize and monitor visitors before allowing access to the facility (other than areas designated as publicly accessible). | [PES-10]: Physical security mechanisms exist to isolate information processing facilities from points such as delivery and loading areas and other points to avoid unauthorized access.",
+        "sub_requirements": [
+            "PES-03.1",
+            "PES-03.3",
+            "PES-04.1",
+            "PES-06",
+            "PES-10"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "7.3",
+        "domain": "Physical & Environmental Security",
+        "control_text": "[PES-04]: Mechanisms exist to identify systems, equipment and respective operating environments that require limited physical access so that appropriate physical access controls are designed and implemented for offices, rooms and facilities. | [PES-04.1]: Physical security mechanisms exist to allow only authorized personnel access to secure areas. | [PES-12]: Physical security mechanisms exist to locate system components within the facility to minimize potential damage from physical and environmental hazards and to minimize the opportunity for unauthorized access.",
+        "sub_requirements": [
+            "PES-04",
+            "PES-04.1",
+            "PES-12"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "7.6",
+        "domain": "Physical & Environmental Security",
+        "control_text": "[PES-04.1]: Physical security mechanisms exist to allow only authorized personnel access to secure areas.",
+        "sub_requirements": [
+            "PES-04.1"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "7.11",
+        "domain": "Physical & Environmental Security",
+        "control_text": "[PES-07]: Facility security mechanisms exist to protect power equipment and power cabling for the system from damage and destruction. | [PES-07.1]: Facility security mechanisms exist to utilize automatic voltage controls for critical system components. | [PES-07.2]: Facility security mechanisms exist to shut off power in emergency situations by: (1) Placing emergency shutoff switches or devices in close proximity to systems or system components to facilitate safe and easy access for personnel; and (2) Protecting emergency power shutoff capability from unauthorized activation. | [PES-07.3]: Facility security mechanisms exist to supply alternate power, capable of maintaining minimally-required operational capability, in the event of an extended loss of the primary power source. | [PES-07.4]: Facility security mechanisms exist to utilize and maintain automatic emergency lighting that activates in the event of a power outage or disruption and that covers emergency exits and evacuation routes within the facility.",
+        "sub_requirements": [
+            "PES-07",
+            "PES-07.1",
+            "PES-07.2",
+            "PES-07.3",
+            "PES-07.4"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "7.12",
+        "domain": "Physical & Environmental Security",
+        "control_text": "[PES-07]: Facility security mechanisms exist to protect power equipment and power cabling for the system from damage and destruction. | [PES-12]: Physical security mechanisms exist to locate system components within the facility to minimize potential damage from physical and environmental hazards and to minimize the opportunity for unauthorized access. | [PES-12.1]: Physical security mechanisms exist to protect power and telecommunications cabling carrying data or supporting information services from interception, interference or damage.",
+        "sub_requirements": [
+            "PES-07",
+            "PES-12",
+            "PES-12.1"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "7.8",
+        "domain": "Physical & Environmental Security",
+        "control_text": "[PES-12]: Physical security mechanisms exist to locate system components within the facility to minimize potential damage from physical and environmental hazards and to minimize the opportunity for unauthorized access.",
+        "sub_requirements": [
+            "PES-12"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "5.34",
+        "domain": "Data Privacy",
+        "control_text": "[PRI-01]: Mechanisms exist to facilitate the implementation and operation of data protection controls throughout the data lifecycle to ensure all forms of Personal Data (PD) are processed lawfully, fairly and transparently. | [PRI-01.6]: Mechanisms exist to ensure Personal Data (PD) is protected by logical and physical security safeguards that are sufficient and appropriately scoped to protect the confidentiality and integrity of the PD. | [PRI-02]: Mechanisms exist to: (1) Make data privacy notice(s) available to individuals upon first interacting with an organization and subsequently as necessary;  (2) Ensure that data privacy notices are clear and easy-to-understand, expressing relevant information about how Personal Data (PD) is collected, received, processed, stored, transmitted, shared, updated and/or disposed; (3) Contain all necessary notice-related criteria required by applicable statutory, regulatory and contractual obligations; (4) Define the scope of PD processing activities, including the geographic locations and third-party recipients that process the PD within the scope of the data privacy notice; (5) Periodically, review and update the content of the privacy notice, as necessary; and (6) Retain prior versions of the privacy notice, in accordance with data retention requirements. | [PRI-02.1]: Mechanisms exist to ensure data privacy notices identify the purpose(s) for which Personal Data (PD) is collected, received, processed, stored, transmitted and/or shared.",
+        "sub_requirements": [
+            "PRI-01",
+            "PRI-01.6",
+            "PRI-02",
+            "PRI-02.1"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "5.8",
+        "domain": "Project & Resource Management",
+        "control_text": "[PRM-01]: Mechanisms exist to facilitate the implementation of resource planning controls that provide a portfolio management approach to achieve security, compliance and resilience objectives. | [PRM-04]: Mechanisms exist to assess security, compliance and resilience controls in system project development to determine the extent to which the controls are implemented correctly, operating as intended and producing the desired outcome with respect to meeting the requirements. | [PRM-05]: Mechanisms exist to identify critical system components and functions by performing a criticality analysis for critical Technology Assets, Applications and/or Services (TAAS) at pre-defined decision points in the Secure Development Life Cycle (SDLC). | [PRM-07]: Mechanisms exist to ensure changes to Technology Assets, Applications and/or Services (TAAS) within the Secure Development Life Cycle (SDLC) are controlled through formal change control procedures. | [RSK-01.1]: Mechanisms exist to identify: (1) Assumptions affecting risk assessments, risk response and risk monitoring; (2) Constraints affecting risk assessments, risk response and risk monitoring; (3) The organizational risk tolerance; and (4) Priorities, benefits and trade-offs considered by the organization for managing risk. | [RSK-03]: Mechanisms exist to identify and document risks, both internal and external. | [RSK-04]: Mechanisms exist to conduct recurring assessments of risk that includes the likelihood and magnitude of harm, from unauthorized access, use, disclosure, disruption, modification or destruction of the organization's Technology Assets, Applications, Services and/or Data (TAASD). | [RSK-06]: Mechanisms exist to remediate risks to an acceptable level. | [RSK-06.1]: Mechanisms exist to ensure proper risk response actions were performed to remediate findings from security, compliance and/or resilience-related: (1) Assessments; (2) Audits; and/or (3) Incidents. | [SEA-02]: Mechanisms exist to develop an enterprise architecture, aligned with industry-recognized leading practices, with consideration for security, compliance and resilience principles that addresses risk to organizational operations, assets, individuals and other organizations.",
+        "sub_requirements": [
+            "PRM-01",
+            "PRM-04",
+            "PRM-05",
+            "PRM-07",
+            "RSK-01.1",
+            "RSK-03",
+            "RSK-04",
+            "RSK-06",
+            "RSK-06.1",
+            "SEA-02"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "8.30",
+        "domain": "Risk Management",
+        "control_text": "[RSK-09]: Mechanisms exist to develop a plan for Supply Chain Risk Management (SCRM) associated with the development, acquisition, maintenance and disposal of Technology Assets, Applications and/or Services (TAAS), including documenting selected mitigating actions and monitoring performance against those plans. | [RSK-09.1]: Mechanisms exist to periodically assess supply chain risks associated with Technology Assets, Applications and/or Services (TAAS). | [TDA-01]: Mechanisms exist to facilitate the implementation of tailored development and acquisition strategies, contract tools and procurement methods to meet unique business needs. | [TDA-02]: Mechanisms exist to design, develop and produce Technology Assets, Applications and/or Services (TAAS) in such a way that risk-based technical and functional specifications ensure Minimum Viable Product (MVP) criteria establish an appropriate level of security and resiliency based on applicable risks and threats. | [TDA-05]: Mechanisms exist to require the developers of Technology Assets, Applications and/or Services (TAAS) to produce a design specification and security architecture that:  (1) Is consistent with and supportive of the organization's security architecture which is established within and is an integrated part of the organization's enterprise architecture; (2) Accurately and completely describes the required security functionality and the allocation of security, compliance and resilience controls among physical and logical components; and (3) Expresses how individual security functions, mechanisms and services work together to provide required security capabilities and a unified approach to protection. | [TDA-06]: Mechanisms exist to develop applications based on Secure Software Development Practices (SSDP). | [TDA-09]: Mechanisms exist to require system developers/integrators consult with security, compliance and/or resilience personnel to:  (1) Create and implement a Security Testing and Evaluation (ST&E) plan, or similar capability; (2) Implement a verifiable flaw remediation process to correct weaknesses and deficiencies identified during the control testing and evaluation process; and (3) Document the results. | [TDA-14]: Mechanisms exist to require system developers and integrators to perform configuration management during system design, development, implementation and operation. | [TDA-20]: Mechanisms exist to limit privileges to change software resident within software libraries. | [TPM-01]: Mechanisms exist to facilitate the implementation of third-party management controls. | [TPM-03]: Mechanisms exist to: (1) Evaluate security risks and threats associated with Technology Assets, Applications and/or Services (TAAS) supply chains; and (2) Take appropriate remediation actions to minimize the organization's exposure to those risks and threats, as necessary. | [TPM-04]: Mechanisms exist to mitigate the risks associated with third-party access to the organization's Technology Assets, Applications, Services and/or Data (TAASD). | [TPM-05]: Mechanisms exist to require contractual requirements for applicable security, compliance and resilience requirements with third-parties, reflecting the organization's needs to protect its Technology Assets, Applications, Services and/or Data (TAASD). | [TPM-06]: Mechanisms exist to control personnel security requirements including security roles and responsibilities for third-party providers.",
+        "sub_requirements": [
+            "RSK-09",
+            "RSK-09.1",
+            "TDA-01",
+            "TDA-02",
+            "TDA-05",
+            "TDA-06",
+            "TDA-09",
+            "TDA-14",
+            "TDA-20",
+            "TPM-01",
+            "TPM-03",
+            "TPM-04",
+            "TPM-05",
+            "TPM-06"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "3.0",
+        "domain": "Secure Engineering & Architecture",
+        "control_text": "[SEA-02.1]: Mechanisms exist to standardize technology and process terminology to reduce confusion amongst groups and departments.",
+        "sub_requirements": [
+            "SEA-02.1"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "3.1",
+        "domain": "Secure Engineering & Architecture",
+        "control_text": "[SEA-02.1]: Mechanisms exist to standardize technology and process terminology to reduce confusion amongst groups and departments.",
+        "sub_requirements": [
+            "SEA-02.1"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "3.2",
+        "domain": "Secure Engineering & Architecture",
+        "control_text": "[SEA-02.1]: Mechanisms exist to standardize technology and process terminology to reduce confusion amongst groups and departments.",
+        "sub_requirements": [
+            "SEA-02.1"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "8.17",
+        "domain": "Secure Engineering & Architecture",
+        "control_text": "[SEA-20]: Mechanisms exist to utilize time-synchronization technology to synchronize all critical system clocks.",
+        "sub_requirements": [
+            "SEA-20"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "6.3",
+        "domain": "Security Awareness & Training",
+        "control_text": "[SAT-01]: Mechanisms exist to facilitate the implementation of security workforce development and awareness controls. | [SAT-02]: Mechanisms exist to provide all employees and contractors appropriate security, compliance and resilience awareness education and training that is relevant for their job function. | [SAT-03]: Mechanisms exist to provide role-based security, compliance and resilience-related training:  (1) Before authorizing access to the system or performing assigned duties;  (2) When required by system changes; and  (3) Annually thereafter.",
+        "sub_requirements": [
+            "SAT-01",
+            "SAT-02",
+            "SAT-03"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "8.28",
+        "domain": "Technology Development & Acquisition",
+        "control_text": "[TDA-06]: Mechanisms exist to develop applications based on Secure Software Development Practices (SSDP).",
+        "sub_requirements": [
+            "TDA-06"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "8.31",
+        "domain": "Technology Development & Acquisition",
+        "control_text": "[TDA-07]: Mechanisms exist to maintain a segmented development network to ensure a secure development environment. | [TDA-08]: Mechanisms exist to manage separate development, testing and operational environments to reduce the risks of unauthorized access or changes to the operational environment and to ensure no impact to production Technology Assets, Applications and/or Services (TAAS).",
+        "sub_requirements": [
+            "TDA-07",
+            "TDA-08"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "8.4",
+        "domain": "Technology Development & Acquisition",
+        "control_text": "[TDA-20]: Mechanisms exist to limit privileges to change software resident within software libraries.",
+        "sub_requirements": [
+            "TDA-20"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "5.19",
+        "domain": "Third-Party Management",
+        "control_text": "[TPM-01]: Mechanisms exist to facilitate the implementation of third-party management controls. | [TPM-01.1]: Mechanisms exist to maintain a current, accurate and complete list of External Service Providers (ESPs) that can potentially impact the Confidentiality, Integrity, Availability and/or Safety (CIAS) of the organization's Technology Assets, Applications, Services and/or Data (TAASD). | [TPM-02]: Mechanisms exist to identify, prioritize and assess suppliers and partners of critical Technology Assets, Applications and/or Services (TAAS) using a supply chain risk assessment process relative to their importance in supporting the delivery of high-value services. | [TPM-03]: Mechanisms exist to: (1) Evaluate security risks and threats associated with Technology Assets, Applications and/or Services (TAAS) supply chains; and (2) Take appropriate remediation actions to minimize the organization's exposure to those risks and threats, as necessary. | [TPM-03.2]: Mechanisms exist to utilize security safeguards to limit harm from potential adversaries who identify and target the organization's supply chain. | [TPM-03.3]: Mechanisms exist to address identified weaknesses or deficiencies in the security of the supply chain | [TPM-04]: Mechanisms exist to mitigate the risks associated with third-party access to the organization's Technology Assets, Applications, Services and/or Data (TAASD). | [TPM-04.1]: Mechanisms exist to conduct a risk assessment prior to the acquisition or outsourcing of technology-related Technology Assets, Applications and/or Services (TAAS). | [TPM-04.3]: Mechanisms exist to ensure that the interests of external service providers are consistent with and reflect organizational interests. | [TPM-05]: Mechanisms exist to require contractual requirements for applicable security, compliance and resilience requirements with third-parties, reflecting the organization's needs to protect its Technology Assets, Applications, Services and/or Data (TAASD). | [TPM-06]: Mechanisms exist to control personnel security requirements including security roles and responsibilities for third-party providers. | [TPM-08]: Mechanisms exist to monitor, regularly review and assess External Service Providers (ESPs) for compliance with established contractual requirements for security, compliance and resilience controls. | [TPM-09]: Mechanisms exist to address weaknesses or deficiencies in supply chain elements identified during independent or organizational assessments of such elements. | [TPM-11]: Mechanisms exist to ensure response/recovery planning and testing are conducted with critical suppliers/providers.",
+        "sub_requirements": [
+            "TPM-01",
+            "TPM-01.1",
+            "TPM-02",
+            "TPM-03",
+            "TPM-03.2",
+            "TPM-03.3",
+            "TPM-04",
+            "TPM-04.1",
+            "TPM-04.3",
+            "TPM-05",
+            "TPM-06",
+            "TPM-08",
+            "TPM-09",
+            "TPM-11"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "ISO 27001",
+        "version": "2022",
+        "requirement_id": "5.22",
+        "domain": "Third-Party Management",
+        "control_text": "[TPM-03]: Mechanisms exist to: (1) Evaluate security risks and threats associated with Technology Assets, Applications and/or Services (TAAS) supply chains; and (2) Take appropriate remediation actions to minimize the organization's exposure to those risks and threats, as necessary. | [TPM-03.1]: Mechanisms exist to utilize tailored acquisition strategies, contract tools and procurement methods for the purchase of unique Technology Assets, Applications and/or Services (TAAS). | [TPM-03.3]: Mechanisms exist to address identified weaknesses or deficiencies in the security of the supply chain | [TPM-08]: Mechanisms exist to monitor, regularly review and assess External Service Providers (ESPs) for compliance with established contractual requirements for security, compliance and resilience controls. | [TPM-10]: Mechanisms exist to control changes to services by suppliers, taking into account the criticality of business Technology Assets, Applications, Services and/or Data (TAASD) that are in scope by the third-party.",
+        "sub_requirements": [
+            "TPM-03",
+            "TPM-03.1",
+            "TPM-03.3",
+            "TPM-08",
+            "TPM-10"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    }
+]

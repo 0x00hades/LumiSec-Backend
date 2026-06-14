@@ -1,4 +1,4 @@
-import { SigmaRule } from "../../../database/index.js";
+import { NetworkAsset, NetworkFlowMetric, NetworkMisconfiguration, SigmaRule } from "../../../database/index.js";
 import { AppError } from "../../utils/appError.js";
 import { successResponse, paginatedResponse } from "../../utils/apiResponse.js";
 import { messages } from "../../utils/constant/messages.js";
@@ -9,6 +9,7 @@ import {
     SigmaValidationError,
     validateSigmaRule
 } from "../../utils/helpers/sigmaConverter.js";
+import { buildNetworkDetectionSuggestions } from "../../utils/helpers/networkDetectionContext.js";
 
 /**
  * Reads Sigma YAML from either the documented field or the internal model field.
@@ -147,6 +148,34 @@ export const convertRule = async (req, res, next) => {
             validation: buildValidationResponse(conversionResult.validation),
             targets: conversionResult.targets,
             conversions: conversionResult.conversions
+        }
+    });
+};
+
+/**
+ * Uses LumiNet asset context to suggest UCTC detection-rule ideas.
+ * This is the main context-sharing integration between LumiNet and UCTC.
+ */
+export const suggestRulesFromNetwork = async (req, res, next) => {
+    const { ip } = req.body;
+    const asset = await NetworkAsset.findOne({ ip });
+    if (!asset) return next(new AppError("Network asset context not found", 404));
+
+    const [misconfigurations, recentFlows] = await Promise.all([
+        NetworkMisconfiguration.find({ asset: asset._id, status: "open" }).sort({ detectedAt: -1 }).limit(10),
+        NetworkFlowMetric.find({ sourceIp: ip }).sort({ observedAt: -1 }).limit(10)
+    ]);
+
+    // INFRA/CLOUD INTEGRATION: This context can later come from a dedicated LumiNet service call instead of shared Mongo models.
+    const suggestions = buildNetworkDetectionSuggestions({ asset, misconfigurations, recentFlows });
+
+    return successResponse(res, {
+        message: "Network-based detection suggestions generated",
+        data: {
+            asset,
+            misconfigurations,
+            recentFlows,
+            suggestions
         }
     });
 };

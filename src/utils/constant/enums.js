@@ -57,6 +57,30 @@ export const sandboxRunType = {
     SCENARIO: "scenario"
 };
 
+export const networkScanStatus = {
+    QUEUED: "queued",
+    RUNNING: "running",
+    COMPLETED: "completed",
+    FAILED: "failed"
+};
+
+export const networkScanType = {
+    DISCOVERY: "discovery",
+    PORT_SCAN: "port_scan"
+};
+
+export const networkAssetStatus = {
+    ACTIVE: "active",
+    INACTIVE: "inactive",
+    UNKNOWN: "unknown"
+};
+
+export const sniffingSessionStatus = {
+    RUNNING: "running",
+    COMPLETED: "completed",
+    FAILED: "failed"
+};
+
 export const findingStatus = {
     OPEN: "open",
     IN_PROGRESS: "in_progress",

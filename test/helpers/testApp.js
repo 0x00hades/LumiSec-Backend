@@ -17,9 +17,23 @@ export const clearTestDb = async () => {
     await Promise.all(collections.map((collection) => collection.deleteMany({})));
 };
 
+const closeTestQueues = async () => {
+    try {
+        const queuesModule = await import("../../src/utils/queue.js");
+        await Promise.all(
+            Object.values(queuesModule)
+                .filter((entry) => entry && typeof entry.close === "function")
+                .map((queue) => queue.close())
+        );
+    } catch {
+        // queue module may not be loaded in every test file
+    }
+};
+
 export const closeTestEnv = async () => {
+    await closeTestQueues();
     await mongoose.connection.dropDatabase();
-    await mongoose.connection.close();
+    await mongoose.disconnect();
     if (mongoServer) {
         await mongoServer.stop();
     }

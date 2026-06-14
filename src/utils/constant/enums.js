@@ -8,11 +8,17 @@ export const roles = {
     COMPLIANCE_MANAGER: "compliance_manager",
     IT_MANAGER: "it_manager",
     ASSIGNEE: "assignee",
-    GRC_MANAGER: "grc_manager"
+    GRC_MANAGER: "grc_manager",
+    PHISHING_OPERATOR: "phishing_operator",
+    PHISHING_MANAGER: "phishing_manager",
+    SENIOR_ANALYST: "senior_analyst",
+    INTEGRATION_ADMIN: "integration_admin",
+    READ_ONLY: "read_only"
 };
 
 export const incidentStatus = {
     NEW: "new",
+    OPEN: "open",
     IN_PROGRESS: "in_progress",
     ESCALATED: "escalated",
     RESOLVED: "resolved",
@@ -169,7 +175,9 @@ export const auditAction = {
     COMPLETE: "complete",
     VERIFY: "verify",
     LINK: "link",
-    GENERATE: "generate"
+    GENERATE: "generate",
+    EXECUTE: "execute",
+    ENRICH: "enrich"
 };
 
 export const entityType = {
@@ -181,7 +189,15 @@ export const entityType = {
     CONTROL: "control",
     RETEST: "retest",
     SIEM_ALERT: "siem_alert",
-    NOTIFICATION: "notification"
+    NOTIFICATION: "notification",
+    INCIDENT: "incident",
+    ARTIFACT: "artifact",
+    PLAYBOOK: "playbook",
+    PLAYBOOK_RUN: "playbook_run",
+    CONNECTOR: "connector",
+    VAULT: "vault",
+    INTEGRATION_ACTION: "integration_action",
+    SOAR_ALERT: "soar_alert"
 };
 
 export const notificationType = {
@@ -191,25 +207,102 @@ export const notificationType = {
     REPORT: "report",
     COMPLIANCE: "compliance",
     RETEST: "retest",
-    INTEGRATION: "integration"
+    INTEGRATION: "integration",
+    INCIDENT: "incident",
+    PLAYBOOK: "playbook"
 };
 
 export const campaignStatus = {
     DRAFT: "draft",
-    ACTIVE: "active",
+    SCHEDULED: "scheduled",
+    RUNNING: "running",
+    PAUSED: "paused",
     COMPLETED: "completed",
-    ARCHIVED: "archived"
+    CANCELLED: "cancelled"
+};
+
+export const recipientStatus = {
+    PENDING: "pending",
+    SENT: "sent",
+    OPENED: "opened",
+    CLICKED: "clicked",
+    SUBMITTED: "submitted",
+    BOUNCED: "bounced"
 };
 
 export const phishingEventType = {
-    OPEN: "open",
-    CLICK: "click",
-    SUBMIT: "submit"
+    EMAIL_SENT: "email_sent",
+    EMAIL_OPENED: "email_opened",
+    LINK_CLICKED: "link_clicked",
+    FORM_VISITED: "form_visited",
+    CREDENTIAL_SUBMITTED: "credential_submitted",
+    ATTACHMENT_DOWNLOADED: "attachment_downloaded",
+    QR_SCANNED: "qr_scanned"
+};
+
+export const phishingRiskLevel = {
+    LOW: "low",
+    MEDIUM: "medium",
+    HIGH: "high",
+    CRITICAL: "critical"
 };
 
 export const playbookTrigger = {
     MANUAL: "manual",
     AUTO: "auto"
+};
+
+export const artifactType = {
+    IP: "ip",
+    DOMAIN: "domain",
+    URL: "url",
+    HASH: "hash",
+    EMAIL: "email",
+    USERNAME: "username",
+    CVE: "cve",
+    FILE: "file"
+};
+
+export const playbookRunStatus = {
+    QUEUED: "queued",
+    RUNNING: "running",
+    PAUSED: "paused",
+    COMPLETED: "completed",
+    CANCELLED: "cancelled",
+    FAILED: "failed"
+};
+
+export const playbookStepStatus = {
+    PENDING: "pending",
+    RUNNING: "running",
+    COMPLETED: "completed",
+    FAILED: "failed",
+    SKIPPED: "skipped"
+};
+
+export const connectorType = {
+    FIREWALL: "firewall",
+    SIEM: "siem",
+    EDR: "edr",
+    TICKETING: "ticketing",
+    EMAIL: "email",
+    SSH: "ssh",
+    CUSTOM: "custom"
+};
+
+export const alertSource = {
+    CROWDSTRIKE: "crowdstrike",
+    FORTIGATE: "fortigate",
+    WAZUH: "wazuh",
+    DEFENDER: "defender",
+    SPLUNK: "splunk",
+    CUSTOM: "custom"
+};
+
+export const integrationActionStatus = {
+    PENDING: "pending",
+    SUCCESS: "success",
+    FAILED: "failed"
 };
 
 export const userStatus = {

@@ -1,0 +1,3087 @@
+[
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "1.0",
+        "domain": "Inventory and Control of Enterprise Assets",
+        "control_text": "[AST-01]: Mechanisms exist to facilitate an IT Asset Management (ITAM) program to implement and manage asset management controls. | [AST-02]: Mechanisms exist to perform inventories of Technology Assets, Applications, Services and/or Data (TAASD) that: (1) Accurately reflects the current TAASD in use;  (2) Identifies authorized software products, including business justification details; (3) Is at the level of granularity deemed necessary for tracking and reporting; (4) Includes organization-defined information deemed necessary to achieve effective property accountability; and (5) Is available for review and audit by designated organizational personnel.",
+        "sub_requirements": [
+            "AST-01",
+            "AST-02"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "2.0",
+        "domain": "Inventory and Control of Software Assets",
+        "control_text": "[AST-01]: Mechanisms exist to facilitate an IT Asset Management (ITAM) program to implement and manage asset management controls. | [AST-02]: Mechanisms exist to perform inventories of Technology Assets, Applications, Services and/or Data (TAASD) that: (1) Accurately reflects the current TAASD in use;  (2) Identifies authorized software products, including business justification details; (3) Is at the level of granularity deemed necessary for tracking and reporting; (4) Includes organization-defined information deemed necessary to achieve effective property accountability; and (5) Is available for review and audit by designated organizational personnel. | [CFG-01]: Mechanisms exist to facilitate the implementation of configuration management controls.",
+        "sub_requirements": [
+            "AST-01",
+            "AST-02",
+            "CFG-01"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "2.1",
+        "domain": "Inventory and Control of Software Assets",
+        "control_text": "[AST-01]: Mechanisms exist to facilitate an IT Asset Management (ITAM) program to implement and manage asset management controls. | [AST-02]: Mechanisms exist to perform inventories of Technology Assets, Applications, Services and/or Data (TAASD) that: (1) Accurately reflects the current TAASD in use;  (2) Identifies authorized software products, including business justification details; (3) Is at the level of granularity deemed necessary for tracking and reporting; (4) Includes organization-defined information deemed necessary to achieve effective property accountability; and (5) Is available for review and audit by designated organizational personnel. | [AST-02.9]: Mechanisms exist to implement and manage a Configuration Management Database (CMDB), or similar technology, to monitor and govern technology asset-specific information.",
+        "sub_requirements": [
+            "AST-01",
+            "AST-02",
+            "AST-02.9"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "2.2",
+        "domain": "Inventory and Control of Software Assets",
+        "control_text": "[AST-01]: Mechanisms exist to facilitate an IT Asset Management (ITAM) program to implement and manage asset management controls. | [AST-02]: Mechanisms exist to perform inventories of Technology Assets, Applications, Services and/or Data (TAASD) that: (1) Accurately reflects the current TAASD in use;  (2) Identifies authorized software products, including business justification details; (3) Is at the level of granularity deemed necessary for tracking and reporting; (4) Includes organization-defined information deemed necessary to achieve effective property accountability; and (5) Is available for review and audit by designated organizational personnel. | [AST-02.7]: Mechanisms exist to protect Intellectual Property (IP) rights with software licensing restrictions. | [RSK-06.2]: Mechanisms exist to identify and implement compensating countermeasures to reduce risk and exposure to threats. | [TDA-17]: Mechanisms exist to prevent unsupported Technology Assets, Applications and/or Services (TAAS) by: (1) Removing and/or replacing TAAS when support for the components is no longer available from the developer, vendor or manufacturer; and (2) Requiring justification and documented approval for the continued use of unsupported TAAS required to satisfy mission/business needs.",
+        "sub_requirements": [
+            "AST-01",
+            "AST-02",
+            "AST-02.7",
+            "RSK-06.2",
+            "TDA-17"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "1.1",
+        "domain": "Inventory and Control of Enterprise Assets",
+        "control_text": "[AST-02]: Mechanisms exist to perform inventories of Technology Assets, Applications, Services and/or Data (TAASD) that: (1) Accurately reflects the current TAASD in use;  (2) Identifies authorized software products, including business justification details; (3) Is at the level of granularity deemed necessary for tracking and reporting; (4) Includes organization-defined information deemed necessary to achieve effective property accountability; and (5) Is available for review and audit by designated organizational personnel.",
+        "sub_requirements": [
+            "AST-02"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "2.4",
+        "domain": "Inventory and Control of Software Assets",
+        "control_text": "[AST-02]: Mechanisms exist to perform inventories of Technology Assets, Applications, Services and/or Data (TAASD) that: (1) Accurately reflects the current TAASD in use;  (2) Identifies authorized software products, including business justification details; (3) Is at the level of granularity deemed necessary for tracking and reporting; (4) Includes organization-defined information deemed necessary to achieve effective property accountability; and (5) Is available for review and audit by designated organizational personnel. | [AST-02.2]: Automated mechanisms exist to detect and alert upon the detection of unauthorized hardware, software and firmware components. | [AST-02.9]: Mechanisms exist to implement and manage a Configuration Management Database (CMDB), or similar technology, to monitor and govern technology asset-specific information. | [CFG-06.1]: Automated mechanisms exist to identify unauthorized deviations from an approved baseline and implement automated resiliency actions to remediate the unauthorized change. | [END-06.2]: Mechanisms exist to detect and respond to unauthorized configuration changes as cybersecurity incidents.",
+        "sub_requirements": [
+            "AST-02",
+            "AST-02.2",
+            "AST-02.9",
+            "CFG-06.1",
+            "END-06.2"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "6.6",
+        "domain": "Access Control Management",
+        "control_text": "[AST-02]: Mechanisms exist to perform inventories of Technology Assets, Applications, Services and/or Data (TAASD) that: (1) Accurately reflects the current TAASD in use;  (2) Identifies authorized software products, including business justification details; (3) Is at the level of granularity deemed necessary for tracking and reporting; (4) Includes organization-defined information deemed necessary to achieve effective property accountability; and (5) Is available for review and audit by designated organizational personnel. | [IAC-01]: Mechanisms exist to facilitate the implementation of identification and access management controls. | [IAC-01.2]: Mechanisms exist to strictly govern the use of Authenticate, Authorize and Audit (AAA) solutions, both on-premises and those hosted by an External Service Provider (ESP).",
+        "sub_requirements": [
+            "AST-02",
+            "IAC-01",
+            "IAC-01.2"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "1.2",
+        "domain": "Inventory and Control of Enterprise Assets",
+        "control_text": "[AST-02.2]: Automated mechanisms exist to detect and alert upon the detection of unauthorized hardware, software and firmware components. | [NET-08.3]: Automated mechanisms exist to enforce host containment protections that revoke or quarantine a host’s access to the network.",
+        "sub_requirements": [
+            "AST-02.2",
+            "NET-08.3"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "1.3",
+        "domain": "Inventory and Control of Enterprise Assets",
+        "control_text": "[AST-02.2]: Automated mechanisms exist to detect and alert upon the detection of unauthorized hardware, software and firmware components. | [AST-02.3]: Mechanisms exist to establish and maintain an authoritative source and repository to provide a trusted source and accountability for approved and implemented system components that prevents assets from being duplicated in other asset inventories.",
+        "sub_requirements": [
+            "AST-02.2",
+            "AST-02.3"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "1.5",
+        "domain": "Inventory and Control of Enterprise Assets",
+        "control_text": "[AST-02.2]: Automated mechanisms exist to detect and alert upon the detection of unauthorized hardware, software and firmware components. | [AST-02.6]: Mechanisms exist to enable Dynamic Host Configuration Protocol (DHCP) server logging to improve asset inventories and assist in detecting unknown systems.",
+        "sub_requirements": [
+            "AST-02.2",
+            "AST-02.6"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "2.3",
+        "domain": "Inventory and Control of Software Assets",
+        "control_text": "[AST-02.2]: Automated mechanisms exist to detect and alert upon the detection of unauthorized hardware, software and firmware components. | [CFG-02.8]: Mechanisms exist to respond to unauthorized changes to configuration settings as security incidents. | [CFG-03.3]: Mechanisms exist to explicitly allow (allowlist / whitelist) and/or block (denylist / blacklist) applications that are authorized to execute on systems. | [CFG-05.1]: Mechanisms exist to configure systems to generate an alert when the unauthorized installation of software is detected. | [CFG-06.1]: Automated mechanisms exist to identify unauthorized deviations from an approved baseline and implement automated resiliency actions to remediate the unauthorized change. | [MON-16.3]: Mechanisms exist to monitor for unauthorized activities, accounts, connections, devices and software. | [END-03.1]: Mechanisms exist to generate an alert when new software is detected. | [END-06.2]: Mechanisms exist to detect and respond to unauthorized configuration changes as cybersecurity incidents. | [IRO-02]: Mechanisms exist to cover: (1) Preparation; (2) Automated event detection or manual incident report intake; (3) Analysis; (4) Containment; (5) Eradication; and (6) Recovery.",
+        "sub_requirements": [
+            "AST-02.2",
+            "CFG-02.8",
+            "CFG-03.3",
+            "CFG-05.1",
+            "CFG-06.1",
+            "MON-16.3",
+            "END-03.1",
+            "END-06.2",
+            "IRO-02"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "13.9",
+        "domain": "Network Monitoring and Defense",
+        "control_text": "[AST-02.5]: Automated mechanisms exist to employ Network Access Control (NAC), or a similar technology, which is capable of detecting unauthorized devices and disable network access to those unauthorized devices.",
+        "sub_requirements": [
+            "AST-02.5"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "1.4",
+        "domain": "Inventory and Control of Enterprise Assets",
+        "control_text": "[AST-02.6]: Mechanisms exist to enable Dynamic Host Configuration Protocol (DHCP) server logging to improve asset inventories and assist in detecting unknown systems.",
+        "sub_requirements": [
+            "AST-02.6"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "16.5",
+        "domain": "Application Software Security",
+        "control_text": "[AST-03.2]: Mechanisms exist to track the origin, development, ownership, location and changes to Technology Assets, Applications, Services and/or Data (TAASD). | [TDA-06]: Mechanisms exist to develop applications based on Secure Software Development Practices (SSDP). | [TDA-06.3]: Mechanisms exist to utilize a Software Assurance Maturity Model (SAMM) to govern a secure development lifecycle for the development of Technology Assets, Applications and/or Services (TAAS). | [TDA-11]: Mechanisms exist to maintain awareness of component authenticity by developing and implementing Product Tampering and Counterfeiting (PTC) practices that include the means to detect and prevent counterfeit components. | [TDA-14.1]: Mechanisms exist to require developers of Technology Assets, Applications and/or Services (TAAS) to enable integrity verification of software and firmware components.",
+        "sub_requirements": [
+            "AST-03.2",
+            "TDA-06",
+            "TDA-06.3",
+            "TDA-11",
+            "TDA-14.1"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "3.8",
+        "domain": "Data Protection",
+        "control_text": "[AST-04]: Mechanisms exist to maintain network architecture diagrams that:  (1) Contain sufficient detail to assess the security of the network's architecture; (2) Reflect the current architecture of the network environment; and (3) Document all sensitive/regulated data flows. | [DCH-14.3]: Mechanisms exist to leverage data-specific Access Control Lists (ACL) or Interconnection Security Agreements (ISAs) to generate a logical map of the parties with whom sensitive/regulated data is shared.",
+        "sub_requirements": [
+            "AST-04",
+            "DCH-14.3"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "12.4",
+        "domain": "Network Infrastructure Management",
+        "control_text": "[AST-04]: Mechanisms exist to maintain network architecture diagrams that:  (1) Contain sufficient detail to assess the security of the network's architecture; (2) Reflect the current architecture of the network environment; and (3) Document all sensitive/regulated data flows.",
+        "sub_requirements": [
+            "AST-04"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "3.5",
+        "domain": "Data Protection",
+        "control_text": "[AST-09]: Mechanisms exist to securely dispose of, destroy or repurpose system components using organization-defined techniques and methods to prevent information being recovered from these components. | [DCH-08]: Mechanisms exist to securely dispose of media when it is no longer required, using formal procedures. | [DCH-09]: Mechanisms exist to sanitize system media with the strength and integrity commensurate with the classification or sensitivity of the information prior to disposal, release out of organizational control or release for reuse. | [DCH-21]: Mechanisms exist to securely dispose of, destroy or erase information. | [PRI-05]: Mechanisms exist to:  (1) Retain Personal Data (PD), including metadata, for an organization-defined time period to fulfill the purpose(s) identified in the notice or as required by law; (2) Dispose of, destroys, erases, and/or anonymizes the PD, regardless of the method of storage; and (3) Use organization-defined techniques or methods to ensure secure deletion or destruction of PD (including originals, copies and archived records).",
+        "sub_requirements": [
+            "AST-09",
+            "DCH-08",
+            "DCH-09",
+            "DCH-21",
+            "PRI-05"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "4.11",
+        "domain": "Secure Configuration of Enterprise Assets and Software",
+        "control_text": "[AST-16]: Mechanisms exist to implement and govern a Bring Your Own Device (BYOD) program to reduce risk associated with personally-owned devices in the workplace. | [MDM-01]: Mechanisms exist to implement and govern Mobile Device Management (MDM) controls. | [MDM-05]: Mechanisms exist to remotely purge selected information from mobile devices.",
+        "sub_requirements": [
+            "AST-16",
+            "MDM-01",
+            "MDM-05"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "11.0",
+        "domain": "Data Recovery",
+        "control_text": "[BCD-01]: Mechanisms exist to facilitate the implementation of contingency planning controls to help ensure resilient Technology Assets, Applications and/or Services (TAAS) (e.g., Continuity of Operations Plan (COOP) or Business Continuity & Disaster Recovery (BC/DR) playbooks). | [DCH-01]: Mechanisms exist to facilitate the implementation of data protection controls. | [END-02]: Mechanisms exist to protect the confidentiality, integrity, availability and safety of endpoint devices.",
+        "sub_requirements": [
+            "BCD-01",
+            "DCH-01",
+            "END-02"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "11.1",
+        "domain": "Data Recovery",
+        "control_text": "[BCD-01]: Mechanisms exist to facilitate the implementation of contingency planning controls to help ensure resilient Technology Assets, Applications and/or Services (TAAS) (e.g., Continuity of Operations Plan (COOP) or Business Continuity & Disaster Recovery (BC/DR) playbooks).",
+        "sub_requirements": [
+            "BCD-01"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "11.2",
+        "domain": "Data Recovery",
+        "control_text": "[BCD-11]: Mechanisms exist to create recurring backups of data, software and/or system images, as well as verify the integrity of these backups, to ensure the availability of the data to satisfy Recovery Time Objectives (RTOs) and Recovery Point Objectives (RPOs).",
+        "sub_requirements": [
+            "BCD-11"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "11.3",
+        "domain": "Data Recovery",
+        "control_text": "[BCD-11.1]: Mechanisms exist to routinely test backups that verify the reliability of the backup process, as well as the integrity and availability of the data. | [BCD-11.4]: Cryptographic mechanisms exist to prevent the unauthorized disclosure and/or modification of backup information. | [BCD-12]: Mechanisms exist to ensure the secure recovery and reconstitution of Technology Assets, Applications and/or Services (TAAS) to a known state after a disruption, compromise or failure. | [BCD-13]: Mechanisms exist to protect backup and restoration hardware and software. | [DCH-01]: Mechanisms exist to facilitate the implementation of data protection controls.",
+        "sub_requirements": [
+            "BCD-11.1",
+            "BCD-11.4",
+            "BCD-12",
+            "BCD-13",
+            "DCH-01"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "11.5",
+        "domain": "Data Recovery",
+        "control_text": "[BCD-11.1]: Mechanisms exist to routinely test backups that verify the reliability of the backup process, as well as the integrity and availability of the data. | [BCD-11.5]: Mechanisms exist to utilize sampling of available backups to test recovery capabilities as part of business continuity plan testing.",
+        "sub_requirements": [
+            "BCD-11.1",
+            "BCD-11.5"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "11.4",
+        "domain": "Data Recovery",
+        "control_text": "[BCD-14]: Mechanisms exist to utilize an isolated, non-production environment to perform data backup and recovery operations through offline, cloud or off-site capabilities.",
+        "sub_requirements": [
+            "BCD-14"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "18.4",
+        "domain": "Penetration Testing",
+        "control_text": "[CHG-06]: Mechanisms exist to verify the functionality of security, compliance and resilience controls following implemented changes to ensure applicable controls operate as designed.",
+        "sub_requirements": [
+            "CHG-06"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "4.0",
+        "domain": "Secure Configuration of Enterprise Assets and Software",
+        "control_text": "[CFG-01]: Mechanisms exist to facilitate the implementation of configuration management controls. | [CFG-03]: Mechanisms exist to configure systems to provide only essential capabilities by specifically prohibiting or restricting the use of ports, protocols, and/or services.",
+        "sub_requirements": [
+            "CFG-01",
+            "CFG-03"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "4.1",
+        "domain": "Secure Configuration of Enterprise Assets and Software",
+        "control_text": "[CFG-01]: Mechanisms exist to facilitate the implementation of configuration management controls. | [CFG-02]: Mechanisms exist to develop, document and maintain secure baseline configurations for Technology Assets, Applications and/or Services (TAAS) that are consistent with industry-accepted system hardening standards. | [CFG-02.1]: Mechanisms exist to review and update baseline configurations: (1) At least annually; (2) When required due to so; or (3) As part of system component installations and upgrades. | [IAC-22]: Mechanisms exist to enforce a limit for consecutive invalid login attempts by a user during an organization-defined time period and automatically locks the account when the maximum number of unsuccessful attempts is exceeded.",
+        "sub_requirements": [
+            "CFG-01",
+            "CFG-02",
+            "CFG-02.1",
+            "IAC-22"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "4.2",
+        "domain": "Secure Configuration of Enterprise Assets and Software",
+        "control_text": "[CFG-01]: Mechanisms exist to facilitate the implementation of configuration management controls. | [CFG-02]: Mechanisms exist to develop, document and maintain secure baseline configurations for Technology Assets, Applications and/or Services (TAAS) that are consistent with industry-accepted system hardening standards.",
+        "sub_requirements": [
+            "CFG-01",
+            "CFG-02"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "4.3",
+        "domain": "Secure Configuration of Enterprise Assets and Software",
+        "control_text": "[CFG-02]: Mechanisms exist to develop, document and maintain secure baseline configurations for Technology Assets, Applications and/or Services (TAAS) that are consistent with industry-accepted system hardening standards. | [IAC-24]: Mechanisms exist to initiate a session lock after an organization-defined time period of inactivity, or upon receiving a request from a user and retain the session lock until the user reestablishes access using established identification and authentication methods.",
+        "sub_requirements": [
+            "CFG-02",
+            "IAC-24"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "4.4",
+        "domain": "Secure Configuration of Enterprise Assets and Software",
+        "control_text": "[CFG-02]: Mechanisms exist to develop, document and maintain secure baseline configurations for Technology Assets, Applications and/or Services (TAAS) that are consistent with industry-accepted system hardening standards. | [END-05]: Mechanisms exist to utilize host-based firewall software, or a similar technology, on all endpoint devices, where technically feasible. | [WEB-03]: Mechanisms exist to deploy Web Application Firewalls (WAFs) to provide defense-in-depth protection for application-specific threats.",
+        "sub_requirements": [
+            "CFG-02",
+            "END-05",
+            "WEB-03"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "4.5",
+        "domain": "Secure Configuration of Enterprise Assets and Software",
+        "control_text": "[CFG-02]: Mechanisms exist to develop, document and maintain secure baseline configurations for Technology Assets, Applications and/or Services (TAAS) that are consistent with industry-accepted system hardening standards. | [END-05]: Mechanisms exist to utilize host-based firewall software, or a similar technology, on all endpoint devices, where technically feasible.",
+        "sub_requirements": [
+            "CFG-02",
+            "END-05"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "4.6",
+        "domain": "Secure Configuration of Enterprise Assets and Software",
+        "control_text": "[CFG-02]: Mechanisms exist to develop, document and maintain secure baseline configurations for Technology Assets, Applications and/or Services (TAAS) that are consistent with industry-accepted system hardening standards. | [CFG-03]: Mechanisms exist to configure systems to provide only essential capabilities by specifically prohibiting or restricting the use of ports, protocols, and/or services. | [CRY-06]: Cryptographic mechanisms exist to protect the confidentiality and integrity of non-console administrative access. | [MNT-05]: Mechanisms exist to authorize, monitor and control remote, non-local maintenance and diagnostic activities. | [NET-04]: Mechanisms exist to implement and govern Access Control Lists (ACLs) to provide data flow enforcement that explicitly restrict network traffic to only what is authorized. | [TDA-02.6]: Mechanisms exist to mitigate the risk associated with the use of insecure ports, protocols and services necessary to operate technology solutions.",
+        "sub_requirements": [
+            "CFG-02",
+            "CFG-03",
+            "CRY-06",
+            "MNT-05",
+            "NET-04",
+            "TDA-02.6"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "4.7",
+        "domain": "Secure Configuration of Enterprise Assets and Software",
+        "control_text": "[CFG-02]: Mechanisms exist to develop, document and maintain secure baseline configurations for Technology Assets, Applications and/or Services (TAAS) that are consistent with industry-accepted system hardening standards. | [IAC-01]: Mechanisms exist to facilitate the implementation of identification and access management controls. | [IAC-10.8]: Mechanisms exist to ensure default authenticators are changed as part of account creation or system installation.",
+        "sub_requirements": [
+            "CFG-02",
+            "IAC-01",
+            "IAC-10.8"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "4.8",
+        "domain": "Secure Configuration of Enterprise Assets and Software",
+        "control_text": "[CFG-02]: Mechanisms exist to develop, document and maintain secure baseline configurations for Technology Assets, Applications and/or Services (TAAS) that are consistent with industry-accepted system hardening standards. | [CFG-03]: Mechanisms exist to configure systems to provide only essential capabilities by specifically prohibiting or restricting the use of ports, protocols, and/or services.",
+        "sub_requirements": [
+            "CFG-02",
+            "CFG-03"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "10.3",
+        "domain": "Malware Defenses",
+        "control_text": "[CFG-02]: Mechanisms exist to develop, document and maintain secure baseline configurations for Technology Assets, Applications and/or Services (TAAS) that are consistent with industry-accepted system hardening standards. | [END-02]: Mechanisms exist to protect the confidentiality, integrity, availability and safety of endpoint devices.",
+        "sub_requirements": [
+            "CFG-02",
+            "END-02"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "10.4",
+        "domain": "Malware Defenses",
+        "control_text": "[CFG-02]: Mechanisms exist to develop, document and maintain secure baseline configurations for Technology Assets, Applications and/or Services (TAAS) that are consistent with industry-accepted system hardening standards. | [END-02]: Mechanisms exist to protect the confidentiality, integrity, availability and safety of endpoint devices. | [END-04]: Mechanisms exist to utilize antimalware technologies to detect and eradicate malicious code. | [END-04.7]: Mechanisms exist to ensure that anti-malware technologies are continuously running in real-time and cannot be disabled or altered by non-privileged users, unless specifically authorized by management on a case-by-case basis for a limited time period.",
+        "sub_requirements": [
+            "CFG-02",
+            "END-02",
+            "END-04",
+            "END-04.7"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "10.5",
+        "domain": "Malware Defenses",
+        "control_text": "[CFG-02]: Mechanisms exist to develop, document and maintain secure baseline configurations for Technology Assets, Applications and/or Services (TAAS) that are consistent with industry-accepted system hardening standards. | [END-02]: Mechanisms exist to protect the confidentiality, integrity, availability and safety of endpoint devices.",
+        "sub_requirements": [
+            "CFG-02",
+            "END-02"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "16.7",
+        "domain": "Application Software Security",
+        "control_text": "[CFG-02]: Mechanisms exist to develop, document and maintain secure baseline configurations for Technology Assets, Applications and/or Services (TAAS) that are consistent with industry-accepted system hardening standards. | [CFG-02.5]: Mechanisms exist to configure Technology Assets, Applications and/or Services (TAAS) utilized in high-risk areas with more restrictive baseline configurations. | [TDA-06.5]: Mechanisms exist to have an independent review of the software design to validate: (1) Applicable security, compliance and resilience requirements are met; and (2) Identified risks are remediated. | [TDA-12]: Mechanisms exist to custom-develop critical system components, when Commercial Off The Shelf (COTS) solutions are unavailable. | [WEB-07]: Mechanisms exist to ensure the Open Web Application Security Project (OWASP) Application Security Verification Standard is incorporated into the organization's Secure Systems Development Lifecycle (SSDLC) process.",
+        "sub_requirements": [
+            "CFG-02",
+            "CFG-02.5",
+            "TDA-06.5",
+            "TDA-12",
+            "WEB-07"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "2.5",
+        "domain": "Inventory and Control of Software Assets",
+        "control_text": "[CFG-03.2]: Mechanisms exist to configure systems to prevent the execution of unauthorized software programs. | [CFG-03.3]: Mechanisms exist to explicitly allow (allowlist / whitelist) and/or block (denylist / blacklist) applications that are authorized to execute on systems.",
+        "sub_requirements": [
+            "CFG-03.2",
+            "CFG-03.3"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "2.6",
+        "domain": "Inventory and Control of Software Assets",
+        "control_text": "[CFG-03.3]: Mechanisms exist to explicitly allow (allowlist / whitelist) and/or block (denylist / blacklist) applications that are authorized to execute on systems.",
+        "sub_requirements": [
+            "CFG-03.3"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "2.7",
+        "domain": "Inventory and Control of Software Assets",
+        "control_text": "[CFG-03.3]: Mechanisms exist to explicitly allow (allowlist / whitelist) and/or block (denylist / blacklist) applications that are authorized to execute on systems. | [IAC-16]: Mechanisms exist to restrict and control privileged access rights for users and Technology Assets, Applications and/or Services (TAAS). | [MNT-04]: Mechanisms exist to control and monitor the use of system maintenance tools. | [MNT-04.4]: Automated mechanisms exist to restrict the use of maintenance tools to authorized maintenance personnel and/or roles.",
+        "sub_requirements": [
+            "CFG-03.3",
+            "IAC-16",
+            "MNT-04",
+            "MNT-04.4"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "9.0",
+        "domain": "Email and Web Browser Protections",
+        "control_text": "[CFG-04.2]: Mechanisms exist to allow only approved Internet browsers and email clients to run on systems. | [END-08]: Mechanisms exist to utilize anti-phishing and spam protection technologies to detect and take action on unsolicited messages transported by electronic mail. | [HRS-05.2]: Mechanisms exist to define rules of behavior that contain explicit restrictions on the use of social media and networking sites, posting information on commercial websites and sharing account information. | [IRO-15]: Mechanisms exist to utilize a detonation chamber capability to detect and/or block potentially-malicious files and email attachments. | [NET-18]: Mechanisms exist to force Internet-bound network traffic through a proxy device (e.g., Policy Enforcement Point (PEP)) for URL content filtering and DNS filtering to limit a user's ability to connect to dangerous or prohibited Internet sites. | [SAT-02.2]: Mechanisms exist to include awareness training on recognizing and reporting potential and actual instances of social engineering and social mining.",
+        "sub_requirements": [
+            "CFG-04.2",
+            "END-08",
+            "HRS-05.2",
+            "IRO-15",
+            "NET-18",
+            "SAT-02.2"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "9.1",
+        "domain": "Email and Web Browser Protections",
+        "control_text": "[CFG-04.2]: Mechanisms exist to allow only approved Internet browsers and email clients to run on systems. | [CFG-05.2]: Mechanisms exist to configure systems to prevent the installation of software, unless the action is performed by a privileged user or service.",
+        "sub_requirements": [
+            "CFG-04.2",
+            "CFG-05.2"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "9.4",
+        "domain": "Email and Web Browser Protections",
+        "control_text": "[CFG-04.2]: Mechanisms exist to allow only approved Internet browsers and email clients to run on systems. | [CFG-05.2]: Mechanisms exist to configure systems to prevent the installation of software, unless the action is performed by a privileged user or service. | [HRS-05.1]: Mechanisms exist to define acceptable and unacceptable rules of behavior for the use of technologies, including consequences for unacceptable behavior. | [HRS-05.4]: Mechanisms exist to govern usage policies for critical technologies.",
+        "sub_requirements": [
+            "CFG-04.2",
+            "CFG-05.2",
+            "HRS-05.1",
+            "HRS-05.4"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "8.0",
+        "domain": "Audit Log Management",
+        "control_text": "[MON-01]: Mechanisms exist to facilitate the implementation of enterprise-wide monitoring controls.",
+        "sub_requirements": [
+            "MON-01"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "8.2",
+        "domain": "Audit Log Management",
+        "control_text": "[MON-01]: Mechanisms exist to facilitate the implementation of enterprise-wide monitoring controls. | [MON-01.4]: Mechanisms exist to generate, monitor, correlate and respond to alerts from physical, cybersecurity, data protection and supply chain activities to achieve integrated situational awareness. | [MON-02]: Mechanisms exist to utilize a Security Incident Event Manager (SIEM), or similar automated tool, to support the centralized collection of security-related event logs. | [MON-02.7]: Automated mechanisms exist to compile audit records into an organization-wide audit trail that is time-correlated. | [MON-03]: Mechanisms exist to configure Technology Assets, Applications and/or Services (TAAS) to produce event logs that contain sufficient information to, at a minimum: (1) Establish what type of event occurred; (2) When (date and time) the event occurred; (3) Where the event occurred; (4) The source of the event; (5) The outcome (success or failure) of the event; and  (6) The identity of any user/subject associated with the event.",
+        "sub_requirements": [
+            "MON-01",
+            "MON-01.4",
+            "MON-02",
+            "MON-02.7",
+            "MON-03"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "13.0",
+        "domain": "Network Monitoring and Defense",
+        "control_text": "[MON-01]: Mechanisms exist to facilitate the implementation of enterprise-wide monitoring controls.",
+        "sub_requirements": [
+            "MON-01"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "13.6",
+        "domain": "Network Monitoring and Defense",
+        "control_text": "[MON-01]: Mechanisms exist to facilitate the implementation of enterprise-wide monitoring controls. | [MON-01.13]: Mechanisms exist to \"tune\" event monitoring technologies through analyzing communications traffic/event patterns and developing profiles representing common traffic patterns and/or events. | [MON-02.1]: Automated mechanisms exist to correlate both technical and non-technical information from across the enterprise by a Security Incident Event Manager (SIEM) or similar automated tool, to enhance organization-wide situational awareness. | [MON-02.3]: Automated mechanisms exist to integrate the analysis of audit records with analysis of vulnerability scanners, network performance, system monitoring and other sources to further enhance the ability to identify inappropriate or unusual activity.",
+        "sub_requirements": [
+            "MON-01",
+            "MON-01.13",
+            "MON-02.1",
+            "MON-02.3"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "8.1",
+        "domain": "Audit Log Management",
+        "control_text": "[MON-01.8]: Mechanisms exist to review event logs on an ongoing basis and escalate incidents in accordance with established timelines and procedures. | [MON-02]: Mechanisms exist to utilize a Security Incident Event Manager (SIEM), or similar automated tool, to support the centralized collection of security-related event logs. | [MON-04]: Mechanisms exist to allocate and proactively manage sufficient event log storage capacity to reduce the likelihood of such capacity being exceeded. | [MON-10]: Mechanisms exist to retain event logs for a time period consistent with records retention requirements to provide support for after-the-fact investigations of security incidents and to meet statutory, regulatory and contractual retention requirements.",
+        "sub_requirements": [
+            "MON-01.8",
+            "MON-02",
+            "MON-04",
+            "MON-10"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "13.11",
+        "domain": "Network Monitoring and Defense",
+        "control_text": "[MON-01.13]: Mechanisms exist to \"tune\" event monitoring technologies through analyzing communications traffic/event patterns and developing profiles representing common traffic patterns and/or events.",
+        "sub_requirements": [
+            "MON-01.13"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "3.14",
+        "domain": "Data Protection",
+        "control_text": "[MON-01.15]: Mechanisms exist to implement enhanced activity monitoring for privileged users. | [MON-02]: Mechanisms exist to utilize a Security Incident Event Manager (SIEM), or similar automated tool, to support the centralized collection of security-related event logs. | [MON-02.1]: Automated mechanisms exist to correlate both technical and non-technical information from across the enterprise by a Security Incident Event Manager (SIEM) or similar automated tool, to enhance organization-wide situational awareness. | [MON-02.3]: Automated mechanisms exist to integrate the analysis of audit records with analysis of vulnerability scanners, network performance, system monitoring and other sources to further enhance the ability to identify inappropriate or unusual activity. | [MON-03]: Mechanisms exist to configure Technology Assets, Applications and/or Services (TAAS) to produce event logs that contain sufficient information to, at a minimum: (1) Establish what type of event occurred; (2) When (date and time) the event occurred; (3) Where the event occurred; (4) The source of the event; (5) The outcome (success or failure) of the event; and  (6) The identity of any user/subject associated with the event. | [MON-03.1]: Mechanisms exist to protect sensitive/regulated data contained in log files.",
+        "sub_requirements": [
+            "MON-01.15",
+            "MON-02",
+            "MON-02.1",
+            "MON-02.3",
+            "MON-03",
+            "MON-03.1"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "8.3",
+        "domain": "Audit Log Management",
+        "control_text": "[MON-02]: Mechanisms exist to utilize a Security Incident Event Manager (SIEM), or similar automated tool, to support the centralized collection of security-related event logs. | [MON-04]: Mechanisms exist to allocate and proactively manage sufficient event log storage capacity to reduce the likelihood of such capacity being exceeded.",
+        "sub_requirements": [
+            "MON-02",
+            "MON-04"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "8.4",
+        "domain": "Audit Log Management",
+        "control_text": "[MON-02]: Mechanisms exist to utilize a Security Incident Event Manager (SIEM), or similar automated tool, to support the centralized collection of security-related event logs. | [MON-07.1]: Mechanisms exist to synchronize internal system clocks with an authoritative time source.",
+        "sub_requirements": [
+            "MON-02",
+            "MON-07.1"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "8.5",
+        "domain": "Audit Log Management",
+        "control_text": "[MON-02]: Mechanisms exist to utilize a Security Incident Event Manager (SIEM), or similar automated tool, to support the centralized collection of security-related event logs. | [MON-03]: Mechanisms exist to configure Technology Assets, Applications and/or Services (TAAS) to produce event logs that contain sufficient information to, at a minimum: (1) Establish what type of event occurred; (2) When (date and time) the event occurred; (3) Where the event occurred; (4) The source of the event; (5) The outcome (success or failure) of the event; and  (6) The identity of any user/subject associated with the event.",
+        "sub_requirements": [
+            "MON-02",
+            "MON-03"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "8.6",
+        "domain": "Audit Log Management",
+        "control_text": "[MON-02]: Mechanisms exist to utilize a Security Incident Event Manager (SIEM), or similar automated tool, to support the centralized collection of security-related event logs. | [MON-02.3]: Automated mechanisms exist to integrate the analysis of audit records with analysis of vulnerability scanners, network performance, system monitoring and other sources to further enhance the ability to identify inappropriate or unusual activity.",
+        "sub_requirements": [
+            "MON-02",
+            "MON-02.3"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "8.7",
+        "domain": "Audit Log Management",
+        "control_text": "[MON-02]: Mechanisms exist to utilize a Security Incident Event Manager (SIEM), or similar automated tool, to support the centralized collection of security-related event logs. | [MON-02.3]: Automated mechanisms exist to integrate the analysis of audit records with analysis of vulnerability scanners, network performance, system monitoring and other sources to further enhance the ability to identify inappropriate or unusual activity.",
+        "sub_requirements": [
+            "MON-02",
+            "MON-02.3"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "8.8",
+        "domain": "Audit Log Management",
+        "control_text": "[MON-02]: Mechanisms exist to utilize a Security Incident Event Manager (SIEM), or similar automated tool, to support the centralized collection of security-related event logs. | [MON-03.3]: Mechanisms exist to log and review the actions of users and/or services with elevated privileges.",
+        "sub_requirements": [
+            "MON-02",
+            "MON-03.3"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "8.9",
+        "domain": "Audit Log Management",
+        "control_text": "[MON-02]: Mechanisms exist to utilize a Security Incident Event Manager (SIEM), or similar automated tool, to support the centralized collection of security-related event logs.",
+        "sub_requirements": [
+            "MON-02"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "8.12",
+        "domain": "Audit Log Management",
+        "control_text": "[MON-02]: Mechanisms exist to utilize a Security Incident Event Manager (SIEM), or similar automated tool, to support the centralized collection of security-related event logs. | [MON-02.1]: Automated mechanisms exist to correlate both technical and non-technical information from across the enterprise by a Security Incident Event Manager (SIEM) or similar automated tool, to enhance organization-wide situational awareness. | [MON-02.3]: Automated mechanisms exist to integrate the analysis of audit records with analysis of vulnerability scanners, network performance, system monitoring and other sources to further enhance the ability to identify inappropriate or unusual activity.",
+        "sub_requirements": [
+            "MON-02",
+            "MON-02.1",
+            "MON-02.3"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "13.1",
+        "domain": "Network Monitoring and Defense",
+        "control_text": "[MON-02]: Mechanisms exist to utilize a Security Incident Event Manager (SIEM), or similar automated tool, to support the centralized collection of security-related event logs. | [NET-18]: Mechanisms exist to force Internet-bound network traffic through a proxy device (e.g., Policy Enforcement Point (PEP)) for URL content filtering and DNS filtering to limit a user's ability to connect to dangerous or prohibited Internet sites. | [NET-18.1]: Mechanisms exist to route internal communications traffic to external networks through organization-approved proxy servers at managed interfaces. | [WEB-03]: Mechanisms exist to deploy Web Application Firewalls (WAFs) to provide defense-in-depth protection for application-specific threats.",
+        "sub_requirements": [
+            "MON-02",
+            "NET-18",
+            "NET-18.1",
+            "WEB-03"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "8.11",
+        "domain": "Audit Log Management",
+        "control_text": "[MON-02.2]: Automated mechanisms exist to centrally collect, review and analyze audit records from multiple sources.",
+        "sub_requirements": [
+            "MON-02.2"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "3.6",
+        "domain": "Data Protection",
+        "control_text": "[CRY-01]: Mechanisms exist to facilitate the implementation of cryptographic protections controls using known public standards and trusted cryptographic technologies. | [CRY-05]: Cryptographic mechanisms exist to prevent unauthorized disclosure of data at rest.",
+        "sub_requirements": [
+            "CRY-01",
+            "CRY-05"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "3.9",
+        "domain": "Data Protection",
+        "control_text": "[CRY-01]: Mechanisms exist to facilitate the implementation of cryptographic protections controls using known public standards and trusted cryptographic technologies. | [CRY-05]: Cryptographic mechanisms exist to prevent unauthorized disclosure of data at rest. | [CRY-05.1]: Cryptographic mechanisms exist to protect the confidentiality and integrity of sensitive/regulated data residing on storage media.",
+        "sub_requirements": [
+            "CRY-01",
+            "CRY-05",
+            "CRY-05.1"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "3.1",
+        "domain": "Data Protection",
+        "control_text": "[CRY-01]: Mechanisms exist to facilitate the implementation of cryptographic protections controls using known public standards and trusted cryptographic technologies. | [CRY-03]: Cryptographic mechanisms exist to protect the confidentiality of data being transmitted. | [DCH-01]: Mechanisms exist to facilitate the implementation of data protection controls. | [DCH-01.1]: Mechanisms exist to ensure data stewardship is assigned, documented and communicated. | [DCH-01.2]: Mechanisms exist to protect sensitive/regulated data wherever it is processed and/or stored. | [DCH-01.4]: Mechanisms exist to explicitly define authorizations for specific individuals and/or roles for logical and /or physical access to sensitive/regulated data. | [DCH-02]: Mechanisms exist to ensure data and assets are categorized in accordance with applicable statutory, regulatory and contractual requirements. | [DCH-03]: Mechanisms exist to control and restrict access to digital and non-digital media to authorized individuals. | [DCH-03.1]: Mechanisms exist to restrict the disclosure of sensitive/regulated data to authorized parties with a need to know. | [DCH-08]: Mechanisms exist to securely dispose of media when it is no longer required, using formal procedures. | [DCH-09]: Mechanisms exist to sanitize system media with the strength and integrity commensurate with the classification or sensitivity of the information prior to disposal, release out of organizational control or release for reuse. | [DCH-18]: Mechanisms exist to retain media and data in accordance with applicable statutory, regulatory and contractual obligations.",
+        "sub_requirements": [
+            "CRY-01",
+            "CRY-03",
+            "DCH-01",
+            "DCH-01.1",
+            "DCH-01.2",
+            "DCH-01.4",
+            "DCH-02",
+            "DCH-03",
+            "DCH-03.1",
+            "DCH-08",
+            "DCH-09",
+            "DCH-18"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "3.11",
+        "domain": "Data Protection",
+        "control_text": "[CRY-01]: Mechanisms exist to facilitate the implementation of cryptographic protections controls using known public standards and trusted cryptographic technologies. | [CRY-05]: Cryptographic mechanisms exist to prevent unauthorized disclosure of data at rest.",
+        "sub_requirements": [
+            "CRY-01",
+            "CRY-05"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "12.3",
+        "domain": "Network Infrastructure Management",
+        "control_text": "[CRY-06]: Cryptographic mechanisms exist to protect the confidentiality and integrity of non-console administrative access. | [MNT-05.3]: Cryptographic mechanisms exist to protect the integrity and confidentiality of remote, non-local maintenance and diagnostic communications. | [NET-01]: Mechanisms exist to develop, govern & update procedures to facilitate the implementation of Network Security Controls (NSC).",
+        "sub_requirements": [
+            "CRY-06",
+            "MNT-05.3",
+            "NET-01"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "3.0",
+        "domain": "Data Protection",
+        "control_text": "[DCH-01]: Mechanisms exist to facilitate the implementation of data protection controls.",
+        "sub_requirements": [
+            "DCH-01"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "3.3",
+        "domain": "Data Protection",
+        "control_text": "[DCH-01]: Mechanisms exist to facilitate the implementation of data protection controls. | [DCH-01.4]: Mechanisms exist to explicitly define authorizations for specific individuals and/or roles for logical and /or physical access to sensitive/regulated data. | [DCH-03]: Mechanisms exist to control and restrict access to digital and non-digital media to authorized individuals. | [DCH-03.1]: Mechanisms exist to restrict the disclosure of sensitive/regulated data to authorized parties with a need to know. | [DCH-13.1]: Mechanisms exist to prohibit external parties, including Technology Assets, Applications and/or Services (TAAS), from storing, processing and transmitting data unless authorized individuals first:  (1) Verifying the implementation of required security, compliance and/or resilience controls; or (2) Retaining a processing agreement with the entity hosting the external TAAS. | [DCH-14]: Mechanisms exist to utilize a process to assist users in making information sharing decisions to ensure data is appropriately protected. | [DCH-14.2]: Mechanisms exist to verify that individuals or Technology Assets, Applications and/or Services (TAAS) transferring data between interconnecting TAAS have the requisite authorizations (e.g., write permissions or privileges) prior to transferring said data. | [DCH-14.3]: Mechanisms exist to leverage data-specific Access Control Lists (ACL) or Interconnection Security Agreements (ISAs) to generate a logical map of the parties with whom sensitive/regulated data is shared. | [IAC-08]: Mechanisms exist to enforce Role-Based Access Control (RBAC) for Technology Assets, Applications, Services and/or Data (TAASD) to restrict access to individuals assigned specific roles with legitimate business needs. | [NET-04]: Mechanisms exist to implement and govern Access Control Lists (ACLs) to provide data flow enforcement that explicitly restrict network traffic to only what is authorized.",
+        "sub_requirements": [
+            "DCH-01",
+            "DCH-01.4",
+            "DCH-03",
+            "DCH-03.1",
+            "DCH-13.1",
+            "DCH-14",
+            "DCH-14.2",
+            "DCH-14.3",
+            "IAC-08",
+            "NET-04"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "3.7",
+        "domain": "Data Protection",
+        "control_text": "[DCH-02]: Mechanisms exist to ensure data and assets are categorized in accordance with applicable statutory, regulatory and contractual requirements. | [DCH-02.1]: Mechanisms exist to ensure that Technology Assets, Applications and/or Services (TAAS) are classified according to the highest level of data sensitivity that is stored, transmitted and/or processed.",
+        "sub_requirements": [
+            "DCH-02",
+            "DCH-02.1"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "3.12",
+        "domain": "Data Protection",
+        "control_text": "[DCH-02.1]: Mechanisms exist to ensure that Technology Assets, Applications and/or Services (TAAS) are classified according to the highest level of data sensitivity that is stored, transmitted and/or processed. | [SEA-03.1]: Mechanisms exist to partition systems so that partitions reside in separate physical domains or environments.",
+        "sub_requirements": [
+            "DCH-02.1",
+            "SEA-03.1"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "3.2",
+        "domain": "Data Protection",
+        "control_text": "[DCH-06.2]: Mechanisms exist to maintain inventory logs of all sensitive media and conduct sensitive media inventories at least annually. | [DCH-06.3]: Mechanisms exist to periodically scan unstructured data sources for sensitive/regulated data or data requiring special protection measures by statutory, regulatory or contractual obligations.",
+        "sub_requirements": [
+            "DCH-06.2",
+            "DCH-06.3"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "3.4",
+        "domain": "Data Protection",
+        "control_text": "[DCH-18]: Mechanisms exist to retain media and data in accordance with applicable statutory, regulatory and contractual obligations.",
+        "sub_requirements": [
+            "DCH-18"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "10.0",
+        "domain": "Malware Defenses",
+        "control_text": "[END-01]: Mechanisms exist to facilitate the implementation of Endpoint Device Management (EDM) controls. | [END-02]: Mechanisms exist to protect the confidentiality, integrity, availability and safety of endpoint devices. | [END-04]: Mechanisms exist to utilize antimalware technologies to detect and eradicate malicious code.",
+        "sub_requirements": [
+            "END-01",
+            "END-02",
+            "END-04"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "10.1",
+        "domain": "Malware Defenses",
+        "control_text": "[END-04]: Mechanisms exist to utilize antimalware technologies to detect and eradicate malicious code.",
+        "sub_requirements": [
+            "END-04"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "10.2",
+        "domain": "Malware Defenses",
+        "control_text": "[END-04.1]: Automated mechanisms exist to update antimalware technologies, including signature definitions.",
+        "sub_requirements": [
+            "END-04.1"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "10.6",
+        "domain": "Malware Defenses",
+        "control_text": "[END-04.3]: Mechanisms exist to centrally-manage antimalware technologies.",
+        "sub_requirements": [
+            "END-04.3"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "10.7",
+        "domain": "Malware Defenses",
+        "control_text": "[END-04.4]: Mechanisms exist to utilize heuristic / nonsignature-based antimalware detection capabilities.",
+        "sub_requirements": [
+            "END-04.4"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "13.7",
+        "domain": "Network Monitoring and Defense",
+        "control_text": "[END-06.2]: Mechanisms exist to detect and respond to unauthorized configuration changes as cybersecurity incidents. | [END-07]: Mechanisms exist to utilize Host-based Intrusion Detection / Prevention Systems (HIDS / HIPS), or similar technologies, to monitor for and protect against anomalous host activity, including lateral movement across the network.",
+        "sub_requirements": [
+            "END-06.2",
+            "END-07"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "13.2",
+        "domain": "Network Monitoring and Defense",
+        "control_text": "[END-07]: Mechanisms exist to utilize Host-based Intrusion Detection / Prevention Systems (HIDS / HIPS), or similar technologies, to monitor for and protect against anomalous host activity, including lateral movement across the network.",
+        "sub_requirements": [
+            "END-07"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "9.6",
+        "domain": "Email and Web Browser Protections",
+        "control_text": "[END-08]: Mechanisms exist to utilize anti-phishing and spam protection technologies to detect and take action on unsolicited messages transported by electronic mail. | [IRO-15]: Mechanisms exist to utilize a detonation chamber capability to detect and/or block potentially-malicious files and email attachments. | [NET-03]: Mechanisms exist to monitor and control communications at the external network boundary and at key internal boundaries within the network. | [NET-08]: Mechanisms exist to employ Network Intrusion Detection / Prevention Systems (NIDS/NIPS) to detect and/or prevent intrusions into the network.",
+        "sub_requirements": [
+            "END-08",
+            "IRO-15",
+            "NET-03",
+            "NET-08"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "9.7",
+        "domain": "Email and Web Browser Protections",
+        "control_text": "[END-08]: Mechanisms exist to utilize anti-phishing and spam protection technologies to detect and take action on unsolicited messages transported by electronic mail. | [IRO-15]: Mechanisms exist to utilize a detonation chamber capability to detect and/or block potentially-malicious files and email attachments.",
+        "sub_requirements": [
+            "END-08",
+            "IRO-15"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "5.0",
+        "domain": "Account Management",
+        "control_text": "[IAC-01]: Mechanisms exist to facilitate the implementation of identification and access management controls. | [IAC-15.1]: Automated mechanisms exist to support the management of system accounts (e.g., directory services).",
+        "sub_requirements": [
+            "IAC-01",
+            "IAC-15.1"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "5.6",
+        "domain": "Account Management",
+        "control_text": "[IAC-01]: Mechanisms exist to facilitate the implementation of identification and access management controls. | [IAC-01.2]: Mechanisms exist to strictly govern the use of Authenticate, Authorize and Audit (AAA) solutions, both on-premises and those hosted by an External Service Provider (ESP). | [IAC-02]: Mechanisms exist to uniquely identify and centrally Authenticate, Authorize and Audit (AAA) organizational users and processes acting on behalf of organizational users. | [IAC-09]: Mechanisms exist to govern naming standards for usernames and Technology Assets, Applications and/or Services (TAAS). | [IAC-15.1]: Automated mechanisms exist to support the management of system accounts (e.g., directory services).",
+        "sub_requirements": [
+            "IAC-01",
+            "IAC-01.2",
+            "IAC-02",
+            "IAC-09",
+            "IAC-15.1"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "6.0",
+        "domain": "Access Control Management",
+        "control_text": "[IAC-01]: Mechanisms exist to facilitate the implementation of identification and access management controls. | [IAC-08]: Mechanisms exist to enforce Role-Based Access Control (RBAC) for Technology Assets, Applications, Services and/or Data (TAASD) to restrict access to individuals assigned specific roles with legitimate business needs. | [IAC-15.1]: Automated mechanisms exist to support the management of system accounts (e.g., directory services).",
+        "sub_requirements": [
+            "IAC-01",
+            "IAC-08",
+            "IAC-15.1"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "12.5",
+        "domain": "Network Infrastructure Management",
+        "control_text": "[IAC-01.2]: Mechanisms exist to strictly govern the use of Authenticate, Authorize and Audit (AAA) solutions, both on-premises and those hosted by an External Service Provider (ESP). | [IAC-02]: Mechanisms exist to uniquely identify and centrally Authenticate, Authorize and Audit (AAA) organizational users and processes acting on behalf of organizational users. | [IAC-03]: Mechanisms exist to uniquely identify and centrally Authenticate, Authorize and Audit (AAA) third-party users and processes that provide services to the organization. | [IAC-04]: Mechanisms exist to uniquely identify and centrally Authenticate, Authorize and Audit (AAA) devices before establishing a connection using bidirectional authentication that is cryptographically- based and replay resistant.",
+        "sub_requirements": [
+            "IAC-01.2",
+            "IAC-02",
+            "IAC-03",
+            "IAC-04"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "5.5",
+        "domain": "Account Management",
+        "control_text": "[IAC-02]: Mechanisms exist to uniquely identify and centrally Authenticate, Authorize and Audit (AAA) organizational users and processes acting on behalf of organizational users. | [IAC-05]: Mechanisms exist to identify and authenticate third-party Technology Assets, Applications and/or Services (TAAS). | [IAC-16.1]: Mechanisms exist to inventory all privileged accounts and validate that each person with elevated privileges is authorized by the appropriate level of organizational management.",
+        "sub_requirements": [
+            "IAC-02",
+            "IAC-05",
+            "IAC-16.1"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "6.7",
+        "domain": "Access Control Management",
+        "control_text": "[IAC-02]: Mechanisms exist to uniquely identify and centrally Authenticate, Authorize and Audit (AAA) organizational users and processes acting on behalf of organizational users. | [IAC-13.1]: Mechanisms exist to provide a transparent authentication (e.g., Single Sign-On (SSO)) capability to the organization's Technology Assets, Applications and/or Services (TAAS). | [IAC-13.2]: Mechanisms exist to federate credentials to allow cross-organization authentication of individuals and devices.",
+        "sub_requirements": [
+            "IAC-02",
+            "IAC-13.1",
+            "IAC-13.2"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "6.3",
+        "domain": "Access Control Management",
+        "control_text": "[IAC-06]: Automated mechanisms exist to enforce Multi-Factor Authentication (MFA) for: (1) Remote network access;  (2) Third-party Technology Assets, Applications and/or Services (TAAS); and/ or (3) Non-console access to critical TAAS that store, transmit and/or process sensitive/regulated data.",
+        "sub_requirements": [
+            "IAC-06"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "6.4",
+        "domain": "Access Control Management",
+        "control_text": "[IAC-06]: Automated mechanisms exist to enforce Multi-Factor Authentication (MFA) for: (1) Remote network access;  (2) Third-party Technology Assets, Applications and/or Services (TAAS); and/ or (3) Non-console access to critical TAAS that store, transmit and/or process sensitive/regulated data.",
+        "sub_requirements": [
+            "IAC-06"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "6.5",
+        "domain": "Access Control Management",
+        "control_text": "[IAC-06.1]: Mechanisms exist to utilize Multi-Factor Authentication (MFA) to authenticate network access for privileged accounts.",
+        "sub_requirements": [
+            "IAC-06.1"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "6.1",
+        "domain": "Access Control Management",
+        "control_text": "[IAC-07]: Mechanisms exist to utilize a formal user registration and de-registration process that governs the assignment of access rights.",
+        "sub_requirements": [
+            "IAC-07"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "6.2",
+        "domain": "Access Control Management",
+        "control_text": "[IAC-07]: Mechanisms exist to utilize a formal user registration and de-registration process that governs the assignment of access rights.",
+        "sub_requirements": [
+            "IAC-07"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "6.8",
+        "domain": "Access Control Management",
+        "control_text": "[IAC-08]: Mechanisms exist to enforce Role-Based Access Control (RBAC) for Technology Assets, Applications, Services and/or Data (TAASD) to restrict access to individuals assigned specific roles with legitimate business needs.",
+        "sub_requirements": [
+            "IAC-08"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "5.2",
+        "domain": "Account Management",
+        "control_text": "[IAC-10]: Mechanisms exist to: (1) Securely manage authenticators for users and devices; and (2) Ensure the strength of authentication is appropriate to the classification of the data being accessed. | [IAC-10.1]: Mechanisms exist to enforce complexity, length and lifespan considerations to ensure strong criteria for password-based authentication.",
+        "sub_requirements": [
+            "IAC-10",
+            "IAC-10.1"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "5.3",
+        "domain": "Account Management",
+        "control_text": "[IAC-15.3]: Automated mechanisms exist to disable inactive accounts after an organization-defined time period.",
+        "sub_requirements": [
+            "IAC-15.3"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "5.1",
+        "domain": "Account Management",
+        "control_text": "[IAC-16]: Mechanisms exist to restrict and control privileged access rights for users and Technology Assets, Applications and/or Services (TAAS). | [IAC-16.1]: Mechanisms exist to inventory all privileged accounts and validate that each person with elevated privileges is authorized by the appropriate level of organizational management.",
+        "sub_requirements": [
+            "IAC-16",
+            "IAC-16.1"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "5.4",
+        "domain": "Account Management",
+        "control_text": "[IAC-16]: Mechanisms exist to restrict and control privileged access rights for users and Technology Assets, Applications and/or Services (TAAS). | [IAC-21]: Mechanisms exist to utilize the concept of least privilege, allowing only authorized access to processes necessary to accomplish assigned tasks in accordance with organizational business functions. | [IAC-21.2]: Mechanisms exist to prohibit privileged users from using privileged accounts, while performing non-security functions.",
+        "sub_requirements": [
+            "IAC-16",
+            "IAC-21",
+            "IAC-21.2"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "12.8",
+        "domain": "Network Infrastructure Management",
+        "control_text": "[IAC-20.4]: Mechanisms exist to restrict executing administrative tasks or tasks requiring elevated access to a dedicated machine.",
+        "sub_requirements": [
+            "IAC-20.4"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "17.0",
+        "domain": "Incident Response Management",
+        "control_text": "[IRO-01]: Mechanisms exist to implement and govern processes and documentation to facilitate an organization-wide response capability for cybersecurity and data protection-related incidents. | [IRO-02]: Mechanisms exist to cover: (1) Preparation; (2) Automated event detection or manual incident report intake; (3) Analysis; (4) Containment; (5) Eradication; and (6) Recovery.",
+        "sub_requirements": [
+            "IRO-01",
+            "IRO-02"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "17.5",
+        "domain": "Incident Response Management",
+        "control_text": "[IRO-01]: Mechanisms exist to implement and govern processes and documentation to facilitate an organization-wide response capability for cybersecurity and data protection-related incidents. | [IRO-02]: Mechanisms exist to cover: (1) Preparation; (2) Automated event detection or manual incident report intake; (3) Analysis; (4) Containment; (5) Eradication; and (6) Recovery. | [IRO-04]: Mechanisms exist to maintain and make available a current and viable Incident Response Plan (IRP) to all stakeholders. | [IRO-07]: Mechanisms exist to establish an integrated team of cybersecurity, IT and business function representatives that are capable of addressing cybersecurity and data protection incident response operations.",
+        "sub_requirements": [
+            "IRO-01",
+            "IRO-02",
+            "IRO-04",
+            "IRO-07"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "17.1",
+        "domain": "Incident Response Management",
+        "control_text": "[IRO-02]: Mechanisms exist to cover: (1) Preparation; (2) Automated event detection or manual incident report intake; (3) Analysis; (4) Containment; (5) Eradication; and (6) Recovery. | [IRO-04]: Mechanisms exist to maintain and make available a current and viable Incident Response Plan (IRP) to all stakeholders. | [IRO-07]: Mechanisms exist to establish an integrated team of cybersecurity, IT and business function representatives that are capable of addressing cybersecurity and data protection incident response operations.",
+        "sub_requirements": [
+            "IRO-02",
+            "IRO-04",
+            "IRO-07"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "17.3",
+        "domain": "Incident Response Management",
+        "control_text": "[IRO-02]: Mechanisms exist to cover: (1) Preparation; (2) Automated event detection or manual incident report intake; (3) Analysis; (4) Containment; (5) Eradication; and (6) Recovery.",
+        "sub_requirements": [
+            "IRO-02"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "17.4",
+        "domain": "Incident Response Management",
+        "control_text": "[IRO-02]: Mechanisms exist to cover: (1) Preparation; (2) Automated event detection or manual incident report intake; (3) Analysis; (4) Containment; (5) Eradication; and (6) Recovery. | [IRO-04]: Mechanisms exist to maintain and make available a current and viable Incident Response Plan (IRP) to all stakeholders. | [IRO-07]: Mechanisms exist to establish an integrated team of cybersecurity, IT and business function representatives that are capable of addressing cybersecurity and data protection incident response operations.",
+        "sub_requirements": [
+            "IRO-02",
+            "IRO-04",
+            "IRO-07"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "17.6",
+        "domain": "Incident Response Management",
+        "control_text": "[IRO-02]: Mechanisms exist to cover: (1) Preparation; (2) Automated event detection or manual incident report intake; (3) Analysis; (4) Containment; (5) Eradication; and (6) Recovery. | [IRO-04]: Mechanisms exist to maintain and make available a current and viable Incident Response Plan (IRP) to all stakeholders. | [IRO-07]: Mechanisms exist to establish an integrated team of cybersecurity, IT and business function representatives that are capable of addressing cybersecurity and data protection incident response operations. | [IRO-09]: Mechanisms exist to document, monitor and report the status of cybersecurity and data protection incidents to internal stakeholders all the way through the resolution of the incident.",
+        "sub_requirements": [
+            "IRO-02",
+            "IRO-04",
+            "IRO-07",
+            "IRO-09"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "17.9",
+        "domain": "Incident Response Management",
+        "control_text": "[IRO-02]: Mechanisms exist to cover: (1) Preparation; (2) Automated event detection or manual incident report intake; (3) Analysis; (4) Containment; (5) Eradication; and (6) Recovery. | [IRO-04]: Mechanisms exist to maintain and make available a current and viable Incident Response Plan (IRP) to all stakeholders. | [IRO-07]: Mechanisms exist to establish an integrated team of cybersecurity, IT and business function representatives that are capable of addressing cybersecurity and data protection incident response operations.",
+        "sub_requirements": [
+            "IRO-02",
+            "IRO-04",
+            "IRO-07"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "17.7",
+        "domain": "Incident Response Management",
+        "control_text": "[IRO-06]: Mechanisms exist to formally test incident response capabilities through realistic exercises to determine the operational effectiveness of those capabilities.",
+        "sub_requirements": [
+            "IRO-06"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "17.2",
+        "domain": "Incident Response Management",
+        "control_text": "[IRO-09]: Mechanisms exist to document, monitor and report the status of cybersecurity and data protection incidents to internal stakeholders all the way through the resolution of the incident. | [IRO-10]: Mechanisms exist to timely-report incidents to applicable: (1) Internal stakeholders;  (2) Affected clients & third-parties; and (3) Regulatory authorities. | [IRO-10.2]: Mechanisms exist to report sensitive/regulated data incidents in a timely manner. | [IRO-10.3]: Mechanisms exist to report system vulnerabilities associated with reported cybersecurity and data protection incidents to organization-defined personnel or roles. | [IRO-10.4]: Mechanisms exist to provide cybersecurity and data protection incident information to the provider of the Technology Assets, Applications and/or Services (TAAS) and other organizations involved in the supply chain for TAAS related to the incident.",
+        "sub_requirements": [
+            "IRO-09",
+            "IRO-10",
+            "IRO-10.2",
+            "IRO-10.3",
+            "IRO-10.4"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "16.3",
+        "domain": "Application Software Security",
+        "control_text": "[IRO-13]: Mechanisms exist to incorporate lessons learned from analyzing and resolving cybersecurity and data protection incidents to reduce the likelihood or impact of future incidents. | [TDA-09]: Mechanisms exist to require system developers/integrators consult with security, compliance and/or resilience personnel to:  (1) Create and implement a Security Testing and Evaluation (ST&E) plan, or similar capability; (2) Implement a verifiable flaw remediation process to correct weaknesses and deficiencies identified during the control testing and evaluation process; and (3) Document the results.",
+        "sub_requirements": [
+            "IRO-13",
+            "TDA-09"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "17.8",
+        "domain": "Incident Response Management",
+        "control_text": "[IRO-13]: Mechanisms exist to incorporate lessons learned from analyzing and resolving cybersecurity and data protection incidents to reduce the likelihood or impact of future incidents.",
+        "sub_requirements": [
+            "IRO-13"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "15.4",
+        "domain": "Service Provider Management",
+        "control_text": "[IAO-03.2]: Mechanisms exist to protect sensitive/regulated data that is collected, developed, received, transmitted, used or stored in support of the performance of a contract. | [PRI-07.1]: Mechanisms exist to include data privacy requirements in contracts and other acquisition-related documents that establish data privacy roles and responsibilities for contractors and service providers. | [TPM-03.2]: Mechanisms exist to utilize security safeguards to limit harm from potential adversaries who identify and target the organization's supply chain. | [TPM-04]: Mechanisms exist to mitigate the risks associated with third-party access to the organization's Technology Assets, Applications, Services and/or Data (TAASD). | [TPM-05]: Mechanisms exist to require contractual requirements for applicable security, compliance and resilience requirements with third-parties, reflecting the organization's needs to protect its Technology Assets, Applications, Services and/or Data (TAASD).",
+        "sub_requirements": [
+            "IAO-03.2",
+            "PRI-07.1",
+            "TPM-03.2",
+            "TPM-04",
+            "TPM-05"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "4.12",
+        "domain": "Secure Configuration of Enterprise Assets and Software",
+        "control_text": "[MDM-10]: Mechanisms exist to enforce a separate device workspace on applicable mobile devices to separate work-related and personal-related applications and data.",
+        "sub_requirements": [
+            "MDM-10"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "12.0",
+        "domain": "Network Infrastructure Management",
+        "control_text": "[NET-01]: Mechanisms exist to develop, govern & update procedures to facilitate the implementation of Network Security Controls (NSC).",
+        "sub_requirements": [
+            "NET-01"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "12.1",
+        "domain": "Network Infrastructure Management",
+        "control_text": "[NET-01]: Mechanisms exist to develop, govern & update procedures to facilitate the implementation of Network Security Controls (NSC). | [VPM-04]: Mechanisms exist to address new threats and vulnerabilities on an ongoing basis and ensure assets are protected against known attacks. | [VPM-04.1]: Mechanisms exist to install the latest stable version of any software and/or security-related updates on all applicable systems. | [VPM-05]: Mechanisms exist to conduct software patching for all deployed Technology Assets, Applications and/or Services (TAAS), including firmware.",
+        "sub_requirements": [
+            "NET-01",
+            "VPM-04",
+            "VPM-04.1",
+            "VPM-05"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "12.2",
+        "domain": "Network Infrastructure Management",
+        "control_text": "[NET-01]: Mechanisms exist to develop, govern & update procedures to facilitate the implementation of Network Security Controls (NSC). | [NET-02]: Mechanisms exist to implement security functions as a layered structure that minimizes interactions between layers of the design and avoids any dependence by lower layers on the functionality or correctness of higher layers. | [SEA-01]: Mechanisms exist to facilitate the implementation of industry-recognized security, compliance and resilience practices in the specification, design, development, implementation and modification of Technology Assets, Applications and/or Services (TAAS). | [SEA-02]: Mechanisms exist to develop an enterprise architecture, aligned with industry-recognized leading practices, with consideration for security, compliance and resilience principles that addresses risk to organizational operations, assets, individuals and other organizations.",
+        "sub_requirements": [
+            "NET-01",
+            "NET-02",
+            "SEA-01",
+            "SEA-02"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "12.6",
+        "domain": "Network Infrastructure Management",
+        "control_text": "[NET-01]: Mechanisms exist to develop, govern & update procedures to facilitate the implementation of Network Security Controls (NSC). | [NET-04]: Mechanisms exist to implement and govern Access Control Lists (ACLs) to provide data flow enforcement that explicitly restrict network traffic to only what is authorized. | [SEA-01]: Mechanisms exist to facilitate the implementation of industry-recognized security, compliance and resilience practices in the specification, design, development, implementation and modification of Technology Assets, Applications and/or Services (TAAS). | [TDA-02.1]: Mechanisms exist to require the developers of Technology Assets, Applications and/or Services (TAAS) to identify early in the Secure Development Life Cycle (SDLC), the functions, ports, protocols and services intended for use. | [TPM-04.2]: Mechanisms exist to require External Service Providers (ESPs) to identify and document the business need for ports, protocols and other services it requires to operate its Technology Assets, Applications and/or Services (TAAS).",
+        "sub_requirements": [
+            "NET-01",
+            "NET-04",
+            "SEA-01",
+            "TDA-02.1",
+            "TPM-04.2"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "13.5",
+        "domain": "Network Monitoring and Defense",
+        "control_text": "[NET-01.1]: Mechanisms exist to treat all users and devices as potential threats and prevent access to data and resources until the users can be properly authenticated and their access authorized. | [NET-03]: Mechanisms exist to monitor and control communications at the external network boundary and at key internal boundaries within the network. | [NET-14.7]: Automated mechanisms exist to validate the security posture of the endpoint devices (e.g., software versions, patch levels, etc.) prior to allowing devices to connect to organizational Technology Assets, Applications and/or Services (TAAS).",
+        "sub_requirements": [
+            "NET-01.1",
+            "NET-03",
+            "NET-14.7"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "13.4",
+        "domain": "Network Monitoring and Defense",
+        "control_text": "[NET-04]: Mechanisms exist to implement and govern Access Control Lists (ACLs) to provide data flow enforcement that explicitly restrict network traffic to only what is authorized. | [NET-04.1]: Mechanisms exist to configure firewall and router configurations to deny network traffic by default and allow network traffic by exception (e.g., deny all, permit by exception).",
+        "sub_requirements": [
+            "NET-04",
+            "NET-04.1"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "13.3",
+        "domain": "Network Monitoring and Defense",
+        "control_text": "[NET-08]: Mechanisms exist to employ Network Intrusion Detection / Prevention Systems (NIDS/NIPS) to detect and/or prevent intrusions into the network.",
+        "sub_requirements": [
+            "NET-08"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "13.8",
+        "domain": "Network Monitoring and Defense",
+        "control_text": "[NET-08]: Mechanisms exist to employ Network Intrusion Detection / Prevention Systems (NIDS/NIPS) to detect and/or prevent intrusions into the network.",
+        "sub_requirements": [
+            "NET-08"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "4.9",
+        "domain": "Secure Configuration of Enterprise Assets and Software",
+        "control_text": "[NET-10]: Mechanisms exist to ensure Domain Name Service (DNS) resolution is designed, implemented and managed to protect the security of name / address resolution.",
+        "sub_requirements": [
+            "NET-10"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "9.5",
+        "domain": "Email and Web Browser Protections",
+        "control_text": "[NET-10.3]: Mechanisms exist to validate the legitimacy of email communications through configuring a Domain Naming Service (DNS) Sender Policy Framework (SPF) record to specify the IP addresses and/or hostnames that are authorized to send email from the specified domain. | [NET-20.4]: Mechanisms exist to implement domain signature verification protections that authenticate incoming email according to the Domain-based Message Authentication Reporting and Conformance (DMARC).",
+        "sub_requirements": [
+            "NET-10.3",
+            "NET-20.4"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "12.7",
+        "domain": "Network Infrastructure Management",
+        "control_text": "[NET-14]: Mechanisms exist to define, control and review organization-approved, secure remote access methods. | [NET-14.1]: Automated mechanisms exist to monitor and control remote access sessions. | [NET-14.2]: Cryptographic mechanisms exist to protect the confidentiality and integrity of remote access sessions (e.g., VPN). | [NET-14.3]: Mechanisms exist to route all remote accesses through managed network access control points (e.g., VPN concentrator).",
+        "sub_requirements": [
+            "NET-14",
+            "NET-14.1",
+            "NET-14.2",
+            "NET-14.3"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "3.13",
+        "domain": "Data Protection",
+        "control_text": "[NET-17]: Automated mechanisms exist to implement Data Loss Prevention (DLP) to protect sensitive information as it is stored, transmitted and processed.",
+        "sub_requirements": [
+            "NET-17"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "9.2",
+        "domain": "Email and Web Browser Protections",
+        "control_text": "[NET-18]: Mechanisms exist to force Internet-bound network traffic through a proxy device (e.g., Policy Enforcement Point (PEP)) for URL content filtering and DNS filtering to limit a user's ability to connect to dangerous or prohibited Internet sites.",
+        "sub_requirements": [
+            "NET-18"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "9.3",
+        "domain": "Email and Web Browser Protections",
+        "control_text": "[NET-18]: Mechanisms exist to force Internet-bound network traffic through a proxy device (e.g., Policy Enforcement Point (PEP)) for URL content filtering and DNS filtering to limit a user's ability to connect to dangerous or prohibited Internet sites.",
+        "sub_requirements": [
+            "NET-18"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "15.7",
+        "domain": "Service Provider Management",
+        "control_text": "[PRM-05]: Mechanisms exist to identify critical system components and functions by performing a criticality analysis for critical Technology Assets, Applications and/or Services (TAAS) at pre-defined decision points in the Secure Development Life Cycle (SDLC). | [PRM-06]: Mechanisms exist to define business processes with consideration for security, compliance and resilience that determines:  (1) The resulting risk to organizational operations, assets, individuals and other organizations; and (2) Information protection needs arising from the defined business processes and revises the processes as necessary, until an achievable set of protection needs is obtained. | [PRM-07]: Mechanisms exist to ensure changes to Technology Assets, Applications and/or Services (TAAS) within the Secure Development Life Cycle (SDLC) are controlled through formal change control procedures. | [TDA-01]: Mechanisms exist to facilitate the implementation of tailored development and acquisition strategies, contract tools and procurement methods to meet unique business needs. | [TDA-01.1]: Mechanisms exist to design and implement product management processes to proactively govern the design, development and production of Technology Assets, Applications and/or Services (TAAS) across the System Development Life Cycle (SDLC) to: (1) Improve functionality; (2) Enhance security and resiliency capabilities;  (3) Correct security deficiencies; and (4) Conform with applicable statutory, regulatory and/or contractual obligations. | [TPM-10]: Mechanisms exist to control changes to services by suppliers, taking into account the criticality of business Technology Assets, Applications, Services and/or Data (TAASD) that are in scope by the third-party.",
+        "sub_requirements": [
+            "PRM-05",
+            "PRM-06",
+            "PRM-07",
+            "TDA-01",
+            "TDA-01.1",
+            "TPM-10"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "16.6",
+        "domain": "Application Software Security",
+        "control_text": "[RSK-01]: Mechanisms exist to facilitate the implementation of strategic, operational and tactical risk management controls. | [RSK-01.1]: Mechanisms exist to identify: (1) Assumptions affecting risk assessments, risk response and risk monitoring; (2) Constraints affecting risk assessments, risk response and risk monitoring; (3) The organizational risk tolerance; and (4) Priorities, benefits and trade-offs considered by the organization for managing risk. | [RSK-02]: Mechanisms exist to categorize Technology Assets, Applications, Services and/or Data (TAASD) in accordance with applicable laws, regulations and contractual obligations that: (1) Document the security categorization results (including supporting rationale) in the security plan for systems; and (2) Ensure the security categorization decision is reviewed and approved by the asset owner. | [RSK-02.1]: Mechanisms exist to prioritize the impact level for Technology Assets, Applications and/or Services (TAAS) to prevent potential disruptions.",
+        "sub_requirements": [
+            "RSK-01",
+            "RSK-01.1",
+            "RSK-02",
+            "RSK-02.1"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "18.3",
+        "domain": "Penetration Testing",
+        "control_text": "[RSK-06]: Mechanisms exist to remediate risks to an acceptable level. | [VPM-04]: Mechanisms exist to address new threats and vulnerabilities on an ongoing basis and ensure assets are protected against known attacks. | [VPM-05]: Mechanisms exist to conduct software patching for all deployed Technology Assets, Applications and/or Services (TAAS), including firmware.",
+        "sub_requirements": [
+            "RSK-06",
+            "VPM-04",
+            "VPM-05"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "15.2",
+        "domain": "Service Provider Management",
+        "control_text": "[RSK-09]: Mechanisms exist to develop a plan for Supply Chain Risk Management (SCRM) associated with the development, acquisition, maintenance and disposal of Technology Assets, Applications and/or Services (TAAS), including documenting selected mitigating actions and monitoring performance against those plans. | [TPM-01]: Mechanisms exist to facilitate the implementation of third-party management controls.",
+        "sub_requirements": [
+            "RSK-09",
+            "TPM-01"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "15.5",
+        "domain": "Service Provider Management",
+        "control_text": "[RSK-09.1]: Mechanisms exist to periodically assess supply chain risks associated with Technology Assets, Applications and/or Services (TAAS). | [TPM-04]: Mechanisms exist to mitigate the risks associated with third-party access to the organization's Technology Assets, Applications, Services and/or Data (TAASD). | [TPM-04.1]: Mechanisms exist to conduct a risk assessment prior to the acquisition or outsourcing of technology-related Technology Assets, Applications and/or Services (TAAS).",
+        "sub_requirements": [
+            "RSK-09.1",
+            "TPM-04",
+            "TPM-04.1"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "16.0",
+        "domain": "Application Software Security",
+        "control_text": "[SEA-01]: Mechanisms exist to facilitate the implementation of industry-recognized security, compliance and resilience practices in the specification, design, development, implementation and modification of Technology Assets, Applications and/or Services (TAAS). | [TDA-01]: Mechanisms exist to facilitate the implementation of tailored development and acquisition strategies, contract tools and procurement methods to meet unique business needs. | [TDA-06]: Mechanisms exist to develop applications based on Secure Software Development Practices (SSDP). | [WEB-07]: Mechanisms exist to ensure the Open Web Application Security Project (OWASP) Application Security Verification Standard is incorporated into the organization's Secure Systems Development Lifecycle (SSDLC) process. | [WEB-08]: Mechanisms exist to ensure a robust Web Application Framework is used to aid in the development of secure web applications, including web services, web resources and web APIs.",
+        "sub_requirements": [
+            "SEA-01",
+            "TDA-01",
+            "TDA-06",
+            "WEB-07",
+            "WEB-08"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "16.1",
+        "domain": "Application Software Security",
+        "control_text": "[SEA-01]: Mechanisms exist to facilitate the implementation of industry-recognized security, compliance and resilience practices in the specification, design, development, implementation and modification of Technology Assets, Applications and/or Services (TAAS). | [SEA-01.1]: Mechanisms exist to centrally-manage the organization-wide management and implementation of security, compliance and resilience controls and related processes. | [SEA-02]: Mechanisms exist to develop an enterprise architecture, aligned with industry-recognized leading practices, with consideration for security, compliance and resilience principles that addresses risk to organizational operations, assets, individuals and other organizations. | [TDA-02.3]: Mechanisms exist to require software developers to ensure that their software development processes employ industry-recognized secure practices for secure programming, engineering methods, quality control processes and validation techniques to minimize flawed and/or malformed software. | [TDA-05]: Mechanisms exist to require the developers of Technology Assets, Applications and/or Services (TAAS) to produce a design specification and security architecture that:  (1) Is consistent with and supportive of the organization's security architecture which is established within and is an integrated part of the organization's enterprise architecture; (2) Accurately and completely describes the required security functionality and the allocation of security, compliance and resilience controls among physical and logical components; and (3) Expresses how individual security functions, mechanisms and services work together to provide required security capabilities and a unified approach to protection. | [TDA-06]: Mechanisms exist to develop applications based on Secure Software Development Practices (SSDP). | [TDA-06.3]: Mechanisms exist to utilize a Software Assurance Maturity Model (SAMM) to govern a secure development lifecycle for the development of Technology Assets, Applications and/or Services (TAAS). | [TDA-09.6]: Mechanisms exist to implement secure configuration settings by default to reduce the likelihood of Technology Assets, Applications and/or Services (TAAS) being deployed with weak security settings that would put the TAAS at a greater risk of compromise. | [TDA-16]: Mechanisms exist to require the developers of Technology Assets, Applications and/or Services (TAAS) to provide training on the correct use and operation of the Technology Asset, Application and/or Service (TAAS). | [WEB-07]: Mechanisms exist to ensure the Open Web Application Security Project (OWASP) Application Security Verification Standard is incorporated into the organization's Secure Systems Development Lifecycle (SSDLC) process. | [WEB-08]: Mechanisms exist to ensure a robust Web Application Framework is used to aid in the development of secure web applications, including web services, web resources and web APIs.",
+        "sub_requirements": [
+            "SEA-01",
+            "SEA-01.1",
+            "SEA-02",
+            "TDA-02.3",
+            "TDA-05",
+            "TDA-06",
+            "TDA-06.3",
+            "TDA-09.6",
+            "TDA-16",
+            "WEB-07",
+            "WEB-08"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "14.0",
+        "domain": "Security Awareness and Skills Training",
+        "control_text": "[SAT-01]: Mechanisms exist to facilitate the implementation of security workforce development and awareness controls.",
+        "sub_requirements": [
+            "SAT-01"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "14.1",
+        "domain": "Security Awareness and Skills Training",
+        "control_text": "[SAT-01]: Mechanisms exist to facilitate the implementation of security workforce development and awareness controls.",
+        "sub_requirements": [
+            "SAT-01"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "14.3",
+        "domain": "Security Awareness and Skills Training",
+        "control_text": "[SAT-02]: Mechanisms exist to provide all employees and contractors appropriate security, compliance and resilience awareness education and training that is relevant for their job function. | [SAT-03]: Mechanisms exist to provide role-based security, compliance and resilience-related training:  (1) Before authorizing access to the system or performing assigned duties;  (2) When required by system changes; and  (3) Annually thereafter.",
+        "sub_requirements": [
+            "SAT-02",
+            "SAT-03"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "14.7",
+        "domain": "Security Awareness and Skills Training",
+        "control_text": "[SAT-02]: Mechanisms exist to provide all employees and contractors appropriate security, compliance and resilience awareness education and training that is relevant for their job function. | [SAT-03]: Mechanisms exist to provide role-based security, compliance and resilience-related training:  (1) Before authorizing access to the system or performing assigned duties;  (2) When required by system changes; and  (3) Annually thereafter.",
+        "sub_requirements": [
+            "SAT-02",
+            "SAT-03"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "14.8",
+        "domain": "Security Awareness and Skills Training",
+        "control_text": "[SAT-02]: Mechanisms exist to provide all employees and contractors appropriate security, compliance and resilience awareness education and training that is relevant for their job function. | [SAT-03]: Mechanisms exist to provide role-based security, compliance and resilience-related training:  (1) Before authorizing access to the system or performing assigned duties;  (2) When required by system changes; and  (3) Annually thereafter.",
+        "sub_requirements": [
+            "SAT-02",
+            "SAT-03"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "14.2",
+        "domain": "Security Awareness and Skills Training",
+        "control_text": "[SAT-02.2]: Mechanisms exist to include awareness training on recognizing and reporting potential and actual instances of social engineering and social mining.",
+        "sub_requirements": [
+            "SAT-02.2"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "14.4",
+        "domain": "Security Awareness and Skills Training",
+        "control_text": "[SAT-03]: Mechanisms exist to provide role-based security, compliance and resilience-related training:  (1) Before authorizing access to the system or performing assigned duties;  (2) When required by system changes; and  (3) Annually thereafter.",
+        "sub_requirements": [
+            "SAT-03"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "14.9",
+        "domain": "Security Awareness and Skills Training",
+        "control_text": "[SAT-03]: Mechanisms exist to provide role-based security, compliance and resilience-related training:  (1) Before authorizing access to the system or performing assigned duties;  (2) When required by system changes; and  (3) Annually thereafter. | [SAT-03.1]: Mechanisms exist to include practical exercises in security, compliance and resilience training that reinforce training objectives. | [SAT-03.7]: Mechanisms exist to ensure security, compliance and resilience personnel receive Continuing Professional Education (CPE) training to maintain currency and proficiency with industry-recognized secure practices that are pertinent to their assigned roles and responsibilities.",
+        "sub_requirements": [
+            "SAT-03",
+            "SAT-03.1",
+            "SAT-03.7"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "16.9",
+        "domain": "Application Software Security",
+        "control_text": "[SAT-03]: Mechanisms exist to provide role-based security, compliance and resilience-related training:  (1) Before authorizing access to the system or performing assigned duties;  (2) When required by system changes; and  (3) Annually thereafter. | [SAT-03.8]: Mechanisms exist to ensure application development and operations (DevOps) personnel receive Continuing Professional Education (CPE) training on Secure Software Development Practices (SSDP) to appropriately address evolving threats.",
+        "sub_requirements": [
+            "SAT-03",
+            "SAT-03.8"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "14.6",
+        "domain": "Security Awareness and Skills Training",
+        "control_text": "[SAT-03.2]: Mechanisms exist to provide training to personnel on organization-defined indicators of malware to recognize suspicious communications and anomalous behavior.",
+        "sub_requirements": [
+            "SAT-03.2"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "14.5",
+        "domain": "Security Awareness and Skills Training",
+        "control_text": "[SAT-03.3]: Mechanisms exist to ensure that every user accessing a system processing, storing or transmitting sensitive/regulated data is formally trained in data handling requirements.",
+        "sub_requirements": [
+            "SAT-03.3"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "16.4",
+        "domain": "Application Software Security",
+        "control_text": "[TDA-02]: Mechanisms exist to design, develop and produce Technology Assets, Applications and/or Services (TAAS) in such a way that risk-based technical and functional specifications ensure Minimum Viable Product (MVP) criteria establish an appropriate level of security and resiliency based on applicable risks and threats. | [TDA-02.1]: Mechanisms exist to require the developers of Technology Assets, Applications and/or Services (TAAS) to identify early in the Secure Development Life Cycle (SDLC), the functions, ports, protocols and services intended for use. | [TDA-02.5]: Mechanisms exist to require process owners to identify, document and justify the business need for the ports, protocols and other services necessary to operate their technology solutions. | [TDA-04.2]: Mechanisms exist to generate, or obtain, a Software Bill of Materials (SBOM) for Technology Assets, Applications and/or Services (TAAS) that lists software packages in use, including versions and applicable licenses.",
+        "sub_requirements": [
+            "TDA-02",
+            "TDA-02.1",
+            "TDA-02.5",
+            "TDA-04.2"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "16.2",
+        "domain": "Application Software Security",
+        "control_text": "[TDA-04.2]: Mechanisms exist to generate, or obtain, a Software Bill of Materials (SBOM) for Technology Assets, Applications and/or Services (TAAS) that lists software packages in use, including versions and applicable licenses. | [TDA-06.2]: Mechanisms exist to perform threat modelling and other secure design techniques, to ensure that threats to software and solutions are identified and accounted for. | [TDA-06.5]: Mechanisms exist to have an independent review of the software design to validate: (1) Applicable security, compliance and resilience requirements are met; and (2) Identified risks are remediated. | [TDA-09]: Mechanisms exist to require system developers/integrators consult with security, compliance and/or resilience personnel to:  (1) Create and implement a Security Testing and Evaluation (ST&E) plan, or similar capability; (2) Implement a verifiable flaw remediation process to correct weaknesses and deficiencies identified during the control testing and evaluation process; and (3) Document the results. | [TDA-09.1]: Mechanisms exist to require the developers of Technology Assets, Applications and/or Services (TAAS) to produce a plan for the continuous monitoring of security, compliance and/or resilience control effectiveness. | [TDA-15]: Mechanisms exist to require system developers and integrators to develop and implement an ongoing Security Testing and Evaluation (ST&E) plan, or similar process, to objectively identify and remediate vulnerabilities prior to release to production. | [THR-06]: Mechanisms exist to establish a Vulnerability Disclosure Program (VDP) to assist with the secure development and maintenance of Technology Assets, Applications and/or Services (TAAS) that receives unsolicited input from the public about vulnerabilities in organizational TAAS.",
+        "sub_requirements": [
+            "TDA-04.2",
+            "TDA-06.2",
+            "TDA-06.5",
+            "TDA-09",
+            "TDA-09.1",
+            "TDA-15",
+            "THR-06"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "16.11",
+        "domain": "Application Software Security",
+        "control_text": "[TDA-06]: Mechanisms exist to develop applications based on Secure Software Development Practices (SSDP). | [TDA-06.3]: Mechanisms exist to utilize a Software Assurance Maturity Model (SAMM) to govern a secure development lifecycle for the development of Technology Assets, Applications and/or Services (TAAS). | [TDA-12]: Mechanisms exist to custom-develop critical system components, when Commercial Off The Shelf (COTS) solutions are unavailable. | [TDA-14]: Mechanisms exist to require system developers and integrators to perform configuration management during system design, development, implementation and operation. | [TDA-14.1]: Mechanisms exist to require developers of Technology Assets, Applications and/or Services (TAAS) to enable integrity verification of software and firmware components.",
+        "sub_requirements": [
+            "TDA-06",
+            "TDA-06.3",
+            "TDA-12",
+            "TDA-14",
+            "TDA-14.1"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "16.14",
+        "domain": "Application Software Security",
+        "control_text": "[TDA-06.2]: Mechanisms exist to perform threat modelling and other secure design techniques, to ensure that threats to software and solutions are identified and accounted for.",
+        "sub_requirements": [
+            "TDA-06.2"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "16.12",
+        "domain": "Application Software Security",
+        "control_text": "[TDA-06.5]: Mechanisms exist to have an independent review of the software design to validate: (1) Applicable security, compliance and resilience requirements are met; and (2) Identified risks are remediated. | [TDA-09]: Mechanisms exist to require system developers/integrators consult with security, compliance and/or resilience personnel to:  (1) Create and implement a Security Testing and Evaluation (ST&E) plan, or similar capability; (2) Implement a verifiable flaw remediation process to correct weaknesses and deficiencies identified during the control testing and evaluation process; and (3) Document the results. | [TDA-09.2]: Mechanisms exist to require the developers of Technology Assets, Applications and/or Services (TAAS) to employ static code analysis tools to identify and remediate common flaws and document the results of the analysis. | [TDA-09.3]: Mechanisms exist to require the developers of Technology Assets, Applications and/or Services (TAAS) to employ dynamic code analysis tools to identify and remediate common flaws and document the results of the analysis.",
+        "sub_requirements": [
+            "TDA-06.5",
+            "TDA-09",
+            "TDA-09.2",
+            "TDA-09.3"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "16.8",
+        "domain": "Application Software Security",
+        "control_text": "[TDA-07]: Mechanisms exist to maintain a segmented development network to ensure a secure development environment. | [TDA-08]: Mechanisms exist to manage separate development, testing and operational environments to reduce the risks of unauthorized access or changes to the operational environment and to ensure no impact to production Technology Assets, Applications and/or Services (TAAS).",
+        "sub_requirements": [
+            "TDA-07",
+            "TDA-08"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "16.13",
+        "domain": "Application Software Security",
+        "control_text": "[TDA-09.5]: Mechanisms exist to perform application-level penetration testing of custom-made Technology Assets, Applications and/or Services (TAAS).",
+        "sub_requirements": [
+            "TDA-09.5"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "15.0",
+        "domain": "Service Provider Management",
+        "control_text": "[TPM-01]: Mechanisms exist to facilitate the implementation of third-party management controls. | [TPM-05.4]: Mechanisms exist to document and maintain a Responsible, Accountable, Supportive, Consulted & Informed (RASCI) matrix, or similar documentation, to delineate assignment for security, compliance and resilience controls between internal stakeholders and External Service Providers (ESPs). | [TPM-05.5]: Mechanisms exist to perform recurring validation of the Responsible, Accountable, Supportive, Consulted & Informed (RASCI) matrix, or similar documentation, to ensure security, compliance and resilience control assignments accurately reflect current: (1) Contractual obligations for the External Service Provider (ESP); (2) Business practices; (3) Applicable stakeholders; and (4) Deployed Technology Assets, Applications and/or Services (TAAS). | [TPM-08]: Mechanisms exist to monitor, regularly review and assess External Service Providers (ESPs) for compliance with established contractual requirements for security, compliance and resilience controls.",
+        "sub_requirements": [
+            "TPM-01",
+            "TPM-05.4",
+            "TPM-05.5",
+            "TPM-08"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "15.1",
+        "domain": "Service Provider Management",
+        "control_text": "[TPM-01.1]: Mechanisms exist to maintain a current, accurate and complete list of External Service Providers (ESPs) that can potentially impact the Confidentiality, Integrity, Availability and/or Safety (CIAS) of the organization's Technology Assets, Applications, Services and/or Data (TAASD).",
+        "sub_requirements": [
+            "TPM-01.1"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "15.3",
+        "domain": "Service Provider Management",
+        "control_text": "[TPM-02]: Mechanisms exist to identify, prioritize and assess suppliers and partners of critical Technology Assets, Applications and/or Services (TAAS) using a supply chain risk assessment process relative to their importance in supporting the delivery of high-value services.",
+        "sub_requirements": [
+            "TPM-02"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "15.6",
+        "domain": "Service Provider Management",
+        "control_text": "[TPM-08]: Mechanisms exist to monitor, regularly review and assess External Service Providers (ESPs) for compliance with established contractual requirements for security, compliance and resilience controls.",
+        "sub_requirements": [
+            "TPM-08"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "7.0",
+        "domain": "Continuous Vulnerability Management",
+        "control_text": "[VPM-01]: Mechanisms exist to facilitate the implementation and monitoring of vulnerability management controls. | [VPM-04]: Mechanisms exist to address new threats and vulnerabilities on an ongoing basis and ensure assets are protected against known attacks.",
+        "sub_requirements": [
+            "VPM-01",
+            "VPM-04"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "7.1",
+        "domain": "Continuous Vulnerability Management",
+        "control_text": "[VPM-01]: Mechanisms exist to facilitate the implementation and monitoring of vulnerability management controls.",
+        "sub_requirements": [
+            "VPM-01"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "18.0",
+        "domain": "Penetration Testing",
+        "control_text": "[VPM-01]: Mechanisms exist to facilitate the implementation and monitoring of vulnerability management controls. | [VPM-07]: Mechanisms exist to conduct penetration testing on Technology Assets, Applications and/or Services (TAAS).",
+        "sub_requirements": [
+            "VPM-01",
+            "VPM-07"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "7.2",
+        "domain": "Continuous Vulnerability Management",
+        "control_text": "[VPM-02]: Mechanisms exist to ensure that vulnerabilities are properly identified, tracked and remediated.",
+        "sub_requirements": [
+            "VPM-02"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "7.7",
+        "domain": "Continuous Vulnerability Management",
+        "control_text": "[VPM-02]: Mechanisms exist to ensure that vulnerabilities are properly identified, tracked and remediated. | [VPM-04]: Mechanisms exist to address new threats and vulnerabilities on an ongoing basis and ensure assets are protected against known attacks.",
+        "sub_requirements": [
+            "VPM-02",
+            "VPM-04"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "7.3",
+        "domain": "Continuous Vulnerability Management",
+        "control_text": "[VPM-05]: Mechanisms exist to conduct software patching for all deployed Technology Assets, Applications and/or Services (TAAS), including firmware.",
+        "sub_requirements": [
+            "VPM-05"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "7.4",
+        "domain": "Continuous Vulnerability Management",
+        "control_text": "[VPM-05]: Mechanisms exist to conduct software patching for all deployed Technology Assets, Applications and/or Services (TAAS), including firmware. | [VPM-05.1]: Mechanisms exist to centrally-manage the flaw remediation process. | [VPM-05.2]: Automated mechanisms exist to determine the state of system components with regard to flaw remediation. | [VPM-05.4]: Automated mechanisms exist to install the latest stable versions of security-relevant software and firmware updates.",
+        "sub_requirements": [
+            "VPM-05",
+            "VPM-05.1",
+            "VPM-05.2",
+            "VPM-05.4"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "7.5",
+        "domain": "Continuous Vulnerability Management",
+        "control_text": "[VPM-06]: Mechanisms exist to detect vulnerabilities and configuration errors by routine vulnerability scanning of systems and applications. | [VPM-06.7]: Mechanisms exist to perform quarterly internal vulnerability scans, which includes all segments of the organization's internal network, as well as rescans until passing results are obtained or all “high” vulnerabilities are resolved, as defined by the Common Vulnerability Scoring System (CVSS).",
+        "sub_requirements": [
+            "VPM-06",
+            "VPM-06.7"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "7.6",
+        "domain": "Continuous Vulnerability Management",
+        "control_text": "[VPM-06]: Mechanisms exist to detect vulnerabilities and configuration errors by routine vulnerability scanning of systems and applications. | [VPM-06.6]: Mechanisms exist to perform quarterly external vulnerability scans (outside the organization's network looking inward) via a reputable vulnerability service provider, which include rescans until passing results are obtained or all “high” vulnerabilities are resolved, as defined by the Common Vulnerability Scoring System (CVSS).",
+        "sub_requirements": [
+            "VPM-06",
+            "VPM-06.6"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "18.1",
+        "domain": "Penetration Testing",
+        "control_text": "[VPM-07]: Mechanisms exist to conduct penetration testing on Technology Assets, Applications and/or Services (TAAS).",
+        "sub_requirements": [
+            "VPM-07"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "18.2",
+        "domain": "Penetration Testing",
+        "control_text": "[VPM-07]: Mechanisms exist to conduct penetration testing on Technology Assets, Applications and/or Services (TAAS).",
+        "sub_requirements": [
+            "VPM-07"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "CIS Controls",
+        "version": "8.1",
+        "requirement_id": "18.5",
+        "domain": "Penetration Testing",
+        "control_text": "[VPM-07]: Mechanisms exist to conduct penetration testing on Technology Assets, Applications and/or Services (TAAS).",
+        "sub_requirements": [
+            "VPM-07"
+        ],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    }
+]

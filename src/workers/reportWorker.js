@@ -2,10 +2,17 @@ import fs from "fs";
 import path from "path";
 import PDFDocument from "pdfkit";
 import { reportQueue } from "../utils/queue.js";
-import { AuditReport } from "../../database/index.js";
+import { AuditReport, CampaignReport, Campaign } from "../../database/index.js";
+import { connectDB } from "../../database/connection.js";
 import { logger } from "../utils/logger.js";
 import { recordAudit } from "../utils/auditLogger.js";
 import { entityType, auditAction } from "../utils/constant/enums.js";
+import * as reportService from "../modules/phishing/services/report.service.js";
+import * as campaignService from "../modules/phishing/services/campaign.service.js";
+import dotenv from "dotenv";
+
+dotenv.config({ path: "./config/.env" });
+await connectDB();
 
 const reportDir = process.env.REPORT_DIR || "uploads/reports";
 fs.mkdirSync(reportDir, { recursive: true });
@@ -67,6 +74,30 @@ reportQueue.process("generateAuditReport", async (job) => {
         report.status = "draft";
         await report.save();
         logger.error(`Report generation failed for ${reportId}: ${err.message}`);
+        throw err;
+    }
+});
+
+reportQueue.process("generatePhishingReport", async (job) => {
+    const { reportId, campaignId } = job.data;
+
+    const report = await CampaignReport.findById(reportId);
+    const campaign = await Campaign.findById(campaignId);
+    if (!report || !campaign) throw new Error("Phishing report or campaign not found");
+
+    try {
+        const stats = await campaignService.getCampaignStats(campaignId);
+        const pdfPath = await reportService.generatePhishingPdf(report, campaign, stats);
+
+        report.pdfPath = pdfPath;
+        report.generatedAt = new Date();
+        report.stats = stats;
+        await report.save();
+
+        logger.info(`Phishing report PDF generated: ${campaignId}`);
+        return { reportId, pdfPath, stats };
+    } catch (err) {
+        logger.error(`Phishing report generation failed for ${campaignId}: ${err.message}`);
         throw err;
     }
 });

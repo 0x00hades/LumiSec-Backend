@@ -18,6 +18,11 @@ export const bootstrap = (app, express) => {
         res.sendFile(path.resolve(__dirname, "../docs/grc-openapi.json"));
     });
 
+    // SOAR OpenAPI documentation
+    app.get("/api/soar/docs/openapi.json", (_req, res) => {
+        res.sendFile(path.resolve(__dirname, "../docs/soar-openapi.json"));
+    });
+
     // API Routes
     app.use("/api/auth",     authRouter);
     app.use("/api/phishing", phishingRouter);

@@ -1,112 +1,224 @@
-import { Campaign, Recipient, PhishingEvent } from "../../../database/index.js";
-import { AppError } from "../../utils/appError.js";
 import { successResponse, paginatedResponse } from "../../utils/apiResponse.js";
 import { messages } from "../../utils/constant/messages.js";
-import { emailQueue } from "../../utils/queue.js";
-import { emitAlert } from "../../utils/socket.js";
-import { calculatePenalty } from "../../utils/helpers/penaltyCalc.js";
-import { campaignStatus } from "../../utils/constant/enums.js";
+import * as templateService from "./services/template.service.js";
+import * as landingPageService from "./services/landingPage.service.js";
+import * as recipientService from "./services/recipient.service.js";
+import * as campaignService from "./services/campaign.service.js";
+import * as trackingService from "./services/tracking.service.js";
+import * as reportService from "./services/report.service.js";
+import * as dashboardService from "./services/dashboard.service.js";
+import * as integrationService from "./services/integration.service.js";
 
-export const createCampaign = async (req, res, next) => {
-    const { name, description, template, landingPageUrl, trackingDomain } = req.body;
-    const createdBy = req.authUser._id;
-
-    const campaign = await Campaign.create({ name, description, template, landingPageUrl, trackingDomain, createdBy });
-
-    return successResponse(res, {
-        message: messages.campaign.createdSuccessfully,
-        data: campaign,
-        statusCode: 201
-    });
+// ─── Templates ───────────────────────────────────────────────────────────────
+export const createTemplate = async (req, res) => {
+    const data = await templateService.createTemplate(req.body, req.authUser);
+    return successResponse(res, { message: messages.template.createdSuccessfully, data, statusCode: 201 });
 };
 
-export const launchCampaign = async (req, res, next) => {
-    const { campaignId } = req.params;
-
-    const campaign = await Campaign.findById(campaignId);
-    if (!campaign) return next(new AppError(messages.campaign.notFound, 404));
-    if (campaign.status !== campaignStatus.DRAFT) {
-        return next(new AppError("Campaign already launched", 400));
-    }
-
-    const recipients = await Recipient.find({ campaign: campaignId, emailSent: false });
-    if (!recipients.length) return next(new AppError("No recipients found for this campaign", 400));
-
-    // Queue all emails
-    for (const recipient of recipients) {
-        await emailQueue.add("sendPhishingEmail", {
-            recipientId: recipient._id,
-            campaignId,
-            to: recipient.email,
-            subject: campaign.template.subject,
-            htmlBody: campaign.template.htmlBody,
-            from: `${campaign.template.senderName} <${campaign.template.senderEmail}>`,
-            trackingId: recipient.trackingId,
-            trackingDomain: campaign.trackingDomain
-        });
-    }
-
-    campaign.status = campaignStatus.ACTIVE;
-    campaign.launchedAt = new Date();
-    await campaign.save();
-
-    return successResponse(res, {
-        message: messages.campaign.launchedSuccessfully,
-        data: { queued: recipients.length }
-    });
+export const getTemplates = async (req, res) => {
+    const result = await templateService.listTemplates(req.query);
+    return paginatedResponse(res, { message: "Templates fetched", ...result });
 };
 
-export const trackEvent = async (req, res, next) => {
-    const { trackingId } = req.params;
-    const { type } = req.body;
-
-    const recipient = await Recipient.findOne({ trackingId });
-    if (!recipient) return next(new AppError("Invalid tracking ID", 404));
-
-    const penalty = calculatePenalty(type);
-
-    // Record event
-    await PhishingEvent.create({
-        recipient: recipient._id,
-        campaign: recipient.campaign,
-        type,
-        ipAddress: req.ip,
-        userAgent: req.headers["user-agent"],
-        penalty
-    });
-
-    // Deduct risk score
-    recipient.riskScore = Math.max(0, recipient.riskScore - penalty);
-    await recipient.save();
-
-    // Update campaign stats
-    await Campaign.findByIdAndUpdate(recipient.campaign, { $inc: { [`stats.${type}s`]: 1 } });
-
-    // Real-time alert to SOC
-    emitAlert("soc_analyst", "phishing:event", {
-        campaignId: recipient.campaign,
-        email: recipient.email,
-        type,
-        riskScore: recipient.riskScore
-    });
-
-    // Return 1x1 pixel for open tracking
-    if (type === "open") {
-        res.set("Content-Type", "image/gif");
-        return res.send(Buffer.from("R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7", "base64"));
-    }
-
-    return successResponse(res, { message: "Event tracked", data: null });
+export const getTemplate = async (req, res) => {
+    const data = await templateService.getTemplateById(req.params.id);
+    return successResponse(res, { message: "Template fetched", data });
 };
 
-export const getCampaigns = async (req, res, next) => {
-    const { page = 1, limit = 20 } = req.query;
-    const skip = (page - 1) * limit;
+export const updateTemplate = async (req, res) => {
+    const data = await templateService.updateTemplate(req.params.id, req.body);
+    return successResponse(res, { message: messages.template.updatedSuccessfully, data });
+};
 
-    const [campaigns, total] = await Promise.all([
-        Campaign.find().sort({ createdAt: -1 }).skip(skip).limit(Number(limit)).populate("createdBy", "name email"),
-        Campaign.countDocuments()
-    ]);
+export const deleteTemplate = async (req, res) => {
+    await templateService.deleteTemplate(req.params.id);
+    return successResponse(res, { message: messages.template.deletedSuccessfully, data: null });
+};
 
-    return paginatedResponse(res, { message: "Campaigns fetched", data: campaigns, page: Number(page), limit: Number(limit), total });
+// ─── Landing Pages ───────────────────────────────────────────────────────────
+export const createLandingPage = async (req, res) => {
+    const data = await landingPageService.createLandingPage(req.body, req.authUser);
+    return successResponse(res, { message: messages.landingPage.createdSuccessfully, data, statusCode: 201 });
+};
+
+export const getLandingPages = async (req, res) => {
+    const result = await landingPageService.listLandingPages(req.query);
+    return paginatedResponse(res, { message: "Landing pages fetched", ...result });
+};
+
+export const getLandingPage = async (req, res) => {
+    const data = await landingPageService.getLandingPageById(req.params.id);
+    return successResponse(res, { message: "Landing page fetched", data });
+};
+
+export const updateLandingPage = async (req, res) => {
+    const data = await landingPageService.updateLandingPage(req.params.id, req.body);
+    return successResponse(res, { message: messages.landingPage.updatedSuccessfully, data });
+};
+
+export const deleteLandingPage = async (req, res) => {
+    await landingPageService.deleteLandingPage(req.params.id);
+    return successResponse(res, { message: messages.landingPage.deletedSuccessfully, data: null });
+};
+
+// ─── Recipients ──────────────────────────────────────────────────────────────
+export const importRecipients = async (req, res) => {
+    const result = await recipientService.importRecipients(req.body);
+    return successResponse(res, { message: messages.recipient.importedSuccessfully, data: result, statusCode: 201 });
+};
+
+export const getRecipients = async (req, res) => {
+    const result = await recipientService.listRecipients(req.query);
+    return paginatedResponse(res, { message: "Recipients fetched", ...result });
+};
+
+export const getRecipient = async (req, res) => {
+    const data = await recipientService.getRecipientById(req.params.id);
+    return successResponse(res, { message: "Recipient fetched", data });
+};
+
+export const updateRecipient = async (req, res) => {
+    const data = await recipientService.updateRecipient(req.params.id, req.body);
+    return successResponse(res, { message: messages.recipient.updatedSuccessfully, data });
+};
+
+export const deleteRecipient = async (req, res) => {
+    await recipientService.deleteRecipient(req.params.id);
+    return successResponse(res, { message: messages.recipient.deletedSuccessfully, data: null });
+};
+
+// ─── Campaigns ───────────────────────────────────────────────────────────────
+export const createCampaign = async (req, res) => {
+    const data = await campaignService.createCampaign(req.body, req.authUser);
+    return successResponse(res, { message: messages.campaign.createdSuccessfully, data, statusCode: 201 });
+};
+
+export const getCampaigns = async (req, res) => {
+    const result = await campaignService.listCampaigns(req.query);
+    return paginatedResponse(res, { message: "Campaigns fetched", ...result });
+};
+
+export const getCampaign = async (req, res) => {
+    const data = await campaignService.getCampaignById(req.params.id);
+    return successResponse(res, { message: "Campaign fetched", data });
+};
+
+export const updateCampaign = async (req, res) => {
+    const data = await campaignService.updateCampaign(req.params.id, req.body);
+    return successResponse(res, { message: messages.campaign.updatedSuccessfully, data });
+};
+
+export const deleteCampaign = async (req, res) => {
+    await campaignService.deleteCampaign(req.params.id);
+    return successResponse(res, { message: messages.campaign.deletedSuccessfully, data: null });
+};
+
+export const addCampaignRecipients = async (req, res) => {
+    const data = await campaignService.addRecipientsToCampaign(req.params.id, req.body.recipients);
+    return successResponse(res, { message: messages.recipient.importedSuccessfully, data, statusCode: 201 });
+};
+
+export const launchCampaign = async (req, res) => {
+    const data = await campaignService.launchCampaign(req.params.id, req.body.trackingDomain);
+    return successResponse(res, { message: messages.campaign.launchedSuccessfully, data });
+};
+
+export const pauseCampaign = async (req, res) => {
+    const data = await campaignService.pauseCampaign(req.params.id);
+    return successResponse(res, { message: messages.campaign.pausedSuccessfully, data });
+};
+
+export const resumeCampaign = async (req, res) => {
+    const data = await campaignService.resumeCampaign(req.params.id);
+    return successResponse(res, { message: messages.campaign.resumedSuccessfully, data });
+};
+
+export const stopCampaign = async (req, res) => {
+    const data = await campaignService.stopCampaign(req.params.id);
+    return successResponse(res, { message: messages.campaign.stoppedSuccessfully, data });
+};
+
+// ─── Tracking (public) ───────────────────────────────────────────────────────
+export const trackOpen = async (req, res) => {
+    const pixel = await trackingService.trackOpen(req.params.trackingId, req);
+    res.set("Content-Type", "image/gif");
+    return res.send(pixel);
+};
+
+export const trackClick = async (req, res) => {
+    const { redirect } = await trackingService.trackClick(req.params.trackingId, req);
+    return res.redirect(redirect);
+};
+
+export const trackVisit = async (req, res) => {
+    await trackingService.trackVisit(req.params.trackingId, req);
+    return successResponse(res, { message: "Visit tracked", data: null });
+};
+
+export const trackSubmit = async (req, res) => {
+    await trackingService.trackSubmit(req.params.trackingId, req);
+    return successResponse(res, { message: "Submission tracked", data: null });
+};
+
+export const trackDownload = async (req, res) => {
+    await trackingService.trackDownload(req.params.trackingId, req);
+    return successResponse(res, { message: "Download tracked", data: null });
+};
+
+// ─── Reports ─────────────────────────────────────────────────────────────────
+export const generateReport = async (req, res) => {
+    const data = await reportService.queueReportGeneration(req.params.campaignId, req.authUser);
+    return successResponse(res, { message: messages.phishingReport.generateQueued, data, statusCode: 202 });
+};
+
+export const downloadReport = async (req, res) => {
+    const report = await reportService.getReportDownload(req.params.campaignId);
+    return res.download(report.pdfPath);
+};
+
+export const getReportStats = async (req, res) => {
+    const data = await reportService.getReportStats(req.params.campaignId);
+    return successResponse(res, { message: "Campaign stats fetched", data });
+};
+
+// ─── Dashboard ───────────────────────────────────────────────────────────────
+export const getDashboardOverview = async (req, res) => {
+    const data = await dashboardService.getOverview();
+    return successResponse(res, { message: "Dashboard overview fetched", data });
+};
+
+export const getDashboardRisks = async (req, res) => {
+    const data = await dashboardService.getRiskDashboard();
+    return successResponse(res, { message: "Risk dashboard fetched", data });
+};
+
+export const getDashboardDepartments = async (req, res) => {
+    const data = await dashboardService.getDepartmentStats();
+    return successResponse(res, { message: "Department stats fetched", data });
+};
+
+export const getDashboardTrends = async (req, res) => {
+    const data = await dashboardService.getTrends(req.query.days);
+    return successResponse(res, { message: "Trend data fetched", data });
+};
+
+// ─── Integrations ──────────────────────────────────────────────────────────
+export const integrateGrcRisk = async (req, res) => {
+    const data = await integrationService.pushGrcRisk(req.body, req.authUser);
+    return successResponse(res, { message: messages.integration.ingestedSuccessfully, data, statusCode: 201 });
+};
+
+export const integrateSoarIncident = async (req, res) => {
+    const data = await integrationService.pushSoarIncident(req.body, req.authUser);
+    return successResponse(res, { message: messages.integration.ingestedSuccessfully, data, statusCode: 201 });
+};
+
+export const integrateSiemEvent = async (req, res) => {
+    const data = await integrationService.pushSiemEvent(req.body);
+    return successResponse(res, { message: messages.integration.ingestedSuccessfully, data });
+};
+
+export const integrateOpenCtiIndicator = async (req, res) => {
+    const data = await integrationService.pushOpenCtiIndicator(req.body);
+    return successResponse(res, { message: messages.integration.ingestedSuccessfully, data, statusCode: 201 });
 };

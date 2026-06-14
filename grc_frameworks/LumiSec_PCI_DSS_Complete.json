@@ -1,0 +1,3212 @@
+[
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "1.1.1",
+        "domain": "Requirement 1: Install and Maintain Network Security Controls",
+        "control_text": "All security policies and operational procedures that are identified in Requirement 1 are:  •\t Documented. •\t Kept up to date. •\t In use. •\t Known to all affected parties.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "1.1.2",
+        "domain": "Requirement 1: Install and Maintain Network Security Controls",
+        "control_text": "Roles and responsibilities for performing activities in Requirement 1 are documented, assigned, and understood.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "1.2.1",
+        "domain": "Requirement 1: Install and Maintain Network Security Controls",
+        "control_text": "Configuration standards for NSC rulesets are: •\t Defined. •\t Implemented. •\t Maintained.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "1.2.2",
+        "domain": "Requirement 1: Install and Maintain Network Security Controls",
+        "control_text": "All changes to network connections and to configurations of NSCs are approved and managed in accordance with the change control process defined at Requirement 6.5.1. Applicability Notes Changes to network connections include the addition, removal, or modification of a connection.  Changes to NSC configurations include those related to the component itself as well as those affecting how it performs its security function.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "1.2.3",
+        "domain": "Requirement 1: Install and Maintain Network Security Controls",
+        "control_text": "An accurate network diagram(s) is maintained that shows all connections between the CDE and other networks, including any wireless networks. Applicability Notes A current network diagram(s) or other technical or topological solution that identifies network connections and devices can be used to meet this requirement.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "1.2.4",
+        "domain": "Requirement 1: Install and Maintain Network Security Controls",
+        "control_text": "An accurate data-flow diagram(s) is maintained that meets the following:   •\t Shows all account data flows across systems and networks. •\t Updated as needed upon changes to the environment. Applicability Notes A data-flow diagram(s) or other technical or topological solution that identifies flows of account data across systems and networks can be used to meet this requirement.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "1.2.5",
+        "domain": "Requirement 1: Install and Maintain Network Security Controls",
+        "control_text": "All services, protocols and ports allowed  are identified, approved, and have a defined business need.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "1.2.6",
+        "domain": "Requirement 1: Install and Maintain Network Security Controls",
+        "control_text": "Security features are defined and implemented for all services, protocols, and ports that are in use and considered to be insecure, such that the risk is mitigated.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "1.2.7",
+        "domain": "Requirement 1: Install and Maintain Network Security Controls",
+        "control_text": "Configurations of NSCs are reviewed at least once every six months to confirm they are relevant and effective.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "1.2.8",
+        "domain": "Requirement 1: Install and Maintain Network Security Controls",
+        "control_text": "Configuration files for NSCs are:  •\t Secured from unauthorized access.  •\t Kept consistent with active network configurations.  Applicability Notes Any file or setting used to configure or synchronize NSCs is considered to be a “configuration file.” This includes files, automated and system-based controls, scripts, settings, infrastructure as code, or other parameters that are backed up, archived, or stored remotely.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "1.3.1",
+        "domain": "Requirement 1: Install and Maintain Network Security Controls",
+        "control_text": "Inbound traffic to the CDE is restricted as follows:  •\t To only traffic that is necessary,  •\t All other traffic is specifically denied.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "1.3.2",
+        "domain": "Requirement 1: Install and Maintain Network Security Controls",
+        "control_text": "Outbound traffic from the CDE is restricted as follows:  •\t To only traffic that is necessary. •\t All other traffic is specifically denied.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "1.3.3",
+        "domain": "Requirement 1: Install and Maintain Network Security Controls",
+        "control_text": "NSCs are installed between all wireless networks and the CDE, regardless of whether the wireless network is a CDE, such that:  •\t All wireless traffic from wireless networks into the CDE is denied by default. •\t Only wireless traffic with an authorized business purpose is allowed into the CDE.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "1.4.1",
+        "domain": "Requirement 1: Install and Maintain Network Security Controls",
+        "control_text": "NSCs are implemented between trusted and untrusted networks.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "1.4.2",
+        "domain": "Requirement 1: Install and Maintain Network Security Controls",
+        "control_text": "Inbound traffic from untrusted networks to trusted networks is restricted to:  •\t Communications with system components that are authorized to provide publicly accessible services, protocols, and ports. •\t Stateful responses to communications initiated by system components in a trusted network. •\t All other traffic is denied. Applicability Notes The intent of this requirement is to address communication sessions between trusted and untrusted networks, rather than the specifics of protocols. This requirement does not limit the use of UDP or other connectionless network protocols if state is maintained by the NSC.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "1.4.3",
+        "domain": "Requirement 1: Install and Maintain Network Security Controls",
+        "control_text": "Anti-spoofing measures are implemented to detect and block forged source IP addresses from entering the trusted network.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "1.4.4",
+        "domain": "Requirement 1: Install and Maintain Network Security Controls",
+        "control_text": "System components that store cardholder data are not directly accessible from untrusted networks. Applicability Notes This requirement is not intended to apply to storage of account data in volatile memory but does apply where memory is being treated as persistent storage (for example, RAM disk). Account data can only be stored in volatile memory during the time necessary to support the associated business process (for example, until completion of the related payment card transaction).",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "1.4.5",
+        "domain": "Requirement 1: Install and Maintain Network Security Controls",
+        "control_text": "The disclosure of internal IP addresses and routing information is limited to only authorized parties.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "1.5.1",
+        "domain": "Requirement 1: Install and Maintain Network Security Controls",
+        "control_text": "Security controls are implemented on any computing devices, including company- and employee-owned devices, that connect to both untrusted networks (including the Internet) and the CDE as follows.  •\t Specific configuration settings are defined to prevent threats being introduced into the entity’s network.  •\t Security controls are actively running. •\t Security controls are not alterable by users of the computing devices unless specifically documented and authorized by management on a case-by-case basis for a limited period. Applicability Notes These security controls may be temporarily disabled only if there is legitimate technical need, as authorized by management on a case-by-case basis. If these security controls need to be disabled for a specific purpose, it must be formally authorized. Additional security measures may also need to be implemented for the period during which these security controls are not active. This requirement applies to employee-owned and company-owned computing devices. Systems that cannot be managed by corporate policy introduce weaknesses and provide opportunities that malicious individuals may exploit.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "2.1.1",
+        "domain": "Requirement 2: Apply Secure Configurations to All System Components",
+        "control_text": "All security policies and operational procedures that are identified in Requirement 2 are:  •\t Documented. •\t Kept up to date. •\t In use. •\t Known to all affected parties.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "2.1.2",
+        "domain": "Requirement 2: Apply Secure Configurations to All System Components",
+        "control_text": "Roles and responsibilities for performing activities in Requirement 2 are documented, assigned, and understood.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "2.2.1",
+        "domain": "Requirement 2: Apply Secure Configurations to All System Components",
+        "control_text": "Configuration standards are developed, implemented, and maintained to: •\t Cover all system components. •\t Address all known security vulnerabilities.  •\t Be consistent with industry-accepted system hardening standards or vendor hardening recommendations.  •\t Be updated as new vulnerability issues are identified, as defined in Requirement 6.3.1. •\t Be applied when new systems are configured and verified as in place before or immediately after a system component is connected to a production environment.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "2.2.2",
+        "domain": "Requirement 2: Apply Secure Configurations to All System Components",
+        "control_text": "Vendor default accounts are managed as follows: •\t If the vendor default account(s) will be used, the default password is changed per Requirement 8.3.6. •\t If the vendor default account(s) will not be used, the account is removed or disabled. Applicability Notes This applies to ALL vendor default accounts and passwords, including, but not limited to, those used by operating systems, software that provides security services, application and system accounts, point-of-sale (POS) terminals, payment applications, and Simple Network Management Protocol (SNMP) defaults. This requirement also applies where a system component is not installed within an entity’s environment, for example, software and applications that are part of the CDE and are accessed via a cloud subscription service.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "2.2.3",
+        "domain": "Requirement 2: Apply Secure Configurations to All System Components",
+        "control_text": "Primary functions requiring different security levels are managed as follows:  •\t Only one primary function exists on a system component, OR •\t Primary functions with differing security levels that exist on the same system component are isolated from each other, OR •\t Primary functions with differing security levels on the same system component are all secured to the level required by the function with the highest security need.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "2.2.4",
+        "domain": "Requirement 2: Apply Secure Configurations to All System Components",
+        "control_text": "Only necessary services, protocols, daemons, and functions are enabled, and all unnecessary functionality is removed or disabled.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "2.2.5",
+        "domain": "Requirement 2: Apply Secure Configurations to All System Components",
+        "control_text": "If any insecure services, protocols, or daemons are present:  •\t Business justification is documented. •\t Additional security features are documented and implemented that reduce the risk of using insecure services, protocols, or daemons.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "2.2.6",
+        "domain": "Requirement 2: Apply Secure Configurations to All System Components",
+        "control_text": "System security parameters are configured to prevent misuse.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "2.2.7",
+        "domain": "Requirement 2: Apply Secure Configurations to All System Components",
+        "control_text": "All non-console administrative access is encrypted using strong cryptography. Applicability Notes This includes administrative access via browser-based interfaces and application programming interfaces (APIs).",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "2.3.1",
+        "domain": "Requirement 2: Apply Secure Configurations to All System Components",
+        "control_text": "For wireless environments connected to the CDE or transmitting account data, all wireless vendor defaults are changed at installation or are confirmed to be secure, including but not limited to: •\t Default wireless encryption keys. •\t Passwords on wireless access points. •\t SNMP defaults, •\t Any other security-related wireless vendor defaults. Applicability Notes This includes, but is not limited to, default wireless encryption keys, passwords on wireless access points, SNMP defaults, and any other security-related wireless vendor defaults.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "2.3.2",
+        "domain": "Requirement 2: Apply Secure Configurations to All System Components",
+        "control_text": "For wireless environments connected to the CDE or transmitting account data, wireless encryption keys are changed as follows:  •\t Whenever personnel with knowledge of the key leave the company or the role for which the knowledge was necessary. •\t Whenever a key is suspected of or known to be compromised.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "3.1.1",
+        "domain": "Requirement 3: Protect Stored Account Data",
+        "control_text": "All security policies and operational procedures that are identified in Requirement 3 are:  •\tDocumented.  •\tKept up to date.  •\tIn use. •\tKnown to all affected parties.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "3.1.2",
+        "domain": "Requirement 3: Protect Stored Account Data",
+        "control_text": "Roles and responsibilities for performing activities in Requirement 3 are documented, assigned, and understood.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "3.2.1",
+        "domain": "Requirement 3: Protect Stored Account Data",
+        "control_text": "Account data storage is kept to a minimum through implementation of data retention and disposal policies, procedures, and processes that include at least the following: •\t Coverage for all locations of stored account data. •\t Coverage for any sensitive authentication data (SAD) stored prior to completion of authorization. This bullet is a best practice until its effective date; refer to Applicability Notes below for details. •\t Limiting data storage amount and retention time to that which is required for legal or regulatory, and/or business requirements.  •\t Specific retention requirements for stored account data that defines length of retention period and includes a documented business justification.  •\t Processes for secure deletion or rendering account data unrecoverable when no longer needed per the retention policy. •\t A process for verifying, at least once every three months, that stored account data exceeding the defined retention period has been securely deleted or rendered unrecoverable.  Applicability Notes Where account data is stored by a TPSP (for example, in a cloud environment), entities are responsible for working with their service providers to understand how the TPSP meets this requirement for the entity. Considerations include ensuring that all geographic instances of a data element are securely deleted. The bullet above (for coverage of SAD stored prior to completion of authorization) is a best practice until 31 March 2025, after which it will be required as part of Requirement 3.2.1 and must be fully considered during a PCI DSS assessment.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "3.3.1",
+        "domain": "Requirement 3: Protect Stored Account Data",
+        "control_text": "SAD is not stored after authorization, even if encrypted. All sensitive authentication data received is rendered unrecoverable upon completion of the authorization process Applicability Notes Issuers and companies that support issuing services, where there is a legitimate and documented business need to store SAD, are not required to meet this requirement. A legitimate business need is one that is necessary for the performance of the function being provided by or for the issuer.   Refer to Requirement 3.3.3 for additional requirements specifically for these entities.  Sensitive authentication data includes the data cited in Requirements 3.3.1.1 through 3.3.1.3.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "3.3.2",
+        "domain": "Requirement 3: Protect Stored Account Data",
+        "control_text": "SAD that is stored electronically prior to completion of authorization is encrypted using strong cryptography.  Applicability Notes Whether SAD is permitted to be stored prior to authorization is determined by the organizations that manage compliance programs (for example, payment brands and acquirers). Contact these organizations for any additional criteria. This requirement applies to all storage of SAD, even if no PAN is present in the environment.  Refer to Requirement 3.2.1 for an additional requirement that applies if SAD is stored prior to completion of authorization. Issuers and companies that support issuing services, where there is a legitimate and documented business need to store SAD, are not required to meet this requirement. A legitimate business need is one that is necessary for the performance of the function being provided by or for the issuer.  Refer to Requirement 3.3.3 for requirements specifically for these entities.  This requirement does not replace how PIN blocks are required to be managed, nor does it mean that a properly encrypted PIN block needs to be encrypted again.  This requirement is a best practice until 31 March 2025, after which it will be required and must be fully considered during a PCI DSS assessment.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "3.3.3",
+        "domain": "Requirement 3: Protect Stored Account Data",
+        "control_text": "Additional requirement for issuers and companies that support issuing services and store sensitive authentication data: Any storage of sensitive authentication data is:  • Limited to that which is needed for a legitimate issuing business need and is secured. • Encrypted using strong cryptography. This bullet is a best practice until its effective date; refer to Applicability Notes below for details. Applicability Notes This requirement applies only to issuers and companies that support issuing services and store sensitive authentication data.  Entities that issue payment cards or that perform or support issuing services will often create and control sensitive authentication data as part of the issuing function. It is allowable for companies that perform, facilitate, or support issuing services to store sensitive authentication data ONLY IF they have a legitimate business need to store such data.  A legitimate issuing business need is one that is necessary for the performance of the function being provided by or for the issuer. The bullet above (for encrypting stored SAD with strong cryptography) is a best practice until 31 March 2025, after which it will be required as part of Requirement 3.3.3 and must be fully considered during a PCI DSS assessment.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "3.4.1",
+        "domain": "Requirement 3: Protect Stored Account Data",
+        "control_text": "PAN is masked when displayed (the BIN and last four digits are the maximum number of digits to be displayed), such that only personnel with a legitimate business need can see more than the BIN and last four digits of the PAN. Applicability Notes This requirement does not supersede stricter requirements in place for displays of cardholder data—for example, legal or payment brand requirements for point-of-sale (POS) receipts. This requirement relates to protection of PAN where it is displayed on screens, paper receipts, printouts, etc., and is not to be confused with Requirement 3.5.1 for protection of PAN when stored, processed, or transmitted.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "3.4.2",
+        "domain": "Requirement 3: Protect Stored Account Data",
+        "control_text": "When using remote-access technologies, technical controls prevent copy and/or relocation of PAN for all personnel, except for those with documented, explicit authorization and a legitimate, defined business need. Applicability Notes Storing or relocating PAN onto local hard drives, removable electronic media, and other storage devices brings these devices into scope for PCI DSS. This requirement is a best practice until 31 March 2025, after which it will be required and must be fully considered during a PCI DSS assessment.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "3.5.1",
+        "domain": "Requirement 3: Protect Stored Account Data",
+        "control_text": "PAN is rendered unreadable anywhere it is stored by using any of the following approaches:  •\t One-way hashes based on strong cryptography of the entire PAN.  •\t Truncation (hashing cannot be used to replace the truncated segment of PAN). •\t Index tokens. •\t Strong cryptography with associated key-management processes and procedures.  •\t Where hashed and truncated versions of the same PAN, or different truncation formats of the same PAN, are present in an environment, additional controls are in place to ensure that the different versions cannot be correlated to reconstruct the original PAN. Applicability Notes This requirement applies to PANs stored in primary storage (databases, or flat files such as text files spreadsheets) as well as non-primary storage (backup, audit logs, exception, or troubleshooting logs).  This requirement does not preclude the use of temporary files containing cleartext PAN while encrypting and decrypting PAN.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "3.6.1",
+        "domain": "Requirement 3: Protect Stored Account Data",
+        "control_text": "Procedures are defined and implemented to protect cryptographic keys used to protect stored account data against disclosure and misuse that include:  •\t\t Access to keys is restricted to the fewest number of custodians necessary.  •\t\t Key-encrypting keys are at least as strong as the data-encrypting keys they protect.  •\t\t Key-encrypting keys are stored separately from data-encrypting keys.  •\t\t Keys are stored securely in the fewest possible locations and forms. Applicability Notes This requirement applies to keys used to protect stored account data and to key-encrypting keys used to protect data-encrypting keys. The requirement to protect keys used to protect stored account data from disclosure and misuse applies to both data-encrypting keys and key-encrypting keys. Because one key-encrypting key may grant access to many data-encrypting keys, the key-encrypting keys require strong protection measures.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "3.7.1",
+        "domain": "Requirement 3: Protect Stored Account Data",
+        "control_text": "Key-management policies and procedures are implemented to include generation of strong cryptographic keys used to protect stored account data.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "3.7.2",
+        "domain": "Requirement 3: Protect Stored Account Data",
+        "control_text": "Key-management policies and procedures are implemented to include secure distribution of cryptographic keys used to protect stored account data.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "3.7.3",
+        "domain": "Requirement 3: Protect Stored Account Data",
+        "control_text": "Key-management policies and procedures are implemented to include secure storage of cryptographic keys used to protect stored account data.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "3.7.4",
+        "domain": "Requirement 3: Protect Stored Account Data",
+        "control_text": "Key management policies and procedures are implemented for cryptographic key changes for keys that have reached the end of their cryptoperiod, as defined by the associated application vendor or key owner, and based on industry best practices and guidelines, including the following: •\t A defined cryptoperiod for each key type in use. •\t A process for key changes at the end of the defined cryptoperiod.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "3.7.5",
+        "domain": "Requirement 3: Protect Stored Account Data",
+        "control_text": "Key management policies procedures are implemented to include the retirement, replacement, or destruction of keys used to protect stored account data, as deemed necessary when:  • \tThe key has reached the end of its defined cryptoperiod. • \t\tThe integrity of the key has been weakened, including when personnel with knowledge of a cleartext key component leaves the company, or the role for which the key component was known. • \t\tThe key is suspected of or known to be compromised.  Retired or replaced keys are not used for encryption operations. Applicability Notes If retired or replaced cryptographic keys need to be retained, these keys must be securely archived (for example, by using a key-encryption key).",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "3.7.6",
+        "domain": "Requirement 3: Protect Stored Account Data",
+        "control_text": "Where manual cleartext cryptographic key-management operations are performed by personnel, key-management policies and procedures are implemented including managing these operations using split knowledge and dual control.  Applicability Notes This control is applicable for manual key-management operations.  A cryptographic key that is simply split into two parts does not meet this requirement. Secret or private keys stored as key components or key shares must be generated via one of the following:  • \tUsing an approved random number generator and within a secure cryptographic device (SCD), such as a hardware security module (HSM) or PTS-approved point-of-interaction device,  OR • \tAccording to ISO 19592 or equivalent industry standard for generation of secret key shares.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "3.7.7",
+        "domain": "Requirement 3: Protect Stored Account Data",
+        "control_text": "Key management policies and procedures are implemented to include the prevention of unauthorized substitution of cryptographic keys.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "3.7.8",
+        "domain": "Requirement 3: Protect Stored Account Data",
+        "control_text": "Key management policies and procedures are implemented to include that cryptographic key custodians formally acknowledge (in writing or electronically) that they understand and accept their key-custodian responsibilities.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "3.7.9",
+        "domain": "Requirement 3: Protect Stored Account Data",
+        "control_text": "Additional requirement for service providers only: Where a service provider shares cryptographic keys with its customers for transmission or storage of account data, guidance on secure transmission, storage and updating of such keys is documented and distributed to the service provider's customers. Applicability Notes This requirement applies only when the entity being assessed is a service provider.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "4.1.1",
+        "domain": "Requirement 4: Protect Cardholder Data with Strong Cryptography During Transmission",
+        "control_text": "All security policies and operational procedures that are identified in Requirement 4 are: •\t Documented •\t Kept up to date •\t In use •\t Known to all affected parties",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "4.1.2",
+        "domain": "Requirement 4: Protect Cardholder Data with Strong Cryptography During Transmission",
+        "control_text": "Roles and responsibilities for performing activities in Requirement 4 are documented, assigned, and understood.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "4.2.1",
+        "domain": "Requirement 4: Protect Cardholder Data with Strong Cryptography During Transmission",
+        "control_text": "Strong cryptography and security protocols are implemented as follows to safeguard PAN during transmission over open, public networks: •\t Only trusted keys and certificates are accepted. •\t Certificates used to safeguard PAN during transmission over open, public networks are confirmed as valid and are not expired or revoked. This bullet is a best practice until its effective date; refer to applicability notes below for details. •\t The protocol in use supports only secure versions or configurations and does not support fallback to, or use of insecure versions, algorithms, key sizes, or implementations. •\t The encryption strength is appropriate for the encryption methodology in use.  Applicability Notes A self-signed certificate may also be acceptable if the certificate is issued by an internal CA within the organization, the certificate’s author is confirmed, and the certificate is verified—for example, via hash or signature—and has not expired.  The bullet above (for confirming that certificates used to safeguard PAN during transmission over open, public networks are valid and are not expired or revoked) is a best practice until 31 March 2025, after which it will be required as part of Requirement 4.2.1 and must be fully considered during a PCI DSS assessment.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "4.2.2",
+        "domain": "Requirement 4: Protect Cardholder Data with Strong Cryptography During Transmission",
+        "control_text": "PAN is secured with strong cryptography whenever it is sent via end-user messaging technologies. Applicability Notes This requirement also applies if a customer, or other third-party, requests that PAN is sent to them via end-user messaging technologies. There could be occurrences where an entity receives unsolicited cardholder data via an insecure communication channel that was not intended for transmissions of sensitive data. In this situation, the entity can choose to either include the channel in the scope of their CDE and secure it according to PCI DSS or delete the cardholder data and implement measures to prevent the channel from being used for cardholder data.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "5.1.1",
+        "domain": "Requirement 5: Protect All Systems and Networks from Malicious Software",
+        "control_text": "All security policies and operational procedures that are identified in Requirement 5 are: •\t Documented •\t Kept up to date •\t In use •\t Known to all affected parties",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "5.1.2",
+        "domain": "Requirement 5: Protect All Systems and Networks from Malicious Software",
+        "control_text": "Roles and responsibilities for performing activities in Requirement 5 are documented, assigned, and understood.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "5.2.1",
+        "domain": "Requirement 5: Protect All Systems and Networks from Malicious Software",
+        "control_text": "An anti-malware solution(s) is deployed on all system components, except for those system components identified in periodic evaluations per Requirement 5.2.3 that concludes the system components are not at risk from malware.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "5.2.2",
+        "domain": "Requirement 5: Protect All Systems and Networks from Malicious Software",
+        "control_text": "The deployed anti-malware solution(s): •\t Detects all known types of malware. •\t Removes, blocks, or contains all known types of malware.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "5.2.3",
+        "domain": "Requirement 5: Protect All Systems and Networks from Malicious Software",
+        "control_text": "Any system components that are not at risk for malware are evaluated periodically to include the following:  •\t A documented list of all system components not at risk for malware. •\t Identification and evaluation of evolving malware threats for those system components. •\t Confirmation whether such system components continue to not require anti-malware protection. Applicability Notes System components covered by this requirement are those for which there is no anti-malware solution deployed per Requirement 5.2.1.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "5.3.1",
+        "domain": "Requirement 5: Protect All Systems and Networks from Malicious Software",
+        "control_text": "The anti-malware solution(s) is kept current via automatic updates.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "5.3.2",
+        "domain": "Requirement 5: Protect All Systems and Networks from Malicious Software",
+        "control_text": "The anti-malware solution(s): •\t Performs periodic scans and active or real-time scans OR  •\t Performs continuous behavioral analysis of systems or processes.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "5.3.3",
+        "domain": "Requirement 5: Protect All Systems and Networks from Malicious Software",
+        "control_text": "For removable electronic media, the anti-malware solution(s):  • Performs automatic scans of when the media is inserted, connected, or logically mounted, OR • Performs continuous behavioral analysis of systems or processes when the media is inserted, connected, or logically mounted.  Applicability Notes This requirement is a best practice until 31 March 2025, after which it will be required and must be fully considered during a PCI DSS assessment.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "5.3.4",
+        "domain": "Requirement 5: Protect All Systems and Networks from Malicious Software",
+        "control_text": "Audit logs for the anti-malware solution(s) are enabled and retained in accordance with Requirement 10.5.1.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "5.3.5",
+        "domain": "Requirement 5: Protect All Systems and Networks from Malicious Software",
+        "control_text": "Anti-malware mechanisms cannot be disabled or altered by users, unless specifically documented, and authorized by management on a case-by-case basis for a limited time period.  Applicability Notes Anti-malware solutions may be temporarily disabled only if there is a legitimate technical need, as authorized by management on a case-by-case basis. If anti-malware protection needs to be disabled for a specific purpose, it must be formally authorized. Additional security measures may also need to be implemented for the period during which anti-malware protection is not active.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "5.4.1",
+        "domain": "Requirement 5: Protect All Systems and Networks from Malicious Software",
+        "control_text": "Processes and automated mechanisms are in place to detect and protect personnel against phishing attacks.  Applicability Notes The focus of this requirement is on protecting personnel with access to system components in-scope for PCI DSS. Meeting this requirement for technical and automated controls to detect and protect personnel against phishing is not the same as Requirement 12.6.3.1 for security awareness training. Meeting this requirement does not also meet the requirement for providing personnel with security awareness training, and vice versa. This requirement is a best practice until 31 March 2025, after which it will be required and must be fully considered during a PCI DSS assessment.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "6.1.1",
+        "domain": "Requirement 6: Develop and Maintain Secure Systems and Software",
+        "control_text": "All security policies and operational procedures that are identified in Requirement 6 are: •\t Documented. •\t Kept up to date. •\t In use. •\t Known to all affected parties.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "6.1.2",
+        "domain": "Requirement 6: Develop and Maintain Secure Systems and Software",
+        "control_text": "Roles and responsibilities for performing activities in Requirement 6 are documented, assigned, and understood.  New requirement - effective immediately",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "6.2.1",
+        "domain": "Requirement 6: Develop and Maintain Secure Systems and Software",
+        "control_text": "Bespoke and custom software are developed securely, as follows: •\t Based on industry standards and/or best practices for secure development.  •\t In accordance with PCI DSS (for example, secure authentication and logging).  •\t Incorporating consideration of information security issues during each stage of the software development lifecycle.  Applicability Notes This applies to all software developed for or by the entity for the entity’s own use. This includes both bespoke and custom software. This does not apply to third-party software.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "6.2.2",
+        "domain": "Requirement 6: Develop and Maintain Secure Systems and Software",
+        "control_text": "Software development personnel working on bespoke and custom software are trained at least once every 12 months as follows:  •\t On software security relevant to their job function and development languages. •\t Including secure software design and secure coding techniques. •\t Including, if security testing tools are used, how to use the tools for detecting vulnerabilities in software. Applicability Notes: This requirement for code reviews applies to all bespoke and custom software (both internal and public facing), as part of the system development lifecycle. Public-facing web applications are also subject to additional controls, to address ongoing threats and vulnerabilities after implementation, as defined at PCI DSS Requirement 6.4. Code reviews may be performed using either manual or automated processes, or a combination of both.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "6.2.3",
+        "domain": "Requirement 6: Develop and Maintain Secure Systems and Software",
+        "control_text": "Bespoke and custom software is reviewed prior to being released into production or to customers, to identify and correct potential coding vulnerabilities, as follows: •\t Code reviews ensure code is developed according to secure coding guidelines. •\t Code reviews look for both existing and emerging software vulnerabilities. •\t Appropriate corrections are implemented prior to release.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "6.2.4",
+        "domain": "Requirement 6: Develop and Maintain Secure Systems and Software",
+        "control_text": "Software engineering techniques or other methods are defined and in use by software development personnel to prevent or mitigate common software attacks and related vulnerabilities for bespoke and custom software, including but not limited to the following: •\t Injection attacks, including SQL, LDAP, XPath, or other command, parameter, object, fault, or injection-type flaws. •\t Attacks on data and data structures, including attempts to manipulate buffers, pointers, input data, or shared data. •\t Attacks on cryptography usage, including attempts to exploit weak, insecure, or inappropriate cryptographic implementations, algorithms, cipher suites, or modes of operation. •\t Attacks on business logic, including attempts to abuse or bypass application features and functionalities through the manipulation of APIs, communication protocols and channels, client-side functionality, or other system/application functions and resources. This includes cross-site scripting (XSS) and cross-site request forgery (CSRF). • \t Attacks on access control mechanisms, including attempts to bypass or abuse identification, authentication, or authorization mechanisms, or attempts to exploit weaknesses in the implementation of such mechanisms. •\t Attacks via any “high-risk” vulnerabilities identified in the vulnerability identification process, as defined in Requirement 6.3.1.  Applicability Notes This applies to all software developed for or by the entity for the entity’s own use. This includes both bespoke and custom software. This does not apply to third-party software.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "6.3.1",
+        "domain": "Requirement 6: Develop and Maintain Secure Systems and Software",
+        "control_text": "Security vulnerabilities are identified and managed as follows:  •\t New security vulnerabilities are identified using industry-recognized sources for security vulnerability information, including alerts from international and national computer emergency response teams (CERTs). •\t Vulnerabilities are assigned a risk ranking based on industry best practices and consideration of potential impact.  •\t Risk rankings, at a minimum, identify all vulnerabilities considered to be a high-risk or critical to the environment.  •\t Vulnerabilities for bespoke and custom, and third-party software (for example operating systems and databases) are covered.  Applicability Notes This requirement is not achieved by, and is in addition to, performing vulnerability scans according to Requirements 11.3.1 and 11.3.2. This requirement is for a process to actively monitor industry sources for vulnerability information and for the entity to determine the risk ranking to be associated with each vulnerability.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "6.3.2",
+        "domain": "Requirement 6: Develop and Maintain Secure Systems and Software",
+        "control_text": "An inventory of bespoke and custom software, and third-party software components incorporated into bespoke and custom software is maintained to facilitate vulnerability and patch management.  Applicability Notes This requirement is a best practice until 31 March 2025, after which it will be required and must be fully considered during a PCI DSS assessment.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "6.3.3",
+        "domain": "Requirement 6: Develop and Maintain Secure Systems and Software",
+        "control_text": "All system components are protected from known vulnerabilities by installing applicable security patches/updates as follows:  •\t Patches/updates for critical vulnerabilities (identified according to the risk ranking process at Requirement 6.3.1) are installed within one month of release. •\t All other applicable security patches/updates are installed within an appropriate time frame as determined by the entity’s assessment of the criticality of the risk to the environment as identified according to the risk ranking process at Requirement 6.3.1",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "6.4.1",
+        "domain": "Requirement 6: Develop and Maintain Secure Systems and Software",
+        "control_text": "For public-facing web applications, new threats and vulnerabilities are addressed on an ongoing basis and these applications are protected against known attacks as follows: •\t Reviewing public-facing web applications via manual or automated application vulnerability security assessment tools or methods as follows: •\t At least once every 12 months and after significant changes. •\t By an entity that specializes in application security. •\t Including, at a minimum, all common software attacks in Requirement 6.2.4. •\t All vulnerabilities are ranked in accordance with requirement 6.3.1. •\t All vulnerabilities are corrected. •\t The application is re-evaluated after the corrections. OR •\t Installing an automated technical solution(s) that continually detects and prevents web-based attacks as follows: •\t Installed in front of public-facing web applications to detect and prevent web-based attacks. •\t Actively running and up to date as applicable. •\t Generating audit logs.  •\t Configured to either block web-based attacks or generate an alert that is immediately investigated. Applicability Notes This assessment is not the same as the vulnerability scans performed for Requirement 11.3.1 and 11.3.2. This requirement will be superseded by Requirement 6.4.2 after 31 March 2025 when Requirement 6.4.2 becomes effective.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "6.4.2",
+        "domain": "Requirement 6: Develop and Maintain Secure Systems and Software",
+        "control_text": "For public-facing web applications, an automated technical solution is deployed that continually detects and prevents web-based attacks, with at least the following: •\t Is installed in front of public-facing web applications and is configured to detect and prevent web-based attacks. •\t Actively running and up to date as applicable.  •\t Generating audit logs. •\t Configured to either block web-based attacks or generate an alert that is immediately investigated.  Applicability Notes This new requirement will replace Requirement 6.4.1 once its effective date is reached. This requirement is a best practice until 31 March 2025, after which it will be required and must be fully considered during a PCI DSS assessment.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "6.4.3",
+        "domain": "Requirement 6: Develop and Maintain Secure Systems and Software",
+        "control_text": "All payment page scripts that are loaded and executed in the consumer’s browser are managed as follows: •\t A method is implemented to confirm that each script is authorized. •\t A method is implemented to assure the integrity of each script.  •\t An inventory of all scripts is maintained with written business or technical justification as to why each is necessary.  Applicability Notes This requirement applies to all scripts loaded from the entity’s environment and scripts loaded from third and fourth parties.  This requirement also applies to scripts in the entity’s webpage(s) that includes a TPSP’s/payment processor’s embedded payment page/form (for example, one or more inline frames or iframes). This requirement does not apply to an entity for scripts in a TPSP’s/payment processor’s embedded payment page/form (for example, one or more iframes), where the entity includes a TPSP’s/payment processor’s payment page/form on its webpage.  Scripts in the TPSP’s/payment processor’s embedded payment page/form are the responsibility of the TPSP/payment processor to manage in accordance with this requirement. This requirement is a best practice until 31 March 2025, after which it will be required and must be fully considered during a PCI DSS assessment.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "6.5.1",
+        "domain": "Requirement 6: Develop and Maintain Secure Systems and Software",
+        "control_text": "Changes to all system components in the production environment are made according to established procedures that include:  •\tReason for, and description of, the change.  •\tDocumentation of security impact.  •\tDocumented change approval by authorized parties. •\tTesting to verify that the change does not adversely impact system security. •\tFor bespoke and custom software changes, all updates are tested for compliance with Requirement 6.2.4 before being deployed into production.  •\tProcedures to address failures and return to a secure state.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "6.5.2",
+        "domain": "Requirement 6: Develop and Maintain Secure Systems and Software",
+        "control_text": "Upon completion of a significant change, all applicable PCI DSS requirements are confirmed to be in place on all new or changed systems and networks, and documentation is updated as applicable. Applicability Notes These significant changes should also be captured and reflected in the entity’s annual PCI DSS scope confirmation activity per Requirement 12.5.2.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "6.5.3",
+        "domain": "Requirement 6: Develop and Maintain Secure Systems and Software",
+        "control_text": "Pre-production environments are separated from production environments and the separation is enforced with access controls.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "6.5.4",
+        "domain": "Requirement 6: Develop and Maintain Secure Systems and Software",
+        "control_text": "Roles and functions are separated between production and pre-production environments to provide accountability such that only reviewed and approved changes are deployed. Applicability Notes In environments with limited personnel where individuals perform multiple roles or functions, this same goal can be achieved with additional procedural controls that provide accountability. For example, a developer may also be an administrator that uses an administrator-level account with elevated privileges in the development environment and, for their developer role, they use a separate account with user-level access to the production environment.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "6.5.5",
+        "domain": "Requirement 6: Develop and Maintain Secure Systems and Software",
+        "control_text": "Live PANs are not used in pre-production environments, except where those environments are included in the CDE and protected in accordance with all applicable PCI DSS requirements.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "6.5.6",
+        "domain": "Requirement 6: Develop and Maintain Secure Systems and Software",
+        "control_text": "Test data and test accounts are removed from system components before the system goes into production.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "7.1.1",
+        "domain": "Requirement 7: Restrict Access to System Components and Cardholder Data by Business Need to Know",
+        "control_text": "All security policies and operational procedures that are identified in Requirement 7 are: •\tDocumented,  •\tKept up to date •\t In use  •\tKnown to all affected parties.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "7.1.2",
+        "domain": "Requirement 7: Restrict Access to System Components and Cardholder Data by Business Need to Know",
+        "control_text": "Roles and responsibilities for performing activities in Requirement 7 are documented, assigned, and understood.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "7.2.1",
+        "domain": "Requirement 7: Restrict Access to System Components and Cardholder Data by Business Need to Know",
+        "control_text": "An access control model is defined and includes granting access as follows: •\t Appropriate access depending on the entity’s business and access needs.  •\t Access to system components and data resources that is based on users’ job classification and functions.  •\t The least privileges required (for example, user, administrator) to perform a job function.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "7.2.2",
+        "domain": "Requirement 7: Restrict Access to System Components and Cardholder Data by Business Need to Know",
+        "control_text": "Access is assigned to users, including privileged users, based on:  •\t Job classification and function. •\t Least privileges necessary to perform job responsibilities.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "7.2.3",
+        "domain": "Requirement 7: Restrict Access to System Components and Cardholder Data by Business Need to Know",
+        "control_text": "Required privileges are approved by authorized personnel.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "7.2.4",
+        "domain": "Requirement 7: Restrict Access to System Components and Cardholder Data by Business Need to Know",
+        "control_text": "All user accounts and related access privileges, including third-party/vendor accounts, are reviewed as follows: •\t At least once every six months •\t To ensure user accounts and access remain appropriate based on job function.  •\t Any inappropriate access is addressed. •\t Management acknowledges that access remains appropriate.  Applicability Notes This requirement applies to all user accounts and related access privileges, including those used by personnel and third parties/vendors, and accounts used to access third-party cloud services.  See Requirements 7.2.5 and 7.2.5.1 and 8.6.1 through 8.6.3 for controls for application and system accounts. This requirement is a best practice until 31 March 2025, after which it will be required and must be fully considered during a PCI DSS assessment.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "7.2.5",
+        "domain": "Requirement 7: Restrict Access to System Components and Cardholder Data by Business Need to Know",
+        "control_text": "All application and system accounts and related access privileges are assigned and managed as follows: •\t Based on the least privileges necessary for the operability of the system or application. •\t Access is limited to the systems, applications, or processes that specifically require their use.   Applicability Notes This requirement is a best practice until 31 March 2025, after which it will be required and must be fully considered during a PCI DSS assessment.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "7.2.6",
+        "domain": "Requirement 7: Restrict Access to System Components and Cardholder Data by Business Need to Know",
+        "control_text": "All user access to query repositories of stored cardholder data is restricted as follows: •\t Via applications or other programmatic methods, with access and allowed actions based on user roles and least privileges. •\t Only the responsible administrator(s) can directly access or query repositories of stored CHD. Applicability Notes This requirement applies to controls for user access to query repositories of stored cardholder data.  See Requirements 7.2.5 and 7.2.5.1 and 8.6.1 through 8.6.3 for controls for application and system accounts.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "7.3.1",
+        "domain": "Requirement 7: Restrict Access to System Components and Cardholder Data by Business Need to Know",
+        "control_text": "An access control system(s) is in place that restricts access based on a user’s need to know and covers all system components.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "7.3.2",
+        "domain": "Requirement 7: Restrict Access to System Components and Cardholder Data by Business Need to Know",
+        "control_text": "The access control system(s) is configured to enforce privileges assigned to individuals, applications, and systems based on job classification and function.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "7.3.3",
+        "domain": "Requirement 7: Restrict Access to System Components and Cardholder Data by Business Need to Know",
+        "control_text": "The access control system(s) is set to “deny all” by default.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "8.1.1",
+        "domain": "Requirement 8: Identify Users and Authenticate Access to System Components",
+        "control_text": "All security policies and operational procedures that are identified in Requirement 8 are: •\t Documented. •\t Kept up to date. •\t In use. •\t Known to all affected parties.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "8.1.2",
+        "domain": "Requirement 8: Identify Users and Authenticate Access to System Components",
+        "control_text": "Roles and responsibilities for performing activities in Requirement 8 are documented, assigned, and understood.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "8.2.1",
+        "domain": "Requirement 8: Identify Users and Authenticate Access to System Components",
+        "control_text": "All users are assigned a unique ID before access to system components or cardholder data is allowed. Applicability Notes This requirement is not intended to apply to user accounts within point-of-sale terminals that have access to only one card number at a time to facilitate a single transaction.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "8.2.2",
+        "domain": "Requirement 8: Identify Users and Authenticate Access to System Components",
+        "control_text": "Group, shared, or generic IDs, or other shared authentication credentials are only used when necessary on an exception basis, and are managed as follows: •\t ID use is prevented unless needed for an exceptional circumstance. •\t Use is limited to the time needed for the exceptional circumstance. •\t Business justification for use is documented. •\t Use is explicitly approved by management.  •\t Individual user identity is confirmed before access to an account is granted. •\t Every action taken is attributable to an individual user.  Applicability Notes This requirement is not intended to apply to user accounts within point-of-sale terminals that have access to only one card number at a time to facilitate a single transaction.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "8.2.3",
+        "domain": "Requirement 8: Identify Users and Authenticate Access to System Components",
+        "control_text": "Additional requirement for service providers only: Service providers with remote access to customer premises use unique authentication factors for each customer premises. Applicability Notes This requirement applies only when the entity being assessed is a service provider. This requirement is not intended to apply to service providers accessing their own shared services environments, where multiple customer environments are hosted. If service provider employees use shared authentication factors to remotely access customer premises, these factors must be unique per customer and managed in accordance with Requirement 8.2.2.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "8.2.4",
+        "domain": "Requirement 8: Identify Users and Authenticate Access to System Components",
+        "control_text": "Addition, deletion, and modification of user IDs, authentication factors, and other identifier objects are managed as follows: •\t Authorized with the appropriate approval. •\t Implemented with only the privileges specified on the documented approval. Applicability Notes This requirement applies to all user accounts, including employees, contractors, consultants, temporary workers and third-party vendors.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "8.2.5",
+        "domain": "Requirement 8: Identify Users and Authenticate Access to System Components",
+        "control_text": "Access for terminated users is immediately revoked",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "8.2.6",
+        "domain": "Requirement 8: Identify Users and Authenticate Access to System Components",
+        "control_text": "Inactive user accounts are removed or disabled within 90 days of inactivity.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "8.2.7",
+        "domain": "Requirement 8: Identify Users and Authenticate Access to System Components",
+        "control_text": "Accounts used by third parties to access, support, or maintain system components via remote access are managed as follows: •\t Enabled only during the time period needed and disabled when not in use. •\t Use is monitored for unexpected activity.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "8.2.8",
+        "domain": "Requirement 8: Identify Users and Authenticate Access to System Components",
+        "control_text": "If a user session has been idle for more than 15 minutes, the user is required to re-authenticate to re-activate the terminal or session. Applicability Notes This requirement is not intended to apply to user accounts on point-of-sale terminals that have access to only one card number at a time to facilitate a single transaction. This requirement is not meant to prevent legitimate activities from being performed while the console/PC is unattended.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "8.3.1",
+        "domain": "Requirement 8: Identify Users and Authenticate Access to System Components",
+        "control_text": "All user access to system components for users and administrators is authenticated via at least one of the following authentication factors: •\tSomething you know, such as a password or passphrase. •\tSomething you have, such as a token device or smart card. •\tSomething you are, such as a biometric element. Applicability Notes This requirement is not intended to apply to user accounts on point-of-sale terminals that have access to only one card number at a time to facilitate a single transaction. This requirement does not supersede multi-factor authentication (MFA) requirements but applies to those in-scope systems not otherwise subject to MFA requirements. A digital certificate is a valid option for “something you have” if it is unique for a particular user.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "8.3.2",
+        "domain": "Requirement 8: Identify Users and Authenticate Access to System Components",
+        "control_text": "Strong cryptography is used to render all authentication factors unreadable during transmission and storage on all system components.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "8.3.3",
+        "domain": "Requirement 8: Identify Users and Authenticate Access to System Components",
+        "control_text": "User identity is verified before modifying any authentication factor.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "8.3.4",
+        "domain": "Requirement 8: Identify Users and Authenticate Access to System Components",
+        "control_text": "Invalid authentication attempts are limited by:  •\t Locking out the user ID after not more than 10 attempts. •\t Setting the lockout duration to a minimum of 30 minutes or until the user’s identity is confirmed.  Applicability Notes This requirement is not intended to apply to user accounts on point-of-sale terminals that have access to only one card number at a time to facilitate a single transaction.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "8.3.5",
+        "domain": "Requirement 8: Identify Users and Authenticate Access to System Components",
+        "control_text": "If passwords/passphrases are used as authentication factors to meet Requirement 8.3.1, they are set and reset for each user as follows:  •\t Set to a unique value for first-time use and upon reset. •\t Forced to be changed immediately after the first use.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "8.3.6",
+        "domain": "Requirement 8: Identify Users and Authenticate Access to System Components",
+        "control_text": "If passwords/passphrases are used as authentication factors to meet Requirement 8.3.1, they meet the following minimum level of complexity:  •\t A minimum length of 12 characters (or IF the system does not support 12 characters, a minimum length of eight characters). •\t Contain both numeric and alphabetic characters. Applicability Notes This requirement is not intended to apply to:  •\t User accounts on point-of-sale terminals that have access to only one card number at a time to facilitate a single transaction. •\t Application or system accounts, which are governed by requirements in section 8.6. This requirement is a best practice until 31 March 2025, after which it will be required and must be fully considered during a PCI DSS assessment. Until 31 March 2025, passwords must be a minimum length of seven characters in accordance with PCI DSS v3.2.1 Requirement 8.2.3.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "8.3.7",
+        "domain": "Requirement 8: Identify Users and Authenticate Access to System Components",
+        "control_text": "Individuals are not allowed to submit a new password/passphrase that is the same as any of the last four passwords/passphrases used. Applicability Notes This requirement is not intended to apply to user accounts on point-of-sale terminals that have access to only one card number at a time to facilitate a single transaction.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "8.3.8",
+        "domain": "Requirement 8: Identify Users and Authenticate Access to System Components",
+        "control_text": "Authentication policies and procedures are documented and communicated to all users including:  •\t Guidance on selecting strong authentication factors. •\tGuidance for how users should protect their authentication factors. •\tInstructions not to reuse previously used passwords/passphrases. •\tInstructions to change passwords/passphrases if there is any suspicion or knowledge that the password/passphrases have been compromised and how to report the incident.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "8.3.9",
+        "domain": "Requirement 8: Identify Users and Authenticate Access to System Components",
+        "control_text": "If passwords/passphrases are used as the only authentication factor for user access (i.e., in any single-factor authentication implementation) then either: •\t Passwords/passphrases are changed at least once every 90 days,  OR •\t The security posture of accounts is dynamically analyzed, and real-time access to resources is automatically determined accordingly.  Applicability Notes This requirement does not apply to in-scope system components where MFA is used. This requirement is not intended to apply to user accounts on point-of-sale terminals that have access to only one card number at a time to facilitate a single transaction. This requirement does not apply to service providers’ customer accounts but does apply to accounts for service provider personnel.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "8.3.10",
+        "domain": "Requirement 8: Identify Users and Authenticate Access to System Components",
+        "control_text": "Additional requirement for service providers only: If passwords/passphrases are used as the only authentication factor for customer user access to cardholder data (i.e., in any single-factor authentication implementation), then guidance is provided to customer users including: •\tGuidance for customers to change their user passwords/passphrases periodically. •\tGuidance as to when, and under what circumstances, passwords/passphrases are to be changed. Applicability Notes This requirement applies only when the entity being assessed is a service provider. This requirement does not apply to accounts of consumer users accessing their own payment card information. This requirement for service providers will be superseded by Requirement 8.3.10.1 once 8.3.10.1 becomes effective.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "8.3.11",
+        "domain": "Requirement 8: Identify Users and Authenticate Access to System Components",
+        "control_text": "Where authentication factors such as physical or logical security tokens, smart cards, or certificates are used:  •\t Factors are assigned to an individual user and not shared among multiple users.  •\t Physical and/or logical controls ensure only the intended user can use that factor to gain access.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "8.4.1",
+        "domain": "Requirement 8: Identify Users and Authenticate Access to System Components",
+        "control_text": "MFA is implemented for all non-console access into the CDE for personnel with administrative access.  Applicability Notes The requirement for MFA for non-console administrative access applies to all personnel with elevated or increased privileges accessing the CDE via a non-console connection—that is, via logical access occurring over a network interface rather than via a direct, physical connection.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "8.4.2",
+        "domain": "Requirement 8: Identify Users and Authenticate Access to System Components",
+        "control_text": "MFA is implemented for all non-console access into the CDE. Applicability Notes This requirement does not apply to:  •\t Application or system accounts performing automated functions. •\t User accounts on point-of-sale terminals that have access to only one card number at a time to facilitate a single transaction. •\t User accounts that are only authenticated with phishing-resistant authentication factors. MFA is required for both types of access specified in Requirements 8.4.2 and 8.4.3. Therefore, applying MFA to one type of access does not replace the need to apply another instance of MFA to the other type of access. If an individual first connects to the entity’s network via remote access, and then later initiates a connection into the CDE from within the network, per this requirement the individual would authenticate using MFA twice, once when connecting via remote access to the entity’s network and once when connecting from the entity’s network into the CDE. The MFA requirements apply for all types of system components, including cloud, hosted systems, and on-premises applications, network security devices, workstations, servers, and endpoints, and includes access directly to an entity’s networks or systems as well as web-based access to an application or function.  MFA for access into the CDE can be implemented at the network or system/application level; it does not have to be applied at both levels. For example, if MFA is used when a user connects to the CDE network, it does not have to be used when the user logs into each system or application within the CDE. This requirement is a best practice until 31 March 2025, after which it will be required and must be fully considered during a PCI DSS assessment.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "8.4.3",
+        "domain": "Requirement 8: Identify Users and Authenticate Access to System Components",
+        "control_text": "MFA is implemented for all remote network access originating from outside the entity’s network that could access or impact the CDE. Applicability Notes The requirement for MFA for remote access originating from outside the entity’s network applies to all user accounts that can access the network remotely, where that remote access leads to or could lead to access into the CDE. This includes all remote access by personnel (users and administrators), and third parties (including, but not limited to, vendors, suppliers, service providers, and customers). If remote access is to a part of the entity’s network that is properly segmented from the CDE, such that remote users cannot access or impact the CDE, MFA for remote access to that part of the network is not required. However, MFA is required for any remote access to networks with access to the CDE and is recommended for all remote access to the entity’s networks. The MFA requirements apply for all types of system components, including cloud, hosted systems, and on-premises applications, network security devices, workstations, servers, and endpoints, and includes access directly to an entity’s networks or systems as well as web-based access to an application or function.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "8.5.1",
+        "domain": "Requirement 8: Identify Users and Authenticate Access to System Components",
+        "control_text": "MFA systems are implemented as follows: •\tThe MFA system is not susceptible to replay attacks. •\tMFA systems cannot be bypassed by any users, including administrative users unless specifically documented, and authorized by management on an exception basis, for a limited time period.  •\tAt least two different types of authentication factors are used. •\tSuccess of all authentication factors is required before access is granted. Applicability Notes This requirement is a best practice until 31 March 2025, after which it will be required and must be fully considered during a PCI DSS assessment.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "8.6.1",
+        "domain": "Requirement 8: Identify Users and Authenticate Access to System Components",
+        "control_text": "If accounts used by systems or applications can be used for interactive login, they are managed as follows:  •\t Interactive use is prevented unless needed for an exceptional circumstance. •\t Interactive use is limited to the time needed for the exceptional circumstance. •\t Business justification for interactive use is documented. •\t Interactive use is explicitly approved by management.  •\t Individual user identity is confirmed before access to account is granted. •\t Every action taken is attributable to an individual user.  Applicability Notes This requirement is a best practice until 31 March 2025, after which it will be required and must be fully considered during a PCI DSS assessment.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "8.6.2",
+        "domain": "Requirement 8: Identify Users and Authenticate Access to System Components",
+        "control_text": "Passwords/passphrases for any application and system accounts that can be used for interactive login are not hard coded in scripts, configuration/property files, or bespoke and custom source code. Note: stored passwords/ passphrases are required to be encrypted in accordance with PCI DSS Requirement 8.3.2. Applicability Notes Stored passwords/passphrases are required to be encrypted in accordance with PCI DSS Requirement 8.3.2. This requirement is a best practice until 31 March 2025, after which it will be required and must be fully considered during a PCI DSS assessment.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "8.6.3",
+        "domain": "Requirement 8: Identify Users and Authenticate Access to System Components",
+        "control_text": "Passwords/passphrases for any application and system accounts are protected against misuse as follows:  •\t Passwords/passphrases are changed periodically (at the frequency defined in the entity’s targeted risk analysis, which is performed according to all elements specified in Requirement 12.3.1) and upon suspicion or confirmation of compromise. •\t Passwords/passphrases are constructed with sufficient complexity appropriate for how frequently the entity changes the passwords/passphrases.  Applicability Notes This requirement is a best practice until 31 March 2025, after which it will be required and must be fully considered during a PCI DSS assessment.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "9.1.1",
+        "domain": "Requirement 9: Restrict Physical Access to Cardholder Data",
+        "control_text": "All security policies and operational procedures that are identified in Requirement 9 are: •\t Documented.  •\t Kept up to date.  •\t In use. •\t Known to all affected parties.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "9.1.2",
+        "domain": "Requirement 9: Restrict Physical Access to Cardholder Data",
+        "control_text": "Roles and responsibilities for performing activities in Requirement 9 are documented, assigned, and understood.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "9.2.1",
+        "domain": "Requirement 9: Restrict Physical Access to Cardholder Data",
+        "control_text": "Appropriate facility entry controls are in place to restrict physical access to systems in the CDE. Applicability Notes This requirement does not apply to locations that are publicly accessible by consumers (cardholders).",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "9.2.2",
+        "domain": "Requirement 9: Restrict Physical Access to Cardholder Data",
+        "control_text": "Physical and/or logical controls are implemented to restrict use of publicly accessible network jacks within the facility.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "9.2.3",
+        "domain": "Requirement 9: Restrict Physical Access to Cardholder Data",
+        "control_text": "Physical access to wireless access points, gateways, networking/communications hardware, and telecommunication lines within the facility is restricted.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "9.2.4",
+        "domain": "Requirement 9: Restrict Physical Access to Cardholder Data",
+        "control_text": "Access to consoles in sensitive areas is restricted via locking when not in use.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "9.3.1",
+        "domain": "Requirement 9: Restrict Physical Access to Cardholder Data",
+        "control_text": "Procedures are implemented for authorizing and managing physical access of personnel to the CDE, including: •\t  Identifying personnel. •\t Managing changes to an individual’s physical access requirements. •\t  Revoking or terminating personnel identification. •\t  Limiting access to the identification process or system to authorized personnel.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "9.3.2",
+        "domain": "Requirement 9: Restrict Physical Access to Cardholder Data",
+        "control_text": "Procedures are implemented for authorizing and managing visitor access to the CDE, including: •\t Visitors are authorized before entering. •\t Visitors are escorted at all times. •\t Visitors are clearly identified and given a badge or other identification that expires. •\t Visitor badges or other identification visibly distinguishes visitors from  personnel.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "9.3.3",
+        "domain": "Requirement 9: Restrict Physical Access to Cardholder Data",
+        "control_text": "Visitor badges or identification are surrendered or deactivated before visitors leave the facility or at the date of expiration.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "9.3.4",
+        "domain": "Requirement 9: Restrict Physical Access to Cardholder Data",
+        "control_text": "Visitor logs are used to maintain a physical record of visitor activity both within the facility and within sensitive areas, including:  •\t The visitor’s name and the organization represented. •\t The date and time of the visit. •\t The name of the personnel authorizing physical access.  •\t Retaining the log for at least three months, unless otherwise restricted by law.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "9.4.1",
+        "domain": "Requirement 9: Restrict Physical Access to Cardholder Data",
+        "control_text": "All media with cardholder data is physically secured.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "9.4.2",
+        "domain": "Requirement 9: Restrict Physical Access to Cardholder Data",
+        "control_text": "All media with cardholder data is classified in accordance with the sensitivity of the data.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "9.4.3",
+        "domain": "Requirement 9: Restrict Physical Access to Cardholder Data",
+        "control_text": "Media with cardholder data sent outside the facility is secured as follows: • Media sent outside the facility is logged. • Media is sent by secured courier or other delivery method that can be accurately tracked. • Offsite tracking logs include details about media location.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "9.4.4",
+        "domain": "Requirement 9: Restrict Physical Access to Cardholder Data",
+        "control_text": "Management approves all media with cardholder data that is moved outside the facility (including when media is distributed to individuals). Applicability Notes Individuals approving media movements should have the appropriate level of management authority to grant this approval. However, it is not specifically required that such individuals have “manager” as part of their title.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "9.4.5",
+        "domain": "Requirement 9: Restrict Physical Access to Cardholder Data",
+        "control_text": "Inventory logs of all electronic media with cardholder data are maintained.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "9.4.6",
+        "domain": "Requirement 9: Restrict Physical Access to Cardholder Data",
+        "control_text": "Hard-copy materials with cardholder data are destroyed when no longer needed for business or legal reasons, as follows: •\t Materials are cross-cut shredded, incinerated, or pulped so that cardholder data cannot be reconstructed.  •\t Materials are stored in secure storage containers prior to destruction.  Applicability Notes These requirements for media destruction when that media is no longer needed for business or legal reasons are separate and distinct from PCI DSS Requirement 3.2.1, which is for securely deleting cardholder data when no longer needed per the entity’s cardholder data retention policies.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "9.4.7",
+        "domain": "Requirement 9: Restrict Physical Access to Cardholder Data",
+        "control_text": "Electronic media with cardholder data is destroyed when no longer needed for business or legal reasons via one of the following:  •\t The electronic media is destroyed. •\t The cardholder data is rendered unrecoverable so that it cannot be reconstructed.  Applicability Notes These requirements for media destruction when that media is no longer needed for business or legal reasons are separate and distinct from PCI DSS Requirement 3.2.1, which is for securely deleting cardholder data when no longer needed per the entity’s cardholder data retention policies.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "9.5.1",
+        "domain": "Requirement 9: Restrict Physical Access to Cardholder Data",
+        "control_text": "POI devices that capture payment card data via direct physical interaction with the payment card form factor are protected from tampering and unauthorized substitution, including the following: •\t Maintaining a list of POI devices.  •\t Periodically inspecting POI devices to look for tampering or unauthorized substitution.  •\t Training personnel to be aware of suspicious behavior and to report tampering or unauthorized substitution of devices. Applicability Notes These requirements apply to deployed POI devices used in card-present transactions (that is, a payment card form factor such as a card that is swiped, tapped, or dipped). These requirements do not apply to: •\t Components used only for manual PAN key entry. •\t Commercial off-the-shelf (COTS) devices (for example, smartphones or tablets), which are mobile merchant-owned devices designed for mass-market distribution.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "10.1.1",
+        "domain": "Requirement 10: Log and Monitor All Access to System Components and Cardholder Data",
+        "control_text": "All security policies and operational procedures that are identified in Requirement 10 are:  •\t Documented. •\t Kept up to date. •\t In use. •\t Known to all affected parties.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "10.1.2",
+        "domain": "Requirement 10: Log and Monitor All Access to System Components and Cardholder Data",
+        "control_text": "Roles and responsibilities for performing activities in Requirement 10 are documented, assigned, and understood.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "10.2.1",
+        "domain": "Requirement 10: Log and Monitor All Access to System Components and Cardholder Data",
+        "control_text": "Audit logs are enabled and active for all system components and cardholder data.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "10.2.2",
+        "domain": "Requirement 10: Log and Monitor All Access to System Components and Cardholder Data",
+        "control_text": "Audit logs record the following details for each auditable event: •\t User identification. •\t Type of event. •\t Date and time. •\t Success and failure indication. •\t Origination of event. •\t Identity or name of affected data, system component, resource, or service (for example, name and protocol).",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "10.3.1",
+        "domain": "Requirement 10: Log and Monitor All Access to System Components and Cardholder Data",
+        "control_text": "Read access to audit logs files is limited to those with a job-related need.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "10.3.2",
+        "domain": "Requirement 10: Log and Monitor All Access to System Components and Cardholder Data",
+        "control_text": "Audit log files are protected to prevent modifications by individuals.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "10.3.3",
+        "domain": "Requirement 10: Log and Monitor All Access to System Components and Cardholder Data",
+        "control_text": "Audit log files, including those for external-facing technologies, are promptly backed up to a secure, central, internal log server(s) or other media that is difficult to modify.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "10.3.4",
+        "domain": "Requirement 10: Log and Monitor All Access to System Components and Cardholder Data",
+        "control_text": "File integrity monitoring or change-detection mechanisms is used on audit logs to ensure that existing log data cannot be changed without generating alerts.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "10.4.1",
+        "domain": "Requirement 10: Log and Monitor All Access to System Components and Cardholder Data",
+        "control_text": "The following audit logs are reviewed at least once daily: •\t All security events.  •\t Logs of all system components that store, process, or transmit CHD and/or SAD. •\t Logs of all critical system components. •\t Logs of all servers and system components that perform security functions (for example, network security controls, intrusion-detection systems/intrusion-prevention systems (IDS/IPS), authentication servers).",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "10.4.2",
+        "domain": "Requirement 10: Log and Monitor All Access to System Components and Cardholder Data",
+        "control_text": "Logs of all other system components (those not specified in Requirement 10.4.1) are reviewed periodically. Applicability Notes This requirement is applicable to all other in-scope system components not included in Requirement 10.4.1.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "10.4.3",
+        "domain": "Requirement 10: Log and Monitor All Access to System Components and Cardholder Data",
+        "control_text": "Exceptions and anomalies identified during the review process are addressed.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "10.5.1",
+        "domain": "Requirement 10: Log and Monitor All Access to System Components and Cardholder Data",
+        "control_text": "Retain audit log history for at least 12 months, with at least the most recent three months immediately available for analysis.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "10.6.1",
+        "domain": "Requirement 10: Log and Monitor All Access to System Components and Cardholder Data",
+        "control_text": "System clocks and time are synchronized using time-synchronization technology.  Applicability Notes Keeping time-synchronization technology current includes managing vulnerabilities and patching the technology according to PCI DSS Requirements 6.3.1 and 6.3.3.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "10.6.2",
+        "domain": "Requirement 10: Log and Monitor All Access to System Components and Cardholder Data",
+        "control_text": "Systems are configured to the correct and consistent time as follows: •\t One or more designated time servers are in use. •\t Only the designated central time server(s) receives time from external sources. •\t Time received from external sources is based on International Atomic Time or Coordinated Universal Time (UTC). •\t The designated time server(s) accept time updates only from specific industry-accepted external sources. •\t Where there is more than one designated time server, the time servers peer with one another to keep accurate time. •\t Internal systems receive time information only from designated central time server(s).",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "10.6.3",
+        "domain": "Requirement 10: Log and Monitor All Access to System Components and Cardholder Data",
+        "control_text": "Time synchronization settings and data are protected as follows:  •\t Access to time data is restricted to only personnel with a business need. •\t Any changes to time settings on critical systems are logged, monitored, and reviewed.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "10.7.1",
+        "domain": "Requirement 10: Log and Monitor All Access to System Components and Cardholder Data",
+        "control_text": "Additional requirement for service providers only: Failures of critical security control systems are detected, alerted, and addressed promptly, including but not limited to failure of the following critical security control systems: •\t Network security controls  •\t IDS/IPS  •\t FIM  •\t Anti-malware solutions  •\t Physical access controls  •\t Logical access controls  •\t Audit logging mechanisms  •\t Segmentation controls (if used)  Applicability Notes This requirement applies only when the entity being assessed is a service provider. This requirement will be superseded by Requirement 10.7.2 as of 31 March 2025.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "10.7.2",
+        "domain": "Requirement 10: Log and Monitor All Access to System Components and Cardholder Data",
+        "control_text": "Failures of critical security control systems are detected, alerted, and addressed promptly, including but not limited to failure of the following critical security control systems: •\t Network security controls. •\t IDS/IPS. •\t Change-detection mechanisms. •\t Anti-malware solutions. •\t Physical access controls. •\t Logical access controls. •\t Audit logging mechanisms. •\t Segmentation controls (if used). •\t Audit log review mechanisms. •\t Automated security testing tools (if used). Applicability Notes This requirement applies to all entities, including service providers, and will supersede Requirement 10.7.1 as of 31 March 2025. It includes two additional critical security control systems not in Requirement 10.7.1.  This requirement is a best practice until 31 March 2025, after which it will be required and must be fully considered during a PCI DSS assessment.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "10.7.3",
+        "domain": "Requirement 10: Log and Monitor All Access to System Components and Cardholder Data",
+        "control_text": "Failures of any critical security control systems are responded to promptly, including but not limited to:  •\t Restoring security functions.  •\t Identifying and documenting the duration (date and time from start to end) of the security failure.  •\t Identifying and documenting the cause(s) of failure, and documenting required remediation.  •\t Identifying and addressing any security issues that arose during the failure.  •\t Determining whether further actions are required as a result of the security failure.  •\t Implementing controls to prevent the cause of failure from reoccurring.  •\t Resuming monitoring of security controls. Applicability Notes This requirement applies only when the entity being assessed is a service provider, until the 31 March 2025, after which this requirement will apply to all entities. This is a current v3.2.1 requirement that applies to service providers only. However, this requirement is a best practice for all other entities until 31 March 2025, after which it will be required and must be fully considered during a PCI DSS assessment.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "11.1.1",
+        "domain": "Requirement 11: Test Security of Systems and Networks Regularly",
+        "control_text": "All security policies and operational procedures that are identified in Requirement 11 are:  •\t Documented.  •\t Kept up to date. •\t In use. •\t Known to all affected parties.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "11.1.2",
+        "domain": "Requirement 11: Test Security of Systems and Networks Regularly",
+        "control_text": "Roles and responsibilities for performing activities in Requirement 11 are documented, assigned, and understood.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "11.2.1",
+        "domain": "Requirement 11: Test Security of Systems and Networks Regularly",
+        "control_text": "Authorized and unauthorized wireless access points are managed as follows: •\t The presence of wireless (Wi-Fi) access points is tested for,  •\t All authorized and unauthorized wireless access points are detected and identified,  •\t Testing, detection, and identification occurs at least once every three months.  •\t If automated monitoring is used, personnel are notified via generated alerts. Applicability Notes The requirement applies even when a policy exists that prohibits the use of wireless technology. Methods used to meet this requirement must be sufficient to detect and identify both authorized and unauthorized devices, including unauthorized devices attached to devices that themselves are authorized.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "11.3.1",
+        "domain": "Requirement 11: Test Security of Systems and Networks Regularly",
+        "control_text": "Internal vulnerability scans are performed as follows:  •\t At least once every three months. •\t Vulnerabilities that are either high-risk or critical (according to the entity’s vulnerability risk rankings defined at Requirement 6.3.1) are resolved. •\t Rescans are performed that confirm all high-risk and all critical vulnerabilities (as noted above) have been resolved. •\t Scan tool is kept up to date with latest vulnerability information. •\t Scans are performed by qualified personnel and organizational independence of the tester exists. Applicability Notes It is not required to use a QSA or ASV to conduct internal vulnerability scans. Internal vulnerability scans can be performed by qualified, internal staff that are reasonably independent of the system component(s) being scanned (for example, a network administrator should not be responsible for scanning the network), or an entity may choose to have internal vulnerability scans performed by a firm specializing in vulnerability scanning.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "11.3.2",
+        "domain": "Requirement 11: Test Security of Systems and Networks Regularly",
+        "control_text": "External vulnerability scans are performed as follows: •\t At least once every three months. •\t By a PCI SSC Approved Scanning Vendor (ASV).  •\t Vulnerabilities are resolved and ASV Program Guide requirements for a passing scan are met. •\t Rescans are performed as needed to confirm that vulnerabilities are resolved per the ASV Program Guide requirements for a passing scan. Applicability Notes For the initial PCI DSS assessment against this requirement, it is not required that four passing scans be completed within 12 months if the assessor verifies: 1) the most recent scan result was a passing scan, 2) the entity has documented policies and procedures requiring scanning at least once every three months, and 3) vulnerabilities noted in the scan results have been corrected as shown in a re-scan(s).  However, for subsequent years after the initial PCI DSS assessment, passing scans at least every three months must have occurred. ASV scanning tools can scan a vast array of network types and topologies. Any specifics about the target environment (for example, load balancers, third-party providers, ISPs, specific configurations, protocols in use, scan interference) should be worked out between the ASV and scan customer. Refer to the ASV Program Guide published on the PCI SSC website for scan customer responsibilities, scan preparation, etc.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "11.4.1",
+        "domain": "Requirement 11: Test Security of Systems and Networks Regularly",
+        "control_text": "A penetration testing methodology is defined, documented, and implemented by the entity, and includes:  •\t Industry-accepted penetration testing approaches. •\t Coverage for the entire CDE perimeter and critical systems.  •\t Testing from both inside and outside the network.  •\t Testing to validate any segmentation and scope-reduction controls.  •\t Application-layer penetration testing to identify, at a minimum, the vulnerabilities listed in Requirement 6.2.4.  •\t Network-layer penetration tests that encompass all components that support network functions as well as operating systems.  •\t Review and consideration of threats and vulnerabilities experienced in the last 12 months.  •\t Documented approach to assessing and addressing the risk posed by exploitable vulnerabilities and security weaknesses found during penetration testing.  •\t Retention of penetration testing results and remediation activities results for at least 12 months. Applicability Notes Testing from inside the network (or “internal penetration testing”) means testing from both inside the CDE and into the CDE from trusted and untrusted internal networks.  Testing from outside the network (or “external” penetration testing” means testing the exposed external perimeter of trusted networks, and critical systems connected to or accessible to public network infrastructures.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "11.4.2",
+        "domain": "Requirement 11: Test Security of Systems and Networks Regularly",
+        "control_text": "Internal penetration testing is performed: •\t Per the entity’s defined methodology  •\t At least once every 12 months  •\t After any significant infrastructure or application upgrade or change •\t By a qualified internal resource or qualified external third-party •\t Organizational independence of the tester exists (not required to be a QSA or ASV).",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "11.4.3",
+        "domain": "Requirement 11: Test Security of Systems and Networks Regularly",
+        "control_text": "External penetration testing is performed:  •\t Per the entity’s defined methodology  •\t At least once every 12 months  •\t After any significant infrastructure or application upgrade or change •\t By a qualified internal resource or qualified external third party •\t Organizational independence of the tester exists (not required to be a QSA or ASV).",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "11.4.4",
+        "domain": "Requirement 11: Test Security of Systems and Networks Regularly",
+        "control_text": "Exploitable vulnerabilities and security weaknesses found during penetration testing are corrected as follows: •\t In accordance with the entity’s assessment of the risk posed by the security issue as defined in Require ment 6.3.1. •\t Penetration testing is repeated to verify the corrections.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "11.4.5",
+        "domain": "Requirement 11: Test Security of Systems and Networks Regularly",
+        "control_text": "If segmentation is used to isolate the CDE from other networks, penetration tests are performed on segmentation controls as follows: •\t At least once every 12 months and after any changes to segmentation controls/methods  •\t Covering all segmentation controls/methods in use. •\t According to the entity’s defined penetration testing methodology. •\t Confirming that the segmentation controls/methods are operational and effective, and isolate the CDE from all out-of-scope systems. •\t Confirming effectiveness of any use of isolation to separate systems with differing security levels (see Requirement 2.2.3). •\t Performed by a qualified internal resource or qualified external third party. •\t Organizational independence of the tester exists (not required to be a QSA or ASV).",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "11.4.6",
+        "domain": "Requirement 11: Test Security of Systems and Networks Regularly",
+        "control_text": "Additional requirement for service providers only: If segmentation is used to isolate the CDE from other networks, penetration tests are performed on segmentation controls as follows:  •\t At least once every six months and after any changes to segmentation controls/methods.  •\t Covering all segmentation controls/methods in use. •\t According to the entity’s defined penetration testing methodology. •\t Confirming that the segmentation controls/methods are operational and effective, and isolate the CDE from all out-of-scope systems. •\t Confirming effectiveness of any use of isolation to separate systems with differing security levels (see Requirement 2.2.3). •\t Performed by a qualified internal resource or qualified external third party. •\t Organizational independence of the tester exists (not required to be a QSA or ASV). Applicability Notes This requirement applies only when the entity being assessed is a service provider.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "11.4.7",
+        "domain": "Requirement 11: Test Security of Systems and Networks Regularly",
+        "control_text": "Additional requirement for third-party hosted/cloud service providers only: Third-party hosted/cloud service providers support to their customers for external penetration testing per Requirement 11.4.3 and 11.4.4. Applicability Notes This requirement applies only when the entity being assessed is a multi-tenant service provider. To meet this requirement, multi-tenant service providers may either:  •\t Provide evidence to its customers to show that penetration testing has been performed according to Requirements 11.4.3 and 11.4.4 on the customers’ subscribed infrastructure, OR •\t Provide prompt access to each of its customers, so customers can perform their own penetration testing. Evidence provided to customers can include redacted penetration testing results but needs to include sufficient information to prove that all elements of Requirements 11.4.3 and 11.4.4 have been met on the customer’s behalf. Refer also to Appendix A1: Additional PCI DSS Requirements for Multi-Tenant Service Providers. This requirement is a best practice until 31 March 2025, after which it will be required and must be fully considered during a PCI DSS assessment.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "11.5.1",
+        "domain": "Requirement 11: Test Security of Systems and Networks Regularly",
+        "control_text": "Intrusion-detection and/or intrusion-prevention techniques are used to detect and/or prevent intrusions into the network as follows:  •\t All traffic is monitored at the perimeter of the CDE.  •\t All traffic is monitored at critical points in the CDE.  •\t Personnel are alerted to suspected compromises.  •\t All intrusion-detection and prevention engines, baselines, and signatures are kept up to date.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "11.5.2",
+        "domain": "Requirement 11: Test Security of Systems and Networks Regularly",
+        "control_text": "A change-detection mechanism (for example, file integrity monitoring tools) is deployed as follows: •\t To alert personnel to unauthorized modification (including changes, additions, and deletions) of critical files  •\t To perform critical file comparisons at least once weekly. Applicability Notes For change-detection purposes, critical files are usually those that do not regularly change, but the modification of which could indicate a system compromise or risk of compromise. Change-detection mechanisms such as file integrity monitoring products usually come pre-configured with critical files for the related operating system. Other critical files, such as those for custom applications, must be evaluated and defined by the entity (that is, the merchant or service provider).",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "11.6.1",
+        "domain": "Requirement 11: Test Security of Systems and Networks Regularly",
+        "control_text": "A change- and tamper-detection mechanism is deployed as follows: •\t To alert personnel to unauthorized modification (including indicators of compromise, changes, additions, and deletions) to the security-impacting HTTP headers and the script contents of payment pages as received by the consumer browser. •\t The mechanism is configured to evaluate the received HTTP header and payment pages.  •\t The mechanism functions are performed as follows:      - At least once weeky,      OR      - Periodically (at the frequency defined in the entity’s targeted risk analysis, which is performed according to all elements specified in Requirement 12.3.1).  Applicability Notes This requirement also applies to entities with a webpage(s) that includes a TPSP’s/payment processor’s embedded payment page/form (for example, one or more inline frames or iframes.) This requirement does not apply to an entity for scripts in a TPSP’s/payment processor’s embedded payment page/form (for example, one or more iframes), where the entity includes a TPSP’s/payment processor’s payment page/form on its webpage.  Scripts in the TPSP’s/payment processor’s embedded payment page/form are the responsibility of the TPSP/payment processor to manage in accordance with this requirement. The intention of this requirement is not that an entity installs software in the systems or browsers of its consumers, but rather that the entity uses techniques such as those described under Examples in the PCI DSS Guidance to prevent and detect unexpected script activities. This requirement is a best practice until 31 March 2025, after which it will be required and must be fully considered during a PCI DSS assessment.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "12.1.1",
+        "domain": "Requirement 12: Support information security with organizational policies and programs",
+        "control_text": "An overall information security policy is:  •\t Established. •\t Published. •\t Maintained. •\t Disseminated to all relevant personnel, as well as to relevant vendors and business partners.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "12.1.2",
+        "domain": "Requirement 12: Support information security with organizational policies and programs",
+        "control_text": "The information security policy is: •\t Reviewed at least once every 12 months. •\t Updated as needed to reflect changes to business objectives or risks to the environment.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "12.1.3",
+        "domain": "Requirement 12: Support information security with organizational policies and programs",
+        "control_text": "The security policy clearly defines information security roles and responsibilities for all personnel, and all personnel are aware and acknowledge their information security responsibilities.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "12.1.4",
+        "domain": "Requirement 12: Support information security with organizational policies and programs",
+        "control_text": "Responsibility for information security is formally assigned to a Chief Information Security Officer or other information security knowledgeable member of executive management.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "12.2.1",
+        "domain": "Requirement 12: Support information security with organizational policies and programs",
+        "control_text": "Acceptable use policies for end-user technologies are documented and implemented, including: •\t Explicit approval by authorized parties. •\t Acceptable uses of the technology. •\t List of products approved by the company for employee use, including hardware and software. Applicability Notes Examples of end-user technologies for which acceptable use policies are expected, include but are not limited to, remote access and wireless technologies, laptops, tablets, mobile phones, and removable electronic media, email usage, and Internet usage.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "12.3.1",
+        "domain": "Requirement 12: Support information security with organizational policies and programs",
+        "control_text": "For each PCI DSS requirement that specifies completion of a targeted risk analysis, the analysis is documented and includes: •\t Identification of the assets being protected.  •\t Identification of the threat(s) that the requirement is protecting against. •\t Identification of factors that contribute to the likelihood and/or impact of a threat being realized.  •\t Resulting analysis that determines, and includes justification for, how the frequency or processes defined by the entity to meet the requirement minimize the likelihood and/or impact of the threat being realized. •\t Review of each targeted risk analysis at least once every 12 months to determine whether the results are still valid or if an updated risk analysis is needed •\t Performance of updated risk analyses when needed, as determined by the annual review. Applicability Notes This requirement is a best practice until 31 March 2025, after which it will be required and must be fully considered during a PCI DSS assessment.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "12.3.2",
+        "domain": "Requirement 12: Support information security with organizational policies and programs",
+        "control_text": "A targeted risk analysis is performed for each PCI DSS requirement that the entity meets with the customized approach, to include: •\t Documented evidence detailing each element specified in Appendix B: Guidance and Instructions for Using Customized Approach (including, at a minimum, a controls matrix and risk analysis). •\t Approval of documented evidence by senior management. •\t Performance of the targeted analysis of risk at least once every 12 months.  Applicability Notes This only applies to entities using a Customized Approach.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "12.3.3",
+        "domain": "Requirement 12: Support information security with organizational policies and programs",
+        "control_text": "Cryptographic cipher suites and protocols in use are documented and reviewed at least once every 12 months, including at least the following: •\t An up-to-date inventory of all cryptographic cipher suites and protocols in use, including purpose and where used. •\t Active monitoring of industry trends regarding continued viability of all cryptographic cipher suites and protocols in use. •\t Documentation of a plan to respond to anticipated changes in cryptographic vulnerabilities. Applicability Notes The requirement applies to all cryptographic cipher suites and protocols used to meet PCI DSS requirements, including, but not limited to, those used to render PAN unreadable in storage and transmission, to protect passwords, and as part of authenticating access.  This requirement is a best practice until 31 March 2025, after which it will be required and must be fully considered during a PCI DSS assessment.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "12.3.4",
+        "domain": "Requirement 12: Support information security with organizational policies and programs",
+        "control_text": "Hardware and software technologies in use are reviewed at least once every 12 months, including at least the following: •\t Analysis that the technologies continue to receive security fixes from vendors promptly. •\t Analysis that the technologies continue to support (and do not preclude) the entity’s PCI DSS compliance. •\t Documentation of any industry announcements or trends related to a technology, such as when a vendor has announced “end of life” plans for a technology. •\t Documentation of a plan, approved by senior management, to remediate outdated technologies, including those for which vendors have announced “end of life” plans. Applicability Notes This requirement is a best practice until 31 March 2025, after which it will be required and must be fully considered during a PCI DSS assessment.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "12.4.1",
+        "domain": "Requirement 12: Support information security with organizational policies and programs",
+        "control_text": "Additional requirement for service providers only: Responsibility is established by executive management for the protection of cardholder data and a PCI DSS compliance program to include:  •\t Overall accountability for maintaining PCI DSS compliance. •\t Defining a charter for a PCI DSS compliance program and communication to executive management. Applicability Notes This requirement applies only when the entity being assessed is a service provider. Executive management may include C-level positions, board of directors, or equivalent. The specific titles will depend on the particular organizational structure. Responsibility for the PCI DSS compliance program may be assigned to individual roles and/or to business units within the organization.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "12.4.2",
+        "domain": "Requirement 12: Support information security with organizational policies and programs",
+        "control_text": "Additional requirement for service providers only: Reviews are performed at least once every three months to confirm personnel are performing their tasks in accordance with all security policies and all operational procedures. Reviews are performed by personnel other than those responsible for performing the given task and include, but not limited to, the following tasks:  • \tDaily log reviews.  • \tConfiguration reviews for network security controls.  • \t Applying configuration standards to new systems.  • \t Responding to security alerts.  •  \tChange-management processes. Applicability Notes This requirement applies only when the entity being assessed is a service provider.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "12.5.1",
+        "domain": "Requirement 12: Support information security with organizational policies and programs",
+        "control_text": "An inventory of system components that are in scope for PCI DSS, including a description of function/use, is maintained and kept current.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "12.5.2",
+        "domain": "Requirement 12: Support information security with organizational policies and programs",
+        "control_text": "PCI DSS scope is documented and confirmed by the entity at least once every 12 months and upon significant change to the in-scope environment. At a minimum, the scoping validation includes: •\t Identifying all data flows for the various payment stages (for example, authorization, capture settlement, chargebacks, and refunds) and acceptance channels (for example, card-present, card-not-present, and e-commerce). •\t Updating all data-flow diagrams per Requirement 1.2.4. •\t Identifying all locations where account data is stored, processed, and transmitted, including but not limited to: 1) any locations outside of the currently defined CDE, 2) applications that process CHD, 3) transmissions between systems and networks, and 4) file backups. •\t Identifying all system components in the CDE, connected to the CDE, or that could impact security of the CDE. •\t Identifying all segmentation controls in use and the environment(s) from which the CDE is segmented, including justification for environments being out of scope. •\t Identifying all connections from third-party entities with access to the CDE. •\t Confirming that all identified data flows, account data, system components, segmentation controls, and connections from third parties with access to the CDE are included in scope. Applicability Notes This annual confirmation of PCI DSS scope is an activity expected to be performed by the entity under assessment, and is not the same, nor is it intended to be replaced by, the scoping confirmation performed by the entity’s assessor during the annual assessment.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "12.5.3",
+        "domain": "Requirement 12: Support information security with organizational policies and programs",
+        "control_text": "Additional requirement for service providers only: Significant changes to organizational structure result in a documented (internal) review of the impact to PCI DSS scope and applicability of controls, with results communicated to executive management. Applicability Notes This requirement applies only when the entity being assessed is a service provider. This requirement is a best practice until 31 March 2025, after which it will be required and must be fully considered during a PCI DSS assessment.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "12.6.1",
+        "domain": "Requirement 12: Support information security with organizational policies and programs",
+        "control_text": "A formal security awareness program is implemented to make all personnel aware of the entity’s information security policy and procedures and their role in protecting the cardholder data.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "12.6.2",
+        "domain": "Requirement 12: Support information security with organizational policies and programs",
+        "control_text": "The security awareness program is:  •\t Reviewed at least once every 12 months, and  •\t Updated as needed to address any new threats and vulnerabilities that may impact the security of the entity’s cardholder data and/or sensitive authentication data, or the information provided to personnel about their role in protecting cardholder data. Applicability Notes This requirement is a best practice until 31 March 2025, after which it will be required and must be fully considered during a PCI DSS assessment.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "12.6.3",
+        "domain": "Requirement 12: Support information security with organizational policies and programs",
+        "control_text": "Personnel receive security awareness training as follows:  •\t Upon hire and at least once every 12 months. •\t Multiple methods of communication are used. •\t Personnel acknowledge at least once every 12 months that they have read and understood the information security policy and procedures.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "12.7.1",
+        "domain": "Requirement 12: Support information security with organizational policies and programs",
+        "control_text": "Potential personnel who will have access to the CDE are screened, within the constraints of local laws, prior to hire to minimize the risk of attacks from internal sources.  Applicability Notes For those potential personnel to be hired for positions such as store cashiers, who only have access to one card number at a time when facilitating a transaction, this requirement is a recommendation only.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "12.8.1",
+        "domain": "Requirement 12: Support information security with organizational policies and programs",
+        "control_text": "A list of all third-party service providers (TPSPs) with which account data is shared or that could affect the security of account data is maintained, including a description for each of the services provided. Applicability Notes The use of a PCI DSS compliant TPSP does not make an entity PCI DSS compliant, nor does it remove the entity’s responsibility for its own PCI DSS compliance.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "12.8.2",
+        "domain": "Requirement 12: Support information security with organizational policies and programs",
+        "control_text": "Written agreements with TPSPs are maintained as follows:  •\t Written agreements are maintained with all TPSPs with which account data is shared or that could affect the security of the CDE. •\t Written agreements include acknowledgments from TPSPs that TPSPs are responsible for the security of account data the TPSPs possess or otherwise store, process, or transmit on behalf of the entity, or to the extent that the TPSP could impact the security of the entity’s cardholder data and/or sensitive authentication data. Applicability Notes The exact wording of an agreement will depend on the details of the service being provided, and the responsibilities assigned to each party. The agreement does not have to include the exact wording provided in this requirement. The TPSP’s written acknowledgment is a confirmation that states the TPSP is responsible for the security of the account data it may store, process, or transmit on behalf of the customer or to the extent the TPSP may impact the security of a customer’s cardholder data and/or sensitive authentication data.  Evidence that a TPSP is meeting PCI DSS requirements is not the same as a written acknowledgment specified in this requirement. For example, a PCI DSS Attestation of Compliance (AOC), a declaration on a company’s website, a policy statement, a responsibility matrix, or other evidence not included in a written agreement is not a written acknowledgment.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "12.8.3",
+        "domain": "Requirement 12: Support information security with organizational policies and programs",
+        "control_text": "An established process is implemented for engaging TPSPs, including proper due diligence prior to engagement.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "12.8.4",
+        "domain": "Requirement 12: Support information security with organizational policies and programs",
+        "control_text": "A program is implemented to monitor TPSPs’ PCI DSS compliance status at least once every 12 months.  Applicability Notes Where an entity has an agreement with a TPSP for meeting PCI DSS requirements on behalf of the entity (for example, via a firewall service), the entity must work with the TPSP to make sure the applicable PCI DSS requirements are met. If the TPSP does not meet those applicable PCI DSS requirements, then those requirements are also “not in place” for the entity.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "12.8.5",
+        "domain": "Requirement 12: Support information security with organizational policies and programs",
+        "control_text": "Information is maintained about which PCI DSS requirements are managed by each TPSP, which are managed by the entity, and any that are shared between the TPSP and the entity.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "12.9.1",
+        "domain": "Requirement 12: Support information security with organizational policies and programs",
+        "control_text": "Additional requirement for service providers only: TPSPs provide written agreements to customers that include acknowledgments that TPSPs are responsible for the security of account data the TPSP possesses or otherwise stores, processes, or transmits on behalf of the customer, or to the extent that the TPSP could impact the security of the customer’s cardholder data and/or sensitive authentication data. Applicability Notes This requirement applies only when the entity being assessed is a service provider. The exact wording of an agreement will depend on the details of the service being provided, and the responsibilities assigned to each party. The agreement does not have to include the exact wording provided in this requirement. The TPSP’s written acknowledgment is a confirmation that states the TPSP is responsible for the security of the account data it may store, process, or transmit on behalf of the customer or to the extent that the TPSP could impact the security of a customer’s cardholder data and/or sensitive authentication data.  Evidence that a TPSP is meeting PCI DSS requirements is not the same as a written agreement specified in this requirement. For example, a PCI DSS Attestation of Compliance (AOC), a declaration on a company’s website, a policy statement, a responsibility matrix, or other evidence not included in a written agreement is not a written acknowledgment.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "12.9.2",
+        "domain": "Requirement 12: Support information security with organizational policies and programs",
+        "control_text": "Additional requirement for service providers only: TPSPs support their customers’ requests for information to meet Requirements 12.8.4 and 12.8.5 by providing the following upon customer request: •\t PCI DSS compliance status information (Requirement 12.8.4). •\t Information about which PCI DSS requirements are the responsibility of the TPSP and which are the responsibility of the customer, including any shared responsibilities (Requirement 12.8.5), for any service the TPSP provides that meets a PCI DSS requirement(s) on behalf of customers or that can impact security of customers’ cardholder data and/or sensitive authentication data. Applicability Notes This requirement applies only when the entity being assessed is a service provider.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "12.10.1",
+        "domain": "Requirement 12: Support information security with organizational policies and programs",
+        "control_text": "An incident response plan exists and is ready to be activated in the event of a suspected or confirmed security incident. The plan includes, but is not limited to:  •\t Roles, responsibilities, and communication and contact strategies in the event of a suspected or confirmed security incident, including notification of payment brands and acquirers, at a minimum. •\t Incident response procedures with specific containment and mitigation activities for different types of incidents. •\t Business recovery and continuity procedures. •\t Data backup processes. •\t Analysis of legal requirements for reporting compromises. •\t Coverage and responses of all critical system components. •\t Reference or inclusion of incident response procedures from the payment brands.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "12.10.2",
+        "domain": "Requirement 12: Support information security with organizational policies and programs",
+        "control_text": "At least once every 12 months, the security incident response plan is:  •\t Reviewed and the content is updated as needed. •\t Tested, including all elements listed in Requirement 12.10.1.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "12.10.3",
+        "domain": "Requirement 12: Support information security with organizational policies and programs",
+        "control_text": "Specific personnel are designated to be available on a 24/7 basis to respond to suspected or confirmed security incidents.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "12.10.4",
+        "domain": "Requirement 12: Support information security with organizational policies and programs",
+        "control_text": "Personnel responsible for responding to suspected and confirmed security incidents are appropriately and periodically trained on their incident response responsibilities.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "12.10.5",
+        "domain": "Requirement 12: Support information security with organizational policies and programs",
+        "control_text": "The security incident response plan includes monitoring and responding to alerts from security monitoring systems, including but not limited to:  •\t Intrusion-detection and intrusion-prevention systems.  •\t Network security controls. •\t Change-detection mechanisms for critical files. •\t The change-and tamper-detection mechanism for payment pages. This bullet is a best practice until its effective date; refer to Applicability Notes below for details.  •\t Detection of unauthorized wireless access points. Applicability Notes The bullet above (for monitoring and responding to alerts from a change- and tamper-detection mechanism for payment pages) is a best practice until 31 March 2025, after which it will be required as part of Requirement 12.10.5 and must be fully considered during a PCI DSS assessment.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "12.10.6",
+        "domain": "Requirement 12: Support information security with organizational policies and programs",
+        "control_text": "The security incident response plan is modified and evolved according to lessons learned and to incorporate industry developments.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "12.10.7",
+        "domain": "Requirement 12: Support information security with organizational policies and programs",
+        "control_text": "Incident response procedures are in place, to be initiated upon the detection of stored PAN anywhere it is not expected, and include: •\t Determining what to do if PAN is discovered outside the CDE, including its retrieval, secure deletion, and/or migration into the currently defined CDE, as applicable. •\t Identifying whether sensitive authentication data is stored with PAN.  •\t Determining where the account data came from and how it ended up where it was not expected. •\t Remediating data leaks or process gaps that resulted in the account data being where it was not expected.  Applicability Notes This requirement is a best practice until 31 March 2025, after which it will be required and must be fully considered during a PCI DSS assessment.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "A1.1.1",
+        "domain": "Appendix A1: Additional PCI DSS Requirements for Multi-Tenant Service Providers",
+        "control_text": "Logical separation is implemented as follows: •\t The provider cannot access its customers’ environments without authorization. •\t Customers cannot access the provider’s environment without authorization. Applicability Notes This requirement is a best practice until 31 March 2025, after which it will be required and must be fully considered during a PCI DSS assessment.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "A1.1.2",
+        "domain": "Appendix A1: Additional PCI DSS Requirements for Multi-Tenant Service Providers",
+        "control_text": "Controls are implemented such that each customer only has permission to access its own cardholder data and CDE.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "A1.1.3",
+        "domain": "Appendix A1: Additional PCI DSS Requirements for Multi-Tenant Service Providers",
+        "control_text": "Controls are implemented such that each customer can only access resources allocated to them.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "A1.1.4",
+        "domain": "Appendix A1: Additional PCI DSS Requirements for Multi-Tenant Service Providers",
+        "control_text": "The effectiveness of logical separation controls used to separate customer environments is confirmed at least once every six months via penetration testing.  Applicability Notes The testing of adequate separation between customers in a multi-tenant service provider environment is in addition to the penetration tests specified in Requirement 11.4.6. This requirement is a best practice until 31 March 2025, after which it will be required and must be fully considered during a PCI DSS assessment.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "A1.2.1",
+        "domain": "Appendix A1: Additional PCI DSS Requirements for Multi-Tenant Service Providers",
+        "control_text": "Audit log capability is enabled for each customer’s environment that is consistent with PCI DSS Requirement 10, including: •\t Logs are enabled for common third-party applications. •\t Logs are active by default. •\t Logs are available for review only by the owning customer. •\t Log locations are clearly communicated to the owning customer. •\t Log data and availability is consistent with PCI DSS Requirement 10",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "A1.2.2",
+        "domain": "Appendix A1: Additional PCI DSS Requirements for Multi-Tenant Service Providers",
+        "control_text": "Processes or mechanisms are implemented to support and/or facilitate prompt forensic investigations in the event of a suspected or confirmed security incident for any customer.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "A1.2.3",
+        "domain": "Appendix A1: Additional PCI DSS Requirements for Multi-Tenant Service Providers",
+        "control_text": "Processes or mechanisms are implemented for reporting and addressing suspected or confirmed security incidents and vulnerabilities, including: •\t Customers can securely report security incidents and vulnerabilities to the provider.  •\t The provider addresses and remediates suspected or confirmed security incidents and vulnerabilities according to Requirement 6.3.1. Applicability Notes This requirement is a best practice until 31 March 2025, after which it will be required and must be fully considered during a PCI DSS assessment.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "A2.1.1",
+        "domain": "Appendix A2: Additional PCI DSS Requirements for Entities using SSL/Early TLS for Card-Present POS POI Terminal Connections  Note: SSL/early TLS  may not be used as a security control, except by POS POI terminals that are verified as not being susceptible to known exploits and the termination points to which they connect, as defined in this Appendix.",
+        "control_text": "Where POS POI terminals at the merchant or payment acceptance location use SSL and/or early TLS, the entity confirms the devices are not susceptible to any known exploits for those protocols. Applicability Notes This requirement is intended to apply to the entity with the POS POI terminal, such as a merchant. This requirement is not intended for service providers who serve as the termination or connection point to those POS POI terminals. Requirements A2.1.2 and A2.1.3 apply to POS POI service providers. The allowance for POS POI terminals that are not currently susceptible to exploits is based on currently known risks. If new exploits are introduced to which POS POI terminals are susceptible, the POS POI terminals will need to be updated immediately.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "A2.1.2",
+        "domain": "Appendix A2: Additional PCI DSS Requirements for Entities using SSL/Early TLS for Card-Present POS POI Terminal Connections  Note: SSL/early TLS  may not be used as a security control, except by POS POI terminals that are verified as not being susceptible to known exploits and the termination points to which they connect, as defined in this Appendix.",
+        "control_text": "Additional requirement for service providers only: All service providers with existing connection points to POS POI terminals that use SSL and/or early TLS as defined in A2.1 have a formal Risk Mitigation and Migration Plan in place that includes: •\t Description of usage, including what data is being transmitted, types and number of systems that use and/or support SSL/early TLS, and type of environment.  •\t Risk-assessment results and risk-reduction controls in place. •\t Description of processes to monitor for new vulnerabilities associated with SSL/early TLS. •\t Description of change control processes that are implemented to ensure SSL/early TLS is not implemented into new environments. •\t Overview of migration project plan to replace SSL/early TLS at a future date. Applicability Notes This requirement applies only when the entity being assessed is a service provider.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    },
+    {
+        "framework": "PCI-DSS",
+        "version": "4.0.1",
+        "requirement_id": "A2.1.3",
+        "domain": "Appendix A2: Additional PCI DSS Requirements for Entities using SSL/Early TLS for Card-Present POS POI Terminal Connections  Note: SSL/early TLS  may not be used as a security control, except by POS POI terminals that are verified as not being susceptible to known exploits and the termination points to which they connect, as defined in this Appendix.",
+        "control_text": "Additional requirement for service providers only: All service providers provide a secure service offering. Applicability Notes This requirement applies only when the entity being assessed is a service provider.",
+        "sub_requirements": [],
+        "evidence_mapping": {
+            "siem_events": [],
+            "tools": []
+        },
+        "weight": 0.85,
+        "compliance_threshold": 0.8,
+        "maturity_level": "L1"
+    }
+]

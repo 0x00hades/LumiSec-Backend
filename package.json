@@ -6,7 +6,19 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "test": "node --test --test-concurrency=1 test/auth.api.test.js test/grc.api.test.js test/health.api.test.js test/phishing.api.test.js test/soar.api.test.js test/uctc.api.test.js"
+    "test": "node --test --test-concurrency=1 test/auth.api.test.js test/grc.api.test.js test/health.api.test.js test/phishing.api.test.js test/soar.api.test.js test/uctc.api.test.js",
+    "seed:frameworks": "node database/seeds/frameworks.seed.js",
+    "worker:email": "node src/workers/emailWorker.js",
+    "worker:tracking": "node src/workers/trackingWorker.js",
+    "worker:risk": "node src/workers/riskWorker.js",
+    "worker:report": "node src/workers/reportWorker.js",
+    "worker:playbook": "node src/workers/playbookWorker.js",
+    "worker:enrichment": "node src/workers/enrichmentWorker.js",
+    "worker:alert": "node src/workers/alertWorker.js",
+    "worker:soar-notification": "node src/workers/notificationWorker.js",
+    "worker:analytics": "node src/workers/analyticsWorker.js",
+    "worker:soar-integration": "node src/workers/integrationWorker.js",
+    "seed:soar": "node database/seeds/soar.seed.js"
   },
   "dependencies": {
     "@elastic/elasticsearch": "^8.15.0",

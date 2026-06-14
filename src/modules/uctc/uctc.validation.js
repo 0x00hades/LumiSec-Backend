@@ -3,6 +3,7 @@ import { ruleStatus } from "../../utils/constant/enums.js";
 
 const targets = ["elastic", "kql", "splunk", "spl", "sentinel", "azure"];
 const sandboxLanguages = ["powershell", "python", "bash"];
+const ipv4 = Joi.string().ip({ version: ["ipv4"] });
 
 const sigmaContentFields = {
     yaml_content: Joi.string().min(1),
@@ -18,6 +19,10 @@ export const convertRuleValidation = Joi.object({
     targets: Joi.array().items(Joi.string().valid(...targets)).min(1),
     targetSiem: Joi.string().valid(...targets)
 }).or("yaml_content", "rawSigma").or("targets", "targetSiem");
+
+export const suggestRulesFromNetworkValidation = Joi.object({
+    ip: ipv4.required()
+});
 
 export const createRuleValidation = Joi.object({
     title: Joi.string().optional(),

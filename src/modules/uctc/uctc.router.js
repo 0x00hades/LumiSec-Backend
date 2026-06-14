@@ -16,6 +16,7 @@ import {
     listRulesValidation,
     noisyRulesValidation,
     ruleIdValidation,
+    suggestRulesFromNetworkValidation,
     tuningSuggestionsValidation,
     updateRuleValidation,
     validateRuleValidation
@@ -28,6 +29,7 @@ import {
     deployRule,
     getRuleById,
     getRules,
+    suggestRulesFromNetwork,
     updateRule,
     validateRule
 } from "./uctc.controller.js";
@@ -96,6 +98,13 @@ uctcRouter.get("/rules/list",
     canReadRules,
     isValid(listRulesValidation),
     asyncHandler(getRules)
+);
+
+// Uses LumiNet asset context to suggest rule ideas for UCTC detection engineering.
+uctcRouter.post("/rules/suggest-from-network",
+    canWriteRules,
+    isValid(suggestRulesFromNetworkValidation),
+    asyncHandler(suggestRulesFromNetwork)
 );
 
 // Fetches one saved Sigma rule by MongoDB rule ID.

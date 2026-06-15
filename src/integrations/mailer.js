@@ -2,11 +2,18 @@ import nodemailer from "nodemailer";
 import { AppError } from "../utils/appError.js";
 import { messages } from "../utils/constant/messages.js";
 
-const transporter = nodemailer.createTransporter({
+const smtpPort = Number(process.env.SMTP_PORT) || 587;
+
+const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
-    port: Number(process.env.SMTP_PORT) || 587,
-    secure: false,
-    auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS }
+    port: smtpPort,
+    secure: smtpPort === 465,
+    auth: process.env.SMTP_USER
+        ? { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS }
+        : undefined,
+    tls: {
+        rejectUnauthorized: process.env.SMTP_TLS_REJECT_UNAUTHORIZED !== "false"
+    }
 });
 
 export const sendEmail = async ({ to, subject, html, from }) => {

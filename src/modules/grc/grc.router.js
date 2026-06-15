@@ -2,6 +2,7 @@ import { Router } from "express";
 import { isValid } from "../../middleware/validation.js";
 import { asyncHandler } from "../../middleware/asyncHandler.js";
 import { isAuthenticated } from "../../middleware/authentication.js";
+import { isServiceOrUserAuthenticated } from "../../middleware/serviceAuth.js";
 import { isAuthorized } from "../../middleware/authorization.js";
 import { evidenceUpload } from "../../middleware/upload.js";
 import { grcPermissions as p } from "./permissions.js";
@@ -259,31 +260,31 @@ grcRouter.patch("/notifications/:id/read",
 
 // ─── Integrations ────────────────────────────────────────────────────────────
 grcRouter.post("/integrations/network/findings",
-    isAuthenticated(), isAuthorized(p.integrations.network), isValid(networkFindingValidation),
+    isServiceOrUserAuthenticated(), isAuthorized(p.integrations.network), isValid(networkFindingValidation),
     asyncHandler(ingestNetworkFinding)
 );
 grcRouter.post("/integrations/uctc/findings",
-    isAuthenticated(), isAuthorized(p.integrations.uctc), isValid(uctcFindingValidation),
+    isServiceOrUserAuthenticated(), isAuthorized(p.integrations.uctc), isValid(uctcFindingValidation),
     asyncHandler(ingestUctcFinding)
 );
 grcRouter.post("/integrations/soar/incidents",
-    isAuthenticated(), isAuthorized(p.integrations.soar), isValid(soarIncidentValidation),
+    isServiceOrUserAuthenticated(), isAuthorized(p.integrations.soar), isValid(soarIncidentValidation),
     asyncHandler(ingestSoarIncident)
 );
 grcRouter.patch("/integrations/soar/tasks/:id",
-    isAuthenticated(), isAuthorized(p.integrations.soar), isValid(soarTaskUpdateValidation),
+    isServiceOrUserAuthenticated(), isAuthorized(p.integrations.soar), isValid(soarTaskUpdateValidation),
     asyncHandler(updateSoarTask)
 );
 grcRouter.post("/integrations/phishing/risk",
-    isAuthenticated(), isAuthorized(p.integrations.phishing), isValid(phishingRiskValidation),
+    isServiceOrUserAuthenticated(), isAuthorized(p.integrations.phishing), isValid(phishingRiskValidation),
     asyncHandler(ingestPhishingRisk)
 );
 grcRouter.post("/integrations/siem/alerts",
-    isAuthenticated(), isAuthorized(p.integrations.siem), isValid(siemAlertValidation),
+    isServiceOrUserAuthenticated(), isAuthorized(p.integrations.siem), isValid(siemAlertValidation),
     asyncHandler(ingestSiemAlert)
 );
 grcRouter.post("/integrations/opencti/ioc",
-    isAuthenticated(), isAuthorized(p.integrations.opencti), isValid(openctiIocValidation),
+    isServiceOrUserAuthenticated(), isAuthorized(p.integrations.opencti), isValid(openctiIocValidation),
     asyncHandler(ingestOpenCtiIoc)
 );
 

@@ -21,7 +21,10 @@ const findingSchema = new Schema({
 }, { timestamps: true });
 
 findingSchema.index({ status: 1, severity: 1 });
-findingSchema.index({ sourceModule: 1, sourceId: 1 });
+findingSchema.index(
+    { sourceModule: 1, sourceId: 1 },
+    { unique: true, partialFilterExpression: { sourceId: { $type: "string" } } }
+);
 findingSchema.index({ asset: 1 });
 findingSchema.index({ assignedTo: 1 });
 findingSchema.index({ title: "text", description: "text", asset: "text" });

@@ -1,0 +1,13 @@
+node_modules/
+npm-debug.log
+.git
+uploads/
+logs/
+config/.env
+*.pem
+*.key
+test/
+docs/
+grc_frameworks/
+lumisec-docs/
+SOAR_*.md

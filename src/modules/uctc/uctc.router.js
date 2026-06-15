@@ -2,6 +2,7 @@ import { Router } from "express";
 import { isValid } from "../../middleware/validation.js";
 import { asyncHandler } from "../../middleware/asyncHandler.js";
 import { isAuthenticated } from "../../middleware/authentication.js";
+import { isServiceOrUserAuthenticated } from "../../middleware/serviceAuth.js";
 import { isAuthorized } from "../../middleware/authorization.js";
 import { roles } from "../../utils/constant/enums.js";
 import {
@@ -19,6 +20,11 @@ import {
     suggestRulesFromNetworkValidation,
     tuningSuggestionsValidation,
     updateRuleValidation,
+    uctcGrcGapValidation,
+    uctcNetworkCoverageValidation,
+    uctcOpenCtiIocValidation,
+    uctcSiemDeployValidation,
+    uctcSoarIncidentValidation,
     validateRuleValidation
 } from "./uctc.validation.js";
 import {
@@ -31,7 +37,12 @@ import {
     getRules,
     suggestRulesFromNetwork,
     updateRule,
-    validateRule
+    validateRule,
+    integrateGrcGap,
+    integrateSoarIncident,
+    integrateNetworkCoverage,
+    integrateSiemDeploy,
+    integrateOpenCtiIoc
 } from "./uctc.controller.js";
 import {
     executeScenario,
@@ -197,10 +208,34 @@ uctcRouter.post("/tuning/alerts/ingest",
     asyncHandler(ingestAlertFeedback)
 );
 
+const canIntegrate = isAuthorized([roles.ADMIN, roles.SOC_MANAGER, roles.DETECTION_ENGINEER, roles.INTEGRATION_ADMIN]);
+
 // Returns compact metrics for the UCTC dashboard.
 uctcRouter.get("/dashboard/stats",
     canReadRules,
     asyncHandler(getDashboardStats)
+);
+
+// ─── Integrations ────────────────────────────────────────────────────────────
+uctcRouter.post("/integrations/grc/gap",
+    isServiceOrUserAuthenticated(), canIntegrate, isValid(uctcGrcGapValidation),
+    asyncHandler(integrateGrcGap)
+);
+uctcRouter.post("/integrations/soar/incident",
+    isServiceOrUserAuthenticated(), canIntegrate, isValid(uctcSoarIncidentValidation),
+    asyncHandler(integrateSoarIncident)
+);
+uctcRouter.post("/integrations/network/coverage",
+    isServiceOrUserAuthenticated(), canIntegrate, isValid(uctcNetworkCoverageValidation),
+    asyncHandler(integrateNetworkCoverage)
+);
+uctcRouter.post("/integrations/siem/deploy",
+    isServiceOrUserAuthenticated(), canIntegrate, isValid(uctcSiemDeployValidation),
+    asyncHandler(integrateSiemDeploy)
+);
+uctcRouter.post("/integrations/opencti/ioc",
+    isServiceOrUserAuthenticated(), canIntegrate, isValid(uctcOpenCtiIocValidation),
+    asyncHandler(integrateOpenCtiIoc)
 );
 
 export default uctcRouter;

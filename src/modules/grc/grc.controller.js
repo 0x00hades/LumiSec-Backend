@@ -301,8 +301,8 @@ export const updateSoarTask = async (req, res) => {
 };
 
 export const ingestPhishingRisk = async (req, res) => {
-    const risk = await integrationService.ingestPhishingRisk(req.body, req.authUser);
-    return successResponse(res, { message: messages.integration.ingestedSuccessfully, data: risk, statusCode: 201 });
+    const result = await integrationService.ingestPhishingRisk(req.body, req.authUser);
+    return successResponse(res, { message: messages.integration.ingestedSuccessfully, data: result, statusCode: 201 });
 };
 
 export const ingestSiemAlert = async (req, res) => {
@@ -311,6 +311,6 @@ export const ingestSiemAlert = async (req, res) => {
 };
 
 export const ingestOpenCtiIoc = async (req, res) => {
-    const risk = await integrationService.ingestOpenCtiIoc(req.body, req.authUser);
-    return successResponse(res, { message: messages.integration.ingestedSuccessfully, data: risk, statusCode: 201 });
+    const result = await integrationService.ingestOpenCtiIoc(req.body, req.authUser);
+    return successResponse(res, { message: messages.integration.ingestedSuccessfully, data: result, statusCode: 201 });
 };

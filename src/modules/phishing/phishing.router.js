@@ -2,6 +2,8 @@ import { Router } from "express";
 import { isValid } from "../../middleware/validation.js";
 import { asyncHandler } from "../../middleware/asyncHandler.js";
 import { isAuthenticated } from "../../middleware/authentication.js";
+import { isServiceOrUserAuthenticated } from "../../middleware/serviceAuth.js";
+import { rateLimit } from "../../middleware/rateLimit.js";
 import { isAuthorized } from "../../middleware/authorization.js";
 import { phishingPermissions as p } from "./permissions.js";
 import {
@@ -137,24 +139,31 @@ phishingRouter.post("/campaigns/:id/stop",
     asyncHandler(stopCampaign)
 );
 
+const trackingRateLimit = rateLimit({ windowMs: 60_000, max: 120 });
+
 // ─── Tracking (public) ───────────────────────────────────────────────────────
 phishingRouter.get("/track/open/:trackingId",
+    trackingRateLimit,
     isValid(trackingIdParamValidation),
     asyncHandler(trackOpen)
 );
 phishingRouter.get("/track/click/:trackingId",
+    trackingRateLimit,
     isValid(trackingIdParamValidation),
     asyncHandler(trackClick)
 );
 phishingRouter.post("/track/visit/:trackingId",
+    trackingRateLimit,
     isValid(trackingIdParamValidation),
     asyncHandler(trackVisit)
 );
 phishingRouter.post("/track/submit/:trackingId",
+    trackingRateLimit,
     isValid(trackSubmitValidation),
     asyncHandler(trackSubmit)
 );
 phishingRouter.post("/track/download/:trackingId",
+    trackingRateLimit,
     isValid(trackDownloadValidation),
     asyncHandler(trackDownload)
 );
@@ -193,19 +202,19 @@ phishingRouter.get("/dashboard/trends",
 
 // ─── Integrations ────────────────────────────────────────────────────────────
 phishingRouter.post("/integrations/grc/risk",
-    isAuthenticated(), isAuthorized(p.integrations.manage), isValid(grcRiskIntegrationValidation),
+    isServiceOrUserAuthenticated(), isAuthorized(p.integrations.manage), isValid(grcRiskIntegrationValidation),
     asyncHandler(integrateGrcRisk)
 );
 phishingRouter.post("/integrations/soar/incident",
-    isAuthenticated(), isAuthorized(p.integrations.manage), isValid(soarIncidentIntegrationValidation),
+    isServiceOrUserAuthenticated(), isAuthorized(p.integrations.manage), isValid(soarIncidentIntegrationValidation),
     asyncHandler(integrateSoarIncident)
 );
 phishingRouter.post("/integrations/siem/event",
-    isAuthenticated(), isAuthorized(p.integrations.manage), isValid(siemEventIntegrationValidation),
+    isServiceOrUserAuthenticated(), isAuthorized(p.integrations.manage), isValid(siemEventIntegrationValidation),
     asyncHandler(integrateSiemEvent)
 );
 phishingRouter.post("/integrations/opencti/indicator",
-    isAuthenticated(), isAuthorized(p.integrations.manage), isValid(openctiIndicatorValidation),
+    isServiceOrUserAuthenticated(), isAuthorized(p.integrations.manage), isValid(openctiIndicatorValidation),
     asyncHandler(integrateOpenCtiIndicator)
 );
 

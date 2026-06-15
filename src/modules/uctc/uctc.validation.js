@@ -118,3 +118,43 @@ export const ingestAlertFeedbackValidation = Joi.object({
     estimated_minutes: Joi.number().min(0).max(10000).optional(),
     source: Joi.string().max(200).optional()
 });
+
+export const uctcGrcGapValidation = Joi.object({
+    title: Joi.string().required(),
+    description: Joi.string().required(),
+    severity: Joi.string().valid("low", "medium", "high", "critical").optional(),
+    asset: ipv4.optional(),
+    testCaseId: Joi.string().optional(),
+    sourceId: Joi.string().optional(),
+    gapType: Joi.string().optional(),
+    tags: Joi.array().items(Joi.string()).optional()
+});
+
+export const uctcSoarIncidentValidation = Joi.object({
+    title: Joi.string().required(),
+    description: Joi.string().required(),
+    severity: Joi.string().valid("low", "medium", "high", "critical").optional(),
+    sourceIp: ipv4.optional(),
+    asset: Joi.string().optional(),
+    gapId: Joi.string().optional(),
+    testCaseId: Joi.string().optional()
+});
+
+export const uctcNetworkCoverageValidation = Joi.object({
+    assetIp: ipv4.optional(),
+    assetMac: Joi.string().optional(),
+    service: Joi.string().optional(),
+    port: Joi.number().integer().min(1).max(65535).optional(),
+    gapType: Joi.string().optional(),
+    description: Joi.string().optional()
+});
+
+export const uctcSiemDeployValidation = Joi.object({
+    ruleId: Joi.string().hex().length(24).required(),
+    eventType: Joi.string().optional(),
+    metadata: Joi.object().optional()
+});
+
+export const uctcOpenCtiIocValidation = Joi.object({
+    limit: Joi.number().integer().min(1).max(100).optional()
+});

@@ -8,7 +8,8 @@ const phishingEventSchema = new Schema({
     ipAddress: { type: String },
     userAgent: { type: String },
     timestamp: { type: Date, default: Date.now },
-    metadata: { type: Schema.Types.Mixed }
+    metadata: { type: Schema.Types.Mixed },
+    meta: { type: Schema.Types.Mixed }
 }, { timestamps: true });
 
 phishingEventSchema.index({ campaignId: 1 });

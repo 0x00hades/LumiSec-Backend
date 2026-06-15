@@ -244,6 +244,8 @@ export const phishingRiskValidation = Joi.object({
     title: Joi.string().optional(),
     description: Joi.string().optional(),
     eventType: Joi.string().valid("click", "submit").required(),
+    sourceId: Joi.string().optional(),
+    severity: Joi.string().valid(...Object.values(severity)).optional(),
     owner: objectId.optional(),
     findingId: objectId.optional()
 });

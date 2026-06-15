@@ -15,14 +15,18 @@ const redisConfig = isTest
         })
     }
     : { redis: process.env.REDIS_URL || "redis://localhost:6379" };
-export const emailQueue      = new Bull("emailQueue",      redisConfig);
-export const soarQueue          = new Bull("soarQueue",          redisConfig);
-export const enrichmentQueue    = new Bull("enrichmentQueue",    redisConfig);
-export const alertQueue         = new Bull("alertQueue",         redisConfig);
-export const soarNotificationQueue = new Bull("soarNotificationQueue", redisConfig);
-export const analyticsQueue     = new Bull("analyticsQueue",     redisConfig);
-export const soarIntegrationQueue  = new Bull("soarIntegrationQueue", redisConfig);
-export const ruleQueue       = new Bull("ruleQueue",       redisConfig);
-export const reportQueue     = new Bull("reportQueue",     redisConfig);
-export const trackingQueue   = new Bull("trackingQueue",   redisConfig);
-export const riskQueue       = new Bull("riskQueue",       redisConfig);
+const PREFIX = process.env.QUEUE_PREFIX || "lumisec";
+
+const queueName = (name) => `${PREFIX}.${name}`;
+
+export const emailQueue      = new Bull(queueName("phishing.email"),      redisConfig);
+export const soarQueue          = new Bull(queueName("soar.legacy"),          redisConfig);
+export const enrichmentQueue    = new Bull(queueName("soar.enrichment"),    redisConfig);
+export const alertQueue         = new Bull(queueName("soar.alert"),         redisConfig);
+export const soarNotificationQueue = new Bull(queueName("soar.notification"), redisConfig);
+export const analyticsQueue     = new Bull(queueName("soar.analytics"),     redisConfig);
+export const soarIntegrationQueue  = new Bull(queueName("soar.integration"), redisConfig);
+export const ruleQueue       = new Bull(queueName("uctc.rule"),       redisConfig);
+export const reportQueue     = new Bull(queueName("report"),     redisConfig);
+export const trackingQueue   = new Bull(queueName("phishing.tracking"),   redisConfig);
+export const riskQueue       = new Bull(queueName("phishing.risk"),       redisConfig);

@@ -5,7 +5,7 @@ import { logger } from "../utils/logger.js";
 import {
     IntegrationAction, SigmaRule, Campaign, Incident
 } from "../../database/index.js";
-import { integrationActionStatus } from "../utils/constant/enums.js";
+import { integrationActionStatus, ruleStatus } from "../utils/constant/enums.js";
 import { blockIPFortigate } from "../integrations/firewall.js";
 import { isolateHost } from "../integrations/ssh.js";
 import { isolateWindowsHost } from "../integrations/winrm.js";
@@ -56,10 +56,25 @@ soarIntegrationQueue.process("triggerUctcRule", PROCESS_OPTS.concurrency, async 
     const rule = await SigmaRule.findById(ruleId);
     if (!rule) throw new Error("Sigma rule not found");
 
-    const result = { ruleId, ruleTitle: rule.title, incidentId, context, triggered: true };
+    const { deployRuleToSiem, pushSiemDeployEvent } = await import("../modules/uctc/services/integration.service.js");
+    const deployment = await deployRuleToSiem(rule, { _id: job.data.userId });
+
+    rule.status = ruleStatus.DEPLOYED;
+    rule.deployedAt = new Date();
+    rule.deploymentNote = `Deployed via SOAR integration worker`;
+    await rule.save();
+
+    await pushSiemDeployEvent({
+        ruleId: rule._id.toString(),
+        ruleTitle: rule.title,
+        targetSiem: rule.targetSiem,
+        metadata: { ...deployment, incidentId, context }
+    });
+
+    const result = { ruleId, ruleTitle: rule.title, incidentId, context, deployment, triggered: true };
     await updateIntegrationAction(job.id, integrationActionStatus.SUCCESS, result);
     emitAlert("detection_engineer", "soar:uctc-triggered", result);
-    logger.info(`Triggered UCTC rule ${ruleId}`);
+    logger.info(`Triggered and deployed UCTC rule ${ruleId}`);
     return result;
 });
 

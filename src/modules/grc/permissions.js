@@ -54,11 +54,11 @@ export const grcPermissions = {
         read: [roles.ADMIN, roles.AUDITOR, roles.GRC_MANAGER, roles.IT_MANAGER, roles.ASSIGNEE, roles.COMPLIANCE_MANAGER, roles.SOC_MANAGER, roles.SOC_ANALYST, roles.DETECTION_ENGINEER]
     },
     integrations: {
-        network: [roles.ADMIN, roles.GRC_MANAGER, roles.DETECTION_ENGINEER, roles.SOC_MANAGER],
-        uctc: [roles.ADMIN, roles.GRC_MANAGER, roles.DETECTION_ENGINEER],
-        soar: [roles.ADMIN, roles.GRC_MANAGER, roles.SOC_MANAGER],
-        phishing: [roles.ADMIN, roles.GRC_MANAGER, roles.SOC_MANAGER],
-        siem: [roles.ADMIN, roles.GRC_MANAGER, roles.SOC_ANALYST, roles.DETECTION_ENGINEER],
-        opencti: [roles.ADMIN, roles.GRC_MANAGER, roles.SOC_ANALYST]
+        network: [roles.ADMIN, roles.GRC_MANAGER, roles.DETECTION_ENGINEER, roles.SOC_MANAGER, roles.INTEGRATION_ADMIN],
+        uctc: [roles.ADMIN, roles.GRC_MANAGER, roles.DETECTION_ENGINEER, roles.INTEGRATION_ADMIN],
+        soar: [roles.ADMIN, roles.GRC_MANAGER, roles.SOC_MANAGER, roles.INTEGRATION_ADMIN],
+        phishing: [roles.ADMIN, roles.GRC_MANAGER, roles.SOC_MANAGER, roles.INTEGRATION_ADMIN],
+        siem: [roles.ADMIN, roles.GRC_MANAGER, roles.SOC_ANALYST, roles.DETECTION_ENGINEER, roles.INTEGRATION_ADMIN],
+        opencti: [roles.ADMIN, roles.GRC_MANAGER, roles.SOC_ANALYST, roles.INTEGRATION_ADMIN]
     }
 };

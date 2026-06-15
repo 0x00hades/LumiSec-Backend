@@ -11,8 +11,7 @@ services:
       - mongo
       - redis
     volumes:
-      - .:/app
-      - /app/node_modules
+      - ./uploads:/app/uploads
 
   mongo:
     image: mongo:7
@@ -26,19 +25,27 @@ services:
     ports:
       - "6379:6379"
 
-  # Optional: run workers as separate processes
-  soar-worker:
+  email-worker:
     build: .
-    command: node src/workers/soarWorker.js
+    command: node src/workers/emailWorker.js
     env_file:
       - config/.env
     depends_on:
       - mongo
       - redis
 
-  email-worker:
+  tracking-worker:
     build: .
-    command: node src/workers/emailWorker.js
+    command: node src/workers/trackingWorker.js
+    env_file:
+      - config/.env
+    depends_on:
+      - mongo
+      - redis
+
+  risk-worker:
+    build: .
+    command: node src/workers/riskWorker.js
     env_file:
       - config/.env
     depends_on:
@@ -55,6 +62,62 @@ services:
       - redis
     volumes:
       - ./uploads:/app/uploads
+
+  playbook-worker:
+    build: .
+    command: node src/workers/playbookWorker.js
+    env_file:
+      - config/.env
+    depends_on:
+      - mongo
+      - redis
+
+  enrichment-worker:
+    build: .
+    command: node src/workers/enrichmentWorker.js
+    env_file:
+      - config/.env
+    depends_on:
+      - mongo
+      - redis
+
+  alert-worker:
+    build: .
+    command: node src/workers/alertWorker.js
+    env_file:
+      - config/.env
+    depends_on:
+      - mongo
+      - redis
+
+  soar-notification-worker:
+    build: .
+    command: node src/workers/notificationWorker.js
+    env_file:
+      - config/.env
+    depends_on:
+      - mongo
+      - redis
+
+  analytics-worker:
+    build: .
+    command: node src/workers/analyticsWorker.js
+    env_file:
+      - config/.env
+    depends_on:
+      - mongo
+      - redis
+    volumes:
+      - ./uploads:/app/uploads
+
+  soar-integration-worker:
+    build: .
+    command: node src/workers/integrationWorker.js
+    env_file:
+      - config/.env
+    depends_on:
+      - mongo
+      - redis
 
 volumes:
   mongo_data:

@@ -10,6 +10,7 @@ import {
     validateSigmaRule
 } from "../../utils/helpers/sigmaConverter.js";
 import { buildNetworkDetectionSuggestions } from "../../utils/helpers/networkDetectionContext.js";
+import * as uctcIntegration from "./services/integration.service.js";
 
 /**
  * Reads Sigma YAML from either the documented field or the internal model field.
@@ -261,14 +262,21 @@ export const deployRule = async (req, res, next) => {
         return next(new AppError("Rule must be converted before deployment", 400));
     }
 
-    // INFRA/CLOUD INTEGRATION: Replace this mock state change with a SIEM client call selected by rule.targetSiem.
-    // INFRA/CLOUD INTEGRATION: The SIEM client should return an external rule ID and deployment status for storage here.
-    const deploymentTarget = rule.targetSiem;
-    rule.deploymentNote = `Mock deployment recorded for ${deploymentTarget}`;
+    const deployment = await uctcIntegration.deployRuleToSiem(rule, req.authUser);
+    rule.deploymentNote = deployment.mode === "mock"
+        ? `Mock deployment recorded for ${rule.targetSiem}`
+        : `Deployed to ${deployment.index || rule.targetSiem}`;
     rule.status = ruleStatus.DEPLOYED;
     rule.deployedAt = new Date();
     rule.approvedBy = req.authUser._id;
     await rule.save();
+
+    await uctcIntegration.pushSiemDeployEvent({
+        ruleId: rule._id.toString(),
+        ruleTitle: rule.title,
+        targetSiem: rule.targetSiem,
+        metadata: deployment
+    });
 
     return successResponse(res, { message: messages.sigmaRule.deployedSuccessfully, data: rule });
 };
@@ -361,4 +369,37 @@ export const archiveRule = async (req, res, next) => {
     await rule.save();
 
     return successResponse(res, { message: messages.sigmaRule.retiredSuccessfully, data: rule });
+};
+
+export const integrateGrcGap = async (req, res) => {
+    const finding = await uctcIntegration.pushGrcGapFinding(req.body, req.authUser);
+    return successResponse(res, { message: "GRC finding created from UCTC gap", data: finding, statusCode: 201 });
+};
+
+export const integrateSoarIncident = async (req, res) => {
+    const incident = await uctcIntegration.pushSoarIncident(req.body, req.authUser);
+    return successResponse(res, { message: "SOAR incident created from UCTC", data: incident, statusCode: 201 });
+};
+
+export const integrateNetworkCoverage = async (req, res) => {
+    const result = await uctcIntegration.suggestRulesFromNetwork(req.body, req.authUser);
+    return successResponse(res, { message: "Network coverage analysis completed", data: result });
+};
+
+export const integrateSiemDeploy = async (req, res) => {
+    const rule = await SigmaRule.findById(req.body.ruleId);
+    if (!rule) throw new AppError(messages.sigmaRule.notFound, 404);
+    const deployment = await uctcIntegration.deployRuleToSiem(rule, req.authUser);
+    await uctcIntegration.pushSiemDeployEvent({
+        ruleId: rule._id.toString(),
+        ruleTitle: rule.title,
+        targetSiem: rule.targetSiem,
+        metadata: deployment
+    });
+    return successResponse(res, { message: "Rule deployment forwarded to SIEM", data: deployment, statusCode: 202 });
+};
+
+export const integrateOpenCtiIoc = async (req, res) => {
+    const result = await uctcIntegration.pullOpenCtiIocs(req.body);
+    return successResponse(res, { message: "OpenCTI IOCs retrieved", data: result });
 };

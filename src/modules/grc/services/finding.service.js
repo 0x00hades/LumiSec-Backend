@@ -5,34 +5,56 @@ import { findingStatus, entityType, auditAction, notificationType, sourceModule 
 import { parsePagination, buildTextSearch } from "../../../utils/pagination.js";
 import { auditCreate, auditUpdate, auditDelete, recordAudit } from "../../../utils/auditLogger.js";
 import { createNotification } from "../../../utils/notificationHelper.js";
+import { withTransaction } from "../../../utils/transaction.js";
 
-export const createFinding = async (data, user) => {
+export const createFinding = async (data, user, options = {}) => {
+    if (data.sourceModule && data.sourceId) {
+        const existing = await Finding.findOne({
+            sourceModule: data.sourceModule,
+            sourceId: data.sourceId
+        });
+        if (existing) return existing;
+    }
+
     const payload = {
         ...data,
         sourceModule: data.sourceModule || sourceModule.MANUAL,
         createdBy: user._id
     };
 
-    const finding = await Finding.create(payload);
+    const runCreate = async (session) => {
+        const createOpts = session ? { session } : {};
+        const [finding] = await Finding.create([payload], createOpts);
 
-    if (data.auditReportId) {
-        await AuditReport.findByIdAndUpdate(data.auditReportId, { $push: { findings: finding._id } });
+        if (data.auditReportId) {
+            await AuditReport.findByIdAndUpdate(
+                data.auditReportId,
+                { $push: { findings: finding._id } },
+                createOpts
+            );
+        }
+
+        await auditCreate(user, entityType.FINDING, finding);
+
+        if (finding.assignedTo) {
+            await createNotification({
+                userId: finding.assignedTo,
+                title: "New finding assigned",
+                message: `Finding "${finding.title}" has been assigned to you`,
+                type: notificationType.FINDING,
+                entityType: entityType.FINDING,
+                entityId: finding._id
+            });
+        }
+
+        return finding;
+    };
+
+    if (options.transactional) {
+        return withTransaction(runCreate);
     }
 
-    await auditCreate(user, entityType.FINDING, finding);
-
-    if (finding.assignedTo) {
-        await createNotification({
-            userId: finding.assignedTo,
-            title: "New finding assigned",
-            message: `Finding "${finding.title}" has been assigned to you`,
-            type: notificationType.FINDING,
-            entityType: entityType.FINDING,
-            entityId: finding._id
-        });
-    }
-
-    return finding;
+    return runCreate();
 };
 
 export const listFindings = async (query) => {

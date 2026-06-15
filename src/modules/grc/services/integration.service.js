@@ -2,6 +2,7 @@ import { SiemAlert } from "../../../../database/index.js";
 import { sourceModule, severity, riskLevel, entityType, notificationType } from "../../../utils/constant/enums.js";
 import { auditCreate } from "../../../utils/auditLogger.js";
 import { createNotification } from "../../../utils/notificationHelper.js";
+import { withTransaction } from "../../../utils/transaction.js";
 import * as findingService from "./finding.service.js";
 import * as riskService from "./risk.service.js";
 import * as taskService from "./task.service.js";
@@ -85,54 +86,92 @@ export const ingestPhishingRisk = async (payload, user) => {
     const likelihood = payload.eventType === "submit" ? 4 : 3;
     const impact = payload.eventType === "submit" ? 5 : 3;
 
-    return riskService.createRisk({
+    let finding = null;
+    if (payload.sourceId) {
+        finding = await findingService.createFinding({
+            title: payload.title || `Phishing finding: ${payload.eventType}`,
+            description: payload.description || `Phishing ${payload.eventType} event detected`,
+            severity: payload.severity || severity.HIGH,
+            riskRating: severityToRisk[payload.severity] || riskLevel.HIGH,
+            sourceModule: sourceModule.PHISHING,
+            sourceId: payload.sourceId,
+            tags: ["phishing", payload.eventType]
+        }, user);
+    }
+
+    const risk = await riskService.createRisk({
         title: payload.title || `Phishing risk: ${payload.eventType}`,
         description: payload.description || `Phishing ${payload.eventType} event detected`,
         likelihood,
         impact,
         owner: payload.owner || user._id,
-        findingId: payload.findingId
+        findingId: finding?._id || payload.findingId
     }, user);
+
+    return { finding, risk };
 };
 
 export const ingestSiemAlert = async (payload, user) => {
-    const alert = await SiemAlert.create({
-        alertId: payload.alertId,
-        ruleName: payload.ruleName,
-        severity: payload.severity,
-        sourceIp: payload.sourceIp,
-        destinationIp: payload.destinationIp,
-        indexName: payload.indexName,
-        receivedAt: payload.receivedAt || new Date()
+    return withTransaction(async (session) => {
+        const existing = await SiemAlert.findOne({ alertId: payload.alertId }).session(session);
+        if (existing) {
+            const finding = existing.findingId
+                ? await findingService.getFindingById(existing.findingId)
+                : null;
+            return { alert: existing, finding };
+        }
+
+        const [alert] = await SiemAlert.create([{
+            alertId: payload.alertId,
+            ruleName: payload.ruleName,
+            severity: payload.severity,
+            sourceIp: payload.sourceIp,
+            destinationIp: payload.destinationIp,
+            indexName: payload.indexName,
+            receivedAt: payload.receivedAt || new Date()
+        }], { session });
+
+        const finding = await findingService.createFinding({
+            title: `SIEM Alert: ${payload.ruleName}`,
+            description: `Alert ${payload.alertId} from index ${payload.indexName}. Source: ${payload.sourceIp || "unknown"}`,
+            severity: payload.severity,
+            riskRating: severityToRisk[payload.severity] || riskLevel.MEDIUM,
+            asset: payload.destinationIp || payload.sourceIp,
+            sourceModule: sourceModule.SIEM,
+            sourceId: payload.alertId,
+            tags: ["siem-alert", payload.ruleName]
+        }, user);
+
+        alert.findingId = finding._id;
+        await alert.save({ session });
+
+        await auditCreate(user, entityType.SIEM_ALERT, alert);
+        return { alert, finding };
     });
-
-    const finding = await findingService.createFinding({
-        title: `SIEM Alert: ${payload.ruleName}`,
-        description: `Alert ${payload.alertId} from index ${payload.indexName}. Source: ${payload.sourceIp || "unknown"}`,
-        severity: payload.severity,
-        riskRating: severityToRisk[payload.severity] || riskLevel.MEDIUM,
-        asset: payload.destinationIp || payload.sourceIp,
-        sourceModule: sourceModule.SIEM,
-        sourceId: payload.alertId,
-        tags: ["siem-alert", payload.ruleName]
-    }, user);
-
-    alert.findingId = finding._id;
-    await alert.save();
-
-    await auditCreate(user, entityType.SIEM_ALERT, alert);
-    return { alert, finding };
 };
 
 export const ingestOpenCtiIoc = async (payload, user) => {
     const impact = payload.iocType === "malware" ? 5 : payload.iocType === "domain" ? 4 : 3;
     const likelihood = payload.confidence || 3;
 
-    return riskService.createRisk({
+    const finding = await findingService.createFinding({
+        title: payload.title || `OpenCTI IOC: ${payload.indicator}`,
+        description: payload.description || `Threat indicator ${payload.indicator} (${payload.iocType})`,
+        severity: payload.severity || severity.HIGH,
+        riskRating: severityToRisk[payload.severity] || riskLevel.HIGH,
+        sourceModule: sourceModule.OPENCTI,
+        sourceId: payload.indicator,
+        tags: ["opencti", payload.iocType]
+    }, user);
+
+    const risk = await riskService.createRisk({
         title: payload.title || `OpenCTI IOC: ${payload.indicator}`,
         description: payload.description || `Threat indicator ${payload.indicator} (${payload.iocType})`,
         likelihood,
         impact,
-        owner: payload.owner || user._id
+        owner: payload.owner || user._id,
+        findingId: finding._id
     }, user);
+
+    return { finding, risk };
 };

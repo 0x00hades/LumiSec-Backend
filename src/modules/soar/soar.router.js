@@ -2,6 +2,7 @@ import { Router } from "express";
 import { isValid } from "../../middleware/validation.js";
 import { asyncHandler } from "../../middleware/asyncHandler.js";
 import { isAuthenticated } from "../../middleware/authentication.js";
+import { isServiceOrUserAuthenticated } from "../../middleware/serviceAuth.js";
 import { isAuthorized } from "../../middleware/authorization.js";
 import { soarPermissions as p } from "./permissions.js";
 import {
@@ -337,31 +338,43 @@ soarRouter.get("/notifications/unread-count",
 
 // ─── Integrations ────────────────────────────────────────────────────────────
 soarRouter.post("/integrations/grc/finding",
-    isAuthenticated(), isAuthorized(p.integrations.execute), isValid(grcFindingIntegrationValidation),
+    isServiceOrUserAuthenticated(), isAuthorized(p.integrations.execute), isValid(grcFindingIntegrationValidation),
     asyncHandler(integrateGrcFinding)
 );
 soarRouter.post("/integrations/grc/risk",
-    isAuthenticated(), isAuthorized(p.integrations.execute), isValid(grcRiskIntegrationValidation),
+    isServiceOrUserAuthenticated(), isAuthorized(p.integrations.execute), isValid(grcRiskIntegrationValidation),
     asyncHandler(integrateGrcRisk)
 );
 soarRouter.post("/integrations/uctc/rule",
-    isAuthenticated(), isAuthorized(p.integrations.execute), isValid(uctcRuleIntegrationValidation),
+    isServiceOrUserAuthenticated(), isAuthorized(p.integrations.execute), isValid(uctcRuleIntegrationValidation),
+    asyncHandler(integrateUctcRule)
+);
+soarRouter.post("/integrations/uctc/rule-trigger",
+    isServiceOrUserAuthenticated(), isAuthorized(p.integrations.execute), isValid(uctcRuleIntegrationValidation),
     asyncHandler(integrateUctcRule)
 );
 soarRouter.post("/integrations/phishing/campaign",
-    isAuthenticated(), isAuthorized(p.integrations.execute), isValid(phishingCampaignIntegrationValidation),
+    isServiceOrUserAuthenticated(), isAuthorized(p.integrations.execute), isValid(phishingCampaignIntegrationValidation),
     asyncHandler(integratePhishingCampaign)
 );
 soarRouter.post("/integrations/firewall/block-ip",
-    isAuthenticated(), isAuthorized(p.integrations.execute), isValid(blockIpIntegrationValidation),
+    isServiceOrUserAuthenticated(), isAuthorized(p.integrations.execute), isValid(blockIpIntegrationValidation),
+    asyncHandler(integrateBlockIp)
+);
+soarRouter.post("/integrations/network/block-ip",
+    isServiceOrUserAuthenticated(), isAuthorized(p.integrations.execute), isValid(blockIpIntegrationValidation),
     asyncHandler(integrateBlockIp)
 );
 soarRouter.post("/integrations/edr/isolate-host",
-    isAuthenticated(), isAuthorized(p.integrations.execute), isValid(isolateHostIntegrationValidation),
+    isServiceOrUserAuthenticated(), isAuthorized(p.integrations.execute), isValid(isolateHostIntegrationValidation),
+    asyncHandler(integrateIsolateHost)
+);
+soarRouter.post("/integrations/network/isolate-host",
+    isServiceOrUserAuthenticated(), isAuthorized(p.integrations.execute), isValid(isolateHostIntegrationValidation),
     asyncHandler(integrateIsolateHost)
 );
 soarRouter.post("/integrations/siem/event",
-    isAuthenticated(), isAuthorized(p.integrations.execute), isValid(siemEventIntegrationValidation),
+    isServiceOrUserAuthenticated(), isAuthorized(p.integrations.execute), isValid(siemEventIntegrationValidation),
     asyncHandler(integrateSiemEvent)
 );
 

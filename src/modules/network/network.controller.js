@@ -11,6 +11,7 @@ import { networkAssetStatus, networkScanStatus, networkScanType, sniffingSession
 import { emitAlert } from "../../utils/socket.js";
 import { buildFlowMetric } from "../../utils/helpers/networkSimulator.js";
 import { discoverHosts, scanHostPorts, startPacketCapture } from "../../utils/helpers/networkRunner.js";
+import * as networkIntegration from "./services/integration.service.js";
 
 /**
  * Upserts one network asset so repeated scans update inventory instead of duplicating hosts.
@@ -428,4 +429,29 @@ export const getFlowMetrics = async (req, res, next) => {
         limit: Number(limit),
         total
     });
+};
+
+export const integrateGrcFinding = async (req, res) => {
+    const finding = await networkIntegration.pushGrcFinding(req.body, req.authUser);
+    return successResponse(res, { message: "GRC finding created from network integration", data: finding, statusCode: 201 });
+};
+
+export const integrateSoarIncident = async (req, res) => {
+    const incident = await networkIntegration.pushSoarIncident(req.body, req.authUser);
+    return successResponse(res, { message: "SOAR incident created from network integration", data: incident, statusCode: 201 });
+};
+
+export const integrateUctcDetectionGap = async (req, res) => {
+    const result = await networkIntegration.pushUctcDetectionGap(req.body, req.authUser);
+    return successResponse(res, { message: "UCTC detection gap forwarded", data: result, statusCode: 201 });
+};
+
+export const integrateSiemEvent = async (req, res) => {
+    const result = await networkIntegration.pushSiemEvent(req.body);
+    return successResponse(res, { message: "Network event forwarded to SIEM", data: result, statusCode: 202 });
+};
+
+export const integrateOpenCtiEnrichment = async (req, res) => {
+    const result = await networkIntegration.pushOpenCtiEnrichment(req.body);
+    return successResponse(res, { message: "OpenCTI enrichment completed", data: result });
 };

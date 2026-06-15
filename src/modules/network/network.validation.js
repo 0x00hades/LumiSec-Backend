@@ -72,6 +72,52 @@ export const listMisconfigurationsValidation = Joi.object({
     asset_ip: ipv4.optional()
 });
 
+// Validates integration payloads for outbound network calls.
+export const networkGrcFindingValidation = Joi.object({
+    title: Joi.string().required(),
+    description: Joi.string().required(),
+    severity: Joi.string().valid("low", "medium", "high", "critical").required(),
+    asset: ipv4.optional(),
+    sourceId: Joi.string().required(),
+    findingType: Joi.string().optional(),
+    tags: Joi.array().items(Joi.string()).optional()
+});
+
+export const networkSoarIncidentValidation = Joi.object({
+    title: Joi.string().required(),
+    description: Joi.string().required(),
+    severity: Joi.string().valid("low", "medium", "high", "critical").optional(),
+    sourceIp: ipv4.optional(),
+    asset: Joi.string().optional(),
+    sourceId: Joi.string().optional(),
+    findingType: Joi.string().optional()
+});
+
+export const networkUctcGapValidation = Joi.object({
+    assetIp: ipv4.optional(),
+    assetMac: macAddress.optional(),
+    service: Joi.string().optional(),
+    port: Joi.number().integer().min(1).max(65535).optional(),
+    gapType: Joi.string().optional(),
+    description: Joi.string().optional()
+});
+
+export const networkSiemEventValidation = Joi.object({
+    eventType: Joi.string().optional(),
+    scanId: Joi.string().optional(),
+    target: Joi.string().optional(),
+    assetCount: Joi.number().integer().optional(),
+    severity: Joi.string().valid("low", "medium", "high", "critical").optional(),
+    metadata: Joi.object().optional()
+});
+
+export const networkOpenCtiValidation = Joi.object({
+    ip: ipv4.optional(),
+    domain: Joi.string().optional(),
+    hash: Joi.string().optional(),
+    cve: Joi.string().optional()
+});
+
 // Validates flow metric filters and anomaly-only queries.
 export const flowMetricsValidation = Joi.object({
     page: Joi.number().integer().min(1).optional(),

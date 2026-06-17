@@ -5,9 +5,7 @@
     "description": "Security Orchestration, Automation and Response module endpoints.",
     "version": "1.0.0"
   },
-  "servers": [
-    { "url": "/api/soar", "description": "SOAR API base path" }
-  ],
+  "servers": [{ "url": "/api/soar", "description": "SOAR API base path" }],
   "tags": [
     { "name": "Incidents" },
     { "name": "Playbooks" },
@@ -36,19 +34,40 @@
         "tags": ["Incidents"],
         "summary": "Get incident by ID",
         "security": [{ "bearerAuth": [] }],
-        "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }]
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ]
       },
       "patch": {
         "tags": ["Incidents"],
         "summary": "Update incident",
         "security": [{ "bearerAuth": [] }],
-        "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }]
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ]
       },
       "delete": {
         "tags": ["Incidents"],
         "summary": "Soft delete incident",
         "security": [{ "bearerAuth": [] }],
-        "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }]
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ]
       }
     },
     "/incidents/{id}/close": {
@@ -56,7 +75,14 @@
         "tags": ["Incidents"],
         "summary": "Close incident (alias)",
         "security": [{ "bearerAuth": [] }],
-        "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }]
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ]
       }
     },
     "/incidents/{id}/artifacts": {
@@ -64,13 +90,27 @@
         "tags": ["Artifacts"],
         "summary": "List incident artifacts",
         "security": [{ "bearerAuth": [] }],
-        "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }]
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ]
       },
       "post": {
         "tags": ["Artifacts"],
         "summary": "Add artifact to incident",
         "security": [{ "bearerAuth": [] }],
-        "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }]
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ]
       }
     },
     "/incidents/{id}/playbooks/run": {
@@ -78,7 +118,14 @@
         "tags": ["Playbooks"],
         "summary": "Execute playbook against incident",
         "security": [{ "bearerAuth": [] }],
-        "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }]
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ]
       }
     },
     "/incidents/{incidentId}/playbook/{playbookId}": {
@@ -87,8 +134,18 @@
         "summary": "Execute playbook (legacy path)",
         "security": [{ "bearerAuth": [] }],
         "parameters": [
-          { "name": "incidentId", "in": "path", "required": true, "schema": { "type": "string" } },
-          { "name": "playbookId", "in": "path", "required": true, "schema": { "type": "string" } }
+          {
+            "name": "incidentId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "playbookId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
         ]
       }
     },
@@ -109,7 +166,14 @@
         "tags": ["Playbooks"],
         "summary": "Get playbook run status",
         "security": [{ "bearerAuth": [] }],
-        "parameters": [{ "name": "runId", "in": "path", "required": true, "schema": { "type": "string" } }]
+        "parameters": [
+          {
+            "name": "runId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ]
       }
     },
     "/webhooks/custom": {

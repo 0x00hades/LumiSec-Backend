@@ -35,5 +35,4 @@ export const corsMiddleware = cors(corsOptions);
 
 export const configureCors = (app) => {
     app.use(corsMiddleware);
-    app.options("*", corsMiddleware);
 };

@@ -191,8 +191,37 @@ export const downloadReport = async (req, res) => {
 
 // ─── Compliance ──────────────────────────────────────────────────────────────
 export const createControl = async (req, res) => {
-    const control = await complianceService.createControl(req.body, req.authUser);
-    return successResponse(res, { message: messages.compliance.createdSuccessfully, data: control, statusCode: 201 });
+    console.log("CREATE CONTROL PAYLOAD:", req.body);
+
+    try {
+        const { controlId, title } = req.body || {};
+
+        if (!controlId || !title || !String(controlId).trim() || !String(title).trim()) {
+            return res.status(400).json({
+                success: false,
+                error: "controlId and title are required fields"
+            });
+        }
+
+        const control = await complianceService.createControl(req.body, req.authUser);
+        return successResponse(res, {
+            message: messages.compliance.createdSuccessfully,
+            data: control,
+            statusCode: 201
+        });
+    } catch (error) {
+        if (error?.statusCode === 400 || error?.name === "ValidationError") {
+            return res.status(400).json({
+                success: false,
+                error: error.message || "Validation failed"
+            });
+        }
+
+        return res.status(500).json({
+            success: false,
+            error: error.message || "Internal server error"
+        });
+    }
 };
 
 export const getControls = async (req, res) => {

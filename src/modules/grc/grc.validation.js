@@ -148,11 +148,27 @@ export const reportIdValidation = Joi.object({ id: objectId.required() });
 
 export const createControlValidation = Joi.object({
     framework: Joi.string().valid(...Object.values(complianceFramework)).required(),
-    controlId: Joi.string().required(),
-    title: Joi.string().required(),
-    description: Joi.string().optional(),
+    controlId: Joi.string().trim().min(1).required(),
+    title: Joi.string().trim().min(1).required(),
+    description: Joi.string().trim().optional().allow(""),
     status: Joi.string().valid(...Object.values(controlStatus)).optional()
-});
+}).unknown(false);
+
+const hasNonEmptyString = (value) =>
+    value !== undefined && value !== null && String(value).trim() !== "";
+
+export const validateCreateControlInput = (req, res, next) => {
+    const { controlId, title } = req.body || {};
+
+    if (!hasNonEmptyString(controlId) || !hasNonEmptyString(title)) {
+        return res.status(400).json({
+            success: false,
+            error: "controlId and title are required fields"
+        });
+    }
+
+    next();
+};
 
 export const updateControlValidation = Joi.object({
     id: objectId.required(),

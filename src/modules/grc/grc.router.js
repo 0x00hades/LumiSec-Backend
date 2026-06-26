@@ -12,7 +12,7 @@ import {
     listRisksValidation, riskIdValidation, createTaskValidation, updateTaskValidation,
     listTasksValidation, taskIdValidation, createEvidenceValidation, evidenceIdValidation,
     createReportValidation, updateReportValidation, addReportFindingsValidation, reportIdValidation,
-    createControlValidation, updateControlValidation, linkControlFindingValidation,
+    createControlValidation, validateCreateControlInput, updateControlValidation, linkControlFindingValidation,
     listControlsValidation, controlIdValidation, createRetestValidation,
     listAuditLogsValidation, entityAuditValidation, listNotificationsValidation,
     notificationIdValidation, networkFindingValidation, uctcFindingValidation,
@@ -192,7 +192,10 @@ grcRouter.get("/reports/:id/download",
 
 // ─── Compliance ──────────────────────────────────────────────────────────────
 grcRouter.post("/compliance/controls",
-    isAuthenticated(), isAuthorized(p.compliance.create), isValid(createControlValidation),
+    isAuthenticated(),
+    isAuthorized(p.compliance.create),
+    validateCreateControlInput,
+    isValid(createControlValidation, "body"),
     asyncHandler(createControl)
 );
 grcRouter.get("/compliance/controls",

@@ -6,7 +6,21 @@ import { parsePagination } from "../../../utils/pagination.js";
 import { auditCreate, auditUpdate, recordAudit } from "../../../utils/auditLogger.js";
 
 export const createControl = async (data, user) => {
-    const control = await ComplianceControl.create(data);
+    const { controlId, title, framework, description, status } = data;
+
+    if (!controlId?.trim?.() || !title?.trim?.()) {
+        const err = new Error("controlId and title are required fields");
+        err.statusCode = 400;
+        throw err;
+    }
+
+    const control = await ComplianceControl.create({
+        framework,
+        controlId: controlId.trim(),
+        title: title.trim(),
+        description,
+        status
+    });
     await auditCreate(user, entityType.CONTROL, control);
     return control;
 };

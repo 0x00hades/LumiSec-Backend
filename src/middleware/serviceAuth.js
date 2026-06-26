@@ -13,6 +13,10 @@ const SERVICE_USER = {
 
 export const isServiceAuthenticated = () => {
     return (req, res, next) => {
+        if (req.method === "OPTIONS") {
+            return next();
+        }
+
         const apiKey = req.headers["x-internal-api-key"];
         const expected = process.env.INTERNAL_API_KEY;
 
@@ -30,6 +34,10 @@ export const isServiceOrUserAuthenticated = () => {
     const jwtAuth = isAuthenticated();
 
     return (req, res, next) => {
+        if (req.method === "OPTIONS") {
+            return next();
+        }
+
         const apiKey = req.headers["x-internal-api-key"];
         const expected = process.env.INTERNAL_API_KEY;
 

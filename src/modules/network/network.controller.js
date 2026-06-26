@@ -7,31 +7,18 @@ import {
 } from "../../../database/index.js";
 import { AppError } from "../../utils/appError.js";
 import { successResponse, paginatedResponse } from "../../utils/apiResponse.js";
-import { networkAssetStatus, networkScanStatus, networkScanType, sniffingSessionStatus } from "../../utils/constant/enums.js";
+import { networkScanStatus, networkScanType, sniffingSessionStatus } from "../../utils/constant/enums.js";
 import { emitAlert } from "../../utils/socket.js";
-import { buildFlowMetric } from "../../utils/helpers/networkSimulator.js";
-import { discoverHosts, scanHostPorts, startPacketCapture } from "../../utils/helpers/networkRunner.js";
+import { aggregatePacketsToFlowMetrics } from "../../utils/helpers/networkFlowMetrics.js";
+import {
+    discoverHosts,
+    getConfiguredScanMode,
+    getConfiguredSniffingMode,
+    scanHostPorts,
+    startPacketCapture
+} from "../../utils/helpers/networkRunner.js";
 import * as networkIntegration from "./services/integration.service.js";
-
-/**
- * Upserts one network asset so repeated scans update inventory instead of duplicating hosts.
- */
-const upsertAsset = async (assetData) => {
-    return NetworkAsset.findOneAndUpdate(
-        { mac: assetData.mac },
-        {
-            $set: {
-                ...assetData,
-                status: assetData.status || networkAssetStatus.ACTIVE,
-                lastSeenAt: new Date()
-            },
-            $setOnInsert: {
-                firstSeenAt: new Date()
-            }
-        },
-        { new: true, upsert: true }
-    );
-};
+import { upsertNetworkAsset } from "./services/networkAsset.service.js";
 
 /**
  * Creates misconfiguration records from risky open services.
@@ -101,7 +88,7 @@ export const discoverNetwork = async (req, res, next) => {
         target: subnet,
         requestedBy: req.authUser._id,
         startedAt: new Date(),
-        runnerProvider: process.env.LUMINET_SCAN_MODE || "mock"
+        runnerProvider: getConfiguredScanMode()
     });
 
     let discoveryResult;
@@ -110,7 +97,7 @@ export const discoverNetwork = async (req, res, next) => {
         // INFRA/CLOUD INTEGRATION: worker/cloud mode calls the external ARP/ICMP/Nmap scanner service.
         discoveryResult = await discoverHosts({ subnet });
         for (const host of discoveryResult.assets) {
-            assets.push(await upsertAsset(host));
+            assets.push(await upsertNetworkAsset(host));
         }
     } catch (error) {
         scan.status = networkScanStatus.FAILED;
@@ -150,7 +137,7 @@ export const discoverNetwork = async (req, res, next) => {
  * Runs port scanning through the configured LumiNet provider and updates service inventory.
  */
 export const scanPorts = async (req, res, next) => {
-    const { target, ports, type = "CONNECT" } = req.body;
+    const { target, ports, scanMode = "CONNECT" } = req.body;
     const startedAt = Date.now();
 
     const scan = await NetworkScan.create({
@@ -158,19 +145,18 @@ export const scanPorts = async (req, res, next) => {
         status: networkScanStatus.RUNNING,
         target,
         ports,
-        scanMode: type,
+        scanMode,
         requestedBy: req.authUser._id,
         startedAt: new Date(),
-        runnerProvider: process.env.LUMINET_SCAN_MODE || "mock"
+        runnerProvider: getConfiguredScanMode()
     });
 
     let scanResult;
     let asset;
     let misconfigurations = [];
     try {
-        // INFRA/CLOUD INTEGRATION: worker/cloud mode calls the isolated Nmap/python-nmap scanner service.
-        scanResult = await scanHostPorts({ target, ports, type });
-        asset = await upsertAsset(scanResult.asset);
+        scanResult = await scanHostPorts({ target, ports, type: scanMode });
+        asset = await upsertNetworkAsset(scanResult.asset);
         misconfigurations = await createMisconfigurationsForAsset(asset);
     } catch (error) {
         scan.status = networkScanStatus.FAILED;
@@ -189,7 +175,8 @@ export const scanPorts = async (req, res, next) => {
     scan.runnerJobId = scanResult.runnerJobId;
     scan.resultSummary = {
         target,
-        scanMode: type,
+        scanMode,
+        ports,
         openPorts: scanResult.asset.openPorts,
         misconfigurationCount: misconfigurations.length
     };
@@ -202,6 +189,9 @@ export const scanPorts = async (req, res, next) => {
             task_id: scan._id,
             runner_provider: scan.runnerProvider,
             status: scan.status,
+            target,
+            ports,
+            scanMode,
             asset,
             open_ports: scanResult.asset.openPorts,
             misconfigurations
@@ -298,7 +288,7 @@ export const startSniffing = async (req, res, next) => {
             requestedBy: req.authUser._id,
             startedAt: new Date(),
             completedAt: new Date(),
-            runnerProvider: process.env.LUMINET_SNIFFING_MODE || "mock",
+            runnerProvider: getConfiguredSniffingMode(),
             error: error.message
         });
         error.sessionId = failedSession._id;
@@ -393,7 +383,7 @@ export const getMisconfigurations = async (req, res, next) => {
 };
 
 /**
- * Returns network flow metrics and creates a mock baseline metric when no data exists yet.
+ * Returns network flow metrics aggregated from captured packet data.
  */
 export const getFlowMetrics = async (req, res, next) => {
     const { page = 1, limit = 20, source_ip, anomaly_only } = req.query;
@@ -404,11 +394,20 @@ export const getFlowMetrics = async (req, res, next) => {
     if (anomaly_only !== undefined) filter.isAnomaly = anomaly_only === true || anomaly_only === "true";
 
     if (await NetworkFlowMetric.countDocuments() === 0) {
-        // INFRA/CLOUD INTEGRATION: Replace seeded mock metrics with live NetFlow/packet capture aggregation.
-        await NetworkFlowMetric.create([
-            buildFlowMetric({ sourceIp: "10.0.0.5", destinationIp: "10.0.0.20", packetsPerSecond: 220, bandwidthKbps: 4096 }),
-            buildFlowMetric({ sourceIp: "10.0.0.8", destinationIp: "8.8.8.8", protocol: "UDP", packetsPerSecond: 45, bandwidthKbps: 512 })
-        ]);
+        const recentSessions = await SniffingSession.find({
+            status: { $in: [sniffingSessionStatus.COMPLETED, sniffingSessionStatus.RUNNING] },
+            packetCount: { $gt: 0 }
+        })
+            .sort({ createdAt: -1 })
+            .limit(5);
+
+        const derivedMetrics = recentSessions.flatMap((session) =>
+            aggregatePacketsToFlowMetrics(session.samplePackets, session.durationSec)
+        );
+
+        if (derivedMetrics.length) {
+            await NetworkFlowMetric.insertMany(derivedMetrics);
+        }
     }
 
     const [metrics, total] = await Promise.all([
@@ -418,7 +417,6 @@ export const getFlowMetrics = async (req, res, next) => {
 
     const anomalies = metrics.filter((metric) => metric.isAnomaly);
     for (const anomaly of anomalies) {
-        // INFRA/CLOUD INTEGRATION: Push overflow anomalies to SIEM and trigger SOAR playbooks when credentials are ready.
         emitAlert("soc_analyst", "network:flow:anomaly", anomaly);
     }
 

@@ -56,7 +56,7 @@ networkRouter.post("/network/discover",
 // Starts a port/service scan for a target host and stores detected services.
 networkRouter.post("/network/scan-ports",
     canRunNetwork,
-    isValid(scanPortsValidation),
+    isValid(scanPortsValidation, "body"),
     asyncHandler(scanPorts)
 );
 
@@ -81,14 +81,14 @@ networkRouter.get("/assets/context/:ip",
     asyncHandler(getAssetContext)
 );
 
-// Starts a packet sniffing session or mock session depending on environment mode.
+// Starts a packet sniffing session through the configured sniffer worker.
 networkRouter.post("/sniffing/start",
     canSniffTraffic,
     isValid(startSniffingValidation),
     asyncHandler(startSniffing)
 );
 
-// Returns recent packet samples until full WebSocket live streaming is connected.
+// Returns recent packet samples captured by active or completed sniffing sessions.
 networkRouter.get("/sniffing/live-stream",
     canSniffTraffic,
     isValid(liveStreamValidation),

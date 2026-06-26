@@ -1,35 +1,39 @@
 import Joi from "joi";
+import { normalizePortsInput } from "../../utils/helpers/networkPortUtils.js";
 
 const ipv4 = Joi.string().ip({ version: ["ipv4"] });
 const cidr = Joi.string().ip({ version: ["ipv4"], cidr: "required" });
 const objectId = Joi.string().hex().length(24);
 const macAddress = Joi.string().pattern(/^([0-9A-Fa-f]{2}[:-]){5}[0-9A-Fa-f]{2}$/);
-const portList = Joi.string().custom((value, helpers) => {
-    for (const part of value.split(",")) {
-        const trimmed = part.trim();
-        const [startValue, endValue] = trimmed.split("-");
-        const start = Number(startValue);
-        const end = endValue === undefined ? start : Number(endValue);
 
-        if (!Number.isInteger(start) || !Number.isInteger(end) || start < 1 || end > 65535 || start > end) {
-            return helpers.error("any.invalid");
+const scanModeField = Joi.string().valid("CONNECT", "SYN", "UDP").default("CONNECT");
+
+const portsField = Joi.alternatives()
+    .try(
+        Joi.array().items(Joi.number().integer().min(1).max(65535)).min(1),
+        Joi.string().min(1),
+        Joi.number().integer().min(1).max(65535)
+    )
+    .required()
+    .custom((value, helpers) => {
+        try {
+            return normalizePortsInput(value);
+        } catch (error) {
+            return helpers.error("any.invalid", { message: error.message });
         }
-    }
-
-    return value;
-}, "port list validation");
+    }, "ports normalization");
 
 // Validates discovery requests for one IPv4 CIDR subnet.
 export const discoverNetworkValidation = Joi.object({
     subnet: cidr.required()
 });
 
-// Validates port scan requests and blocks impossible port ranges before scanning.
+// NetworkScanRequest contract: { target, ports: number[], scanMode }
 export const scanPortsValidation = Joi.object({
     target: ipv4.required(),
-    ports: portList.required(),
-    type: Joi.string().valid("SYN", "CONNECT", "UDP").default("CONNECT")
-});
+    ports: portsField,
+    scanMode: scanModeField
+}).unknown(false);
 
 // Validates asset inventory filters.
 export const listAssetsValidation = Joi.object({

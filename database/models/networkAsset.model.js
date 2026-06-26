@@ -27,8 +27,9 @@ const networkAssetSchema = new Schema({
 }, { timestamps: true });
 
 networkAssetSchema.index({ ip: 1 }, { unique: true });
-networkAssetSchema.index({ mac: 1 }, { unique: true });
+networkAssetSchema.index({ mac: 1 });
 networkAssetSchema.index({ status: 1, osType: 1 });
+networkAssetSchema.index({ ip: 1, lastSeenAt: -1 });
 networkAssetSchema.index({ hostname: "text", ip: "text", mac: "text", vendor: "text" });
 
 export const NetworkAsset = model("NetworkAsset", networkAssetSchema);

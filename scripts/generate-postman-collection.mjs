@@ -66,7 +66,7 @@ const SAMPLE_BODIES = {
   "/api/uctc/integrations/grc/gap": { title: "Missing Sysmon rule", description: "No deployed rule for CLIENT01", severity: "medium", sourceId: "gap-sysmon-001" },
   "/api/uctc/integrations/siem/deploy": { ruleId: "{{ruleId}}" },
   "/api/luminet/network/discover": { subnet: "10.0.0.0/24" },
-  "/api/luminet/network/scan-ports": { target: "10.0.0.15", ports: "22,80,443,445" },
+  "/api/luminet/network/scan-ports": { target: "10.0.0.15", ports: [22, 80, 443, 445], scanMode: "CONNECT" },
   "/api/luminet/sniffing/start": { interface: "eth0", duration_sec: 60 },
   "/api/luminet/integrations/grc/finding": { title: "Critical SMB exposure", description: "SMB on management VLAN", severity: "critical", sourceId: "scan-99:smb:10.0.0.8", asset: "10.0.0.8" },
   "/api/luminet/integrations/siem/event": { eventType: "network_scan_complete", target: "10.0.0.0/24", assetCount: 12 }

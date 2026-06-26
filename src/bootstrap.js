@@ -1,46 +1,48 @@
 import path from "path";
 import { fileURLToPath } from "url";
+import { configureCors } from "./middleware/cors.js";
 import { globalErrorHandling } from "./middleware/globalErrorHandling.js";
 import { authRouter, phishingRouter, soarRouter, uctcRouter, grcRouter, networkRouter } from "./modules/index.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export const bootstrap = (app, express) => {
-    app.use(express.json());
+    // 1. CORS must run before auth and route handlers (handles preflight OPTIONS).
+    configureCors(app);
 
-    // Health check
+    // 2. Body parsers
+    app.use(express.json());
+    app.use(express.urlencoded({ extended: true }));
+
+    // 3. Public endpoints (no authentication)
     const healthHandler = (req, res) => res.json({ status: "ok", service: "LumiSec API" });
     app.get("/health", healthHandler);
     app.get("/api/health", healthHandler);
 
-    // GRC OpenAPI documentation
     app.get("/api/grc/docs/openapi.json", (_req, res) => {
         res.sendFile(path.resolve(__dirname, "../docs/grc-openapi.json"));
     });
 
-    // SOAR OpenAPI documentation
     app.get("/api/soar/docs/openapi.json", (_req, res) => {
         res.sendFile(path.resolve(__dirname, "../docs/soar-openapi.json"));
     });
 
-    // API Routes
-    app.use("/api/auth",     authRouter);
+    // 4. Public auth routes (login/signup are unauthenticated inside authRouter)
+    app.use("/api/auth", authRouter);
+
+    // 5. Protected module routes (each router applies isAuthenticated where required)
     app.use("/api/phishing", phishingRouter);
-    app.use("/api/soar",     soarRouter);
-    app.use("/api/uctc",     uctcRouter);
-    app.use("/api/grc",      grcRouter);
-    app.use("/api/luminet",  networkRouter);
+    app.use("/api/soar", soarRouter);
+    app.use("/api/uctc", uctcRouter);
+    app.use("/api/grc", grcRouter);
+    app.use("/api/luminet", networkRouter);
 
-    // UCTC documentation uses /api/v1/rules/*, so keep a versioned alias for the rule builder.
-    app.use("/api/v1",       uctcRouter);
-    // LumiNet documentation uses /api/v1/network/*, /api/v1/assets/*, and /api/v1/sniffing/*.
-    app.use("/api/v1",       networkRouter);
+    app.use("/api/v1", uctcRouter);
+    app.use("/api/v1", networkRouter);
 
-    // 404
     app.all("*", (req, res) => {
         res.status(404).json({ success: false, message: "Route not found" });
     });
 
-    // Global error handler
     app.use(globalErrorHandling);
 };

@@ -6,6 +6,10 @@ import { userStatus } from "../utils/constant/enums.js";
 
 export const isAuthenticated = () => {
     return async (req, res, next) => {
+        if (req.method === "OPTIONS") {
+            return next();
+        }
+
         const authHeader = req.headers.authorization;
         if (!authHeader || !authHeader.startsWith("Bearer ")) {
             return next(new AppError(messages.auth.notAuthenticated, 401));

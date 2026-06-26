@@ -50,6 +50,51 @@ test("POST /api/auth/login returns 401 for wrong password", async () => {
     assert.equal(response.body.success, false);
 });
 
+test("OPTIONS /api/auth/login returns CORS headers for frontend preflight", async () => {
+    const response = await request(app)
+        .options("/api/auth/login")
+        .set("Origin", "http://localhost:3000")
+        .set("Access-Control-Request-Method", "POST")
+        .set("Access-Control-Request-Headers", "Content-Type, Authorization");
+
+    assert.equal(response.status, 204);
+    assert.equal(response.headers["access-control-allow-origin"], "http://localhost:3000");
+    assert.match(response.headers["access-control-allow-methods"], /POST/);
+});
+
+test("OPTIONS protected LumiNet route is not blocked by authentication", async () => {
+    const response = await request(app)
+        .options("/api/luminet/network/discover")
+        .set("Origin", "http://localhost:3000")
+        .set("Access-Control-Request-Method", "POST")
+        .set("Access-Control-Request-Headers", "Content-Type, Authorization");
+
+    assert.equal(response.status, 204);
+    assert.equal(response.headers["access-control-allow-origin"], "http://localhost:3000");
+});
+
+test("POST /api/auth/login includes CORS headers for browser clients", async () => {
+    await request(app).post("/api/auth/signup").send({
+        name: "Admin User",
+        email: "admin@lumisec.io",
+        password: "Password123",
+        role: "admin",
+        department: "SOC"
+    });
+
+    const response = await request(app)
+        .post("/api/auth/login")
+        .set("Origin", "http://localhost:3000")
+        .send({
+            email: "admin@lumisec.io",
+            password: "Password123"
+        });
+
+    assert.equal(response.status, 200);
+    assert.equal(response.headers["access-control-allow-origin"], "http://localhost:3000");
+    assert.ok(response.body.data.token);
+});
+
 test("GET /api/auth/profile requires token", async () => {
     const response = await request(app).get("/api/auth/profile");
 

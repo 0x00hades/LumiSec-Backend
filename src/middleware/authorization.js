@@ -3,6 +3,10 @@ import { messages } from "../utils/constant/messages.js";
 
 export const isAuthorized = (allowedRoles = []) => {
     return (req, res, next) => {
+        if (req.method === "OPTIONS") {
+            return next();
+        }
+
         if (!req.authUser) {
             return next(new AppError(messages.auth.notAuthenticated, 401));
         }

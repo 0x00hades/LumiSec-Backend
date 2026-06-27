@@ -12,6 +12,8 @@ import * as dashboardService from "./services/dashboard.service.js";
 import * as auditService from "./services/audit.service.js";
 import * as notificationService from "./services/notification.service.js";
 import * as integrationService from "./services/integration.service.js";
+import * as assigneeService from "./services/assignee.service.js";
+import * as userAdminService from "./services/userAdmin.service.js";
 
 // ─── Findings ────────────────────────────────────────────────────────────────
 export const createFinding = async (req, res) => {
@@ -342,4 +344,24 @@ export const ingestSiemAlert = async (req, res) => {
 export const ingestOpenCtiIoc = async (req, res) => {
     const result = await integrationService.ingestOpenCtiIoc(req.body, req.authUser);
     return successResponse(res, { message: messages.integration.ingestedSuccessfully, data: result, statusCode: 201 });
+};
+
+export const getAssignees = async (req, res) => {
+    const data = await assigneeService.listAssignees(req.query);
+    return successResponse(res, { message: "Assignees fetched", data });
+};
+
+export const getGrcUsers = async (req, res) => {
+    const result = await userAdminService.listUsers(req.query);
+    return paginatedResponse(res, { message: "Users fetched", ...result });
+};
+
+export const createGrcUser = async (req, res) => {
+    const user = await userAdminService.createUser(req.body);
+    return successResponse(res, { message: messages.user.createdSuccessfully, data: user, statusCode: 201 });
+};
+
+export const updateGrcUser = async (req, res) => {
+    const user = await userAdminService.updateUser(req.params.id, req.body, req.authUser);
+    return successResponse(res, { message: messages.user.updatedSuccessfully, data: user });
 };

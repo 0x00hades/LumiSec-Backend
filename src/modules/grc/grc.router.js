@@ -17,7 +17,8 @@ import {
     listAuditLogsValidation, entityAuditValidation, listNotificationsValidation,
     notificationIdValidation, networkFindingValidation, uctcFindingValidation,
     soarIncidentValidation, soarTaskUpdateValidation, phishingRiskValidation,
-    siemAlertValidation, openctiIocValidation
+    siemAlertValidation, openctiIocValidation,
+    listGrcUsersValidation, createGrcUserValidation, updateGrcUserValidation, grcUserIdValidation
 } from "./grc.validation.js";
 import {
     createFinding, getFindings, getFinding, updateFinding, assignFinding,
@@ -32,6 +33,7 @@ import {
     getDashboardOverview, getDashboardRisks, getDashboardCompliance, getDashboardTasks, getRiskHeatmap,
     getAuditLogs, getEntityAuditLogs,
     getNotifications, markNotificationRead,
+    getAssignees, getGrcUsers, createGrcUser, updateGrcUser,
     ingestNetworkFinding, ingestUctcFinding, ingestSoarIncident, updateSoarTask,
     ingestPhishingRisk, ingestSiemAlert, ingestOpenCtiIoc
 } from "./grc.controller.js";
@@ -239,6 +241,24 @@ grcRouter.get("/dashboard/tasks",
 grcRouter.get("/dashboard/risk-heatmap",
     isAuthenticated(), isAuthorized(p.dashboard.read),
     asyncHandler(getRiskHeatmap)
+);
+
+// ─── Assignees (user picker for tasks/findings) ──────────────────────────────
+grcRouter.get("/users/assignees",
+    isAuthenticated(), isAuthorized(p.assignees.read),
+    asyncHandler(getAssignees)
+);
+grcRouter.get("/users",
+    isAuthenticated(), isAuthorized(p.users.read), isValid(listGrcUsersValidation),
+    asyncHandler(getGrcUsers)
+);
+grcRouter.post("/users",
+    isAuthenticated(), isAuthorized(p.users.create), isValid(createGrcUserValidation),
+    asyncHandler(createGrcUser)
+);
+grcRouter.patch("/users/:id",
+    isAuthenticated(), isAuthorized(p.users.update), isValid(updateGrcUserValidation),
+    asyncHandler(updateGrcUser)
 );
 
 // ─── Audit Logs ──────────────────────────────────────────────────────────────

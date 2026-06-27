@@ -46,3 +46,27 @@ export const login = async (req, res, next) => {
 export const getProfile = async (req, res, next) => {
     return successResponse(res, { message: "Profile fetched", data: req.authUser });
 };
+
+export const updateProfile = async (req, res, next) => {
+    const { name, password, currentPassword } = req.body;
+    const user = await User.findById(req.authUser._id);
+    if (!user) return next(new AppError(messages.user.notFound, 404));
+
+    if (name !== undefined) {
+        user.name = name.trim();
+    }
+
+    if (password) {
+        const isMatch = await bcrypt.compare(currentPassword, user.password);
+        if (!isMatch) return next(new AppError("Current password is incorrect", 401));
+        user.password = await bcrypt.hash(password, 12);
+    }
+
+    await user.save();
+
+    const sanitized = await User.findById(user._id).select("-password");
+    return successResponse(res, {
+        message: messages.user.updatedSuccessfully,
+        data: sanitized
+    });
+};

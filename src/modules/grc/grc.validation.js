@@ -1,7 +1,8 @@
 import Joi from "joi";
 import {
     findingStatus, sourceModule, severity, riskLevel, riskStatus, riskTreatment,
-    taskStatus, taskPriority, complianceFramework, controlStatus, retestResult
+    taskStatus, taskPriority, complianceFramework, controlStatus, retestResult,
+    roles, userStatus
 } from "../../utils/constant/enums.js";
 
 const objectId = Joi.string().hex().length(24);
@@ -284,3 +285,28 @@ export const openctiIocValidation = Joi.object({
     confidence: Joi.number().integer().min(1).max(5).optional(),
     owner: objectId.optional()
 });
+
+export const listGrcUsersValidation = Joi.object({
+    ...pagination,
+    role: Joi.string().valid(...Object.values(roles)).optional(),
+    status: Joi.string().valid(...Object.values(userStatus)).optional(),
+    search: Joi.string().optional()
+});
+
+export const createGrcUserValidation = Joi.object({
+    name: Joi.string().min(2).max(60).required(),
+    email: Joi.string().email().required(),
+    password: Joi.string().min(8).required(),
+    role: Joi.string().valid(...Object.values(roles)).required(),
+    department: Joi.string().optional()
+});
+
+export const updateGrcUserValidation = Joi.object({
+    id: objectId.required(),
+    name: Joi.string().min(2).max(60).optional(),
+    role: Joi.string().valid(...Object.values(roles)).optional(),
+    status: Joi.string().valid(...Object.values(userStatus)).optional(),
+    department: Joi.string().allow("").optional()
+});
+
+export const grcUserIdValidation = Joi.object({ id: objectId.required() });

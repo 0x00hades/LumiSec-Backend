@@ -206,3 +206,56 @@ test("POST /api/grc/integrations/siem/alerts ingests alert and creates finding",
     assert.equal(response.body.data.finding.title.includes("Failed Login Burst"), true);
     assert.equal(response.body.data.alert.alertId, "siem-test-001");
 });
+
+test("GET /api/grc/users/assignees returns active users for pickers", async () => {
+    const { token } = await createUserAndToken({
+        email: "grc-manager@lumisec.io",
+        role: "grc_manager"
+    });
+
+    const response = await request(app)
+        .get("/api/grc/users/assignees")
+        .set("Authorization", `Bearer ${token}`);
+
+    assert.equal(response.status, 200);
+    assert.equal(response.body.success, true);
+    assert.ok(Array.isArray(response.body.data));
+    assert.ok(response.body.data.length >= 1);
+    assert.ok(response.body.data[0].email);
+});
+
+test("GET /api/grc/users lists users for GRC managers", async () => {
+    const { token } = await createUserAndToken({
+        email: "admin-users@lumisec.io",
+        role: "admin"
+    });
+
+    const response = await request(app)
+        .get("/api/grc/users")
+        .set("Authorization", `Bearer ${token}`);
+
+    assert.equal(response.status, 200);
+    assert.equal(response.body.success, true);
+    assert.ok(Array.isArray(response.body.data));
+});
+
+test("POST /api/grc/users creates a user for admins", async () => {
+    const { token } = await createUserAndToken({
+        email: "admin-create@lumisec.io",
+        role: "admin"
+    });
+
+    const response = await request(app)
+        .post("/api/grc/users")
+        .set("Authorization", `Bearer ${token}`)
+        .send({
+            name: "New GRC Analyst",
+            email: "new-grc-analyst@lumisec.io",
+            password: "Password123",
+            role: "grc_manager",
+            department: "GRC"
+        });
+
+    assert.equal(response.status, 201);
+    assert.equal(response.body.data.email, "new-grc-analyst@lumisec.io");
+});

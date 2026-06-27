@@ -47,6 +47,14 @@ export const grcPermissions = {
     dashboard: {
         read: [roles.ADMIN, roles.GRC_MANAGER, roles.AUDITOR, roles.COMPLIANCE_MANAGER, roles.SOC_MANAGER, roles.IT_MANAGER]
     },
+    assignees: {
+        read: [roles.ADMIN, roles.GRC_MANAGER, roles.IT_MANAGER, roles.AUDITOR, roles.ASSIGNEE, roles.COMPLIANCE_MANAGER]
+    },
+    users: {
+        read: [roles.ADMIN, roles.GRC_MANAGER],
+        create: [roles.ADMIN],
+        update: [roles.ADMIN, roles.GRC_MANAGER]
+    },
     auditLogs: {
         read: [roles.ADMIN, roles.AUDITOR, roles.GRC_MANAGER]
     },

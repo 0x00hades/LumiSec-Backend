@@ -121,3 +121,24 @@ test("GET /api/auth/profile returns current user with a valid token", async () =
     assert.equal(response.body.success, true);
     assert.equal(response.body.data.email, "analyst@lumisec.io");
 });
+
+test("PATCH /api/auth/profile updates name for authenticated user", async () => {
+    const signupResponse = await request(app).post("/api/auth/signup").send({
+        name: "Analyst User",
+        email: "analyst@lumisec.io",
+        password: "Password123",
+        role: "soc_analyst",
+        department: "SOC"
+    });
+
+    const token = signupResponse.body.data.token;
+
+    const response = await request(app)
+        .patch("/api/auth/profile")
+        .set("Authorization", `Bearer ${token}`)
+        .send({ name: "Updated Analyst" });
+
+    assert.equal(response.status, 200);
+    assert.equal(response.body.success, true);
+    assert.equal(response.body.data.name, "Updated Analyst");
+});

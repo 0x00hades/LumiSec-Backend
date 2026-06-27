@@ -160,3 +160,44 @@ test("POST /api/phishing/track/submit/:trackingId rejects password field", async
     assert.equal(response.status, 422);
     assert.equal(token ? true : true, true);
 });
+
+test("GET /api/phishing/events lists tracking events", async () => {
+    const { user, token } = await createUserAndToken({ email: "events@lumisec.io", role: "soc_analyst" });
+
+    const template = await EmailTemplate.create({
+        name: "T2",
+        subject: "S",
+        htmlBody: "<p>x</p>",
+        createdBy: user._id
+    });
+
+    const campaign = await Campaign.create({
+        name: "Event Campaign",
+        templateId: template._id,
+        createdBy: user._id,
+        status: campaignStatus.RUNNING
+    });
+
+    const { Recipient, PhishingEvent } = await import("../database/index.js");
+    const recipient = await Recipient.create({
+        campaignId: campaign._id,
+        email: "tracked@lumisec.io",
+        trackingId: "trackid123456789"
+    });
+
+    await PhishingEvent.create({
+        campaignId: campaign._id,
+        recipientId: recipient._id,
+        eventType: "email_opened",
+        timestamp: new Date()
+    });
+
+    const response = await request(app)
+        .get("/api/phishing/events")
+        .set("Authorization", `Bearer ${token}`);
+
+    assert.equal(response.status, 200);
+    assert.equal(response.body.success, true);
+    assert.ok(Array.isArray(response.body.data));
+    assert.ok(response.body.data.length >= 1);
+});

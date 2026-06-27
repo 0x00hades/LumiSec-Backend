@@ -7,6 +7,7 @@ import * as campaignService from "./services/campaign.service.js";
 import * as trackingService from "./services/tracking.service.js";
 import * as reportService from "./services/report.service.js";
 import * as dashboardService from "./services/dashboard.service.js";
+import * as eventService from "./services/event.service.js";
 import * as integrationService from "./services/integration.service.js";
 
 // ─── Templates ───────────────────────────────────────────────────────────────
@@ -165,6 +166,13 @@ export const trackDownload = async (req, res) => {
     return successResponse(res, { message: "Download tracked", data: null });
 };
 
+export const serveLanding = async (req, res) => {
+    const { html, title } = await trackingService.serveLandingPage(req.params.trackingId, req);
+    res.set("Content-Type", "text/html; charset=utf-8");
+    if (title) res.set("X-Landing-Title", title);
+    return res.send(html);
+};
+
 // ─── Reports ─────────────────────────────────────────────────────────────────
 export const generateReport = async (req, res) => {
     const data = await reportService.queueReportGeneration(req.params.campaignId, req.authUser);
@@ -200,6 +208,11 @@ export const getDashboardDepartments = async (req, res) => {
 export const getDashboardTrends = async (req, res) => {
     const data = await dashboardService.getTrends(req.query.days);
     return successResponse(res, { message: "Trend data fetched", data });
+};
+
+export const getEvents = async (req, res) => {
+    const result = await eventService.listEvents(req.query);
+    return paginatedResponse(res, { message: "Tracking events fetched", ...result });
 };
 
 // ─── Integrations ──────────────────────────────────────────────────────────

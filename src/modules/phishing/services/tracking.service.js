@@ -7,6 +7,7 @@ import {
     phishingEventType, recipientStatus, campaignStatus
 } from "../../../utils/constant/enums.js";
 import { trackingQueue } from "../../../utils/queue.js";
+import { injectLandingTrackingScript } from "../helpers/landingPageHtml.js";
 
 const TRACKING_PIXEL = Buffer.from("R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7", "base64");
 
@@ -160,4 +161,33 @@ export const trackDownload = async (trackingId, req) => {
         userAgent: req.headers["user-agent"],
         metadata: { attachment: req.body.attachment }
     });
+};
+
+export const serveLandingPage = async (trackingId, req) => {
+    const recipient = await resolveRecipient(trackingId);
+    const campaign = await Campaign.findById(recipient.campaignId).populate("landingPageId");
+
+    if (!campaign?.landingPageId) {
+        throw new AppError("No landing page configured for this campaign", 404);
+    }
+
+    await queueTrackingEvent({
+        trackingId,
+        eventType: phishingEventType.FORM_VISITED,
+        ipAddress: req.ip,
+        userAgent: req.headers["user-agent"]
+    });
+
+    const apiBase = campaign.trackingDomain
+        || process.env.PHISHING_TRACKING_DOMAIN
+        || "http://localhost:3000/api/phishing";
+
+    const page = campaign.landingPageId;
+    const html = injectLandingTrackingScript(page.htmlContent, {
+        trackingId,
+        apiBase,
+        redirectUrl: page.redirectUrl
+    });
+
+    return { html, title: page.title || page.name };
 };

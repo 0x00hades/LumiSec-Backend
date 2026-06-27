@@ -43,11 +43,11 @@ export const importRecipientsValidation = Joi.object({
     campaignId: objectId.optional(),
     csv: Joi.string().optional(),
     recipients: Joi.array().items(Joi.object({
-        fullName: Joi.string().optional(),
+        fullName: Joi.string().empty("").optional(),
         email: Joi.string().email().required(),
-        department: Joi.string().optional(),
-        jobTitle: Joi.string().optional(),
-        manager: Joi.string().optional()
+        department: Joi.string().empty("").optional(),
+        jobTitle: Joi.string().empty("").optional(),
+        manager: Joi.string().empty("").optional()
     })).optional()
 }).or("csv", "recipients");
 
@@ -101,11 +101,11 @@ export const campaignIdParamValidation = Joi.object({
 
 export const addCampaignRecipientsValidation = Joi.object({
     recipients: Joi.array().items(Joi.object({
-        fullName: Joi.string().optional(),
+        fullName: Joi.string().empty("").optional(),
         email: Joi.string().email().required(),
-        department: Joi.string().optional(),
-        jobTitle: Joi.string().optional(),
-        manager: Joi.string().optional()
+        department: Joi.string().empty("").optional(),
+        jobTitle: Joi.string().empty("").optional(),
+        manager: Joi.string().empty("").optional()
     })).min(1).required()
 });
 
@@ -171,4 +171,11 @@ export const listQueryValidation = Joi.object({
 
 export const dashboardTrendsValidation = Joi.object({
     days: Joi.number().integer().min(1).max(365).default(30)
+});
+
+export const listEventsValidation = Joi.object({
+    page: Joi.number().integer().min(1).optional(),
+    limit: Joi.number().integer().min(1).max(100).optional(),
+    campaignId: objectId.optional(),
+    eventType: Joi.string().valid(...Object.values(phishingEventType)).optional()
 });

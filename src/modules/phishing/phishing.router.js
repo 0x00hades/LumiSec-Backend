@@ -15,7 +15,7 @@ import {
     trackingIdParamValidation, trackSubmitValidation, trackDownloadValidation,
     grcRiskIntegrationValidation, soarIncidentIntegrationValidation,
     siemEventIntegrationValidation, openctiIndicatorValidation,
-    listQueryValidation, dashboardTrendsValidation
+    listQueryValidation, dashboardTrendsValidation, listEventsValidation
 } from "./phishing.validation.js";
 import {
     createTemplate, getTemplates, getTemplate, updateTemplate, deleteTemplate,
@@ -23,9 +23,10 @@ import {
     importRecipients, getRecipients, getRecipient, updateRecipient, deleteRecipient,
     createCampaign, getCampaigns, getCampaign, updateCampaign, deleteCampaign,
     addCampaignRecipients, launchCampaign, pauseCampaign, resumeCampaign, stopCampaign,
-    trackOpen, trackClick, trackVisit, trackSubmit, trackDownload,
+    trackOpen, trackClick, trackVisit, trackSubmit, trackDownload, serveLanding,
     generateReport, downloadReport, getReportStats,
     getDashboardOverview, getDashboardRisks, getDashboardDepartments, getDashboardTrends,
+    getEvents,
     integrateGrcRisk, integrateSoarIncident, integrateSiemEvent, integrateOpenCtiIndicator
 } from "./phishing.controller.js";
 
@@ -142,6 +143,11 @@ phishingRouter.post("/campaigns/:id/stop",
 const trackingRateLimit = rateLimit({ windowMs: 60_000, max: 120 });
 
 // ─── Tracking (public) ───────────────────────────────────────────────────────
+phishingRouter.get("/landing/:trackingId",
+    trackingRateLimit,
+    isValid(trackingIdParamValidation),
+    asyncHandler(serveLanding)
+);
 phishingRouter.get("/track/open/:trackingId",
     trackingRateLimit,
     isValid(trackingIdParamValidation),
@@ -198,6 +204,11 @@ phishingRouter.get("/dashboard/departments",
 phishingRouter.get("/dashboard/trends",
     isAuthenticated(), isAuthorized(p.dashboard.read), isValid(dashboardTrendsValidation),
     asyncHandler(getDashboardTrends)
+);
+
+phishingRouter.get("/events",
+    isAuthenticated(), isAuthorized(p.events.read), isValid(listEventsValidation, "query"),
+    asyncHandler(getEvents)
 );
 
 // ─── Integrations ────────────────────────────────────────────────────────────

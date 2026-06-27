@@ -7,6 +7,7 @@ import { campaignStatus } from "../../../utils/constant/enums.js";
 import { parsePagination } from "../../../utils/pagination.js";
 import { emailQueue } from "../../../utils/queue.js";
 import { generateTrackingId } from "../helpers/trackingId.js";
+import { buildLandingUrl, prepareEmailHtml } from "../helpers/emailContent.js";
 
 const LAUNCHABLE = [campaignStatus.DRAFT, campaignStatus.SCHEDULED];
 const PAUSABLE = [campaignStatus.RUNNING];
@@ -101,7 +102,9 @@ export const addRecipientsToCampaign = async (campaignId, recipients) => {
 };
 
 export const launchCampaign = async (campaignId, trackingDomain) => {
-    const campaign = await Campaign.findById(campaignId).populate("templateId");
+    const campaign = await Campaign.findById(campaignId)
+        .populate("templateId")
+        .populate("landingPageId");
     if (!campaign) throw new AppError(messages.campaign.notFound, 404);
     if (!LAUNCHABLE.includes(campaign.status)) {
         throw new AppError(messages.campaign.invalidStatus, 400);
@@ -111,14 +114,22 @@ export const launchCampaign = async (campaignId, trackingDomain) => {
     if (!recipients.length) throw new AppError("No recipients found for this campaign", 400);
 
     const domain = trackingDomain || campaign.trackingDomain || process.env.PHISHING_TRACKING_DOMAIN || "http://localhost:3000/api/phishing";
+    const hasLandingPage = Boolean(campaign.landingPageId);
 
     for (const recipient of recipients) {
+        const landingUrl = hasLandingPage ? buildLandingUrl(domain, recipient.trackingId) : null;
+        const htmlBody = prepareEmailHtml(
+            campaign.templateId.htmlBody,
+            recipient,
+            landingUrl
+        );
+
         await emailQueue.add("sendPhishingEmail", {
             recipientId: recipient._id,
             campaignId,
             to: recipient.email,
             subject: campaign.templateId.subject,
-            htmlBody: campaign.templateId.htmlBody,
+            htmlBody,
             from: process.env.SMTP_FROM || "LumiSec <noreply@lumisec.io>",
             trackingId: recipient.trackingId,
             trackingDomain: domain

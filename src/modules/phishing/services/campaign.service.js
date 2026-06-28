@@ -8,11 +8,66 @@ import { parsePagination } from "../../../utils/pagination.js";
 import { emailQueue } from "../../../utils/queue.js";
 import { generateTrackingId } from "../helpers/trackingId.js";
 import { buildLandingUrl, prepareEmailHtml } from "../helpers/emailContent.js";
+import { getFromAddress, getStoredSettings } from "./settings.service.js";
+import { resolveTrackingDomainForEmail } from "../helpers/trackingDomain.js";
 
 const LAUNCHABLE = [campaignStatus.DRAFT, campaignStatus.SCHEDULED];
 const PAUSABLE = [campaignStatus.RUNNING];
 const RESUMABLE = [campaignStatus.PAUSED];
 const STOPPABLE = [campaignStatus.RUNNING, campaignStatus.PAUSED, campaignStatus.SCHEDULED];
+const ACTIVE_SEND_STATUSES = [campaignStatus.RUNNING];
+
+const loadCampaignForEmail = (campaignId) =>
+    Campaign.findById(campaignId)
+        .populate("templateId")
+        .populate("landingPageId");
+
+const queueEmailsForRecipients = async (campaign, recipients, { req, trackingDomainOverride } = {}) => {
+    if (!recipients.length) return 0;
+
+    const populated = campaign.templateId?.htmlBody
+        ? campaign
+        : await loadCampaignForEmail(campaign._id ?? campaign.id);
+    if (!populated?.templateId) throw new AppError(messages.template.notFound, 404);
+
+    const stored = await getStoredSettings();
+    const { domain } = await resolveTrackingDomainForEmail({
+        override: trackingDomainOverride,
+        campaign: populated,
+        storedSettings: stored,
+        req
+    });
+
+    const hasLandingPage = Boolean(populated.landingPageId);
+    const fromAddress = await getFromAddress();
+    const campaignId = populated._id;
+
+    for (const recipient of recipients) {
+        const landingUrl = hasLandingPage ? buildLandingUrl(domain, recipient.trackingId) : null;
+        const htmlBody = prepareEmailHtml(
+            populated.templateId.htmlBody,
+            recipient,
+            landingUrl
+        );
+
+        await emailQueue.add(
+            "sendPhishingEmail",
+            {
+                recipientId: recipient._id,
+                campaignId,
+                to: recipient.email,
+                subject: populated.templateId.subject,
+                htmlBody,
+                from: fromAddress,
+                trackingId: recipient.trackingId,
+                trackingDomain: domain
+            },
+            { jobId: `phishing-email-${recipient._id}` }
+        );
+    }
+
+    return recipients.length;
+};
 
 export const createCampaign = async (data, user) => {
     const template = await EmailTemplate.findById(data.templateId);
@@ -80,31 +135,49 @@ export const deleteCampaign = async (id) => {
     return campaign;
 };
 
-export const addRecipientsToCampaign = async (campaignId, recipients) => {
+export const addRecipientsToCampaign = async (campaignId, recipients, req) => {
     const campaign = await Campaign.findById(campaignId);
     if (!campaign) throw new AppError(messages.campaign.notFound, 404);
 
-    const docs = recipients.map((r) => ({
-        campaignId,
-        fullName: r.fullName,
-        email: r.email.toLowerCase(),
-        department: r.department,
-        jobTitle: r.jobTitle,
-        manager: r.manager,
-        trackingId: generateTrackingId()
-    }));
+    const existing = await Recipient.find({ campaignId }).select("email").lean();
+    const existingEmails = new Set(existing.map((r) => r.email.toLowerCase()));
 
-    const created = await Recipient.insertMany(docs);
+    const toCreate = recipients
+        .map((r) => ({
+            campaignId,
+            fullName: r.fullName,
+            email: r.email.toLowerCase(),
+            department: r.department,
+            jobTitle: r.jobTitle,
+            manager: r.manager,
+            trackingId: generateTrackingId()
+        }))
+        .filter((r) => r.email && !existingEmails.has(r.email));
+
+    if (!toCreate.length) {
+        return { added: 0, recipients: [], skipped: recipients.length, queued: 0 };
+    }
+
+    const created = await Recipient.insertMany(toCreate);
     campaign.recipientsCount = await Recipient.countDocuments({ campaignId });
     await campaign.save();
 
-    return { added: created.length, recipients: created };
+    let queued = 0;
+    if (ACTIVE_SEND_STATUSES.includes(campaign.status)) {
+        const populated = await loadCampaignForEmail(campaignId);
+        queued = await queueEmailsForRecipients(populated, created, { req });
+    }
+
+    return {
+        added: created.length,
+        skipped: recipients.length - created.length,
+        recipients: created,
+        queued
+    };
 };
 
-export const launchCampaign = async (campaignId, trackingDomain) => {
-    const campaign = await Campaign.findById(campaignId)
-        .populate("templateId")
-        .populate("landingPageId");
+export const launchCampaign = async (campaignId, trackingDomainOverride, req) => {
+    const campaign = await loadCampaignForEmail(campaignId);
     if (!campaign) throw new AppError(messages.campaign.notFound, 404);
     if (!LAUNCHABLE.includes(campaign.status)) {
         throw new AppError(messages.campaign.invalidStatus, 400);
@@ -113,35 +186,25 @@ export const launchCampaign = async (campaignId, trackingDomain) => {
     const recipients = await Recipient.find({ campaignId, emailSent: false });
     if (!recipients.length) throw new AppError("No recipients found for this campaign", 400);
 
-    const domain = trackingDomain || campaign.trackingDomain || process.env.PHISHING_TRACKING_DOMAIN || "http://localhost:3000/api/phishing";
-    const hasLandingPage = Boolean(campaign.landingPageId);
+    const stored = await getStoredSettings();
+    const { domain } = await resolveTrackingDomainForEmail({
+        override: trackingDomainOverride,
+        campaign,
+        storedSettings: stored,
+        req
+    });
 
-    for (const recipient of recipients) {
-        const landingUrl = hasLandingPage ? buildLandingUrl(domain, recipient.trackingId) : null;
-        const htmlBody = prepareEmailHtml(
-            campaign.templateId.htmlBody,
-            recipient,
-            landingUrl
-        );
-
-        await emailQueue.add("sendPhishingEmail", {
-            recipientId: recipient._id,
-            campaignId,
-            to: recipient.email,
-            subject: campaign.templateId.subject,
-            htmlBody,
-            from: process.env.SMTP_FROM || "LumiSec <noreply@lumisec.io>",
-            trackingId: recipient.trackingId,
-            trackingDomain: domain
-        });
-    }
+    const queued = await queueEmailsForRecipients(campaign, recipients, {
+        req,
+        trackingDomainOverride: domain
+    });
 
     campaign.status = campaignStatus.RUNNING;
     campaign.launchDate = new Date();
-    if (trackingDomain) campaign.trackingDomain = trackingDomain;
+    campaign.trackingDomain = domain;
     await campaign.save();
 
-    return { queued: recipients.length, campaign };
+    return { queued, campaign };
 };
 
 export const pauseCampaign = async (campaignId) => {
@@ -154,14 +217,22 @@ export const pauseCampaign = async (campaignId) => {
     return campaign;
 };
 
-export const resumeCampaign = async (campaignId) => {
+export const resumeCampaign = async (campaignId, req) => {
     const campaign = await Campaign.findById(campaignId);
     if (!campaign) throw new AppError(messages.campaign.notFound, 404);
     if (!RESUMABLE.includes(campaign.status)) throw new AppError(messages.campaign.invalidStatus, 400);
 
     campaign.status = campaignStatus.RUNNING;
     await campaign.save();
-    return campaign;
+
+    const unsent = await Recipient.find({ campaignId, emailSent: false });
+    let queued = 0;
+    if (unsent.length) {
+        const populated = await loadCampaignForEmail(campaignId);
+        queued = await queueEmailsForRecipients(populated, unsent, { req });
+    }
+
+    return { campaign, queued };
 };
 
 export const stopCampaign = async (campaignId) => {

@@ -179,3 +179,11 @@ export const listEventsValidation = Joi.object({
     campaignId: objectId.optional(),
     eventType: Joi.string().valid(...Object.values(phishingEventType)).optional()
 });
+
+const fromAddressPattern = /^(.+\s)?<?[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+>?$/;
+
+export const updatePhishingSettingsValidation = Joi.object({
+    fromAddress: Joi.string().trim().min(3).max(320).pattern(fromAddressPattern)
+        .messages({ "string.pattern.base": "Enter a valid email or \"Name <email@domain.com>\" format" }),
+    trackingDomain: Joi.string().trim().uri({ allowRelative: false }).allow("", null)
+}).or("fromAddress", "trackingDomain");

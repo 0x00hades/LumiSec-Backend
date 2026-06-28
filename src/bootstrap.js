@@ -7,6 +7,9 @@ import { authRouter, phishingRouter, soarRouter, uctcRouter, grcRouter, networkR
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export const bootstrap = (app, express) => {
+    // Trust reverse proxy (nginx, cloud load balancers) for correct tracking URLs in production.
+    app.set("trust proxy", 1);
+
     // 1. CORS must run before auth and route handlers (handles preflight OPTIONS).
     configureCors(app);
 

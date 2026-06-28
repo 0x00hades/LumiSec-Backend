@@ -4,31 +4,59 @@ import {
 import { AppError } from "../../../utils/appError.js";
 import { messages } from "../../../utils/constant/messages.js";
 import {
-    phishingEventType, recipientStatus, campaignStatus
+    phishingEventType, recipientStatus
 } from "../../../utils/constant/enums.js";
 import { trackingQueue } from "../../../utils/queue.js";
+import { logger } from "../../../utils/logger.js";
 import { injectLandingTrackingScript } from "../helpers/landingPageHtml.js";
+import { resolveTrackingBaseSync } from "../helpers/trackingDomain.js";
 
 const TRACKING_PIXEL = Buffer.from("R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7", "base64");
 
 const recipientUpdates = {
     [phishingEventType.EMAIL_OPENED]: { opened: true, status: recipientStatus.OPENED },
     [phishingEventType.LINK_CLICKED]: { clicked: true, status: recipientStatus.CLICKED },
-    [phishingEventType.FORM_VISITED]: { status: recipientStatus.CLICKED },
+    [phishingEventType.FORM_VISITED]: { clicked: true, status: recipientStatus.CLICKED },
     [phishingEventType.CREDENTIAL_SUBMITTED]: { submitted: true, status: recipientStatus.SUBMITTED },
     [phishingEventType.ATTACHMENT_DOWNLOADED]: { clicked: true },
     [phishingEventType.QR_SCANNED]: { clicked: true }
 };
 
-const campaignIncrements = {
-    [phishingEventType.EMAIL_SENT]: { sentCount: 1 },
-    [phishingEventType.EMAIL_OPENED]: { openedCount: 1 },
-    [phishingEventType.LINK_CLICKED]: { clickedCount: 1 },
-    [phishingEventType.FORM_VISITED]: { clickedCount: 1 },
-    [phishingEventType.CREDENTIAL_SUBMITTED]: { submittedCount: 1 },
-    [phishingEventType.ATTACHMENT_DOWNLOADED]: { clickedCount: 1 },
-    [phishingEventType.QR_SCANNED]: { clickedCount: 1 }
-};
+const impliesOpen = new Set([
+    phishingEventType.LINK_CLICKED,
+    phishingEventType.FORM_VISITED,
+    phishingEventType.CREDENTIAL_SUBMITTED,
+    phishingEventType.ATTACHMENT_DOWNLOADED,
+    phishingEventType.QR_SCANNED
+]);
+
+function buildCampaignIncrements(eventType, { wasOpened, wasClicked, wasSubmitted }) {
+    const inc = {};
+
+    if (eventType === phishingEventType.EMAIL_OPENED && !wasOpened) {
+        inc.openedCount = 1;
+    }
+
+    if (impliesOpen.has(eventType) && !wasOpened) {
+        inc.openedCount = 1;
+    }
+
+    const clickTypes = new Set([
+        phishingEventType.LINK_CLICKED,
+        phishingEventType.FORM_VISITED,
+        phishingEventType.ATTACHMENT_DOWNLOADED,
+        phishingEventType.QR_SCANNED
+    ]);
+    if (clickTypes.has(eventType) && !wasClicked) {
+        inc.clickedCount = 1;
+    }
+
+    if (eventType === phishingEventType.CREDENTIAL_SUBMITTED && !wasSubmitted) {
+        inc.submittedCount = 1;
+    }
+
+    return inc;
+}
 
 export const resolveRecipient = async (trackingId) => {
     const recipient = await Recipient.findOne({ trackingId });
@@ -44,11 +72,6 @@ export const queueTrackingEvent = async ({
     metadata = {}
 }) => {
     const recipient = await resolveRecipient(trackingId);
-
-    const campaign = await Campaign.findById(recipient.campaignId);
-    if (campaign?.status === campaignStatus.PAUSED) {
-        throw new AppError("Campaign is paused", 403);
-    }
 
     await trackingQueue.add("processTrackingEvent", {
         trackingId,
@@ -84,6 +107,10 @@ export const processTrackingEvent = async ({
         metadata
     });
 
+    const wasOpened = recipient.opened;
+    const wasClicked = recipient.clicked;
+    const wasSubmitted = recipient.submitted;
+
     const updates = recipientUpdates[eventType] || {};
     Object.assign(recipient, updates);
 
@@ -91,10 +118,17 @@ export const processTrackingEvent = async ({
         recipient.clickCount = (recipient.clickCount || 0) + 1;
     }
 
+    if (impliesOpen.has(eventType) && !recipient.opened) {
+        recipient.opened = true;
+        if ([recipientStatus.PENDING, recipientStatus.SENT].includes(recipient.status)) {
+            recipient.status = recipientStatus.OPENED;
+        }
+    }
+
     await recipient.save();
 
-    const inc = campaignIncrements[eventType];
-    if (inc) {
+    const inc = buildCampaignIncrements(eventType, { wasOpened, wasClicked, wasSubmitted });
+    if (Object.keys(inc).length) {
         await Campaign.findByIdAndUpdate(campaignId, { $inc: inc });
     }
 
@@ -111,12 +145,17 @@ export const processTrackingEvent = async ({
 };
 
 export const trackOpen = async (trackingId, req) => {
-    await queueTrackingEvent({
-        trackingId,
-        eventType: phishingEventType.EMAIL_OPENED,
-        ipAddress: req.ip,
-        userAgent: req.headers["user-agent"]
-    });
+    try {
+        await queueTrackingEvent({
+            trackingId,
+            eventType: phishingEventType.EMAIL_OPENED,
+            ipAddress: req.ip,
+            userAgent: req.headers["user-agent"]
+        });
+    } catch (err) {
+        // Always return the pixel — mail clients must get a 200 + GIF even if queue/DB fails.
+        logger.warn(`Open pixel queued with error for ${trackingId}: ${err.message}`);
+    }
     return TRACKING_PIXEL;
 };
 
@@ -129,7 +168,13 @@ export const trackClick = async (trackingId, req) => {
         metadata: { url: req.query.url }
     });
 
-    const redirect = req.query.url || "/";
+    const rawUrl = req.query.url || "/";
+    let redirect = rawUrl;
+    try {
+        redirect = decodeURIComponent(rawUrl);
+    } catch {
+        redirect = rawUrl;
+    }
     return { recipient, redirect };
 };
 
@@ -178,9 +223,7 @@ export const serveLandingPage = async (trackingId, req) => {
         userAgent: req.headers["user-agent"]
     });
 
-    const apiBase = campaign.trackingDomain
-        || process.env.PHISHING_TRACKING_DOMAIN
-        || "http://localhost:3000/api/phishing";
+    const apiBase = resolveTrackingBaseSync(campaign.trackingDomain);
 
     const page = campaign.landingPageId;
     const html = injectLandingTrackingScript(page.htmlContent, {

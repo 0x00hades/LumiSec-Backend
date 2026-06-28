@@ -39,5 +39,9 @@ export const phishingPermissions = {
     },
     integrations: {
         manage: [roles.ADMIN, roles.SOC_MANAGER, roles.PHISHING_MANAGER, roles.SOC_ANALYST, roles.INTEGRATION_ADMIN]
+    },
+    settings: {
+        read: [roles.ADMIN, roles.PHISHING_MANAGER, roles.PHISHING_OPERATOR, roles.SOC_MANAGER, roles.SOC_ANALYST, roles.AUDITOR],
+        update: [roles.ADMIN, roles.PHISHING_MANAGER]
     }
 };

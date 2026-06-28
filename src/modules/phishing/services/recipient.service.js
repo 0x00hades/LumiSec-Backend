@@ -65,8 +65,13 @@ export const updateRecipient = async (id, updates) => {
 };
 
 export const deleteRecipient = async (id) => {
-    const recipient = await Recipient.findByIdAndDelete(id);
+    const recipient = await Recipient.findById(id);
     if (!recipient) throw new AppError(messages.recipient.notFound, 404);
+    if (recipient.emailSent) {
+        throw new AppError(messages.recipient.cannotDeleteAfterSent, 400);
+    }
+
+    await Recipient.findByIdAndDelete(id);
 
     if (recipient.campaignId) {
         await Campaign.findByIdAndUpdate(recipient.campaignId, { $inc: { recipientsCount: -1 } });

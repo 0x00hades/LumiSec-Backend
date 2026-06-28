@@ -21,6 +21,7 @@ export { Attachment } from "./models/attachment.model.js";
 export { CredentialCapture } from "./models/credentialCapture.model.js";
 export { CampaignReport } from "./models/campaignReport.model.js";
 export { PhishingRisk } from "./models/phishingRisk.model.js";
+export { PhishingSettings } from "./models/phishingSettings.model.js";
 export { SigmaRule } from "./models/sigmaRule.model.js";
 export { SandboxRun } from "./models/sandboxRun.model.js";
 export { UctcTuning } from "./models/uctcTuning.model.js";

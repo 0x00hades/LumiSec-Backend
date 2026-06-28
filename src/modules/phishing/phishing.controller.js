@@ -9,6 +9,7 @@ import * as reportService from "./services/report.service.js";
 import * as dashboardService from "./services/dashboard.service.js";
 import * as eventService from "./services/event.service.js";
 import * as integrationService from "./services/integration.service.js";
+import * as settingsService from "./services/settings.service.js";
 
 // ─── Templates ───────────────────────────────────────────────────────────────
 export const createTemplate = async (req, res) => {
@@ -115,12 +116,12 @@ export const deleteCampaign = async (req, res) => {
 };
 
 export const addCampaignRecipients = async (req, res) => {
-    const data = await campaignService.addRecipientsToCampaign(req.params.id, req.body.recipients);
+    const data = await campaignService.addRecipientsToCampaign(req.params.id, req.body.recipients, req);
     return successResponse(res, { message: messages.recipient.importedSuccessfully, data, statusCode: 201 });
 };
 
 export const launchCampaign = async (req, res) => {
-    const data = await campaignService.launchCampaign(req.params.id, req.body.trackingDomain);
+    const data = await campaignService.launchCampaign(req.params.id, req.body.trackingDomain, req);
     return successResponse(res, { message: messages.campaign.launchedSuccessfully, data });
 };
 
@@ -130,7 +131,7 @@ export const pauseCampaign = async (req, res) => {
 };
 
 export const resumeCampaign = async (req, res) => {
-    const data = await campaignService.resumeCampaign(req.params.id);
+    const data = await campaignService.resumeCampaign(req.params.id, req);
     return successResponse(res, { message: messages.campaign.resumedSuccessfully, data });
 };
 
@@ -142,7 +143,12 @@ export const stopCampaign = async (req, res) => {
 // ─── Tracking (public) ───────────────────────────────────────────────────────
 export const trackOpen = async (req, res) => {
     const pixel = await trackingService.trackOpen(req.params.trackingId, req);
-    res.set("Content-Type", "image/gif");
+    res.set({
+        "Content-Type": "image/gif",
+        "Cache-Control": "no-store, no-cache, must-revalidate, private",
+        Pragma: "no-cache",
+        Expires: "0"
+    });
     return res.send(pixel);
 };
 
@@ -234,4 +240,15 @@ export const integrateSiemEvent = async (req, res) => {
 export const integrateOpenCtiIndicator = async (req, res) => {
     const data = await integrationService.pushOpenCtiIndicator(req.body);
     return successResponse(res, { message: messages.integration.ingestedSuccessfully, data, statusCode: 201 });
+};
+
+// ─── Settings ────────────────────────────────────────────────────────────────
+export const getSettings = async (req, res) => {
+    const data = await settingsService.getSettings(req);
+    return successResponse(res, { message: "Phishing settings fetched", data });
+};
+
+export const updateSettings = async (req, res) => {
+    const data = await settingsService.updateSettings(req.body, req);
+    return successResponse(res, { message: messages.phishingSettings.updatedSuccessfully, data });
 };

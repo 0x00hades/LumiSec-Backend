@@ -54,6 +54,7 @@ export const messages = {
     },
     recipient: {
         notFound: "Recipient not found",
+        cannotDeleteAfterSent: "Cannot remove a recipient after their email has been sent",
         createdSuccessfully: "Recipient created successfully",
         updatedSuccessfully: "Recipient updated successfully",
         deletedSuccessfully: "Recipient deleted successfully",
@@ -66,6 +67,9 @@ export const messages = {
     },
     phishingRisk: {
         createdSuccessfully: "Phishing risk created successfully"
+    },
+    phishingSettings: {
+        updatedSuccessfully: "Phishing settings updated successfully"
     },
     sigmaRule: {
         notFound: "Sigma rule not found",

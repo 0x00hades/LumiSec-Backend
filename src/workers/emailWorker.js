@@ -1,4 +1,7 @@
 import dotenv from "dotenv";
+
+dotenv.config({ path: "./config/.env" });
+
 import { emailQueue, trackingQueue } from "../utils/queue.js";
 import { sendPhishingEmail } from "../integrations/mailer.js";
 import { Recipient, Campaign } from "../../database/index.js";
@@ -7,7 +10,6 @@ import { logger } from "../utils/logger.js";
 import { recipientStatus, phishingEventType } from "../utils/constant/enums.js";
 import * as trackingService from "../modules/phishing/services/tracking.service.js";
 
-dotenv.config({ path: "./config/.env" });
 await connectDB();
 
 emailQueue.process("sendPhishingEmail", async (job) => {

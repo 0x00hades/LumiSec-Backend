@@ -15,7 +15,8 @@ import {
     trackingIdParamValidation, trackSubmitValidation, trackDownloadValidation,
     grcRiskIntegrationValidation, soarIncidentIntegrationValidation,
     siemEventIntegrationValidation, openctiIndicatorValidation,
-    listQueryValidation, dashboardTrendsValidation, listEventsValidation
+    listQueryValidation, dashboardTrendsValidation, listEventsValidation,
+    updatePhishingSettingsValidation
 } from "./phishing.validation.js";
 import {
     createTemplate, getTemplates, getTemplate, updateTemplate, deleteTemplate,
@@ -27,7 +28,8 @@ import {
     generateReport, downloadReport, getReportStats,
     getDashboardOverview, getDashboardRisks, getDashboardDepartments, getDashboardTrends,
     getEvents,
-    integrateGrcRisk, integrateSoarIncident, integrateSiemEvent, integrateOpenCtiIndicator
+    integrateGrcRisk, integrateSoarIncident, integrateSiemEvent, integrateOpenCtiIndicator,
+    getSettings, updateSettings
 } from "./phishing.controller.js";
 
 const phishingRouter = Router();
@@ -227,6 +229,16 @@ phishingRouter.post("/integrations/siem/event",
 phishingRouter.post("/integrations/opencti/indicator",
     isServiceOrUserAuthenticated(), isAuthorized(p.integrations.manage), isValid(openctiIndicatorValidation),
     asyncHandler(integrateOpenCtiIndicator)
+);
+
+// ─── Settings ────────────────────────────────────────────────────────────────
+phishingRouter.get("/settings",
+    isAuthenticated(), isAuthorized(p.settings.read),
+    asyncHandler(getSettings)
+);
+phishingRouter.patch("/settings",
+    isAuthenticated(), isAuthorized(p.settings.update), isValid(updatePhishingSettingsValidation),
+    asyncHandler(updateSettings)
 );
 
 export default phishingRouter;

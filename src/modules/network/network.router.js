@@ -13,13 +13,15 @@ import {
     listAssetsValidation,
     listMisconfigurationsValidation,
     liveStreamValidation,
+    misconfigurationIdValidation,
     networkGrcFindingValidation,
     networkOpenCtiValidation,
     networkSiemEventValidation,
     networkSoarIncidentValidation,
     networkUctcGapValidation,
     scanPortsValidation,
-    startSniffingValidation
+    startSniffingValidation,
+    updateMisconfigurationValidation
 } from "./network.validation.js";
 import {
     discoverNetwork,
@@ -35,7 +37,8 @@ import {
     integrateSoarIncident,
     integrateUctcDetectionGap,
     scanPorts,
-    startSniffing
+    startSniffing,
+    updateMisconfigurationStatus
 } from "./network.controller.js";
 
 const networkRouter = Router();
@@ -100,6 +103,14 @@ networkRouter.get("/network/misconfigurations",
     canReadNetwork,
     isValid(listMisconfigurationsValidation),
     asyncHandler(getMisconfigurations)
+);
+
+// Marks a misconfiguration as accepted or resolved after remediation.
+networkRouter.patch("/network/misconfigurations/:id",
+    canRunNetwork,
+    isValid(misconfigurationIdValidation),
+    isValid(updateMisconfigurationValidation, "body"),
+    asyncHandler(updateMisconfigurationStatus)
 );
 
 // Returns flow metrics and traffic overflow/anomaly indicators.

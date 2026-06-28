@@ -18,6 +18,10 @@ import {
     startPacketCapture
 } from "../../utils/helpers/networkRunner.js";
 import * as networkIntegration from "./services/integration.service.js";
+import {
+    refreshSniffingSessionSamples,
+    buildLiveStreamStats
+} from "../../utils/helpers/networkSniffingLive.js";
 import { upsertNetworkAsset } from "./services/networkAsset.service.js";
 
 /**
@@ -73,6 +77,26 @@ const createMisconfigurationsForAsset = async (asset) => {
     }
 
     return created;
+};
+
+const pushAutoIntegrationsForMisconfigurations = async (misconfigurations, scan, user) => {
+    for (const misconfiguration of misconfigurations) {
+        try {
+            await networkIntegration.autoIntegrateOnCriticalFinding({
+                finding: {
+                    title: misconfiguration.title,
+                    description: misconfiguration.description,
+                    severity: misconfiguration.severity,
+                    asset: misconfiguration.assetIp,
+                    findingType: misconfiguration.type
+                },
+                scan,
+                user
+            });
+        } catch {
+            // Scan results remain successful even if downstream integrations fail.
+        }
+    }
 };
 
 /**
@@ -158,6 +182,7 @@ export const scanPorts = async (req, res, next) => {
         scanResult = await scanHostPorts({ target, ports, type: scanMode });
         asset = await upsertNetworkAsset(scanResult.asset);
         misconfigurations = await createMisconfigurationsForAsset(asset);
+        await pushAutoIntegrationsForMisconfigurations(misconfigurations, scan, req.authUser);
     } catch (error) {
         scan.status = networkScanStatus.FAILED;
         scan.completedAt = new Date();
@@ -296,16 +321,17 @@ export const startSniffing = async (req, res, next) => {
     }
 
     const packetCount = packets.length;
-    const byteCount = packets.reduce((total, packet) => total + packet.size, 0);
+    const byteCount = packets.reduce((total, packet) => total + Number(packet.size || 0), 0);
+    const keepLive = duration_sec > 0;
 
     const session = await SniffingSession.create({
         interfaceName,
         durationSec: duration_sec,
         filter,
-        status: captureResult.status === "running" ? sniffingSessionStatus.RUNNING : sniffingSessionStatus.COMPLETED,
+        status: keepLive ? sniffingSessionStatus.RUNNING : sniffingSessionStatus.COMPLETED,
         requestedBy: req.authUser._id,
         startedAt: new Date(),
-        completedAt: captureResult.status === "running" ? undefined : new Date(),
+        completedAt: keepLive ? undefined : new Date(),
         packetCount,
         byteCount,
         samplePackets: packets,
@@ -323,7 +349,7 @@ export const startSniffing = async (req, res, next) => {
         message: "Sniffing session started",
         statusCode: 201,
         data: {
-            session_id: session._id,
+            session_id: String(session._id),
             runner_provider: session.runnerProvider,
             status: session.status,
             packet_count: packetCount,
@@ -341,17 +367,33 @@ export const getLiveStreamSamples = async (req, res, next) => {
     const filter = {};
     if (session_id) filter._id = session_id;
 
-    const sessions = await SniffingSession.find(filter).sort({ createdAt: -1 }).limit(Number(limit));
+    let sessions = await SniffingSession.find(filter).sort({ createdAt: -1 }).limit(Number(limit));
+
+    sessions = await Promise.all(
+        sessions.map((session) => (
+            session.status === sniffingSessionStatus.RUNNING
+                ? refreshSniffingSessionSamples(session)
+                : session
+        ))
+    );
+
     const packets = sessions.flatMap((session) => session.samplePackets.map((packet) => ({
         session_id: session._id,
         ...packet
     })));
 
+    const primarySession = sessions[0];
+    const stats = buildLiveStreamStats(packets);
+
     return successResponse(res, {
         message: "Live stream samples fetched",
         data: {
             websocket_event: "network:sniffing:sample",
-            packets
+            session_id: primarySession?._id,
+            status: primarySession?.status,
+            duration_sec: primarySession?.durationSec,
+            packets,
+            stats
         }
     });
 };
@@ -379,6 +421,26 @@ export const getMisconfigurations = async (req, res, next) => {
         page: Number(page),
         limit: Number(limit),
         total
+    });
+};
+
+/**
+ * Updates misconfiguration status after analyst remediation.
+ */
+export const updateMisconfigurationStatus = async (req, res, next) => {
+    const misconfiguration = await NetworkMisconfiguration.findByIdAndUpdate(
+        req.params.id,
+        { $set: { status: req.body.status } },
+        { new: true, runValidators: true }
+    );
+
+    if (!misconfiguration) {
+        return next(new AppError("Network misconfiguration not found", 404));
+    }
+
+    return successResponse(res, {
+        message: "Misconfiguration status updated",
+        data: misconfiguration
     });
 };
 

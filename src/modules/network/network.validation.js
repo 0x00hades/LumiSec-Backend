@@ -129,3 +129,11 @@ export const flowMetricsValidation = Joi.object({
     source_ip: ipv4.optional(),
     anomaly_only: Joi.boolean().truthy("true").falsy("false").optional()
 });
+
+export const misconfigurationIdValidation = Joi.object({
+    id: objectId.required()
+});
+
+export const updateMisconfigurationValidation = Joi.object({
+    status: Joi.string().valid("open", "accepted", "resolved").required()
+});

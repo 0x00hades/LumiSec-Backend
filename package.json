@@ -20,6 +20,7 @@
     "worker:soar-notification": "node src/workers/notificationWorker.js",
     "worker:analytics": "node src/workers/analyticsWorker.js",
     "worker:soar-integration": "node src/workers/integrationWorker.js",
+    "worker:sniffer": "node services/luminet-sniffer-worker/index.js",
     "seed:soar": "node database/seeds/soar.seed.js"
   },
   "dependencies": {

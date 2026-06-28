@@ -1,7 +1,9 @@
 import net from "net";
+import dgram from "dgram";
 import os from "os";
 import { spawn } from "child_process";
 import axios from "axios";
+import { AppError } from "../appError.js";
 import { normalizePortsInput } from "./networkPortUtils.js";
 
 const serviceByPort = {
@@ -262,9 +264,47 @@ const discoverWithLocalPing = async (subnet) => {
 };
 
 /**
+ * Checks one UDP port with a lightweight probe packet.
+ * No ICMP unreachable within the timeout is treated as open|filtered for demo scanning.
+ */
+const checkUdpPort = (target, port) => {
+    const timeoutMs = Number(process.env.LUMINET_CONNECT_TIMEOUT_MS) || 1200;
+
+    return new Promise((resolve) => {
+        const socket = dgram.createSocket("udp4");
+        let settled = false;
+
+        const finish = (isOpen) => {
+            if (settled) return;
+            settled = true;
+            try {
+                socket.close();
+            } catch {
+                // ignore close races
+            }
+            resolve(isOpen);
+        };
+
+        const timer = setTimeout(() => finish(true), timeoutMs);
+
+        socket.on("error", () => {
+            clearTimeout(timer);
+            finish(false);
+        });
+
+        socket.send(Buffer.from("LumiNet-UDP-probe"), port, target, (error) => {
+            if (error) {
+                clearTimeout(timer);
+                finish(false);
+            }
+        });
+    });
+};
+
+/**
  * Runs a local TCP connect scan with optional banner grabbing.
  */
-const scanWithLocalTcp = async ({ target, ports }) => {
+const scanWithLocalTcp = async ({ target, ports, scanMethod = "local_tcp_connect", metadata = {} }) => {
     const requestedPorts = normalizePortsInput(ports);
     const concurrency = Number(process.env.LUMINET_SCAN_CONCURRENCY) || 64;
     const openPorts = [];
@@ -300,11 +340,73 @@ const scanWithLocalTcp = async ({ target, ports }) => {
         status: "active",
         openPorts,
         metadata: {
-            scanMethod: "local_tcp_connect",
+            scanMethod,
             macSource: mac ? "arp" : "fallback",
-            bannerGrabbing: true
+            bannerGrabbing: true,
+            ...metadata
         }
     };
+};
+
+/**
+ * Runs a local UDP probe scan.
+ */
+const scanWithLocalUdp = async ({ target, ports }) => {
+    const requestedPorts = normalizePortsInput(ports);
+    const concurrency = Number(process.env.LUMINET_SCAN_CONCURRENCY) || 64;
+    const openPorts = [];
+
+    for (let index = 0; index < requestedPorts.length; index += concurrency) {
+        const batch = requestedPorts.slice(index, index + concurrency);
+        const results = await Promise.all(batch.map(async (port) => ({
+            port,
+            isOpen: await checkUdpPort(target, port)
+        })));
+
+        for (const result of results) {
+            if (!result.isOpen) continue;
+            openPorts.push({
+                port: result.port,
+                protocol: "udp",
+                service: serviceByPort[result.port] || "unknown",
+                banner: "",
+                state: "open",
+                detectedAt: new Date()
+            });
+        }
+    }
+
+    const mac = await resolveMacFromArp(target);
+    return {
+        ip: target,
+        mac: mac || fallbackMacFromIp(target),
+        hostname: null,
+        osType: "unknown",
+        vendor: mac ? "unknown" : "unresolved",
+        status: "active",
+        openPorts,
+        metadata: {
+            scanMethod: "local_udp_probe",
+            macSource: mac ? "arp" : "fallback",
+            bannerGrabbing: false
+        }
+    };
+};
+
+/**
+ * Stealth scan fallback for local mode — raw SYN requires elevated privileges,
+ * so local development uses TCP connect probing with stealth metadata.
+ */
+const scanWithLocalStealth = async ({ target, ports }) => {
+    return scanWithLocalTcp({
+        target,
+        ports,
+        scanMethod: "local_connect_stealth_fallback",
+        metadata: {
+            requestedScanMode: "SYN",
+            note: "Raw SYN scanning requires worker/cloud mode or elevated privileges. Local mode uses TCP connect probing."
+        }
+    });
 };
 
 /**
@@ -313,12 +415,29 @@ const scanWithLocalTcp = async ({ target, ports }) => {
 const callScannerWorker = async (path, payload) => {
     const baseUrl = process.env.LUMINET_SCANNER_WORKER_URL;
     if (!baseUrl) {
-        throw new Error("LUMINET_SCANNER_WORKER_URL is not configured for worker/cloud scan mode");
+        throw new AppError(
+            "LUMINET_SCANNER_WORKER_URL is not configured for worker/cloud scan mode",
+            422
+        );
     }
-    const { data } = await axios.post(`${baseUrl}${path}`, payload, {
-        timeout: Number(process.env.LUMINET_SCAN_TIMEOUT_SEC || 60) * 1000
-    });
-    return data;
+
+    try {
+        const { data } = await axios.post(`${baseUrl}${path}`, payload, {
+            timeout: Number(process.env.LUMINET_SCAN_TIMEOUT_SEC || 60) * 1000
+        });
+        return data;
+    } catch (error) {
+        if (error.response) {
+            throw new AppError(
+                error.response.data?.message || "Scanner worker request failed",
+                error.response.status || 502
+            );
+        }
+        throw new AppError(
+            `Scanner worker is unavailable at ${baseUrl}. Start the scanner worker or use LUMINET_SCAN_MODE=local.`,
+            503
+        );
+    }
 };
 
 /**
@@ -373,7 +492,7 @@ export const discoverHosts = async ({ subnet }) => {
             assets: result.assets
         };
     }
-    throw new Error(`Unsupported LUMINET_SCAN_MODE: ${mode}. Supported values: local, worker, cloud`);
+    throw new AppError(`Unsupported LUMINET_SCAN_MODE: ${mode}. Supported values: local, worker, cloud`, 422);
 };
 
 /**
@@ -384,7 +503,10 @@ export const scanHostPorts = async ({ target, ports, type }) => {
     const mode = getScanMode();
     if (mode === "local") {
         if (type === "UDP") {
-            throw new Error("Local UDP scanning requires worker/cloud mode with LUMINET_SCANNER_WORKER_URL configured");
+            return { runnerProvider: "local_udp_probe", asset: await scanWithLocalUdp({ target, ports: normalizedPorts }) };
+        }
+        if (type === "SYN") {
+            return { runnerProvider: "local_connect_stealth_fallback", asset: await scanWithLocalStealth({ target, ports: normalizedPorts }) };
         }
         return { runnerProvider: "local_tcp_connect", asset: await scanWithLocalTcp({ target, ports: normalizedPorts }) };
     }
@@ -397,7 +519,7 @@ export const scanHostPorts = async ({ target, ports, type }) => {
             asset: result.asset
         };
     }
-    throw new Error(`Unsupported LUMINET_SCAN_MODE: ${mode}. Supported values: local, worker, cloud`);
+    throw new AppError(`Unsupported LUMINET_SCAN_MODE: ${mode}. Supported values: local, worker, cloud`, 422);
 };
 
 /**
